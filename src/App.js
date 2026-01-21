@@ -1,25 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider } from 'react-router-dom';
+import styled from 'styled-components';
+import { media } from './styles/media';
+import bg from './assets/images/bg.png';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Wrapper = styled.div`
+   width: 100%;
+   height: 100%;
+   background-color: #1E1E1E;
+   background-image: url(${bg});
+   overflow: hidden auto;
+   background-size: cover;
+   
+
+   ${media.tablet`
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      & > div {
+         max-width: 550px;
+         height: 100%;
+         width: 100%;
+      }
+   `};
+
+   ${media.desktop`
+      & > div {
+         max-width: 1440px;
+         height: 100%;
+         width: 100%;
+      }
+   `}
+`;
+
+function App({ router }) {
+   return (
+      <Wrapper>
+         <RouterProvider router={router} />
+      </Wrapper>
+   );
 }
 
 export default App;
