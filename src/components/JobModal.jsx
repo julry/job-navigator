@@ -57,7 +57,7 @@ const CompasButtonStyled = styled(CompasButton)`
 
 
 const TitleStyled = styled(Title)`
-    font-size: 36px;
+    font-size: ${({$fontSize}) => $fontSize}px;
     padding-bottom: 55px;
 
      @media screen and (min-width: 1200px){
@@ -72,6 +72,7 @@ const Card = styled.div`
     border-radius: 30px;
     width: fit-content;
     overflow: hidden;
+    width: 100%;
 
     & + & {
         margin-top: 20px;
@@ -95,6 +96,10 @@ const CardContent = styled.div`
 
    ${media.desktop`
         ${({$withPicture}) => $withPicture ? 'height: 380px' : ''};
+
+        & ${Text} {
+            max-width: 420px;
+        }
    `}
 `
 
@@ -120,6 +125,8 @@ const CardTitle = styled(Title)`
     font-size: 24px;
     color: var(--color-white-text);
     margin-bottom: 30px;
+    max-width: 600px;
+    text-transform: none;
 `;
 
 const FilterSvg = styled.svg`
@@ -353,7 +360,7 @@ export const JobModal = ({ opportunities, id, onClose, picture, menuPerson = def
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id);
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
 
-    const {pictureBottom, jobs = [], hasPicture = true, } = chosenOpportunity;
+    const {pictureBottom, textSize = 36, jobs = [], hasPicture = true, } = chosenOpportunity;
 
     const scrollContentTop = () => {
         contentRef?.current?.scrollTo({top: 0, behavior: 'smooth'});
@@ -403,7 +410,7 @@ export const JobModal = ({ opportunities, id, onClose, picture, menuPerson = def
                     <MenuMan src={menuPerson} alt="" />
                     <MenuHead src={menuPersonHead} alt="" />
                  </MenuBlockDesktop>
-                <TitleStyled>
+                <TitleStyled $fontSize={textSize}>
                     {chosenOpportunity.text}
                 </TitleStyled>
                 <CardsWrapper $bottom={pictureBottom}>

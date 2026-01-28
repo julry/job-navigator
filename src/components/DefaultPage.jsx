@@ -14,6 +14,7 @@ import { AnimatePresence } from "framer-motion";
 import { JobModal } from "./JobModal";
 import { useNavigate } from "react-router-dom";
 import { CompasButton } from "./shared/CompasButton";
+import { SmallText } from "./shared/Texts";
 
 const Wrapper = styled.div`
     padding-top: 34px;
@@ -94,6 +95,14 @@ const ClosedButton = styled.button`
     `}
 `;
 
+const FooterText = styled(SmallText)`
+    text-align: center;
+    text-transform: none;
+
+    ${media.desktop`
+        display: none;
+    `}
+`;
 
 export const DefaultPage = ({pageId, personComponent}) => {
     const [modalState, setModalState] = useState({shown: false});
@@ -101,6 +110,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
         jobTitle,
         jobDescription,
         jobDescriptionSm,
+        jobTitleSize = 36,
         testQuestions, 
         testName,
         opportunitiesPerson,
@@ -146,7 +156,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                         </svg>
                     </ClosedButton>
                 )}
-                <AboutJob jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
+                <AboutJob jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>
                     {personComponent}
                 </PictureWrapper>
@@ -165,6 +175,9 @@ export const DefaultPage = ({pageId, personComponent}) => {
                     <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke="#FF7F00" stroke-width="2"/>
                     </svg>
                 </UpButton>
+                <FooterText>
+                    © 2005-2026 FutureToday.{'\n'}Все права защищены.
+                </FooterText>
             </SpacingContent>
 
             <AnimatePresence>

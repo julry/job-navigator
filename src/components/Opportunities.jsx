@@ -158,17 +158,39 @@ const OPPS_TO_LINES_MOBILE = {
 };
 
 const OPPS_TO_STYLE_LINES_MOBILE = {
+    3: {
+        $top: 14,
+        $width: 255,
+        $height: 323,
+    },
     4: {
         $top: 14,
         $width: 255,
         $height: 323,
-    }
+    },
+    5: {
+        $top: -6,
+        $width: 305,
+        $height: 397,
+    },
 };
 
 const OPPS_TO_STYLE_LINES_DESKTOP = {
+    3: {
+        $top: 32,
+        $left: 261,
+        $width: 199,
+        $height: 190,
+    },
     4: {
         $top: 32,
         $left: 261,
+        $width: 199,
+        $height: 190,
+    },
+    5: {
+        $top: 25,
+        $left: 241,
         $width: 199,
         $height: 190,
     }

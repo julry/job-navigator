@@ -169,7 +169,7 @@ const EndButtonWrapper = styled.div`
     ${media.desktop`
         margin-top: 40px;
         max-width: 329px;
-        flex-direction: column;
+        flex-direction: row;
     `}
 `;
 

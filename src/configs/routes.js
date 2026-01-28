@@ -1,8 +1,9 @@
 import { Navigate } from "react-router-dom";
 import { MainPage } from "../pages/MainPage";
 import { HimTech } from "../pages/HimTech";
-import { Page2 } from "../pages/Page2";
 import { Page3 } from "../pages/Page3";
+import { ITPage } from "../pages/IT";
+import { InfoSecPage } from "../pages/InfoSec";
 
 export const routes = [
     {
@@ -12,12 +13,12 @@ export const routes = [
     {
         //Информатика и вычислительная техника
         path: '/it',
-        element: <Page2 />
+        element: <ITPage />
     },
     {
         //Информационная безопасность
         path: '/infosec',
-        element: <Page3 />
+        element: <InfoSecPage />
     },
     {
         //Электро- и теплоэнергетика

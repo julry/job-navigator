@@ -72,7 +72,7 @@ const TextWrapper = styled.div`
 const TitleStyled = styled(Title)`
     position: relative;
     z-index: 3;
-    font-size: 36px;
+    font-size: ${({$size}) => $size}px;
 
     ${media.desktop`
        font-size: 50px;
@@ -106,10 +106,10 @@ const TextDesktop = styled(SmallText)`
     }
 `;
 
-export const AboutJob = ({jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
+export const AboutJob = ({jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
     <Wrapper>
         <Content>
-            <TitleStyled $color={textColor}>{jobTitle}</TitleStyled>
+            <TitleStyled $size={jobTitleSize} $color={textColor}>{jobTitle}</TitleStyled>
             <SubTitle>чем занимаются специалисты</SubTitle>
             <TextWrapper>
                 <TextDesktop>{jobDescription}</TextDesktop>
