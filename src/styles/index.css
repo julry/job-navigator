@@ -41,9 +41,11 @@ body {
 
 p, span, button, div {
   letter-spacing: -0.03em;
+  text-transform: lowercase;
 }
 
 button {
   outline: none;
   border: none;
+  cursor: pointer;
 }

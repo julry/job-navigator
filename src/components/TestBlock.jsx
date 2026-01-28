@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { media } from "../styles/media";
 import { ColoredSpan, Text, Title } from "./shared/Texts";
 import styled from "styled-components";
@@ -38,21 +38,23 @@ const TestContent = styled.div`
     background-color: var(--color-white);
     border-radius: 30px;
     padding: 17px 10px 20px 20px;
+    margin-top: 20px;
 
     ${media.desktop`
+        margin-top: 0;
         border-radius: 40px;
         padding: 30px 40px 56px;
     `}
 `;
 
 const DesktopButton = styled(Button)`
-    margin-top: 30px;
+    margin: 30px auto 0;
     width: auto;
 
     ${media.desktop`
         position: absolute;
         right: 40px;
-        margin-top: 0;
+        margin: 0;
         bottom: 30px;
     `}
 `;
@@ -103,20 +105,29 @@ const AnswerWrapper = styled.div`
 
 const ResultBlock = styled(motion.div)`
     position: absolute;
-    left: 0;
-    z-index: 2;
+    left: 100%;
     height: 278px;
+    z-index: 5;
     border-radius: 30px;
-    background-color: var(--color-orange);
+    width: 499px;
+    background-color: var(--color-gray);
+    padding: 20px 25px;
+    bottom: -188px;
+
+    & p {
+        color: var(--color-white-text);
+        max-width: 244px;
+    }
 
     ${media.desktop`
+        left: 0;
+        z-index: 2;
+        background-color: var(--color-orange);
         padding: 35px 30px;
         bottom: 117px;
         border-radius: 40px;
-        width: 499px;
 
         & p {
-            color: var(--color-white-text);
             max-width: 328px;
         }
     `}
@@ -126,18 +137,26 @@ const Image = styled(motion.img)`
     position: absolute;
     z-index: ${({$zIndex}) => $zIndex};
     bottom: ${({$bottom}) => $bottom}px;
-    left: ${({$left}) => $left}px;
+    left: ${({$left}) => $left}%;
     width: ${({$width}) => $width}px;
     height: ${({$height}) => $height}px;
+
+    @media screen and (min-width: 376px){
+        left: calc(${({$left}) => $left}% + (100% - 335px)/2);
+    }
+    ${media.desktop`
+        left: ${({$left}) => $left}px;
+    `}
 `;
 
 const EndButtonWrapper = styled.div`
     width: 100%;
-    margin-top: 40px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    max-width: 329px;
-
+    max-width: 240px;
+    margin-top: 15px;
+    gap: 10px;
     & ${Button} {
         width: auto;
         min-width: 150px;
@@ -146,11 +165,24 @@ const EndButtonWrapper = styled.div`
             border: 1px solid var(--color-white);
         }
     }
+
+    ${media.desktop`
+        margin-top: 40px;
+        max-width: 329px;
+        flex-direction: column;
+    `}
 `;
 
 export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
+    const [isMobile, setIsMobile] = useState(true);
+
+    useEffect(() => {
+        const width = window.innerWidth;
+
+        setIsMobile(width < 1200);
+    }, [])
 
     const { hardSkills, softSkills } = questions.reduce((res, question) => {
         if (question.isSoft) {
@@ -173,13 +205,26 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
         setIsEnd(true);
     }
 
-    const endAnimation = {
+    const endAnimation = isMobile ? {
+        animate: isEnd ? {x: -260} : {},
+        transition: {duration: 0.6}
+    } : {
         animate: isEnd ? {x: -379} : {},
         transition: {duration: 0.5}
     };
 
-    const endText = answers.length > 5 ? 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nно ты можешь прокачать их еще больше — переходи в наш тг-бот!' 
-    : 'ты почти у цели.\nчтобы скорее прокачать навыки переходи в наш тг-бот\n\nа потом возвращайся\nи откликайся на вакансии!';
+    const getEndText = () => {
+        if (answers.length < 2) {
+            return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или переходи в наш тг‑бот и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
+        }
+
+        if (answers.length > 5) {
+            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nно ты можешь прокачать их еще больше — переходи в наш тг‑бот!' 
+
+        }
+
+        return 'ты почти у цели.\nчтобы скорее прокачать навыки переходи в наш тг‑бот\n\nа потом возвращайся\nи откликайся на вакансии!'
+    }
 
     return (
         <Wrapper>
@@ -247,8 +292,8 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
                     посмотреть результат
                 </DesktopButton>
                 </TestContent>
-                <ResultBlock  {...endAnimation}>
-                    <Text>{endText}</Text>
+                <ResultBlock {...endAnimation}>
+                    <Text>{getEndText()}</Text>
                     <EndButtonWrapper>
                         <Button $type="secondary">прокачать навыки</Button>
                         <Button $type="secondary">вакансии</Button>
@@ -257,20 +302,20 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
                 <Image 
                     src={person.top.src} 
                     alt="" 
-                    $width={person.top.widthDesc} 
-                    $height={person.top.heightDesc}
-                    $bottom={person.top.bottomDesc}
-                    $left={person.top.leftDesc}
+                    $width={isMobile ? person.top.width : person.top.widthDesc} 
+                    $height={isMobile ? person.top.height : person.top.heightDesc}
+                    $bottom={isMobile ? person.top.bottom : person.top.bottomDesc}
+                    $left={isMobile ? person.top.left : person.top.leftDesc}
                     $zIndex={5}
                     {...endAnimation}
                 />
                 <Image 
                     src={person.bot.src} 
                     alt="" 
-                    $width={person.bot.widthDesc} 
-                    $height={person.bot.heightDesc}
-                    $bottom={person.bot.bottomDesc}
-                    $left={person.bot.leftDesc}
+                    $width={isMobile ? person.bot.width : person.bot.widthDesc} 
+                    $height={isMobile ? person.bot.height : person.bot.heightDesc}
+                    $bottom={isMobile ? person.bot.bottom : person.bot.bottomDesc}
+                    $left={isMobile ? person.bot.left : person.bot.leftDesc}
                     $zIndex={1}
                     {...endAnimation}
                 />

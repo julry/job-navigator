@@ -29,5 +29,6 @@ export const Button = styled.button`
 
     &:hover {
         background-color: var(--color-orange);
+        color: var(--color-white-text);
     }
 `;

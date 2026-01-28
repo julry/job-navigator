@@ -3,16 +3,27 @@ import { media } from "../styles/media";
 import { ColoredSpan, Text, Title } from "./shared/Texts";
 import defaultMan from '../assets/images/default_man.png';
 import { Button } from "./shared/Button";
+import { Opp3Mobile } from "./shared/svg/Opp3Mobile";
+import { Opp4Mobile } from "./shared/svg/Opp4Mobile";
+import { Opp5Mobile } from "./shared/svg/Opp5Mobile";
+import { Opp3Desktop } from "./shared/svg/Opp3Desktop";
+import { Opp4Desktop } from "./shared/svg/Opp4Desktop";
+import { Opp5Desktop } from "./shared/svg/Opp5Desktop";
 
 const Wrapper = styled.div`
+    position: relative;
+    z-index: 2;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    background-color: inherit;
 
     gap: 30px;
 
     ${media.desktop`
+        border-top-left-radius: 72px;
+        border-top-right-radius: 72px;
         padding-bottom: 185px;
         flex-direction: row;
         justify-content: space-between;
@@ -27,6 +38,10 @@ const TextBlock = styled.div`
 const Info = styled.div`
     width: 100%;
     flex: 1;
+
+    ${media.desktop`
+        padding-top: 50px;
+    `}
 `;
 
 const OpportunitiesBlock = styled.div`
@@ -42,9 +57,10 @@ const OpportunitiesBlock = styled.div`
     ${media.desktop`
         display: grid;
         grid-template-rows: repeat(4, 1fr);
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 20px;
-        justify-items: center;
+        grid-template-columns: 280px auto;
+        grid-column-gap: 0;
+        grid-row-gap: ${({$gap}) => $gap ?? 10}px;
+        justify-items: end;
     `}
 `;
 
@@ -55,13 +71,13 @@ const StudentPic = styled.img`
     object-position: center center;
     margin-top: 30px;
     grid-area: 5/1/6/3;
-    z-index: 2;
+    z-index: 4;
 
     ${media.desktop`
         position: absolute;
         margin-top: 0;
         top: 64px;
-        left: 330px;
+        left: 305px;
         width: 273px;
         height: 385px;
         grid-area: unset;
@@ -71,10 +87,10 @@ const StudentPic = styled.img`
 const Opportunity = styled(Button)`
     max-width: 480px;
 
-    ${({$style}) => $style};
+    ${({ $style }) => $style};
 
     ${media.desktop`
-        max-width: 281px;
+        max-width: 280px;
     `}
 `;
 
@@ -101,10 +117,27 @@ const Ellipse = styled.svg`
 
 const LinesWrapper = styled.div`
     position: absolute;
-    top: ${({$top}) => $top}px;
-    left: ${({$left}) => $left}px;
-    width: ${({$width}) => $width}px;
-    height: ${({$height}) => $height}px;
+    top: ${({ $top }) => $top}px;
+    left: 50%;
+    width: ${({ $width }) => $width}px;
+    height: ${({ $height }) => $height}px;
+    z-index: 3;
+    transform: translateX(-50%);
+
+    ${media.desktop`
+        display: none;
+    `}
+`;
+
+const LinesWrapperDesktop = styled(LinesWrapper)`
+    display: none;
+    transform: none;
+
+    left: ${({ $left }) => $left}px;
+
+    ${media.desktop`
+        display: block;
+    `}
 `;
 
 const textVariants = {
@@ -112,7 +145,42 @@ const textVariants = {
     default: 'перед тобой — карта роста в профессии. она показывает, с каких ролей можно начать и до чего дорасти\n\nсмотри разные ветки и выбирай, что тебе больше нравится!',
 }
 
-export const Opportunities = ({ hasButton, linesSvg, textColor, opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)' }) => {
+const OPPS_TO_LINES_DESK = {
+    3: <Opp3Desktop />,
+    4: <Opp4Desktop />,
+    5: <Opp5Desktop />,
+};
+
+const OPPS_TO_LINES_MOBILE = {
+    3: <Opp3Mobile />,
+    4: <Opp4Mobile />,
+    5: <Opp5Mobile />,
+};
+
+const OPPS_TO_STYLE_LINES_MOBILE = {
+    4: {
+        $top: 14,
+        $width: 255,
+        $height: 323,
+    }
+};
+
+const OPPS_TO_STYLE_LINES_DESKTOP = {
+    4: {
+        $top: 32,
+        $left: 261,
+        $width: 199,
+        $height: 190,
+    }
+};
+
+const OPPS_TO_GAP_LINES_DESKTOP = {
+    4: 20,
+    3: 10,
+    5: 10,
+};
+
+export const Opportunities = ({onClickOpp, textColor, opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)' }) => {
     return (
         <Wrapper>
             <div>
@@ -122,40 +190,43 @@ export const Opportunities = ({ hasButton, linesSvg, textColor, opportunities = 
                 </TextBlock>
             </div>
             <Info>
-                <OpportunitiesBlock>
-                        {opportunities.map(({text, style, link}) => (
-                            <Opportunity $style={style}>{text}</Opportunity>
-                        )
+                <OpportunitiesBlock $gap={OPPS_TO_GAP_LINES_DESKTOP[opportunities.length]}>
+                    {opportunities.map(({ text, style, id }) => (
+                        <Opportunity key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
+                    )
                     )}
                     <StudentPic src={person} alt="" />
                     <Ellipse viewBox="0 0 733 590" fill="none">
                         <g filter="url(#filter0_f_1877_3504)">
-                        <path d="M1115 298.017C1115 394.284 929.848 492.739 607.5 489.942C285.152 487.145 100 387.582 100 298.017C100 200.532 304.961 100 607.5 100C910.04 100 1115 188.655 1115 298.017Z" fill={accentColor}/>
-                        <path d="M607.5 105C758.353 105 884.548 127.112 972.836 162.637C1016.99 180.402 1051.42 201.425 1074.73 224.494C1098.01 247.53 1110 272.369 1110 298.018C1110 320.388 1099.25 343.4 1077.47 365.502C1055.68 387.612 1023.09 408.534 980.197 426.518C894.42 462.478 768.263 486.337 607.544 484.942C446.819 483.548 320.628 458.024 234.809 421.909C191.887 403.847 159.273 383.222 137.469 361.828C115.646 340.417 105 318.607 105 298.018C105 275.483 116.849 252.134 140.227 229.546C163.582 206.979 198.062 185.572 242.23 167.063C330.54 130.058 456.729 105 607.5 105Z" stroke={accentColor} stroke-width="10"/>
+                            <path d="M1115 298.017C1115 394.284 929.848 492.739 607.5 489.942C285.152 487.145 100 387.582 100 298.017C100 200.532 304.961 100 607.5 100C910.04 100 1115 188.655 1115 298.017Z" fill={accentColor} />
+                            <path d="M607.5 105C758.353 105 884.548 127.112 972.836 162.637C1016.99 180.402 1051.42 201.425 1074.73 224.494C1098.01 247.53 1110 272.369 1110 298.018C1110 320.388 1099.25 343.4 1077.47 365.502C1055.68 387.612 1023.09 408.534 980.197 426.518C894.42 462.478 768.263 486.337 607.544 484.942C446.819 483.548 320.628 458.024 234.809 421.909C191.887 403.847 159.273 383.222 137.469 361.828C115.646 340.417 105 318.607 105 298.018C105 275.483 116.849 252.134 140.227 229.546C163.582 206.979 198.062 185.572 242.23 167.063C330.54 130.058 456.729 105 607.5 105Z" stroke={accentColor} stroke-width="10" />
                         </g>
                         <g filter="url(#filter1_g_1877_3504)">
-                        <ellipse cx="620.67" cy="297.872" rx="455.838" ry="177.711" fill={accentColor}/>
+                            <ellipse cx="620.67" cy="297.872" rx="455.838" ry="177.711" fill={accentColor} />
                         </g>
                         <defs>
-                        <filter id="filter0_f_1877_3504" x="0" y="0" width="1215" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                        <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_1877_3504"/>
-                        </filter>
-                        <filter id="filter1_g_1877_3504" x="64.832" y="20.1603" width="1111.68" height="555.422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-                        <feTurbulence type="fractalNoise" baseFrequency="0.83333331346511841 0.83333331346511841" numOctaves="3" seed="4986" />
-                        <feDisplacementMap in="shape" scale="200" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
-                        <feMerge result="effect1_texture_1877_3504">
-                        <feMergeNode in="displacedImage"/>
-                        </feMerge>
-                        </filter>
+                            <filter id="filter0_f_1877_3504" x="0" y="0" width="1215" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_1877_3504" />
+                            </filter>
+                            <filter id="filter1_g_1877_3504" x="64.832" y="20.1603" width="1111.68" height="555.422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                <feTurbulence type="fractalNoise" baseFrequency="0.83333331346511841 0.83333331346511841" numOctaves="3" seed="4986" />
+                                <feDisplacementMap in="shape" scale="200" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+                                <feMerge result="effect1_texture_1877_3504">
+                                    <feMergeNode in="displacedImage" />
+                                </feMerge>
+                            </filter>
                         </defs>
                     </Ellipse>
-                    <LinesWrapper $top={linesSvg.top} $left={linesSvg.left} $width={linesSvg.width} $height={linesSvg.height}>
-                        {linesSvg.image()}
+                    <LinesWrapper {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
+                        {OPPS_TO_LINES_MOBILE[opportunities.length]}
                     </LinesWrapper>
+                    <LinesWrapperDesktop {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
+                        {OPPS_TO_LINES_DESK[opportunities.length]}
+                    </LinesWrapperDesktop>
                 </OpportunitiesBlock>
             </Info>
         </Wrapper>

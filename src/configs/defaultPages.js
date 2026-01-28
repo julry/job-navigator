@@ -1,10 +1,22 @@
-import { ChemicalOpp } from '../components/shared/svg/ChemicalOpp';
 import chemT from '../assets/images/default/chemical_top.png';
 import chemB from '../assets/images/default/chemical_bot.png';
+import { ColoredSpan } from '../components/shared/Texts';
+import { opportunitiesConfig } from './opportunitiesConfig';
+import himTech from '../assets/images/default/people/himtech.png';
 
 export const defaultPages = [
     {
         id: 'chemical',
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>химические</ColoredSpan> технологии</>,
+        jobDescription: 'Это инженеры, которые превращают лабораторные открытия в полезные продукты — от топлива и новых материаловдо лекарств и продуктов питания\n\nИх задача — сделать так, чтобы химическую реакцию можно было повторять на заводе каждый день, без сбоев и рисков\n\nИх работа — связующее звено между наукой и повседневной жизнью. Они помогают промышленности развиваться, следят за качеством и думают, как сделать технологии безопаснее и экологичнее',
+        jobDescriptionSm: 'Превращают сырье в полезные продукты — от топлива и лекарств до новых материалов и продуктов питания:\n\nОни разрабатывают и контролируют химические процессы на производстве, следят за качеством и думают, как сделать технологии безопаснее и экологичнее',
+        vacanciesDescr: [
+            {id: 0, name: 'Промышленные предприятия (заводы, комбинаты)', desc: 'Следить, чтобы все производилось правильно и качественно (заводы, комбинаты)'},
+            {id: 1, name: 'Научно-исследовательские центры и лаборатории', desc: 'Разрабатывать новые материалы, лекарства, продукты и проводить опыты'},
+            {id: 2, name: 'Экологические службы', desc: 'Следить за состоянием окружающей среды и придумывать, как её сохранить'},
+            {id: 3, isSmall: true, name: 'Консалтинговые компании', desc: 'Давать рекомендации заводам и компаниям, как оптимизировать работу, внедрять новые технологии и решать нестандартные задачи'},
+            {id: 4, name: 'Службы контроля качества', desc: 'Проверять, соответствует ли все, от сырья до готового товара, строгим стандартам и нормам'},
+        ],
         testQuestions: [
             {
                 id: 'q-0',
@@ -61,31 +73,20 @@ export const defaultPages = [
                 isSoft: true
             },
         ],
-        testName: 'химической промышленности',
-        opportunities: [
-            {
-                text: 'лабораторный контроль\nи анализ',
-                style: { 'grid-area': '1/1/2/2' }
-            },
-            {
-                text: 'производство\n(аппаратчик-оператор)',
-                style: { 'grid-area': '2/1/3/2' }
-            },
-            {
-                text: 'контроль и управление\nкачеством',
-                style: { 'grid-area': '3/1/4/2' }
-            },
-            {
-                text: 'смежные профессии',
-                style: { 'grid-area': '4/1/5/2' }
-            },
-        ],
-        opportunitiesSvg: {
-            image: ChemicalOpp,
-            top: 32,
-            left: 292,
-            width: 199,
-            height: 190,
+        testName: 'химической промышленности',
+        opportunities: opportunitiesConfig.chemical,
+        opportunitiesPerson: {
+            width: 183,
+            height: 343,
+            left: 32,
+            img: himTech,
+        },
+        opportunitiesPersonDesk: {
+            width: 229,
+            height: 428,
+            left: 440,
+            img: himTech,
+            bottom: -130,
         },
         testPerson: {
             top: {
@@ -94,6 +95,11 @@ export const defaultPages = [
                 src: chemT,
                 bottomDesc: 178,
                 leftDesc: -205.5,
+                width: 188,
+                height: 179,
+                src: chemT,
+                bottom: -95,
+                left: 56,
             },
             bot: {
                 widthDesc: 283,
@@ -101,6 +107,10 @@ export const defaultPages = [
                 src: chemB,
                 bottomDesc: -68,
                 leftDesc: -203,
+                width: 205,
+                height: 178,
+                bottom: -272,
+                left: 56.4,
             },
         }
     }

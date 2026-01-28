@@ -29,8 +29,17 @@ export const Text = styled.p`
 
 export const SmallText = styled.p`
     font-size: 12px;
+
+    line-height: 110%;
+    white-space: pre-line;
+
+    color: ${({$color}) => $color ?? 'var(--color-gray)'};
+
+    @media screen and (max-width: 360px) {
+        font-size: 10px;
+    }
 `;
 
 export const ColoredSpan = styled.span`
-    color: ${({$color}) => $color};
+    color: ${({$color = 'var(--color-orange)'}) => $color};
 `;

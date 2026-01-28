@@ -39,7 +39,7 @@ export const Vacancies = ({textColor, vacancies = [],  accentColor = 'var(--colo
             <Title $color={textColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
             <LinksWrapper>
                 {vacancies.map(({name, link}) => (
-                    <Link>
+                    <Link key={name}>
                         {name}
                     </Link>
                 ))}

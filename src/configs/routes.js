@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { MainPage } from "../pages/MainPage";
-import { Page1 } from "../pages/Page1";
+import { HimTech } from "../pages/HimTech";
 import { Page2 } from "../pages/Page2";
 import { Page3 } from "../pages/Page3";
 
@@ -10,15 +10,78 @@ export const routes = [
         element: <MainPage />
     },
     {
-        path: '/page1',
-        element: <Page1 />
-    },
-    {
-        path: '/page2',
+        //Информатика и вычислительная техника
+        path: '/it',
         element: <Page2 />
     },
     {
-        path: '/page3',
+        //Информационная безопасность
+        path: '/infosec',
+        element: <Page3 />
+    },
+    {
+        //Электро- и теплоэнергетика
+        path: '/energetics',
+        element: <div />
+    },
+    {
+        //Машиностроение
+        path: '/machine',
+        element: <div />
+    },
+    {
+        //Химические технологии
+        path: '/himtech',
+        element: <HimTech />
+    },
+    {
+        //Промышленная экология и биотехнологии
+        path: '/biotech',
+        element: <div />
+    },
+    {
+        //Техносферная безопасность и природообустройство
+        path: '/safetech',
+        element: <div />
+    },
+    {
+        //Прикладная геология, горное дело, нефтегазовое дело и геодезия
+        path: '/geology',
+        element: <div />
+    },
+    {
+        //Технологии материалов
+        path: '/materials',
+        element: <div />
+    },
+    {
+        //Техника и технологии наземного транспорта
+        path: '/transport',
+        element: <div />
+    },
+    {
+        //Управление в технических системах
+        path: '/techcontrol',
+        element: <div />
+    },
+    {
+        //Технологии легкой промышленности
+        path: '/techprom',
+        element: <div />
+    },
+    {
+        //Сельское, лесное и рыбное хозяйство
+        path: '/agro',
+        element: <div />
+    },
+    {
+        //Сервис и туризм
+        path: '/service',
+        element: <div />
+    },
+    {
+        //Образование и педагогические науки
+        path: '/education',
         element: <Page3 />
     },
     {

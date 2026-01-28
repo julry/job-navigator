@@ -2,6 +2,8 @@ import { RouterProvider } from 'react-router-dom';
 import styled from 'styled-components';
 import { media } from './styles/media';
 import bg from './assets/images/bg.png';
+import { useRef } from 'react';
+import { AppContext } from './context/AppContext';
 
 const Wrapper = styled.div`
    width: 100%;
@@ -34,10 +36,14 @@ const Wrapper = styled.div`
 `;
 
 function App({ router }) {
+   const wrapperRef = useRef();
+
    return (
-      <Wrapper>
-         <RouterProvider router={router} />
-      </Wrapper>
+         <AppContext.Provider value={{wrapperRef}}>
+            <Wrapper ref={wrapperRef}>
+                  <RouterProvider router={router} />
+            </Wrapper>
+         </AppContext.Provider>
    );
 }
 
