@@ -12,6 +12,12 @@ const Wrapper = styled.div`
    background-image: url(${bg});
    overflow: hidden auto;
    background-size: cover;
+   scrollbar-width: none;
+   -ms-overflow-style: none;
+
+   &::-webkit-scrollbar {
+      display: none; 
+   }
    
 
    ${media.tablet`
@@ -23,12 +29,19 @@ const Wrapper = styled.div`
          max-width: 550px;
          height: 100%;
          width: 100%;
+         
+         scrollbar-width: none;
+         -ms-overflow-style: none;
+
+         &::-webkit-scrollbar {
+            display: none; 
+         }
       }
    `};
 
    ${media.desktop`
       & > div {
-         max-width: 1440px;
+         max-width: unset;
          height: 100%;
          width: 100%;
       }

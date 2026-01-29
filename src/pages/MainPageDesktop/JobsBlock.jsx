@@ -54,25 +54,6 @@ const ImageElement = styled(motion.img)`
     z-index: 3;
 `;
 
-const StaticBlock = styled.div`
-    position: relative;
-    margin-top: ${({ $marginTop }) => $marginTop}px;
-    margin-left: ${({ $marginLeft }) => $marginLeft}px;
-    height: ${({ $height }) => $height}px;
-    width: ${({ $width }) => $width}px;
-    flex-shrink: 0;
-
-    @media screen and (max-width: 1400px){
-        height: calc(${({ $height }) => $height}px * 0.9);
-        width: calc(${({ $width }) => $width}px * 0.9);
-        margin-left: calc(${({ $marginLeft }) => $marginLeft}px * 0.9);
-    }
-    @media screen and (max-width: 1300px){
-        height: calc(${({ $height }) => $height}px * 0.8);
-        width: calc(${({ $width }) => $width}px * 0.8);
-    }
-`;
-
 const AbsoluteBlock = styled.div`
     position: absolute;
     top: ${({ $top }) => $top}px;
@@ -195,27 +176,27 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => (
             <Person src={radioelectronic} alt="" $width={83} $height={175} $top={0} $left={13} />
             <ImageElement src={radioelectronicMoutin} alt="" $width={251} $height={192} $top={1} $left={0} />
         </MotionBlock>
-        <StaticBlock
+        <AbsoluteBlock
             onMouseEnter={(e) => handleMouseEnter(e, { top: 580, left: 633, width: 327, height: 210 })}
             onMouseLeave={() => handleMouseLeave()}
-            $marginTop={52} $marginLeft={633} $width={327} $height={206}>
+            $top={580} $left={633} $width={327} $height={206}>
             <TextWrapper $isRight $top={40} $width={233} $spacing={150}>
                 Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
             </TextWrapper>
             <Person src={geology} alt="" $width={106} $height={170} $top={0} $left={188} />
             <ImageElement src={geologyMountin} alt="" $width={327} $height={206} $top={0} $left={0} />
-        </StaticBlock>
-        <StaticBlock
+        </AbsoluteBlock>
+        <AbsoluteBlock
             onMouseEnter={(e) => handleMouseEnter(e, { top: 775, left: 465, width: 306, height: 208 })}
             onMouseLeave={() => handleMouseLeave()}
-            $marginTop={-10} $marginLeft={465} $width={306} $height={208}
+            $top={775} $left={465} $width={306} $height={208}
         >
             <TextWrapper $isRight $top={48} $width={155} $spacing={50}>
                 Торговое дело{'\n'}и логистика
             </TextWrapper>
             <Person src={trade} alt="" $width={146} $height={185} $top={0} $left={160} />
             <ImageElement src={tradeMountin} alt="" $width={250} $height={172} $top={36} $left={0} />
-        </StaticBlock>
+        </AbsoluteBlock>
         <AbsoluteBlock $top={900} $left={780} $width={306} $height={208}
             onMouseEnter={(e) => handleMouseEnter(e, { top: 900, left: 780, width: 306, height: 208 })}
             onMouseLeave={() => handleMouseLeave()}
