@@ -1,17 +1,27 @@
 
 import { ColoredSpan } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
-import himTech from '../assets/images/default/people/himtech.png';
 import chemT from '../assets/images/default/chemical_top.png';
 import chemB from '../assets/images/default/chemical_bot.png';
 
-import it from '../assets/images/default/people/it.png';
 import itT from '../assets/images/default/itTop.png';
 import itB from '../assets/images/default/itBot.png';
 
-import infosec from '../assets/images/default/people/infosec.png';
 import infosecT from '../assets/images/default/infoSecTop.png';
 import infosecB from '../assets/images/default/infoSecBot.png';
+
+import agro from '../assets/images/default/people/agro.png';
+import biotech from '../assets/images/default/people/biotech.png';
+import education from '../assets/images/default/people/education.png';
+import energetics from '../assets/images/default/people/energetics.png';
+import geology from '../assets/images/default/people/geology.png';
+import himTech from '../assets/images/default/people/himtech.png';
+import infosec from '../assets/images/default/people/infosec.png';
+import it from '../assets/images/default/people/it.png';
+import safetech from '../assets/images/default/people/safetech.png';
+import service from '../assets/images/default/people/service.png';
+import techcontrol from '../assets/images/default/people/techcontrol.png';
+import transport from '../assets/images/default/people/transport.png';
 
 export const defaultPages = [
     {

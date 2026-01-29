@@ -86,6 +86,31 @@ export const routes = [
         element: <Page3 />
     },
     {
+        // втб юрист
+        path: '/pravo',
+        element: <Page3 />
+    },
+    {
+        // Торговое дело и логистика – Лемана ПРО
+        path: '/trade',
+        element: <Page3 />
+    },
+    {
+        //Экономика и управление втб
+        path: '/economy ',
+        element: <Page3 />
+    },
+    {
+        //Электроника, радиотехника и системы связи – Билайн
+        path: '/radioelectronic',
+        element: <Page3 />
+    },
+    {
+        //Техника и технологии строительства – Алабуга
+        path: '/stroy',
+        element: <Page3 />
+    },
+    {
         path: '*',
         element: <Navigate to={'/'} replace />,
     },
