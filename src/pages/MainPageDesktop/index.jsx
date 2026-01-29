@@ -57,6 +57,7 @@ const CompasWrapper = styled(motion.div)`
     width: 357px;
     height: 357px;
     z-index: 20;
+    pointer-events: none;
 
     ${media.desktop`
         display: block;
@@ -299,7 +300,7 @@ export const MainPageDesktop = () => {
                     <SmallText>
                         листай ниже, чтобы посмотреть все профессии
                     </SmallText>
-                    <motion.svg animate={{y: 10}} transition={{repeat: Infinity, repeatType: 'mirror', duration: 2}} width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <motion.svg animate={{y: 10}} transition={{repeat: Infinity, repeatType: 'mirror', duration: 1}} width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M8.36328 1C8.36328 0.447715 7.91557 -2.41411e-08 7.36328 0C6.811 2.41411e-08 6.36328 0.447715 6.36328 1L7.36328 1L8.36328 1ZM6.65618 26.7071C7.0467 27.0976 7.67986 27.0976 8.07039 26.7071L14.4343 20.3431C14.8249 19.9526 14.8249 19.3195 14.4343 18.9289C14.0438 18.5384 13.4107 18.5384 13.0201 18.9289L7.36328 24.5858L1.70643 18.9289C1.3159 18.5384 0.682739 18.5384 0.292214 18.9289C-0.0983101 19.3195 -0.0983101 19.9526 0.292214 20.3431L6.65618 26.7071ZM7.36328 1L6.36328 1L6.36328 26L7.36328 26L8.36328 26L8.36328 1L7.36328 1Z" fill="#FF7F00"/>
                     </motion.svg>
                 </TipBlock>

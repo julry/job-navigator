@@ -7,7 +7,6 @@ import educationMountinSm from '../../assets/images/mountins/educationMountinSm.
 import agroMountinSm from '../../assets/images/mountins/agroMountinSm.png';
 import mountinSm from '../../assets/images/mountins/mountinSm.png';
 
-
 const AnimatedItem = styled(motion.div)`
     position: absolute;
     top: ${({ $top }) => $top}px;
@@ -15,6 +14,7 @@ const AnimatedItem = styled(motion.div)`
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
     z-index: 3;
+    pointer-events: none;
 
     & img {
         object-fit: contain;
@@ -60,7 +60,7 @@ export const Stones = ({yBlocks, yBlocksMiddle}) => (
             <img src={mountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
-            $top={1171} $left={386} $width={97} $height={78}
+            $top={1593} $left={386} $width={97} $height={78}
         >
             <img src={himtechMountinSm} alt="" />
         </AnimatedItem>
