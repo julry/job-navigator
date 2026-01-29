@@ -21,6 +21,10 @@ import techcontrol from '../assets/images/default/people/techcontrol.png';
 import transportMain from '../assets/images/default/people/transportMain.png';
 import techprom from '../assets/images/default/people/techpromMain.png';
 import stroy from '../assets/images/default/people/stroy.png';
+import economy from '../assets/images/default/people/economy.png';
+import pravo from '../assets/images/default/people/pravo.png';
+import radioelectronic from '../assets/images/default/people/radioelectronic.png';
+import trade from '../assets/images/default/people/trade.png';
 
 import agroMountin from '../assets/images/mountins/agroMountin.png';
 import agroMountinSm from '../assets/images/mountins/agroMountinSm.png';
@@ -397,6 +401,12 @@ export const MainPageDesktop = () => {
         [0, START_ANIMATION]
     );
 
+    const yBlocksMiddle = useTransform(
+        scrollY,
+        [0, START_ANIMATION],
+        [0, START_ANIMATION / 2]
+    );
+
     const handleMouseEnter = (e) => {
         // const innerWidth = window.innerWidth;
         // const isXs = innerWidth < 1300;
@@ -470,24 +480,6 @@ export const MainPageDesktop = () => {
                         <img src={cloudLg} alt="" />
                     </AnimatedItem>
                     <AnimatedItem 
-                        $top={765} $left={822} $width={283} $height={119} 
-                        initial={{x: 0}}
-                        animate={{
-                            x: [-50, 0, 50],
-                        }}
-
-                        transition={{
-                            repeat: Infinity,
-                            repeatDelay: 2,
-                            duration: 4,
-                            delay: 0.02,
-                            ease: 'linear',
-                            repeatType: 'mirror'
-                        }}
-                    >
-                        <img src={cloudLg} alt="" />
-                    </AnimatedItem>
-                    <AnimatedItem 
                         $top={1241} $left={1130} $width={283} $height={119} 
                         initial={{x: 0}}
                         animate={{
@@ -524,7 +516,7 @@ export const MainPageDesktop = () => {
                         <img src={cloudLg} alt="" />
                     </AnimatedItem>
                     <AnimatedItem 
-                        $top={1331} $left={868} $width={173} $height={72} 
+                        $top={1331} $left={638} $width={173} $height={72} 
                         initial={{x: 0}}
                         animate={{
                             x: [50, 0, -50],
@@ -689,6 +681,54 @@ export const MainPageDesktop = () => {
                     <Person src={education} alt="" $width={134} $height={200} $top={0} $left={80} />
                     <ImageElement src={educationMountin} alt="" $width={230} $height={127} $top={84} $left={0} />
                 </MotionBlock>
+                <AnimatedItem 
+                        $top={310} $left={1345} $width={136} $height={74} 
+                        style={{ y: yBlocks }}
+                >
+                        <img src={mountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={663} $left={991} $width={110} $height={88} 
+                        style={{ y: yBlocksMiddle }}
+                >
+                        <img src={educationMountinSm} alt="" />
+                </AnimatedItem>
+                 <AnimatedItem 
+                        $top={695} $left={0} $width={125} $height={84} 
+                        style={{ y: yBlocks }}
+                >
+                        <img src={mountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={883} $left={770} $width={96} $height={44} 
+                >
+                        <img src={mountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={1135} $left={310} $width={89} $height={73} 
+                >
+                        <img src={pravoMountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={1592} $left={978} $width={141} $height={76} 
+                >
+                        <img src={mountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={1171} $left={386} $width={97} $height={78} 
+                >
+                        <img src={himtechMountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={1747} $left={718} $width={108} $height={85} 
+                >
+                        <img src={agroMountinSm} alt="" />
+                </AnimatedItem>
+                <AnimatedItem 
+                        $top={2168} $left={553} $width={141} $height={76} 
+                >
+                        <img src={techpromMountinSm} alt="" />
+                </AnimatedItem>
                 <MotionBlock
                     $top={460} $left={0} $width={240} $height={183}
                     style={{ y: yBlocks }}
@@ -706,7 +746,7 @@ export const MainPageDesktop = () => {
                     onMouseLeave={() => handleMouseLeave()}
                 >
                     <TextWrapper $isRight={false} $top={40} $width={181} $height={30} $spacing={-24}>юриспруденция</TextWrapper>
-                    <Person alt="" $width={104} $height={184} $top={0} $left={141} />
+                    <Person src={pravo} alt="" $width={104} $height={184} $top={0} $left={141} />
                     <ImageElement src={pravoMountin} alt="" $width={252} $height={159} $top={54} $left={0} />
                 </MotionBlock>
                 <MotionBlock
@@ -714,7 +754,7 @@ export const MainPageDesktop = () => {
                     style={{ y: yBlocks }}
                 >
                     <TextWrapper $isRight={false} $top={70} $width={164} $spacing={119}>Электроника,{'\n'}радиотехника{'\n'}и системы связи</TextWrapper>
-                    <Person alt="" $width={83} $height={175} $top={0} $left={13} />
+                    <Person src={radioelectronic} alt="" $width={83} $height={175} $top={0} $left={13} />
                     <ImageElement src={radioelectronicMoutin} alt="" $width={251} $height={192} $top={1} $left={0} />
                 </MotionBlock>
                 <StaticBlock
@@ -735,7 +775,7 @@ export const MainPageDesktop = () => {
                     <TextWrapper $isRight $top={48} $width={155} $spacing={50}>
                         Торговое дело{'\n'}и логистика
                     </TextWrapper>
-                    <Person alt="" $width={146} $height={185} $top={0} $left={160} />
+                    <Person src={trade} alt="" $width={146} $height={185} $top={0} $left={160} />
                     <ImageElement src={tradeMountin} alt="" $width={250} $height={172} $top={36} $left={0} />
                 </StaticBlock>
                 <AbsoluteBlock $top={900} $left={780} $width={306} $height={208}
@@ -758,7 +798,7 @@ export const MainPageDesktop = () => {
                         Экономика{'\n'}
                         и управление
                     </TextWrapper>
-                    <Person alt="" $width={95} $height={168} $top={0} $left={59} />
+                    <Person src={economy} alt="" $width={95} $height={168} $top={0} $left={59} />
                     <ImageElement src={economyMountin} alt="" $width={342} $height={155} $top={25} $left={0} />
                 </AbsoluteBlock>
                 <AbsoluteBlock $top={1254} $left={292} $width={251} $height={222}
