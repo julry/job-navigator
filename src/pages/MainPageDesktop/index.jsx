@@ -149,7 +149,6 @@ const BotBlock = styled.div`
     & ${SmallText} {
         color: var(--color-white);
     }
-    
 `;
 
 const FooterText = styled(SmallText)`
@@ -201,7 +200,6 @@ export const MainPageDesktop = () => {
     const { scrollY } = useScroll({ container: wrapperRef });
     const [isFixed, setIsFixed] = useState(false);
     const [arrowDeg, setArrowDeg] = useState();
-
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         setIsFixed(latest > 540);
@@ -270,6 +268,7 @@ export const MainPageDesktop = () => {
     const handleMouseLeave = () => {
         setArrowDeg(0);
     }
+
     return (
         <>
             <Wrapper ref={wrapperRef}>
