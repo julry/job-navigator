@@ -2,6 +2,7 @@
   "name": "prof-jobs",
   "version": "0.1.0",
   "private": true,
+  "homepage": ".",
   "dependencies": {
     "framer-motion": "^12.27.0",
     "react": "^19.2.3",

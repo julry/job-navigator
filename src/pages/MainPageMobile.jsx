@@ -41,6 +41,7 @@ import techpromMountin from '../assets/images/mountins/techpromMountin.png';
 import transportMountin from '../assets/images/mountins/transportMountin.png';
 import tradeMountin from '../assets/images/mountins/tradeMountin.png';
 import { Button } from "../components/shared/Button";
+import { media } from "../styles/media";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -51,6 +52,10 @@ const Wrapper = styled.div`
     align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
+
+    ${media.desktop`
+        display: none;
+    `}
 `;
 
 const TitleStyled = styled(motion.h3)`
@@ -195,7 +200,7 @@ const JobsWrapper = styled.div`
     width: 100%;
 `;
 
-const BotInfo = styled.p`
+const BotInfo = styled.div`
     margin: 40px auto 20px;
     padding: 40px 30px 0;
 
@@ -440,8 +445,8 @@ export const MainPageMobile = () => {
                 <BotInfo>
                     <p>
                         Хочешь узнать больше{'\n'}
-                    полезной инфы о навыках{'\n'}
-                    и развитии в профессии?
+                        полезной инфы о навыках{'\n'}
+                        и развитии в профессии?
                     </p>
                 <ButtonStyled>переходи в бота!</ButtonStyled>
                 </BotInfo>
