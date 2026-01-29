@@ -6,7 +6,7 @@ import { routes } from './configs/routes';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const router = createBrowserRouter(routes, {basename: 'job-navigator'});
+const router = createBrowserRouter(routes, {basename: 'job-navigator/build'});
 
 root.render(
   <React.StrictMode>
