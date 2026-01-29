@@ -60,42 +60,31 @@ const CloudsField = styled.div`
 `;
 
 const Wrapper = styled.div`
+    display: none;
     width: 100%;
     height: 100%;
     position: relative;
     z-index: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     overflow-x: hidden;
     overflow-y: auto;
 
     ${media.desktop`
-        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
     `}
 `;
 
 const TitleStyled = styled(motion.h3)`
-    font-size: 40px;
     line-height: 100%;
     white-space: pre-line;
-    margin: 41px 0 47px;
     color: var(--color-white-text);
-
-    @media screen and (max-width: 374px) {
-        font-size: 36px;
-    }
-
-    ${media.desktop`
-        position: sticky;
-        float: left;
-        width: 100%;
-        text-align: left;
-        top: 50px;
-        padding-left: 50px;
-        font-size: 55px;
-        margin: 0;
-    `};
+    position: sticky;
+    float: left;
+    width: 100%;
+    text-align: left;
+    top: 50px;
+    padding-left: 50px;
+    font-size: 55px;
 `;
 
 const ImageElement = styled(motion.img)`
@@ -286,7 +275,7 @@ const COMPAS_SIZE_KOEF = 229 / 357;
 
 const START_ANIMATION = 246;
 
-export const MainPage = () => {
+export const MainPageDesktop = () => {
     const titleRef = useRef();
     const wrapperRef = useRef();
 
