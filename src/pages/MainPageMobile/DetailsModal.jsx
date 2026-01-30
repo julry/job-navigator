@@ -3,8 +3,8 @@ import { popups } from "../../configs/popups";
 import { motion, AnimatePresence } from "framer-motion";
 import { SmallText } from "../../components/shared/Texts";
 import { Button } from "../../components/shared/Button";
-import { cloneElement } from "react";
 import { useNavigate } from "react-router-dom";
+import { media } from "../../styles/media";
 
 const ModalWrapper = styled(motion.div)`
     position: fixed;
@@ -23,6 +23,13 @@ const ComponentWrapper = styled.div`
     position: absolute;
     top: -13px;
     left: -25px;
+
+    ${media.tablet`
+       
+         & > div > div {
+            margin-top: 30px;
+         }
+    `}
 `;
 
 const DetailedWrapper = styled(motion.div)`
@@ -40,6 +47,10 @@ const DetailedWrapper = styled(motion.div)`
     @media screen  and (min-width: 360px) {
         min-width: 300px;
     }
+
+    ${media.tablet`
+        max-width: 445px;
+    `}
 `;
 
 const ButtonStyled = styled(Button)`
@@ -50,6 +61,10 @@ const ButtonStyled = styled(Button)`
     @media screen  and (min-width: 360px) {
         min-width: 300px;
     }
+
+    ${media.tablet`
+        max-width: 445px;
+    `}
 `;
 
 const DetailedTitle = styled.h3`
@@ -58,6 +73,12 @@ const DetailedTitle = styled.h3`
     color: var(--color-orange);
     line-height: 100%;
     max-width: ${({$titleWidth = 155}) => $titleWidth}px;
+
+    ${media.tablet`
+        font-size: 14px;
+
+        max-width: ${({$titleWidth = 155}) => $titleWidth * 1.4}px;
+    `}
 `;
 
 const DetailedJob = styled.div`
@@ -74,6 +95,12 @@ const DetailedJob = styled.div`
     & svg {
         margin-top: 5px;
     }
+
+    ${media.tablet`
+        & ${SmallText} {
+            font-size: 14px;
+        }
+    `}
 `;
 
 const ClosedButton = styled.button`
@@ -94,6 +121,11 @@ const ClosedButton = styled.button`
 const TextWrapper = styled.div`
     margin-top: ${({$marginTop}) => $marginTop ?? 50}px;
     margin-left: ${({$marginLeft}) => $marginLeft !== undefined ? $marginLeft + 'px' : 'auto'};
+
+    ${media.tablet`
+        margin-top: ${({$marginTop}) => ($marginTop ?? 50) * 1.4}px;
+        margin-left: ${({$marginLeft}) => $marginLeft !== undefined ? $marginLeft * 1.4 + 'px' : 'auto'};
+    `}
 `;
 
 export const DetailsModal = ({jobId, marginTop, onClose, isActive, isMirror, component}) => {

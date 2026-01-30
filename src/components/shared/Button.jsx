@@ -8,7 +8,7 @@ export const Button = styled.button`
     padding: 14px 20px;
 
     z-index: 4;
-    background-color: ${({$type = 'main'}) => $type === 'main' ? 'var(--color-gray)' : 'var(--color-white)'};
+    background-color: ${({$type = 'main', $defaultColor = 'var(--color-gray)'}) => $type === 'main' ? $defaultColor : 'var(--color-white)'};
     border-radius: 100px;
 
     display: flex;
@@ -24,11 +24,10 @@ export const Button = styled.button`
     color: var(--color-${({$type = 'main'}) => $type === 'main' ? 'white': 'dark'}-text);
     font-size: 12px;
     line-height: 110%;
-    text-transform: lowercase;
     transition: background-color 0.3s;
 
     &:hover {
-        background-color: var(--color-orange);
+        background-color: ${({$accentColor = 'var(--color-orange)'}) => $accentColor};
         color: var(--color-white-text);
     }
 `;

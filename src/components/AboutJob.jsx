@@ -77,6 +77,10 @@ const TitleStyled = styled(Title)`
     ${media.desktop`
        font-size: 50px;
     `}
+
+    @media screen and (max-width: 334px) {
+        font-size: ${({$size}) => $size * 0.8}px;
+    }
 `;
 
 const SubTitle = styled(Title)`
@@ -89,6 +93,10 @@ const SubTitle = styled(Title)`
         margin: 69px 0 30px;
        font-size: 24px;
     `}
+
+    @media screen and (max-width: 334px) {
+        font-size: 18px;
+    }
 `;
 
 const TextMobile = styled(SmallText)`
@@ -99,6 +107,10 @@ const TextMobile = styled(SmallText)`
     ${media.desktop`
         display: none;
     `}
+
+    @media screen and (max-width: 334px) {
+        font-size: 12px;
+    }
 `;
 const TextDesktop = styled(SmallText)`
     @media screen and (max-width: 1199px){
@@ -106,7 +118,7 @@ const TextDesktop = styled(SmallText)`
     }
 `;
 
-export const AboutJob = ({jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
+export const AboutJob = ({ spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
     <Wrapper>
         <Content>
             <TitleStyled $size={jobTitleSize} $color={textColor}>{jobTitle}</TitleStyled>
@@ -115,7 +127,7 @@ export const AboutJob = ({jobTitleSize, jobTitle, jobDescription, jobDescription
                 <TextDesktop>{jobDescription}</TextDesktop>
                 <TextMobile>{jobDescriptionMob}</TextMobile>
             </TextWrapper>
-            <OrangeSpotStyled />
+            <OrangeSpotStyled accentColor={spotColor}/>
         </Content>
     </Wrapper>
 )

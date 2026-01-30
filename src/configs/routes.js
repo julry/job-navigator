@@ -4,6 +4,8 @@ import { HimTech } from "../pages/HimTech";
 import { Page3 } from "../pages/Page3";
 import { ITPage } from "../pages/IT";
 import { InfoSecPage } from "../pages/InfoSec";
+import { EnergeticsPage } from "../pages/Energetics";
+import { StroyPage } from "../pages/Stroy";
 
 export const routes = [
     {
@@ -23,7 +25,7 @@ export const routes = [
     {
         //Электро- и теплоэнергетика
         path: '/energetics',
-        element: <div />
+        element: <EnergeticsPage />
     },
     {
         //Машиностроение
@@ -108,7 +110,7 @@ export const routes = [
     {
         //Техника и технологии строительства – Алабуга
         path: '/stroy',
-        element: <Page3 />
+        element: <StroyPage />
     },
     {
         path: '*',

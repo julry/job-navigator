@@ -276,9 +276,7 @@ export const MainPageDesktop = () => {
                  <CompasWrapper
                     ref={compasRef}
                     layout
-                    style={{ x, y, scale, 
-                        // ...(isFixed ? { top: -240 } : {}) 
-                    }}
+                    style={{ x, y, scale }}
                     transition={{
                         type: 'spring',
                         duration: 0.5,

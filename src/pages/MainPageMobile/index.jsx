@@ -116,6 +116,10 @@ const ImageElement = styled(motion.img)`
     object-fit: contain;
     z-index: 3;
     transform: ${({ $isMirror }) => $isMirror ? 'scale(-1,1)' : 'none'};
+
+    ${media.tablet`
+        transform: ${({ $isMirror }) => $isMirror ? 'scale(-1.4, 1.4) ' : 'scale(1.4)'};
+    `}
 `;
 
 const Person = styled(ImageElement)`
@@ -175,6 +179,13 @@ const TextWrapper = styled.div`
     justify-content: flex-end;
     right: var(--text-spacing);
     ${({ $style }) => $style};
+
+    ${media.tablet`
+        transform: scale(1.4);
+        top: ${({ $top }) => $top - 20}px;
+        --text-spacing: ${({ $spacing }) => -1.25 * $spacing - 20 + 'px'};
+        width: ${({ $width }) => $width + 10}px;
+    `}
 `;
 
 const StaticBlock = styled.div`
@@ -216,6 +227,10 @@ const BotInfo = styled.div`
         color: var(--color-white-text);
         margin-bottom: 20px;
     }
+
+    ${media.tablet`
+       margin-top: 80px;
+    `}
 `;
 
 const FooterText = styled(SmallText)`

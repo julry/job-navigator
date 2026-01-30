@@ -7,7 +7,7 @@ const Wrapper = styled.div`
     width: 100%;
     border-radius: 40px;
     padding: 30px 20px;
-    background-color: var(--color-gray);
+    background-color: ${({$backgroundColor}) => $backgroundColor};
     margin-top: 265px;
 
     ${media.desktop`
@@ -25,11 +25,11 @@ const Wrapper = styled.div`
 `;
 
 
-export const BotBlock = () => (
-    <Wrapper>
+export const BotBlock = ({defaultColor, backgroundColor = 'var(--color-gray)'}) => (
+    <Wrapper $backgroundColor={backgroundColor} $defaultColor={defaultColor}>
         <Text>
             хочешь узнать больше полезной инфы{'\n'}о навыках и развитии в профессии?
         </Text>
-        <Button $type="secondary">перейти в бота</Button>
+        <Button $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
     </Wrapper>
 )

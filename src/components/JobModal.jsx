@@ -126,7 +126,6 @@ const CardTitle = styled(Title)`
     color: var(--color-white-text);
     margin-bottom: 30px;
     max-width: 600px;
-    text-transform: none;
 `;
 
 const FilterSvg = styled.svg`

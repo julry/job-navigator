@@ -18,9 +18,15 @@ import { SmallText } from "./shared/Texts";
 
 const Wrapper = styled.div`
     padding-top: 34px;
+    margin: 0 auto;
 
     ${media.tablet`
+        max-width: 550px;
         padding-top: 40px;
+    `}
+
+    ${media.desktop`
+        max-width: 1440px;
     `}
 `;
 
@@ -97,7 +103,6 @@ const ClosedButton = styled.button`
 
 const FooterText = styled(SmallText)`
     text-align: center;
-    text-transform: none;
 
     ${media.desktop`
         display: none;
@@ -146,7 +151,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
     }
 
     return (
-        <Wrapper>
+        <Wrapper ref={wrapperRef}>
             <AboutBlock>
                 {!modalState.shown && (<CompasButton onClick={() => navigate('/')} />)}
                 {!modalState.shown && (
@@ -163,7 +168,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                 <AboutVacancies vacanciesDescr={vacanciesDescr}/>
             </AboutBlock>
             
-            <SpacingContent ref={wrapperRef}>
+            <SpacingContent>
                 <Opportunities opportunities={opportunities} onClickOpp={handleOpenModal}/>
                 <Vacancies vacancies={vacancies} />
                 <TestBlock person={testPerson} testName={testName} questions={testQuestions}/>

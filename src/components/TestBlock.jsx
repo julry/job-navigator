@@ -50,6 +50,7 @@ const TestContent = styled.div`
 const DesktopButton = styled(Button)`
     margin: 30px auto 0;
     width: auto;
+    color: ${({$accentColor}) => $accentColor};
 
     ${media.desktop`
         position: absolute;
@@ -73,7 +74,7 @@ const TumblerWrapper = styled(motion.div)`
     border: 2px solid var(--color-gray);
     border-radius: 100px;
 
-    cursor: ${({$isEnd}) => $isEnd ? 'unset' : 'pointer'};
+    cursor: pointer;
 `;
 
 const TumblerCircle = styled(motion.div)`
@@ -82,7 +83,7 @@ const TumblerCircle = styled(motion.div)`
     height: 18px;
     top: -1px;
     left: -1px;
-    background: var(--color-gray);
+    background: ${({$defaultColor}) => $defaultColor ?? 'var(--color-gray)'};
     border-radius: 50%;
 `;
 
@@ -110,7 +111,7 @@ const ResultBlock = styled(motion.div)`
     z-index: 5;
     border-radius: 30px;
     width: 499px;
-    background-color: var(--color-gray);
+    background-color: ${({$background}) => $background ?? 'var(--color-gray)'};
     padding: 20px 25px;
     bottom: -188px;
 
@@ -122,7 +123,7 @@ const ResultBlock = styled(motion.div)`
     ${media.desktop`
         left: 0;
         z-index: 2;
-        background-color: var(--color-orange);
+        background-color: ${({$background}) => $background ?? 'var(--color-orange)'};
         padding: 35px 30px;
         bottom: 117px;
         border-radius: 40px;
@@ -173,10 +174,11 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
+    const [endText, setEndText] = useState('');
 
     useEffect(() => {
         const width = window.innerWidth;
@@ -195,14 +197,12 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
 
 
     const handleToggle = (id) => {
-        if (isEnd) return;
         setAnswers(prev => prev.includes(id) ? prev.filter((prevId) => prevId !== id) : [...prev, id]);
     }
 
     const handleClick = () => {
-        if (isEnd) return;
-
         setIsEnd(true);
+        setEndText(getEndText());
     }
 
     const endAnimation = isMobile ? {
@@ -214,7 +214,7 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
     };
 
     const getEndText = () => {
-        if (answers.length < 2) {
+        if (answers.length < 3) {
             return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или переходи в наш тг‑бот и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
         }
 
@@ -229,8 +229,8 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
     return (
         <Wrapper>
             <TextBlock>
-                <Title $color={textColor}><ColoredSpan $color={accentColor}>проверь</ColoredSpan> себя</Title>
-                <Text>
+                <Title $color={defaultColor}><ColoredSpan $color={accentColor}>проверь</ColoredSpan> себя</Title>
+                <Text $color={defaultColor}>
                     готов ли ты к старту в {testName}?{'\n'}
                     заполни чек-лист — узнай, какие навыки
                     и качества успешного кандидата
@@ -239,7 +239,7 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
             </TextBlock>
             <TestWrapper>
                 <TestContent>
-                    <Subtitles $color={textColor}><ColoredSpan $color={accentColor}>профессиональные</ColoredSpan>{'\n'}навыки (харды)</Subtitles>
+                    <Subtitles $color={defaultColor}><ColoredSpan $color={accentColor}>профессиональные</ColoredSpan>{'\n'}навыки (харды)</Subtitles>
                 <div>
                     {
                         hardSkills.map(({ id, text }) => (
@@ -249,23 +249,23 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
                             >
                                 <TumblerWrapper
                                     $isEnd={isEnd}
-                                    initial={{ borderColor: 'var(--color-gray)', background: 'transparent'}}
+                                    initial={{ borderColor: defaultColor, background: 'transparent'}}
                                     animate={answers.includes(id) ? {
-                                        borderColor: 'var(--color-orange)', background: 'var(--color-orange)'
+                                        borderColor: accentColor, background: accentColor
                                     } : {}}
                                     transition={{
                                         background: { delay: 0.4 }
                                     }}
                                 >
-                                    <TumblerCircle initial={{ x: 0 }} animate={answers.includes(id) ? { x: 20 } : { x: 0 }} />
+                                    <TumblerCircle $defaultColor={defaultColor} initial={{ x: 0 }} animate={answers.includes(id) ? { x: 20 } : { x: 0 }} />
                                 </TumblerWrapper>
-                                <Text>{text}</Text>
+                                <Text $color={defaultColor}>{text}</Text>
                             </AnswerWrapper>
                         ))
                     }
                 </div>
                 
-                <Subtitles $color={textColor}><ColoredSpan $color={accentColor}>личные качества</ColoredSpan>{'\n'}(софты)</Subtitles>
+                <Subtitles $color={defaultColor}><ColoredSpan $color={accentColor}>личные качества</ColoredSpan>{'\n'}(софты)</Subtitles>
                 {
                     softSkills.map(({ id, text }) => (
                         <AnswerWrapper
@@ -273,27 +273,26 @@ export const TestBlock = ({ testName, person, textColor, accentColor = 'var(--co
                             onClick={() => handleToggle(id)}
                         >
                             <TumblerWrapper
-                                $isEnd={isEnd}
-                                initial={{ borderColor: 'var(--color-gray)', background: 'transparent'}}
+                                initial={{ borderColor: defaultColor, background: 'transparent'}}
                                 animate={answers.includes(id) ? {
-                                    borderColor: 'var(--color-orange)', background: 'var(--color-orange)'
+                                    borderColor: accentColor, background: accentColor
                                 } : {}}
                                 transition={{
                                     background: { delay: 0.4 }
                                 }}
                             >
-                                <TumblerCircle initial={{ x: 0 }} animate={answers.includes(id) ? { x: 20 } : { x: 0 }} />
+                                <TumblerCircle $defaultColor={defaultColor} initial={{ x: 0 }} animate={answers.includes(id) ? { x: 20 } : { x: 0 }} />
                             </TumblerWrapper>
-                            <Text>{text}</Text>
+                            <Text $color={defaultColor}>{text}</Text>
                         </AnswerWrapper>
                     ))
                 }
-                <DesktopButton onClick={handleClick}>
+                <DesktopButton $defaultColor={accentColor} $accentColor={defaultColor} onClick={handleClick}>
                     посмотреть результат
                 </DesktopButton>
                 </TestContent>
-                <ResultBlock {...endAnimation}>
-                    <Text>{getEndText()}</Text>
+                <ResultBlock $background={defaultColor} {...endAnimation}>
+                    <Text>{endText}</Text>
                     <EndButtonWrapper>
                         <Button $type="secondary">прокачать навыки</Button>
                         <Button $type="secondary">вакансии</Button>

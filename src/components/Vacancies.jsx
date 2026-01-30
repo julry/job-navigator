@@ -27,6 +27,7 @@ const Link = styled(Button)`
     height: 80px;
     font-size: 16px;
     padding: 10px 5px;
+    text-transform: lowercase;
 
      ${media.desktop`
         width: calc((100% - 27px * 3) / 4);

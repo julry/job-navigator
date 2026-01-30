@@ -18,6 +18,11 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    --defaultColor: ${({$defaultColor}) => $defaultColor};
+
+    & h3, h4, p {
+        color: ${({$defaultColor}) => $defaultColor} !important;
+    }
     
     ${media.desktop`   
         flex: 1;
@@ -68,7 +73,6 @@ const Wrapper = styled.div`
     `}
 `;
 
-
 const SubTitle = styled(Title)`
     font-size: 20px;
     padding-bottom: 30px;
@@ -94,7 +98,7 @@ const Vacancy = styled(motion.div)`
     height: 45px;
     padding: 14px 20px;
 
-    background-color: var(--color-gray);
+    background-color: var(--defaultColor);
     color: var(--color-white-text);
     border-radius: 100px;
 
@@ -114,8 +118,8 @@ const VacancyInfo = styled(Vacancy)`
     position: absolute;
     inset: 0;
     background-color: var(--color-white);
-    color: var(--color-dark-text);
-    box-shadow: inset 0 0 1px 1px var(--color-dark-text);
+    color: ${({$defaultColor}) => $defaultColor};
+    box-shadow: inset 0 0 1px 1px  ${({$defaultColor}) => $defaultColor};
 
     ${({$isSmall}) => $isSmall ? 'font-size: 11px; line-height: 100%;' : ''};
 `;
@@ -164,7 +168,7 @@ const AddPicture = styled.img`
     `};
 `;
 
-export const AboutVacancies = ({addPicture = defaultAdd, vacanciesDescr = []}) => {
+export const AboutVacancies = ({ className, accentColor, defaultColor = 'var(--color-gray)', addPicture = defaultAdd, vacanciesDescr = []}) => {
     const [hoveredCard, setHoveredCard] = useState();
 
     const touchTimerRef = useRef(null);
@@ -190,7 +194,7 @@ export const AboutVacancies = ({addPicture = defaultAdd, vacanciesDescr = []}) =
     };
 
     return (
-    <Wrapper>
+    <Wrapper $defaultColor={defaultColor} className={className}>
         <SubTitle>
             где можно работать {'\n'}после выпуска?
         </SubTitle>
@@ -210,6 +214,7 @@ export const AboutVacancies = ({addPicture = defaultAdd, vacanciesDescr = []}) =
                         ease: "easeOut",
                     }}
                     $isSmall={isSmall}
+                    $defaultColor={defaultColor}
                     animate={hoveredCard === id ? {x: 0} : {x: '100%'}}
                 >
                     {desc}
@@ -223,7 +228,7 @@ export const AboutVacancies = ({addPicture = defaultAdd, vacanciesDescr = []}) =
                 и развитии в профессии?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
-            <Button>переходи в бота</Button>
+            <Button $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</Button>
         </AddBlock>
     </Wrapper>
 )

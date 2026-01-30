@@ -10,6 +10,10 @@ export const Title = styled.h3`
         font-size: 34px;
     }
 
+    @media screen and (max-width: 334px) {
+        font-size: 30px;
+    }
+
     @media screen and (min-width: 1200px){
         font-size: 42px;
     }
@@ -24,6 +28,10 @@ export const Text = styled.p`
 
     @media screen and (min-width: 1200px){
         font-size: 16px;
+    }
+
+    @media screen and (max-width: 334px) {
+        font-size: 12px;
     }
 `;
 
@@ -42,4 +50,20 @@ export const SmallText = styled.p`
 
 export const ColoredSpan = styled.span`
     color: ${({$color = 'var(--color-orange)'}) => $color};
+`;
+
+export const Subtitle = styled(Title)`
+    font-size: 20px;
+
+    @media screen and (max-width: 374px) {
+        font-size: 18px;
+    }
+
+    @media screen and (max-width: 334px) {
+        font-size: 16px;
+    }
+
+    @media screen and (min-width: 1200px){
+        font-size: 24px;
+    }
 `;

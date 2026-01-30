@@ -26,7 +26,6 @@ const Wrapper = styled.div`
       justify-content: center;
 
       & > div {
-         max-width: 550px;
          height: 100%;
          width: 100%;
          
@@ -41,7 +40,6 @@ const Wrapper = styled.div`
 
    ${media.desktop`
       & > div {
-         max-width: unset;
          height: 100%;
          width: 100%;
       }

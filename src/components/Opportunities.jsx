@@ -24,7 +24,7 @@ const Wrapper = styled.div`
     ${media.desktop`
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
-        padding-bottom: 185px;
+        padding-bottom: ${({$hasButton}) => $hasButton ? 275 : 185}px;
         flex-direction: row;
         justify-content: space-between;
     `}
@@ -53,13 +53,12 @@ const OpportunitiesBlock = styled.div`
     width: 100%;    
     align-items: center;
 
-
     ${media.desktop`
         display: grid;
         grid-template-rows: repeat(4, 1fr);
         grid-template-columns: 280px auto;
         grid-column-gap: 0;
-        grid-row-gap: ${({$gap}) => $gap ?? 10}px;
+        grid-row-gap: ${({ $gap }) => $gap ?? 10}px;
         justify-items: end;
     `}
 `;
@@ -124,6 +123,10 @@ const LinesWrapper = styled.div`
     z-index: 3;
     transform: translateX(-50%);
 
+    & path {
+        fill: ${({$defaultColor = 'var(--color-gray)'}) => $defaultColor};
+    }
+
     ${media.desktop`
         display: none;
     `}
@@ -140,9 +143,19 @@ const LinesWrapperDesktop = styled(LinesWrapper)`
     `}
 `;
 
+const ButtonStyled = styled(Button)`
+    position: absolute;
+    right: 0;
+    bottom: 40px;
+
+    ${media.desktop`
+        max-width: min(838px, 58vw);
+    `}
+`;
+
 const textVariants = {
     brand: 'перед тобой — карта роста в профессии. она показывает, с каких ролей можно начать и до чего дорасти\n\nсмотри разные ветки и выбирай, что тебе больше нравится!',
-    default: 'перед тобой — карта роста в профессии. она показывает, с каких ролей можно начать и до чего дорасти\n\nсмотри разные ветки и выбирай, что тебе больше нравится!',
+    default: 'тут ты можешь посмотреть варианты своей будущей профессии и узнать о карьерном росте на каждой позиции',
 }
 
 const OPPS_TO_LINES_DESK = {
@@ -202,54 +215,66 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
     5: 10,
 };
 
-export const Opportunities = ({onClickOpp, textColor, opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)' }) => {
+export const Opportunities = ({
+    onClickOpp, companyName, defaultColor, hasButton, companyLink,
+    opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
+}) => {
     return (
-        <Wrapper>
+        <Wrapper $hasButton={hasButton}>
             <div>
-                <Title $color={textColor}>дерево{'\n'}<ColoredSpan $color={accentColor}>возможностей</ColoredSpan> </Title>
+                <Title $color={defaultColor}>дерево{'\n'}<ColoredSpan $color={accentColor}>возможностей</ColoredSpan> </Title>
                 <TextBlock>
-                    <Text $color={textColor}>{textVariants[textVariant]}</Text>
+                    <Text $color={defaultColor}>{textVariants[textVariant]}</Text>
                 </TextBlock>
             </div>
             <Info>
                 <OpportunitiesBlock $gap={OPPS_TO_GAP_LINES_DESKTOP[opportunities.length]}>
                     {opportunities.map(({ text, style, id }) => (
-                        <Opportunity key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
+                        <Opportunity $defaultColor={defaultColor} $accentColor={accentColor} key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
                     )
                     )}
                     <StudentPic src={person} alt="" />
-                    <Ellipse viewBox="0 0 733 590" fill="none">
-                        <g filter="url(#filter0_f_1877_3504)">
-                            <path d="M1115 298.017C1115 394.284 929.848 492.739 607.5 489.942C285.152 487.145 100 387.582 100 298.017C100 200.532 304.961 100 607.5 100C910.04 100 1115 188.655 1115 298.017Z" fill={accentColor} />
-                            <path d="M607.5 105C758.353 105 884.548 127.112 972.836 162.637C1016.99 180.402 1051.42 201.425 1074.73 224.494C1098.01 247.53 1110 272.369 1110 298.018C1110 320.388 1099.25 343.4 1077.47 365.502C1055.68 387.612 1023.09 408.534 980.197 426.518C894.42 462.478 768.263 486.337 607.544 484.942C446.819 483.548 320.628 458.024 234.809 421.909C191.887 403.847 159.273 383.222 137.469 361.828C115.646 340.417 105 318.607 105 298.018C105 275.483 116.849 252.134 140.227 229.546C163.582 206.979 198.062 185.572 242.23 167.063C330.54 130.058 456.729 105 607.5 105Z" stroke={accentColor} stroke-width="10" />
-                        </g>
-                        <g filter="url(#filter1_g_1877_3504)">
-                            <ellipse cx="620.67" cy="297.872" rx="455.838" ry="177.711" fill={accentColor} />
-                        </g>
-                        <defs>
-                            <filter id="filter0_f_1877_3504" x="0" y="0" width="1215" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_1877_3504" />
-                            </filter>
-                            <filter id="filter1_g_1877_3504" x="64.832" y="20.1603" width="1111.68" height="555.422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                                <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                                <feTurbulence type="fractalNoise" baseFrequency="0.83333331346511841 0.83333331346511841" numOctaves="3" seed="4986" />
-                                <feDisplacementMap in="shape" scale="200" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
-                                <feMerge result="effect1_texture_1877_3504">
-                                    <feMergeNode in="displacedImage" />
-                                </feMerge>
-                            </filter>
-                        </defs>
-                    </Ellipse>
-                    <LinesWrapper {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
+                    {
+                        !hasButton  && (
+                            <Ellipse viewBox="0 0 733 590" fill="none">
+                                <g filter="url(#filter0_f_1877_3504)">
+                                    <path d="M1115 298.017C1115 394.284 929.848 492.739 607.5 489.942C285.152 487.145 100 387.582 100 298.017C100 200.532 304.961 100 607.5 100C910.04 100 1115 188.655 1115 298.017Z" fill={accentColor} />
+                                    <path d="M607.5 105C758.353 105 884.548 127.112 972.836 162.637C1016.99 180.402 1051.42 201.425 1074.73 224.494C1098.01 247.53 1110 272.369 1110 298.018C1110 320.388 1099.25 343.4 1077.47 365.502C1055.68 387.612 1023.09 408.534 980.197 426.518C894.42 462.478 768.263 486.337 607.544 484.942C446.819 483.548 320.628 458.024 234.809 421.909C191.887 403.847 159.273 383.222 137.469 361.828C115.646 340.417 105 318.607 105 298.018C105 275.483 116.849 252.134 140.227 229.546C163.582 206.979 198.062 185.572 242.23 167.063C330.54 130.058 456.729 105 607.5 105Z" stroke={accentColor} stroke-width="10" />
+                                </g>
+                                <g filter="url(#filter1_g_1877_3504)">
+                                    <ellipse cx="620.67" cy="297.872" rx="455.838" ry="177.711" fill={accentColor} />
+                                </g>
+                                <defs>
+                                    <filter id="filter0_f_1877_3504" x="0" y="0" width="1215" height="590" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feGaussianBlur stdDeviation="50" result="effect1_foregroundBlur_1877_3504" />
+                                    </filter>
+                                    <filter id="filter1_g_1877_3504" x="64.832" y="20.1603" width="1111.68" height="555.422" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                                        <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                                        <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
+                                        <feTurbulence type="fractalNoise" baseFrequency="0.83333331346511841 0.83333331346511841" numOctaves="3" seed="4986" />
+                                        <feDisplacementMap in="shape" scale="200" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+                                        <feMerge result="effect1_texture_1877_3504">
+                                            <feMergeNode in="displacedImage" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                            </Ellipse>
+                        )
+                    }
+                    <LinesWrapper $defaultColor={defaultColor} {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
                         {OPPS_TO_LINES_MOBILE[opportunities.length]}
                     </LinesWrapper>
-                    <LinesWrapperDesktop {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
+                    <LinesWrapperDesktop $defaultColor={defaultColor} {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
                         {OPPS_TO_LINES_DESK[opportunities.length]}
                     </LinesWrapperDesktop>
                 </OpportunitiesBlock>
+                {hasButton && (
+                    <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>
+                        откликайся в {companyName}
+                    </ButtonStyled>
+                )}
             </Info>
         </Wrapper>
     )
