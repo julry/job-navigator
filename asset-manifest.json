@@ -1,15 +1,17 @@
 {
   "files": {
     "main.css": "./static/css/main.21f30e41.css",
-    "main.js": "./static/js/main.a100527e.js",
+    "main.js": "./static/js/main.179fb927.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
     "static/media/alabugaMenu.png": "./static/media/alabugaMenu.912756341f3542dc7d66.png",
+    "static/media/machineBot.png": "./static/media/machineBot.e12d92274b68b2246713.png",
     "static/media/KOT-EitaiGothic-Bold.otf": "./static/media/KOT-EitaiGothic-Bold.3f67f8e705c2ae8c8317.otf",
     "static/media/alabugaVacancies.png": "./static/media/alabugaVacancies.6492486ab8506be42de3.png",
     "static/media/compasMain.png": "./static/media/compasMain.dde02df6ddca9ae569c8.png",
     "static/media/economy.png": "./static/media/economy.d531ebff6de1437a7a72.png",
+    "static/media/machineTop.png": "./static/media/machineTop.1b210939cba318dc694c.png",
     "static/media/pravo.png": "./static/media/pravo.7ad0026843ed6dd7d1d4.png",
     "static/media/infosec.png": "./static/media/infosec.22d6029d5b63d5f7c465.png",
     "static/media/education.png": "./static/media/education.152eb50995c642996c98.png",
@@ -29,6 +31,9 @@
     "static/media/stroy.png": "./static/media/stroy.42620102c9aa81c22533.png",
     "static/media/radioelectronic.png": "./static/media/radioelectronic.fc0fe9d3f5ea9c2d3aa0.png",
     "static/media/default_man.png": "./static/media/default_man.9fc97db4c82510be9c2c.png",
+    "static/media/energeticsBot.png": "./static/media/energeticsBot.8bf423f58554971ec323.png",
+    "static/media/safetechBot.png": "./static/media/safetechBot.7f14255c59a983216416.png",
+    "static/media/biotechBot.png": "./static/media/biotechBot.acafa73489d6c98c87ed.png",
     "static/media/itBot.png": "./static/media/itBot.67949f455276c71a2ba7.png",
     "static/media/alabugaStudent.png": "./static/media/alabugaStudent.902013845ff22d24919d.png",
     "static/media/infoSecBot.png": "./static/media/infoSecBot.bf3450e3a0d78bd85d6c.png",
@@ -41,16 +46,19 @@
     "static/media/itMountin.png": "./static/media/itMountin.b2bed526bb8810b507a7.png",
     "static/media/alabugaAdvant4.png": "./static/media/alabugaAdvant4.433fc79d925c801c4961.png",
     "static/media/itTop.png": "./static/media/itTop.164cb00d73e3a50a36ab.png",
+    "static/media/energeticsTop.png": "./static/media/energeticsTop.d2145c5986ab0f3d3740.png",
     "static/media/alabugaAdvant2.png": "./static/media/alabugaAdvant2.9ad1413785cb35b57c61.png",
     "static/media/agroMountin.png": "./static/media/agroMountin.c914fb80053ded2dd69c.png",
     "static/media/economyMountin.png": "./static/media/economyMountin.b5ca509cf7e8536aaa76.png",
     "static/media/techcontrolMountin.png": "./static/media/techcontrolMountin.375485b5f7646b4e826a.png",
     "static/media/himTechMountin.png": "./static/media/himTechMountin.d413a1a9a06a3aa4303e.png",
     "static/media/himTechObj.png": "./static/media/himTechObj.a8045f8effd0bc86824a.png",
+    "static/media/biotechTop.png": "./static/media/biotechTop.830b04790502241b876b.png",
     "static/media/geologyMountin.png": "./static/media/geologyMountin.3ada10967d2e100e456d.png",
     "static/media/infosecMountin.png": "./static/media/infosecMountin.b8493f03990828786bc5.png",
     "static/media/alabugaBot.png": "./static/media/alabugaBot.6a400397342d1f376052.png",
     "static/media/safetechMountin.png": "./static/media/safetechMountin.9a5142a45cbeaa49d9f8.png",
+    "static/media/safetechTop.png": "./static/media/safetechTop.04ee849f51844ce64a49.png",
     "static/media/chemical_bot.png": "./static/media/chemical_bot.912a4e84b5e4637eb20c.png",
     "static/media/tradeMountin.png": "./static/media/tradeMountin.7db98a5d85bff7c95e53.png",
     "static/media/biotechMountin.png": "./static/media/biotechMountin.d5f4d7ac33f0d393811b.png",
@@ -82,10 +90,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.21f30e41.css.map": "./static/css/main.21f30e41.css.map",
-    "main.a100527e.js.map": "./static/js/main.a100527e.js.map"
+    "main.179fb927.js.map": "./static/js/main.179fb927.js.map"
   },
   "entrypoints": [
     "static/css/main.21f30e41.css",
-    "static/js/main.a100527e.js"
+    "static/js/main.179fb927.js"
   ]
 }
