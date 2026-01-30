@@ -1,5 +1,5 @@
 
-import { ColoredSpan } from '../components/shared/Texts';
+import { ColoredSpan, NoTransformSpan } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
 import chemT from '../assets/images/default/chemical_top.png';
 import chemB from '../assets/images/default/chemical_bot.png';
@@ -14,6 +14,8 @@ import agro from '../assets/images/default/people/agro.png';
 import biotech from '../assets/images/default/people/biotech.png';
 import education from '../assets/images/default/people/education.png';
 import energetics from '../assets/images/default/people/energetics.png';
+import energeticsB from '../assets/images/default/energeticsBot.png';
+import energeticsT from '../assets/images/default/energeticsTop.png';
 import geology from '../assets/images/default/people/geology.png';
 import himTech from '../assets/images/default/people/himtech.png';
 import infosec from '../assets/images/default/people/infosec.png';
@@ -348,111 +350,103 @@ export const defaultPages = [
         }
     },
     {
-            id: 'energetics',
-            jobTitleSize: 33,
-            jobTitle: <><ColoredSpan $color='var(--color-orange)'>Электро-</ColoredSpan> и теплоэнергетика</>,
-            jobDescription: 'Они проектируют, обслуживают и ремонтируют оборудование электростанций, подстанций, тепловых сетей, следят за безопасностью, эффективностью и надежностью энергосистем. Благодаря им транспорт ходит по улицам города, заводы выпускают товары, а люди не мерзнут зимой.',
-            jobDescriptionSm: 'Они проектируют, обслуживают и ремонтируют оборудование электростанций, подстанций, тепловых сетей, следят за безопасностью, эффективностью и надежностью энергосистем.\n\nБлагодаря им транспорт ходит\nпо улицам города, заводы\nвыпускают товары,\nа люди не мерзнут\nзимой.',
+        id: 'energetics',
+        jobTitleSize: 28,
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Электро-</ColoredSpan> и теплоэнергетика</>,
+        jobDescription: 'Они проектируют, обслуживают и ремонтируют оборудование электростанций, подстанций, тепловых сетей, следят за безопасностью, эффективностью и надежностью энергосистем. Благодаря им транспорт ходит по улицам города, заводы выпускают товары, а люди не мерзнут зимой.',
+        jobDescriptionSm: 'Они проектируют, обслуживают и ремонтируют оборудование электростанций, подстанций, тепловых сетей, следят за безопасностью, эффективностью и надежностью энергосистем.\n\nБлагодаря им транспорт ходит\nпо улицам города, заводы\nвыпускают товары,\nа люди не мерзнут\nзимой.',
         vacanciesDescr: [
-            {id: 0, isSmall: true, name: 'Банки и финансы', desc: 'Защищать важные финансовые данные, транзакции и клиентскую информацию от мошенничества и кибератак'},
-            {id: 1, isSmall: true, name: 'Бизнес и производство', desc: 'Строить систему информационной безопасности в любой компании — от магазина до завода'},
-            {id: 2, isSmall: true, name: 'IT-компании-разработчики систем безопасности', desc: 'Создавать продукты для защиты данных: антивирусы, системы мониторинга, средства шифрования'},
-            {id: 3, isSmall: true, name: 'Государственный сектор', desc: 'Обеспечивать защиту государственных информационных ресурсов, систем и данных'},
-            {id: 4, isSmall: true, name: 'Консалтинг и аудит', desc: 'Проводить независимые проверки (аудит) безопасности и помогать разным компаниям выстроить эффективную защиту'},
+            {id: 0, isSmall: true, name: 'Энергосбытовые и сетевые компании', desc: 'Следить за работой линий электропередач и подстанций, чтобы в домах и на предприятиях был свет'},
+            {id: 1, isSmall: true, name: <>Тепловые электростанции <NoTransformSpan>(ТЭЦ)</NoTransformSpan> и котельные</>, desc: 'Работать с оборудованием, которое производит тепло и электричество, следить за котлами и турбинами'},
+            {id: 2, isSmall: true, name: 'Промышленные предприятия и заводы', desc: 'Отвечать за бесперебойное энергоснабжение цехов, ремонтировать оборудование и снижать энергозатраты'},
+            {id: 3, isSmall: true, name: 'Компании в сфере возобновляемой энергетики', desc: 'Работать на солнечных электростанциях и ветропарках — будущее за экологичной энергетикой!'},
+            {id: 4, isSmall: true, name: 'Сервисные и монтажные организации', desc: 'Собирать, запускать и обслуживать сложное энергетическое оборудование у заказчиков'},
         ],
         testQuestions: [
             {
                 id: 'q-0',
-                text: 'Понимаю архитектуру сетей и принципы работы протоколов (TCP/IP, DNS, HTTP/S)'
+                text: 'Знаю устройство и принципы работы энергооборудования'
             },
             {
                 id: 'q-1',
-                text: 'Умею настраивать средства защиты (firewall, IDS/IPS, SIEM, DLP)'
+                text: 'Умею читать электрические и тепловые схемы, чертежи'
             },
             {
                 id: 'q-2',
-                text: 'Знаю основные классы уязвимостей и методы атак'
-            },
+                text: 'Знаю безопасные методы переключения в энергоустановках'
+            }, 
             {
                 id: 'q-3',
-                text: 'Владею основами криптографии и механизмами аутентификации'
+                text: 'Помню правила технической эксплуатации и охраны труда'
             },
             {
                 id: 'q-4',
-                text: 'Умею проводить базовый анализ вредоносного ПО и сетевого трафика'
-            },
-            {
-                id: 'q-5',
-                text: 'Знаю стандарты и регулятивы в области ИБ',
+                text: 'Умею проводить измерения (напряжение, ток, сопротивление, температура)'
             },
             {
                 id: 'q-6',
-                text: 'Внимателен к ошибкам и аномалиям в системе',
+                text: 'Осознаю высокую ответственность — ошибки ведут к авариям',
                 isSoft: true,
             },
             {
                 id: 'q-7',
-                text: 'Умею видеть общую картину и взаимосвязи процессов',
+                text: 'Обладаю внимательностью к деталям и точностью в работе',
                 isSoft: true,
             },
             {
                 id: 'q-8',
-                text: 'Обладаю усидчивостью для мониторинга логов и расследований',
+                text: 'Готов работать в любых погодных условиях и в нестандартных ситуациях',
                 isSoft: true
             },
             {
                 id: 'q-9',
-                text: 'Руководствуюсь этикой и ответственностью в работе с чувствительными данными',
+                text: 'Умею быстро принимать решения в аварийных режимах',
                 isSoft: true
             },
             {
                 id: 'q-10',
-                text: 'Умею доступно объяснять риски нетехническому руководству',
-                isSoft: true
-            },
-            {
-                id: 'q-11',
-                text: 'Постоянно учусь, чтобы быть готовым к новым видам киберугроз',
+                text: 'Знаю инструкции и четко им следую ',
                 isSoft: true
             },
         ],
-        testName: 'информационной безопасности',
-        opportunities: opportunitiesConfig.infosec,
+        testName: 'энергетике',
+        testAdditionMargin: 70,
+        opportunities: opportunitiesConfig.energetics,
         opportunitiesPerson: {
-            width: 183,
-            height: 343,
-            left: 32,
-            img: infosec,
+            width: 188 * 1.2,
+            height: 352 * 1.4,
+            left: 12,
+            img: energetics,
         },
         opportunitiesPersonDesk: {
-            width: 229,
-            height: 428,
+            width: 316,
+            height: 448,
             left: 440,
-            img: infosec,
+            img: energetics,
             bottom: -150,
         },
         testPerson: {
             top: {
-                widthDesc: 250,
-                heightDesc: 326,
-                src: infosecT,
-                bottomDesc: 71,
-                leftDesc: -186,
-                width: 158,
-                height: 258,
-                bottom: -205,
-                left: 64.7,
+                widthDesc: 162,
+                heightDesc: 379,
+                src: energeticsT,
+                bottomDesc: 3,
+                leftDesc: -115,
+                width: 105,
+                height: 304,
+                bottom: -285,
+                left: 78,
             },
             bot: {
-                widthDesc: 250,
-                heightDesc: 326,
-                src: infosecB,
-                bottomDesc: -131,
-                leftDesc: -101,
-                width: 245,
-                height: 225,
-                bottom: -342,
-                left: 75
+                widthDesc: 387,
+                heightDesc: 352,
+                src: energeticsB,
+                bottomDesc: -211,
+                leftDesc: -141,
+                width: 292,
+                height: 265,
+                bottom: -462,
+                left: 69
             },
         },
         },

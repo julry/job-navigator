@@ -120,22 +120,22 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'helper',
-                    title: <><ColoredSpan>стажер</ColoredSpan> IT-отдела / помощник сисадмина</>,
+                    title: <><ColoredSpan>стажер</ColoredSpan> <NoTransformSpan>IT-отдела</NoTransformSpan> / помощник сисадмина</>,
                     desc: 'Помогает в настройке компьютеров и установке программ'
                 },
                 {
                     id: 'sysadmin',
-                    title: <><ColoredSpan>системный администратор</ColoredSpan> / специалист по ИТ-инфраструктуре</>,
+                    title: <NoTransformSpan><ColoredSpan>системный администратор</ColoredSpan> / специалист по ИТ-инфраструктуре</NoTransformSpan>,
                     desc: 'Настраивает серверы, операционные системы, обеспечивает резервное копирование, контролирует доступы',
                 },
                 {
                     id: 'cyberspec',
-                    title: <><ColoredSpan>сетевой администратор</ColoredSpan> / специалист по кибербезопасности</>,
-                    desc: 'Проектирует и защищает сетевую инфраструктуру, настраивает маршрутизацию, VPN, межсетевые экраны'
+                    title: <><ColoredSpan>сетевой администратор</ColoredSpan> / специалист по кибербезопасности</>,
+                    desc: <>Проектирует и защищает сетевую инфраструктуру, настраивает маршрутизацию, <NoTransformSpan>VPN</NoTransformSpan>, межсетевые экраны</>
                 },
                 {
                     id: 'quality',
-                    title: <><ColoredSpan>руководитель</ColoredSpan> IT-отдела / DevOps-инженер</>,
+                    title: <NoTransformSpan><ColoredSpan>руководитель</ColoredSpan> IT-отдела / DevOps-инженер</NoTransformSpan>,
                     desc: 'Автоматизирует развертывание систем, управляет облачной инфраструктурой, координирует команду'
                 }
             ]
@@ -150,11 +150,11 @@ export const opportunitiesConfig = {
                 {
                     id: 'internsh',
                     title: <>стажер<ColoredSpan>-программист / тестировщик</ColoredSpan></>,
-                    desc: 'Пишет простые скрипты, тестирует готовые модули, ищет ошибки в коде'
+                    desc: 'Пишет простые скрипты, тестирует готовые модули, ищет ошибки в коде'
                 },
                 {
                     id: 'developer',
-                    title: <><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</>,
+                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</NoTransformSpan>,
                     desc: 'Создает приложения, сайты, базы данных',
                 },
                 {
@@ -164,7 +164,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'tech',
-                    title: <><ColoredSpan>техлид</ColoredSpan> архитектор ПО</>,
+                    title: <NoTransformSpan><ColoredSpan>техлид</ColoredSpan> архитектор ПО</NoTransformSpan>,
                     desc: 'Проектирует сложные системы, выбирает технологии, руководит командой разработки'
                 }
             ]
@@ -183,19 +183,19 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'wifinets',
-                    title: <>сетевой <ColoredSpan>инженер / администратор</ColoredSpan> Wi‑Fi‑сетей</>,
+                    title: <NoTransformSpan>сетевой <ColoredSpan>инженер / администратор</ColoredSpan> Wi‑Fi‑сетей</NoTransformSpan>,
                     desc: 'Проектирует локальные и беспроводные сети, настраивает маршрутизаторы, коммутаторы, точки доступа'
                 },
                 {
                     id: 'voip',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по телекоммуникациям VoIP‑инженер</>,
-                    desc: 'Работает с телефонными сетями, видеоконференцсвязью, системами IP‑телефонии'
+                    title: <NoTransformSpan><ColoredSpan>специалист</ColoredSpan> по телекоммуникациям VoIP‑инженер</NoTransformSpan>,
+                    desc: <>Работает с телефонными сетями, видеоконференцсвязью, системами<NoTransformSpan>IP‑телефонии</NoTransformSpan></>
                 },
                  
                 {
                     id: 'managernets',
                     title: <><ColoredSpan>руководитель</ColoredSpan> группы сетевой инфраструктуры</>,
-                    desc: 'Планирует развитие сетей предприятия, внедряет новые технологии (SD‑WAN, 5G)'
+                    desc: <>Планирует развитие сетей предприятия, внедряет новые технологии <NoTransformSpan>(SD‑WAN, 5G)</NoTransformSpan></>
                 },
             ]
         },
@@ -218,12 +218,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'it-consult',
                     title: <>системный<ColoredSpan>аналитик / IT‑консультант</ColoredSpan></>,
-                    desc: 'анализирует потребности бизнеса, подбирает решения, проектирует IT‑процессы'
+                    desc: <NoTransformSpan>анализирует потребности бизнеса, подбирает решения, проектирует IT‑процессы</NoTransformSpan>
                 },
                 {
                     id: 'itManager',
                     title: <><ColoredSpan>руководитель</ColoredSpan>службы поддержки / <ColoredSpan>IT-менеджер</ColoredSpan></>,
-                    desc: 'организует работу Help Desk, контролирует SLA, управляет командой'
+                    desc: <NoTransformSpan>организует работу Help Desk, контролирует SLA, управляет командой</NoTransformSpan>
                 },
             ]
         },
@@ -241,7 +241,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'operatorIt',
                     title: <><ColoredSpan>оператор</ColoredSpan> информационных систем</>,
-                    desc: 'вводит данные, ведет электронные базы, пишет отчеты в корпоративных системах'
+                    desc: 'вводит данные, ведет электронные базы, пишет отчеты в корпоративных системах'
                 },
                 {
                     id: 'suppIT',
@@ -252,11 +252,11 @@ export const opportunitiesConfig = {
                 {
                     id: 'dataS',
                     title: <><ColoredSpan>специалист</ColoredSpan> по работе с данными / Data-аналитик</>,
-                    desc: 'собирает и анализирует большие массивы данных (Big Data), строит отчетыи визуализации для принятия бизнес-решений',
+                    desc: <NoTransformSpan>собирает и анализирует большие массивы данных (Big Data), строит отчетыи визуализации для принятия бизнес-решений</NoTransformSpan>,
                 },
                 {
                     id: 'aispec',
-                    title: <><ColoredSpan>специалист</ColoredSpan> в области машинного обучения  и ИИ</>,
+                    title: <><ColoredSpan>специалист</ColoredSpan> в области машинного обучения  и ИИ</>,
                     desc: 'участвует в создании и обучении алгоритмов нейросетей, умных системи компьютерного зрения',
                 },
             ]
@@ -265,7 +265,7 @@ export const opportunitiesConfig = {
     infosec: [
         {
             id: 'defendence',
-            text: 'Защита сетей и инфраструктуры',
+            text: 'Защита сетей и инфраструктуры',
             textSize: 27,
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -114,
@@ -278,17 +278,17 @@ export const opportunitiesConfig = {
                 {
                     id: 'safetym',
                     title: <><ColoredSpan>специалист</ColoredSpan> по защите сетей</>,
-                    desc: 'настраивает межсетевые экраны, IPS/IDS, VPN, сегментирует сеть',
+                    desc: <>настраивает межсетевые экраны, <NoTransformSpan>IPS/IDS, VPN,</NoTransformSpan> сегментирует сеть</>,
                 },
                  
                 {
                     id: 'analyticSaf',
                     title: <><ColoredSpan>Инженер</ColoredSpan> по кибербезопасности / аналитик угроз</>,
-                    desc: 'расследует инциденты, анализирует вредоносный код, настраивает SIEM-системы (Splunk, ArcSight)'
+                    desc: <>расследует инциденты, анализирует вредоносный код, настраивает <NoTransformSpan>SIEM-системы (Splunk, ArcSight)</NoTransformSpan></>
                 },
                 {
                     id: 'safManager',
-                    title: <><ColoredSpan>руководитель</ColoredSpan> направления ИБ /Архитектор безопасных сетей</>,
+                    title: <NoTransformSpan><ColoredSpan>руководитель</ColoredSpan> направления ИБ /Архитектор безопасных сетей</NoTransformSpan>,
                     desc: 'проектирует архитектуру безопасности, управляет бюджетом на защитныерешения, координирует команду'
                 }
             ]
@@ -302,13 +302,13 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'auditassistance',
-                    title: <>ассистент<ColoredSpan> по аудиту ИБ</ColoredSpan></>,
+                    title: <>ассистент <ColoredSpan><NoTransformSpan>по аудиту ИБ</NoTransformSpan></ColoredSpan></>,
                     desc: 'помогает собирать данные для проверок, проверяет базовые политики доступа'
                 },
                 {
                     id: 'auditib',
-                    title: <><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</>,
-                    desc: 'проверяет соответствие стандартам (ISO 27001, ФЗ-152, GDPR), составляетотчеты и рекомендации',
+                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</NoTransformSpan>,
+                    desc: <NoTransformSpan>проверяет соответствие стандартам (ISO 27001, ФЗ-152, GDPR), составляетотчеты и рекомендации</NoTransformSpan>
                 },
                 {
                     id: 'criminalist',
@@ -332,51 +332,50 @@ export const opportunitiesConfig = {
                 {
                     id: 'testSaf',
                     title: <><ColoredSpan>тестировщик</ColoredSpan> безопасности</>,
-                    desc: 'проводит базовые тесты на уязвимости web-приложений, использует сканеры (Burp Suite, OWASP ZAP)'
+                    desc: <>проводит базовые тесты на уязвимости web-приложений, использует сканеры <NoTransformSpan>(Burp Suite, OWASP ZAP)</NoTransformSpan></>
                 },
                 {
                     id: 'appsec',
-                    title: <><ColoredSpan>cпециалист</ColoredSpan> по AppSec / DevSecOps</>,
+                    title: <NoTransformSpan><ColoredSpan>cпециалист</ColoredSpan> по AppSec / DevSecOps</NoTransformSpan>,
                     desc: 'Внедряет безопасность в цикл разработки (SAST/DAST), проверяет код на уязвимости'
                 },
                 {
                     id: 'shifr',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по шифрованию</>,
-                    desc: 'работает с алгоритмами шифрования, ключевой инфраструктурой (PKI), защитой данных на rest и in transit'
+                    title: <><ColoredSpan>специалист</ColoredSpan> по шифрованию</>,
+                    desc: <NoTransformSpan>работает с алгоритмами шифрования, ключевой инфраструктурой (PKI), защитой данных на rest и in transit</NoTransformSpan>
                 },
                 {
                     id: 'mainArch',
-                    title: <><ColoredSpan>главный архитектор</ColoredSpan> безопасности ПО</>,
-                    desc: 'строит процессы безопаснойразработки, выбирает фреймворки и стандарты для команды'
+                    title: <NoTransformSpan><ColoredSpan>главный архитектор</ColoredSpan> безопасности ПО</NoTransformSpan>,
+                    desc: 'строит процессы безопаснойразработки, выбирает фреймворки и стандарты для команды'
                 },
             ]
         },
         {
-            //TODO!!!
             id: 'safetycontrol',
             text: 'Управление безопасностью и администрирование',
             style: { 'grid-area': '4/1/5/2' },
             pictureBottom: -169,
             jobs: [
                 {
-                    id: 'supp1',
-                    title: <><ColoredSpan>cпециалист</ColoredSpan> технической поддержки (саппорт 1‑й линии)</>,
-                    desc: 'принимает заявки от пользователей, решает типовые проблемы (сброс паролей, установка ПО)'
+                    id: 'supdsp1',
+                    title: <><ColoredSpan>Администратор</ColoredSpan> средств защиты информации</>,
+                    desc: <>Настраивает <NoTransformSpan>DLP</NoTransformSpan>, антивирусы, системы контроля доступа, управляет политиками</>
                 },
                 {
-                    id: 'supp2',
-                    title: <><ColoredSpan>инженер</ColoredSpan> технической поддержки (саппорт 2‑й линии)</>,
-                    desc: 'диагностирует сложные сбои, работаетс серверами, сетями, системами мониторинга'
+                    id: 'sdsaupp2',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по управлению инцидентами <NoTransformSpan>ИБ</NoTransformSpan></>,
+                    desc: 'Координирует реакцию на атаки, восстанавливает системы, готовит отчеты для руководства'
                 },
                 {
                     id: 'it-consult',
-                    title: <>системный<ColoredSpan>аналитик / IT‑консультант</ColoredSpan></>,
-                    desc: 'анализирует потребности бизнеса, подбирает решения, проектирует IT‑процессы'
+                    title: <><ColoredSpan>Менеджер</ColoredSpan> <NoTransformSpan>ИБ</NoTransformSpan> / Риск‑менеджер</>,
+                    desc: 'Оценивает риски, разрабатывает политики и регламенты, обучает сотрудников'
                 },
                 {
                     id: 'itManager',
-                    title: <><ColoredSpan>руководитель</ColoredSpan>службы поддержки / <ColoredSpan>IT-менеджер</ColoredSpan></>,
-                    desc: 'организует работу Help Desk, контролирует SLA, управляет командой'
+                    title: <><ColoredSpan>руководитель</ColoredSpan> службы <NoTransformSpan>ИБ</NoTransformSpan></>,
+                    desc: 'Определяет стратегию безопасности компании, отвечает за бюджет, взаимодействует с советом директоров'
                 },
             ]
         },
@@ -387,30 +386,166 @@ export const opportunitiesConfig = {
             hasPicture: false,
             jobs: [
                 {
-                    id: 'otherpo',
-                    title: <><ColoredSpan>наладчик</ColoredSpan> аппаратного и программного обеспечения</>,
-                    desc: 'диагностирует и ремонтирует компьютеры, принтеры, оргтехнику, настраивает драйверы'
+                    id: 'othfdserpo',
+                    title: <><ColoredSpan>Этичный хакер</ColoredSpan></>,
+                    desc: 'Легально взламывает системы по заказу компании для поиска уязвимостей'
                 },
                 {
-                    id: 'operatorIt',
-                    title: <><ColoredSpan>оператор</ColoredSpan> информационных систем</>,
-                    desc: 'вводит данные, ведет электронные базы, пишет отчеты в корпоративных системах'
-                },
-                {
-                    id: 'suppIT',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по технической поддержке</>,
-                    desc: 'консультирует пользователей, оперативно решает их технические проблемы',
+                    id: 'sufsppIT',
+                    title: <><ColoredSpan>специалист</ColoredSpan> по киберразведке</>,
+                    desc: 'Собирает и анализирует данные об угрозах, атаках и прогнозирует риски',
                 },
                  
                 {
-                    id: 'dataS',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по работе с данными / Data-аналитик</>,
-                    desc: 'собирает и анализирует большие массивы данных (Big Data), строит отчетыи визуализации для принятия бизнес-решений',
+                    id: 'datadfsS',
+                    title: <><ColoredSpan>Консультант</ColoredSpan> по информационной безопасности</>,
+                    desc: 'Помогает компаниям внедрять системы защиты, проводит обучение',
+                },
+            ]
+        },
+    ],
+    energetics: [
+        {
+            id: 'defesegrnewqdence',
+            text: 'Эксплуатация электростанций',
+            textSize: 27,
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -214,
+            jobs: [
+                {
+                    id: 'helpersdasef',
+                    title: <><ColoredSpan>Помощник</ColoredSpan> машиниста / Оператор котла</>,
+                    desc: 'Контролирует параметры работы основного оборудования, ведет сменный журнал, выполняет поручения старшего персонала'
                 },
                 {
-                    id: 'aispec',
-                    title: <><ColoredSpan>специалист</ColoredSpan> в области машинного обучения  и ИИ</>,
-                    desc: 'участвует в создании и обучении алгоритмов нейросетей, умных системи компьютерного зрения',
+                    id: 'sdsafetym',
+                    title: <><ColoredSpan>Машинист</ColoredSpan> котла / Машинист турбины</>,
+                    desc: 'Управляет работой паровых котлов, турбин, генераторов, обеспечивает заданные режимы работы, предотвращает аварии',
+                },
+                 
+                {
+                    id: 'a2nalyticSaf',
+                    title: <><ColoredSpan>Старший машинист</ColoredSpan> / Начальник смены станции</>,
+                    desc: 'Руководит сменой, отвечает за выполнение диспетчерского графика, координацию ремонтных бригад'
+                },
+                {
+                    id: 'saf21Manager32',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> цеха / Технический директор станции</>,
+                    desc: 'Организует работу целого направления (котельный, турбинный), отвечает за ремонты, модернизацию, экономику'
+                }
+            ]
+        },
+        {
+            id: 'adsudit',
+            text: 'Электросети и подстанции',
+            textSize: 27,
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -199,
+            jobs: [
+                {
+                    id: 'auditassistance',
+                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту электросетей (помощник)</>,
+                    desc: 'Участвует в плановых обходах, мелком ремонте, заготовке материалов'
+                },
+                {
+                    id: 'a00tassistance',
+                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по эксплуатации распределительных сетей</>,
+                    desc: 'Обслуживает воздушные и кабельные линии, выполняет переключения, устраняет повреждения'
+                },
+                {
+                    id: 'a432uditib',
+                    title: <NoTransformSpan><ColoredSpan>Электромонтер-линейщик </ColoredSpan> по монтажу ВЛ высокого напряжения</NoTransformSpan>,
+                    desc: 'Специализируется на монтаже и ремонте высоковольтных линий, работает на высоте'
+                },
+                {
+                    id: 'auccxditmanager',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> участка сетей / Диспетчер электросетей</>,
+                    desc: 'Планирует работы на участке, выдает наряды-допуски, управляет режимами сети дистанционно'
+                }
+            ]
+        },
+        {
+            id: 'sa31fety',
+            text: 'Теплоэнергетика и теплоснабжение',
+            textSize: 27,
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -229,
+            jobs: [
+                {
+                    id: 'test32Saf',
+                    title: <><ColoredSpan>Слесарь</ColoredSpan> по ремонту оборудования тепловых сетей</>,
+                    desc: 'Обслуживает трубопроводы, задвижки, компенсаторы, насосные станции',
+                },
+                {
+                    id: 'afdsppsec',
+                    title: <><ColoredSpan>Оператор</ColoredSpan> котельной / Аппаратчик теплового пункта</>,
+                    desc: 'Контролирует работу котельных агрегатов, регулирует параметры теплоносителя'
+                },
+                {
+                    id: 's321hifr',
+                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
+                    desc: 'Настраивает тепловые схемы, проводит испытания оборудования'
+                },
+                {
+                    id: 'fdsmainArch',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> теплового района / Ведущий инженер по теплоснабжению</>,
+                    desc: 'Отвечает за надежное теплоснабжение района, оптимизацию затрат, взаимодействие с потребителями.'
+                },
+            ]
+        },
+        {
+            id: 'safet00ycontrol',
+            text: 'Автоматизация, защита и метрология',
+            style: { 'grid-area': '4/1/5/2' },
+            pictureBottom: -189,
+            jobs: [
+                {
+                    id: 'sudsfpdsp1',
+                    title: <><ColoredSpan>Электрослесарь</ColoredSpan> по ремонту оборудования электростанций</>,
+                    desc: 'Ремонтирует релейную защиту, автоматику, приборы учета',
+                },
+                {
+                    id: 's32dsaudspp2',
+                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту и обслуживанию электрооборудования</>,
+                    desc: 'Специализируется на силовом оборудовании (трансформаторы, выключатели, электродвигатели)'
+                },
+                {
+                    id: 'it-consul53t',
+                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по релейной защите и автоматике <NoTransformSpan>(РЗА)</NoTransformSpan></>,
+                    desc: 'Настраивает и обслуживает устройства, предотвращающие аварии в энергосистеме'
+                },
+                {
+                    id: 'it432Manager',
+                    title: <><ColoredSpan>Инженер-наладчик</ColoredSpan> / Специалист по <NoTransformSpan>АСУ ТП</NoTransformSpan> в энергетике</>,
+                    desc: <>Программирует контроллеры, настраивает <NoTransformSpan>SCADA-системы</NoTransformSpan>, внедряет цифровые решения</>
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '5/1/6/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'o3thfdserpo',
+                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по лифтам</>,
+                    desc: 'Специализируется на обслуживании и ремонте лифтов'
+                },
+                {
+                    id: 'sufsppIT',
+                    title: <><ColoredSpan>Электромонтажник-схемщик</ColoredSpan></>,
+                    desc: 'Собирает щиты управления, панели релейной защиты, выполняет монтаж по схемам',
+                },
+                {
+                    id: 'datadfsS',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по энергоаудиту</>,
+                    desc: 'Проводит обследование предприятий, ищет потери, рассчитывает энергоэффективность',
+                },
+                {
+                    id: 'd32atadfsS',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> участка по обслуживанию наружного освещения</>,
+                    desc: 'Отвечает за работу и ремонт систем городского освещения',
                 },
             ]
         },

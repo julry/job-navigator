@@ -411,7 +411,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id);
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
 
-    const { pictureBottom, textSize = 36, jobs = [], hasPicture = true, } = chosenOpportunity;
+    const { pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, } = chosenOpportunity;
 
     const { 
         textColor, cardTitleColor, activeTabStyles = {}, 
@@ -419,7 +419,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
         commonSkillStyles, skillStyles 
     } = styles ?? {};
 
-    const {titleColor: titleColorCommonSkills, ...commonSkills} = commonSkillStyles;
+    const {titleColor: titleColorCommonSkills, ...commonSkills} = commonSkillStyles ?? {};
 
     const scrollContentTop = () => {
         contentRef?.current?.scrollTo({ top: 0, behavior: 'smooth' });

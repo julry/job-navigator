@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     border-radius: 40px;
     padding: 30px 20px;
     background-color: ${({$backgroundColor}) => $backgroundColor};
-    margin-top: ${({$isBrand}) => $isBrand ? 40 : 345}px;
+    margin-top: ${({$isBrand, $testAdditionMargin}) => $isBrand ? 40 : 345 + $testAdditionMargin}px;
 
     ${media.desktop`
         margin-top: 170px;
@@ -27,8 +27,8 @@ const Wrapper = styled.div`
 `;
 
 
-export const BotBlock = ({ isBrand, defaultColor, styles, backgroundColor = 'var(--color-gray)'}) => (
-    <Wrapper $isBrand={isBrand} $backgroundColor={backgroundColor} $defaultColor={defaultColor}>
+export const BotBlock = ({ isBrand, defaultColor, styles, testAdditionMargin = 0, backgroundColor = 'var(--color-gray)'}) => (
+    <Wrapper $testAdditionMargin={testAdditionMargin} $isBrand={isBrand} $backgroundColor={backgroundColor} $defaultColor={defaultColor}>
         <Text>
             хочешь узнать больше полезной инфы{'\n'}о навыках и развитии в профессии?
         </Text>

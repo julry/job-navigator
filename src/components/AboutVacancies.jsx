@@ -98,15 +98,19 @@ const Vacancy = styled(motion.div)`
     padding: 14px 20px;
 
     background-color: var(--defaultColor);
-    color: var(--color-white-text);
     border-radius: 100px;
 
-    font-size: 12px;
-    line-height: 110%;
-    text-transform: lowercase;
+    
     transition: background-color 0.3s;
 
     cursor: default;
+
+    & p {
+        font-size: 12px;
+        line-height: 110%;
+        text-transform: lowercase;
+        color: var(--color-white-text) !important;
+    }
 
     & + & {
         margin-top: 10px;
@@ -117,10 +121,14 @@ const VacancyInfo = styled(Vacancy)`
     position: absolute;
     inset: 0;
     background-color: var(--color-white);
-    color: ${({$defaultColor}) => $defaultColor};
+   
     box-shadow: inset 0 0 1px 1px  ${({$defaultColor}) => $defaultColor};
 
-    ${({$isSmall}) => $isSmall ? 'font-size: 11px; line-height: 100%;' : ''};
+
+     & p {
+        ${({$isSmall}) => $isSmall ? 'font-size: 11px; line-height: 100%;' : ''};
+        color: ${({$defaultColor}) => $defaultColor} !important;
+    }
 `;
 
 const AddBlock = styled.div`
@@ -208,7 +216,7 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
                 initial="initial"
                 onTouchStart={() => handleTouchStart(id)}
             >
-                {name}
+                <p>{name}</p>
                 <VacancyInfo 
                     key={`info${id}`}
                     variants={containerVariants}
@@ -220,7 +228,7 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
                     $defaultColor={defaultColor}
                     animate={hoveredCard === id ? {x: 0} : {x: '100%'}}
                 >
-                    {desc}
+                    <p>{desc}</p>
                 </VacancyInfo>
             </Vacancy>
         ))}
