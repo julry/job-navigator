@@ -212,9 +212,9 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
         {vacanciesDescr.map(({name, desc, id, isSmall}) => (
             <Vacancy 
                 key={id} 
-                whileHover="hover"
+                whileHover={desc === undefined ? undefined : "hover"}
                 initial="initial"
-                onTouchStart={() => handleTouchStart(id)}
+                onTouchStart={() => desc === undefined ? undefined : handleTouchStart(id)}
             >
                 <p>{name}</p>
                 <VacancyInfo 

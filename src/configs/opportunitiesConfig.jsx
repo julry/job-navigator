@@ -550,6 +550,157 @@ export const opportunitiesConfig = {
             ]
         },
     ],
+    machine: [
+        {
+            id: 'mmeroijea',
+            text: 'Металлообработка и станочные работы',
+            textSize: 27,
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -264,
+            jobs: [
+                {
+                    id: 'redeaw',
+                    title: <><ColoredSpan>Станочник</ColoredSpan> широкого профиля (помощник)</>,
+                    desc: 'Выполняет простые операции на токарных, фрезерных, сверлильных станках под руководством'
+                },
+                {
+                    id: 'seinfeaetym',
+                    title: <><ColoredSpan>Токарь-универсал</ColoredSpan> / Фрезеровщик-универсал</>,
+                    desc: 'Работает на универсальных станках, изготавливает сложные детали по чертежам, настраивает оборудование',
+                },
+                 
+                {
+                    id: 'a2nalyticSaf',
+                    title: <><ColoredSpan>Оператор</ColoredSpan>  станков <NoTransformSpan>с ЧПУ</NoTransformSpan> / Наладчик станков</>,
+                    desc: <>Программирует и обслуживает современные обрабатывающие центры, <NoTransformSpan>3D-принтеры</NoTransformSpan>, лазерные комплексы</>
+                },
+                {
+                    id: 'saf21Manager32',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> участка механической обработки / Технолог-программист <NoTransformSpan>ЧПУ</NoTransformSpan></>,
+                    desc: 'Планирует загрузку станков, оптимизирует техпроцессы, разрабатывает управляющие программы'
+                }
+            ]
+        },
+        {
+            id: 'sbhorea',
+            text: 'Сборка, монтаж и обслуживание оборудования',
+            textSize: 27,
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -219,
+            jobs: [
+                {
+                    id: 'fdslvds32dw',
+                    title: <><ColoredSpan>Слесарь-сборщик</ColoredSpan> (помощник)</>,
+                    desc: 'Участвует в сборке узлов по инструкциям, готовит инструмент и компоненты'
+                },
+                {
+                    id: 'asdvp3rofed',
+                    title: <><ColoredSpan>Слесарь-монтажник</ColoredSpan> технологического оборудования</>,
+                    desc: 'Собирает и устанавливает промышленные станки, конвейеры, прессы на месте эксплуатации'
+                },
+                {
+                    id: 'sdvowss',
+                    title: <NoTransformSpan><ColoredSpan>Электромеханик</ColoredSpan> по торговому и холодильному оборудованию</NoTransformSpan>,
+                    desc: 'Специализируется на монтаже и ремонте коммерческого оборудования (витрины, холодильники, печи)'
+                },
+                {
+                    id: 'bfp22',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> по монтажу и пусконаладке / Инженер-механик</>,
+                    desc: 'Руководит комплексным монтажом линий, проводит испытания, сдает объекты в эксплуатацию'
+                }
+            ]
+        },
+        {
+            id: 'sa31fety',
+            text: 'Автоматизация, мехатроника и робототехника',
+            textSize: 27,
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -279,
+            jobs: [
+                {
+                    id: 'hueacdv',
+                    title: <><ColoredSpan>Оператор</ColoredSpan> роботизированной линии</>,
+                    desc: 'Контролирует работу промышленных роботов, выполняет загрузку/выгрузку, следит за параметрами',
+                },
+                {
+                    id: 'ascyh5n',
+                    title: <><ColoredSpan>Мехатроник</ColoredSpan> / Специалист по обслуживанию роботов</>,
+                    desc: 'Диагностирует и ремонтирует роботизированные комплексы, датчики, приводы, системы управления'
+                },
+                {
+                    id: 'bndfqwhjsc',
+                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
+                    desc: 'Настраивает тепловые схемы, проводит испытания оборудования'
+                },
+                {
+                    id: 'vdskERdn',
+                    title: <><ColoredSpan>Наладчик</ColoredSpan> <NoTransformSpan>КИПиА</NoTransformSpan> / Специалист по автоматизированным системам</>,
+                    desc: <>Настраивает датчики, контроллеры, системы визуализации <NoTransformSpan>(SCADA), программирует ПЛК</NoTransformSpan></>
+                },
+                {
+                    id: 'zcqexdcsppd',
+                    title: <><ColoredSpan>Инженер-проектировщик</ColoredSpan> <NoTransformSpan>АСУ ТП</NoTransformSpan> / Руководитель отдела автоматизации</>,
+                    desc: <>проектирует системы автоматизации целых цехов, внедряет <NoTransformSpan>Industry 4.0</NoTransformSpan>, руководит командой</>
+                },
+            ]
+        },
+        {
+            id: 'vmkdfopppalf',
+            text: 'Контроль качества и метрология',
+            style: { 'grid-area': '4/1/5/2' },
+            pictureBottom: -269,
+            jobs: [
+                {
+                    id: 'dsvvcxcv',
+                    title: <><ColoredSpan>Контролер</ColoredSpan> станочных и слесарных работ</>,
+                    desc: 'Проверяет геометрию деталей штангенциркулем, микрометром, шаблонами',
+                },
+                {
+                    id: 'baekewncsd',
+                    title: <><ColoredSpan>Дефектоскопист</ColoredSpan> / Лаборант по физико-механическим испытаниям</>,
+                    desc: 'Проводит неразрушающий контроль (ультразвук, магнитопорошковый), испытывает материалы'
+                },
+                {
+                    id: 'itsdvkm232323',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> <NoTransformSpan>ОТК</NoTransformSpan> / Специалист по метрологическому обеспечению<NoTransformSpan>(РЗА)</NoTransformSpan></>,
+                    desc: 'Руководит отделом технического контроля, ведет документацию, работает с претензиями'
+                },
+                {
+                    id: 'jjjksadfp',
+                    title: <><ColoredSpan>Инженер</ColoredSpan> по качеству / Аудитор системы менеджмента качества <NoTransformSpan>(ISO 9001)</NoTransformSpan></>,
+                    desc:'Внедряет системы качества, анализирует причины брака, готовит предприятие к сертификации'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '5/1/6/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'o3zcthfdserpo',
+                    title: <><ColoredSpan>Сварщик</ColoredSpan> (ручной и частично механизированной сварки)</>,
+                    desc: 'Соединяет металлические конструкции, отвечает за прочность и герметичность швов'
+                },
+                {
+                    id: 'vxooppsfhturwn',
+                    title: <><ColoredSpan>Чертежник-конструктор</ColoredSpan></>,
+                    desc: <>Создает и оформляет чертежи деталей и сборочных единиц <NoTransformSpan>в CAD-системах (Компас, AutoCAD)</NoTransformSpan></>
+                },
+                {
+                    id: 'oregjsfkbnaodwl',
+                    title: <><ColoredSpan>Машинист</ColoredSpan> холодильных установок</>,
+                    desc: 'Обслуживает промышленные холодильные системы, чиллеры, системы кондиционирования',
+                },
+                {
+                    id: 'd32atadfsS',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> по ремонту и обслуживанию инженерных систем</>,
+                    desc: 'Работает с системами вентиляции, пневматики, гидравлики на производстве',
+                },
+            ]
+        },
+    ],
     stroy: [
         {
             id: 'pgsBuildings',

@@ -6,6 +6,8 @@ import { ITPage } from "../pages/IT";
 import { InfoSecPage } from "../pages/InfoSec";
 import { EnergeticsPage } from "../pages/Energetics";
 import { StroyPage } from "../pages/Stroy";
+import { MachinePage } from "../pages/Machine";
+import { BioTechPage } from "../pages/Biotech";
 
 export const routes = [
     {
@@ -30,7 +32,7 @@ export const routes = [
     {
         //Машиностроение
         path: '/machine',
-        element: <div />
+        element: <MachinePage />
     },
     {
         //Химические технологии
@@ -40,7 +42,7 @@ export const routes = [
     {
         //Промышленная экология и биотехнологии
         path: '/biotech',
-        element: <div />
+        element: <BioTechPage />
     },
     {
         //Техносферная безопасность и природообустройство
