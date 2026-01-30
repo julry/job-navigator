@@ -15,6 +15,8 @@ import biotech from '../assets/images/default/people/biotech.png';
 import education from '../assets/images/default/people/education.png';
 import energetics from '../assets/images/default/people/energetics.png';
 import energeticsB from '../assets/images/default/energeticsBot.png';
+import biotechB from '../assets/images/default/biotechBot.png';
+import biotechT from '../assets/images/default/biotechTop.png';
 import energeticsT from '../assets/images/default/energeticsTop.png';
 import machineB from '../assets/images/default/machineBot.png';
 import machineT from '../assets/images/default/machineTop.png';
@@ -454,7 +456,6 @@ export const defaultPages = [
         },
     },
     {
-        //Машиностроение
         id: 'machine',
         jobTitleSize: 32,
         jobTitle: <><ColoredSpan $color='var(--color-orange)'>Машиностроение</ColoredSpan></>,
@@ -562,6 +563,115 @@ export const defaultPages = [
                 height: 231,
                 bottom: -385,
                 left: 79
+            },
+        },
+    },
+    {
+        id: 'biotech',
+        jobTitleSize: 29,
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Промышленная экология</ColoredSpan> и биотехнологии</>,
+        jobDescription: 'Их главная задача – сделать так, чтобы заводы и фабрики не вредили природе. Они создают и контролируют системы очистки, чтобы в воздух, воду и почву попадало как можно меньше вредных веществ.\n\nА ещё они используют живые микроорганизмы, дрожжи или ферменты, чтобы создавать полезные продукты: от лекарств и экологичных материалов до пищевых добавок и биотоплива.\n\nИх работа соединяет химию, биологию и инженерию, чтобы заботиться о безопасности планеты и создавать технологии будущего',
+        jobDescriptionSm: 'Их главная задача – сделать так, чтобы заводы и фабрики не вредили природе.\n\nОни создают и контролируют системы очистки, чтобы в воздух, воду и почву попадало как можно меньше вредных веществ. А ещё они используют живые микроорганизмы, дрожжи или ферменты, чтобы создавать полезные продукты: от лекарств и экологичных материалов до пищевых добавок и биотоплива.\n\nИх работа соединяет химию,\nбиологию и инженерию,\nчтобы заботиться\nо безопасности планеты\nи создавать технологии\nбудущего',
+        vacanciesDescr: [
+            { id: 0, isSmall: true, name: 'Отделы экологического контроля на предприятиях', desc: 'Следить, чтобы завод или фабрика не вредили окружающей среде, контролировать выбросы и стоки' },
+            { id: 1, isSmall: true, name: 'Лаборатории анализа и мониторинга', desc: 'Исследовать пробы воды, воздуха и почвы, чтобы точно оценить состояние экосистемы' },
+            { id: 2, name: 'Службы охраны труда и промышленной безопасности', desc: 'Создавать безопасные условия для людей на производстве' },
+            { id: 3, isSmall: true, name: 'Биотехнологические производства', desc: 'Участвовать в создании полезных продуктов с помощью микроорганизмов: от ферментов до биодобавок' },
+            { id: 4, isSmall: true, name: 'Консалтинг и экологический аудит', desc: 'Помогать компаниям стать экологичными: проводить проверки и давать рекомендации ' },
+            { id: 5, isSmall: true, name: 'Компании водоподготовки и очистки сточных вод', desc: 'Обеспечивать, чтобы в наши краны и реки попадала только чистая вода, управляя системами очистки'},
+        ],
+        testQuestions: [
+            {
+                id: 'q-0',
+                text: 'Понимаю, как устроены вещества вокруг нас — от состава воды до основ биохимии'
+            },
+            {
+                id: 'q-1',
+                text: 'Готов осваивать приборы для точных измерений'
+            },
+            {
+                id: 'q-2',
+                text: 'Умею читать технологические схемы'
+            },
+            {
+                id: 'q-3',
+                text: 'Знаю методы микробиологического анализа и правила работы в стерильных условиях'
+            },
+            {
+                id: 'q-4',
+                text: 'Помню, как правильно отобрать пробы воды, воздуха или почвы, чтобы получить достоверные данные'
+            },
+            {
+                id: 'q-5',
+                text: 'Ориентируюсь в законах и нормативах, которые защищают природу'
+            },
+            {
+                id: 'q-6',
+                text: 'Осознаю ответственность – нужно работать с опасными веществами и микроорганизмами'
+            },
+            {
+                id: 'q-7',
+                text: 'Люблю искать закономерности в данных, цифрах и графиках, чтобы делать точные выводы',
+                isSoft: true,
+            },
+            {
+                id: 'q-8',
+                text: 'Умею работать в команде и четко следовать правилам безопасности',
+                isSoft: true
+            },
+            {
+                id: 'q-9',
+                text: 'Не боюсь сочетать лабораторную работу с выездами на производство',
+                isSoft: true
+            },
+            {
+                id: 'q-10',
+                text: 'Беспокоюсь за природу, хочу, чтобы окружающий мир стал чище и безопаснее',
+                isSoft: true
+            },
+            {
+                id: 'q-11',
+                text: 'Хочу осваивать современные эко-технологии',
+                isSoft: true
+            },
+        ],
+        testName: 'экологии',
+        opportunities: opportunitiesConfig.biotech,
+        opportunitiesPerson: {
+            width: 167,
+            height: 309,
+            left: 20,
+            img: biotech,
+        },
+        opportunitiesPersonDesk: {
+            width: 281,
+            height: 463,
+            left: 440,
+            img: biotech,
+            bottom: -137,
+        },
+        testPerson: {
+            top: {
+                widthDesc: 213,
+                heightDesc: 263,
+                src: biotechT,
+                bottomDesc: 146,
+                leftDesc: -139,
+                width: 163,
+                height: 201,
+                bottom: -176,
+                left: 68,
+            },
+            bot: {
+                widthDesc: 300,
+                heightDesc: 301,
+                src: biotechB,
+                bottomDesc: -55,
+                leftDesc: -140,
+                width: 229,
+                height: 230,
+                bottom: -351,
+                left: 69.5
             },
         },
     },
