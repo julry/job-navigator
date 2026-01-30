@@ -1,4 +1,4 @@
-import { ColoredSpan, NoTransformSpan } from "../components/shared/Texts";
+import { ColoredSpan, NoTransformSpan, ShortScreen } from "../components/shared/Texts";
 
 export const opportunitiesConfig = {
     chemical: [
@@ -837,6 +837,151 @@ export const opportunitiesConfig = {
                     id: 'evbsdvtiy',
                     title: <><ColoredSpan>Мониторинг</ColoredSpan> состояния водных биоресурсов (гидробиолог-лаборант)</>,
                     desc: 'Оценивает состояние водоемов, исследует пробы на наличие фито- и зоопланктона',
+                },
+            ]
+        },
+    ],
+    safetech: [
+        {
+            id: 'firevjndfb',
+            text: 'Пожарная безопасность',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -174,
+            jobs: [
+                {
+                    id: 'vbvdshtvfncdj',
+                    title: <><ColoredSpan>Пожарный</ColoredSpan> / Спасатель (рядовой)</>,
+                    desc: <>Участвует в тушении пожаров, спасении людей, ликвидации последствий <NoTransformSpan>ЧС</NoTransformSpan> на пожаре, обслуживает технику</>
+                },
+                {
+                    id: 'vskotinusa',
+                    title: <><ColoredSpan>Старший пожарный</ColoredSpan> / Командир отделения</>,
+                    desc: 'Руководит действиями отделения при пожаре, отвечает за состояние оборудования, проводит учения',
+                },
+                {
+                    id: 'vdsknbdswexvnmj',
+                    title: <><ColoredSpan>Инспектор</ColoredSpan> пожарного надзора / Специалист по пожарной профилактике</>,
+                    desc: 'Проводит проверки соблюдения норм пожарной безопасности, консультирует организации, согласовывает проекты'
+                },
+                {
+                    id: 'Gvdsnjwxxjabvlwbzlfgtjnswl',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> караула / Руководитель пожарно-спасательного подразделения</>,
+                    desc: 'Организует несение службы, планирует оперативные действия, отвечает за обучение и готовность личного состава'
+                },
+            ]
+        },
+        {
+            id: 'chschcshshcshhschchschcscpg',
+            text: 'Чрезвычайные ситуации и гражданская защита',
+            textSize: 27,
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -196,
+            jobs: [
+                {
+                    id: 'vasdpvnf02dd',
+                    title: <><ColoredSpan>Спасатель</ColoredSpan> <NoTransformSpan>(МЧС)</NoTransformSpan> / Дежурный оперативного штаба</>,
+                    desc: <>Выполняет задачи по ликвидации последствий аварий, <NoTransformSpan>ДТП</NoTransformSpan>, природных катастроф, ведет оперативные журналы</>
+                },
+                {
+                    id: 'uusjvnxbwbnchslzbvksdpbals',
+                    title: <><ColoredSpan>Специалист</ColoredSpan>по экстренному реагированию / Инженер-спасатель</>,
+                    desc: 'Проводит аварийно-спасательные работы с применением специального оборудования, разрабатывает планы эвакуации'
+                },
+                {
+                    id: 'specjfdbgnkndovbkcbslk',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по промышленной безопасности / Аналитик рисков</>,
+                    desc: 'Оценивает опасность производственных объектов, разрабатывает меры по предотвращению аварий.'
+                },
+                {
+                    id: 'vdfkjnweicx222009',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan>службы <NoTransformSpan>ГО и ЧС</NoTransformSpan> предприятия / Менеджер по кризисным ситуациям</>,
+                    desc: 'Организует систему управления в кризисных ситуациях, взаимодействует с надзорными органами, обучает персонал'
+                }
+            ]
+        },
+        {
+            id: 'complexghufowqcndk',
+            text: 'Экологическая безопасность природных комплексов',
+            textSize: 27,
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -199,
+            jobs: [
+                {
+                    id: 'bieodps',
+                    title: <><ColoredSpan>Техник-эколог</ColoredSpan> / Мониторинговый лаборант</>,
+                    desc: 'Проводит наблюдения за состоянием воздуха, воды, почвы в зоне влияния предприятия, отбирает пробы'
+                },
+                {
+                    id: 'secutriyen',
+                    title: <><ColoredSpan>Инженер</ColoredSpan> по охране окружающей среды</>,
+                    desc: 'Разрабатывает проекты по восстановлению нарушенных земель, рекультивации полигонов, минимизации воздействия'
+                },
+                {
+                    id: 'sprbjcndjsosrkfmmfkvmcdvff',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по экологической экспертизе / Аудитор-эколог</>,
+                    desc: 'Оценивает экологические риски проектов, готовит заключения для госэкспертизы, проверяет отчетность'
+                },
+                {
+                    id: 'cszx',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan> отдела экологической безопасности / Главный эколог предприятия</>,
+                    desc: 'Формирует экологическую политику компании, отвечает за соответствие природоохранному законодательству'
+                },
+            ]
+        },
+        {
+            id: 'pririodjvfblamv',
+            textSize: 25,
+            text: 'Природообустройство и водное хозяйство',
+            style: { 'grid-area': '4/1/5/2' },
+            pictureBottom: -189,
+            jobs: [
+                {
+                    id: 'dsvvewcscxcv',
+                    title: <><ColoredSpan>Рабочий</ColoredSpan> по природо<ShortScreen>- </ShortScreen>обустройству / Машинист мелиоративных машин</>,
+                    desc: 'Выполняет работы по восстановлению ландшафтов, строительству водоемов, укреплению берегов',
+                },
+                {
+                    id: 'technikghyfjvsljhfr',
+                    title: <><ColoredSpan>Техник-гидротехник</ColoredSpan> / Специалист по мелиорации</>,
+                    desc: 'Проектирует и обслуживает системы осушения и орошения земель, гидротехнические сооружения'
+                },
+                {
+                    id: 'ifnefekv',
+                    title: <><ColoredSpan>Инженер</ColoredSpan> по природо<ShortScreen>- </ShortScreen>обустройству / Ландшафтный инженер</>,
+                    desc: 'Разрабатывает проекты рекультивации нарушенных территорий, создания рекреационных зон, зеленых зон'
+                },
+                {
+                    id: 'minvifnbleqbnkfebke',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan> природо<ShortScreen>- </ShortScreen>обустройства / Эксперт по устойчивому развитию территорий</>,
+                    desc:'Координирует комплексные проекты восстановления экосистем, управляет ресурсами и командой'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '5/1/6/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по охране труда и промышленной безопасности</>,
+                    desc: 'Контролирует соблюдение норм охраны труда и техники безопасности на производстве'
+                },
+                {
+                    id: 'ecoprosvet',
+                    title: <><ColoredSpan>Спасатель</ColoredSpan> на акватории / Водолаз-спасатель</>,
+                    desc: 'Специализируется на поисково-спасательных работах на воде, подводных обследованиях и ремонтах'
+                },
+                {
+                    id: 'vgjeiwvniiieuchsjfnvj',
+                    title: <><ColoredSpan>Инспектор</ColoredSpan> по маломерным судам <NoTransformSpan>(ГИМС)</NoTransformSpan></>,
+                    desc: 'Работает с базами биологических данных, помогает анализировать результаты исследований'
+                },
+                {
+                    id: 'setifsf',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по пожарной автоматике и связи</>,
+                    desc: 'Обслуживает системы пожарной сигнализации, оповещения и управления эвакуацией',
                 },
             ]
         },

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { media } from "../../styles/media";
 
 export const Title = styled.h3`
     font-size: 40px;
@@ -86,4 +87,16 @@ export const SubtitleSm = styled(Title)`
 
 export const NoTransformSpan = styled.span`
     text-transform: none;
+`;
+
+export const NoDesktop = styled.span`
+    ${media.desktop`
+        display: none;
+    `}
+`;
+
+export const ShortScreen = styled.span`
+    @media screen and (min-width: 1320px){
+        display: none;
+    }
 `;

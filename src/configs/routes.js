@@ -8,6 +8,7 @@ import { EnergeticsPage } from "../pages/Energetics";
 import { StroyPage } from "../pages/Stroy";
 import { MachinePage } from "../pages/Machine";
 import { BioTechPage } from "../pages/Biotech";
+import { SafetechPage } from "../pages/Safetech";
 
 export const routes = [
     {
@@ -47,7 +48,7 @@ export const routes = [
     {
         //Техносферная безопасность и природообустройство
         path: '/safetech',
-        element: <div />
+        element: <SafetechPage />
     },
     {
         //Прикладная геология, горное дело, нефтегазовое дело и геодезия

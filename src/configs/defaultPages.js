@@ -1,5 +1,5 @@
 
-import { ColoredSpan, NoTransformSpan } from '../components/shared/Texts';
+import { ColoredSpan, NoTransformSpan, ShortScreen } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
 import chemT from '../assets/images/default/chemical_top.png';
 import chemB from '../assets/images/default/chemical_bot.png';
@@ -17,6 +17,8 @@ import energetics from '../assets/images/default/people/energetics.png';
 import energeticsB from '../assets/images/default/energeticsBot.png';
 import biotechB from '../assets/images/default/biotechBot.png';
 import biotechT from '../assets/images/default/biotechTop.png';
+import safetechB from '../assets/images/default/safetechBot.png';
+import safetechT from '../assets/images/default/safetechTop.png';
 import energeticsT from '../assets/images/default/energeticsTop.png';
 import machineB from '../assets/images/default/machineBot.png';
 import machineT from '../assets/images/default/machineTop.png';
@@ -676,22 +678,109 @@ export const defaultPages = [
         },
     },
     {
-        //Химические технологии
-        id: 'himtech',
-        title: 'Те, кто создают новые материалы и вещества',
-        jobs: ['Лаборант-химик', 'Аппаратчик', 'Нефтепереработка', 'Производство лекарств', 'Контроль качества']
-    },
-    {
-        //Промышленная экология и биотехнологии
-        id: 'biotech',
-        title: 'Те, кто создают безопасные производства и продукты будущего',
-        jobs: ['Экологический контроль', 'Биотехнология', 'Микробиология', 'Контроль выбросов', 'Очистка сточных вод']
-    },
-    {
-        //Техносферная безопасность и природообустройство
         id: 'safetech',
-        title: 'Те, кто защищают людей, технику и природу',
-        jobs: ['Инспектор по охране труда', 'Пожарный', 'Спасатель МЧС', 'Инженер-эколог', 'Рекультивация земель']
+        jobTitleSize: 29,
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Техносферная безопасность</ColoredSpan> и природо<ShortScreen>- </ShortScreen>обустройство</>,
+        jobDescription: 'Их работа — предвидеть и предотвращать любые угрозы: от несчастного случая на заводе до пожара в лесу.\n\nОни создают правила и системы, которые защищают рабочих в цехах, жителей городов от наводнений и окружающую среду от вредных выбросов. Если авария всё же случилась, они знают, как грамотно и быстро ликвидировать её последствия.\n\nИх работа — это симбиоз инженерии, экологии и управления рисками, который делает наш мир более устойчивым, предсказуемым и безопасным для жизни',
+        jobDescriptionSm: 'Их работа — предвидеть и предотвращать любые угрозы: от несчастного случая на заводе до пожара в лесу.\n\nОни создают правила и системы, которые защищают рабочих в цехах, жителей городов от наводнений и окружающую среду от вредных выбросов. Если авария всё же\nслучилась, они знают, как\nграмотно и быстро\nликвидировать её последствия.\n\nИх работа — это симбиоз\nинженерии, экологии\nи управления рисками,\nкоторый делает наш мир более\nустойчивым, предсказуемым\nи безопасным для жизни',
+        vacanciesDescr: [
+            { id: 0, isSmall: true, name: 'Промышленные предприятия', desc: 'Заботиться о том, чтобы работа в цехах и на объектах была безопасной для людей, а производство — для природы' },
+            { id: 1, isSmall: true, name: 'Природоохранные и инжиниринговые компании', desc: 'Восстанавливать природу: от карьеров и свалок до берегов рек, возвращая земле жизнь и красоту' },
+            { id: 2, isSmall: true, name: 'Службы МЧС и пожарного надзора', desc: 'Придумывать, как защитить леса, поля и населенные пункты от пожаров' },
+            { id: 3, name: 'Государственный сектор', desc: 'Следить за состоянием воздуха, воды и почвы и выявлять нарушения' },
+            { id: 4, name: 'Компании по обращению с отходами и эко-технологиям', desc: 'Организовывать переработку мусора и производственных отходов'},
+        ],
+        testQuestions: [
+            {
+                id: 'q-0',
+                text: 'Сохраняю ясную голову в критической ситуации',
+                isSoft: true,
+            },
+            {
+                id: 'q-1',
+                text: 'Осознаю высокую ответственность и понимаю, что от моих решений могут зависеть жизни людей',
+                isSoft: true,
+            },
+            {
+                id: 'q-2',
+                text: 'Обладаю хорошей физической формой и выносливостью',
+                isSoft: true,
+            },
+            {
+                id: 'q-3',
+                text: 'Быстро реагирую и могу принимать решения в сложной ситуации',
+                isSoft: true,
+            },
+            {
+                id: 'q-4',
+                text: 'Умею работать в группе, слушать команды и доверять коллегам',
+                isSoft: true,
+            },
+            {
+                id: 'q-5',
+                text: 'Хочу защищать людей, предотвращать ущерб и сохранять природу',
+                isSoft: true,
+            },
+            {
+                id: 'q-7',
+                text: 'Знаю основные законы и нормативы по охране труда, промышленной и пожарной безопасности',
+            },
+            {
+                id: 'q-8',
+                text: 'Умею правильно использовать защитную экипировку',
+            },
+            {
+                id: 'q-9',
+                text: 'Разбираюсь в инструментах для спасения и ликвидации, принципах работы аварийного оборудования',
+            },
+            {
+                id: 'q-10',
+                text: 'Умею работать с цифрами и чертежами: могу рассчитать риски или нагрузку, прочитать проектную схему здания',
+            },
+            {
+                id: 'q-11',
+                text: 'Учу основы геодезии, картографии и экологического мониторинга',
+            },
+        ],
+        testName: 'техносферной безопасности',
+        opportunities: opportunitiesConfig.safetech,
+        opportunitiesPerson: {
+            width: 241,
+            height: 332,
+            left: 16,
+            img: safetech,
+        },
+        opportunitiesPersonDesk: {
+            width: 281,
+            height: 463,
+            left: 440,
+            img: safetech,
+            bottom: -137,
+        },
+        testPerson: {
+            top: {
+                widthDesc: 166,
+                heightDesc: 242,
+                src: safetechT,
+                bottomDesc: 176,
+                leftDesc: -129.5,
+                width: 110,
+                height: 161,
+                bottom: -168,
+                left: 74.5,
+            },
+            bot: {
+                widthDesc: 274,
+                heightDesc: 282,
+                src: safetechB,
+                bottomDesc: -73,
+                leftDesc: -114,
+                width: 180,
+                height: 184,
+                bottom: -321,
+                left: 76
+            },
+        },
     },
     {
         //Прикладная геология, горное дело, нефтегазовое дело и геодезия
