@@ -19,8 +19,6 @@ export const Button = styled.button`
     white-space: pre-line;
     cursor: pointer;
 
-    ${({$style}) => $style};
-
     color: var(--color-${({$type = 'main'}) => $type === 'main' ? 'white': 'dark'}-text);
     font-size: 12px;
     line-height: 110%;
@@ -28,6 +26,8 @@ export const Button = styled.button`
 
     &:hover {
         background-color: ${({$accentColor = 'var(--color-orange)'}) => $accentColor};
-        color: var(--color-white-text);
+        color: ${({$defaultColor = "var(--color-white-text)", $isBrand}) => $isBrand ? $defaultColor : 'var(--color-white-text)'};
     }
+
+    ${({$style}) => $style};
 `;

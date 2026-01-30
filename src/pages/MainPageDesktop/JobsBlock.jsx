@@ -292,7 +292,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
         >
             <TextWrapper $top={48} $width={157} $spacing={45}>
                 Экономика{'\n'}
-                и управление
+                и финанс
             </TextWrapper>
             <Person  onClick={() => handleNavigate('economy')} src={economy} alt="" $width={95} $height={168} $top={0} $left={59} />
             <ImageElement src={economyMountin} alt="" $width={342} $height={155} $top={25} $left={0} />

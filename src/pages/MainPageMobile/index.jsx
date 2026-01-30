@@ -47,6 +47,7 @@ import tradeMountin from '../../assets/images/mountins/tradeMountin.png';
 import { Button } from "../../components/shared/Button";
 import { media } from "../../styles/media";
 import { DetailsModal } from "./DetailsModal";
+import { openBot } from "../../utils/openBot";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -281,7 +282,7 @@ export const MainPageMobile = () => {
                     <SmallText>Выбирай свою специальность</SmallText>
                 </OrangeBlock>
             </CompasBlock>
-            <BotBlockWrapper>
+            <BotBlockWrapper onClick={openBot}>
                 <BotBlock>
                     <SmallText>бот — твой{'\n'}личный гид</SmallText>
                 </BotBlock>
@@ -371,7 +372,7 @@ export const MainPageMobile = () => {
                                 <PictureWrapper $width={243} $height={148}>
                                     <TextWrapper $isInversed $top={42} $width={175} $spacing={87}>
                                         Экономика{'\n'}
-                                        и управление
+                                        и финансы
                                     </TextWrapper>
                                     <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={17} />
                                     <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={-30} />
@@ -385,7 +386,7 @@ export const MainPageMobile = () => {
                     <PictureWrapper $width={243} $height={148}>
                         <TextWrapper $top={42} $width={155} $spacing={77}>
                             Экономика{'\n'}
-                            и управление
+                            и финансы
                         </TextWrapper>
                         <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={47} />
                         <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={0} />
@@ -818,7 +819,7 @@ export const MainPageMobile = () => {
                     полезной инфы о навыках{'\n'}
                     и развитии в профессии?
                 </p>
-                <ButtonStyled>переходи в бота!</ButtonStyled>
+                <ButtonStyled onClick={openBot}>переходи в бота!</ButtonStyled>
             </BotInfo>
             <UpButton onClick={() => wrapperRef?.current?.scrollTo({ top: 0, behavior: "smooth" })}>
                 <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">

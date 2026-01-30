@@ -9,7 +9,7 @@ import { Addictions } from "./Addictions";
 import { AboutJob } from "./AboutJob";
 import { AboutVacancies } from "./AboutVacancies";
 import { useProgress } from "../context/AppContext";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import { JobModal } from "./JobModal";
 import { useNavigate } from "react-router-dom";
@@ -103,6 +103,7 @@ const ClosedButton = styled.button`
 
 const FooterText = styled(SmallText)`
     text-align: center;
+    text-transform: none;
 
     ${media.desktop`
         display: none;
@@ -128,6 +129,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
     const navigate = useNavigate();
 
     const {wrapperRef} = useProgress();
+    const vacancyRef = useRef();
 
     const vacancies = [
         {name: 'клиентский менеджер\nв отделении банка', link: ''},
@@ -150,6 +152,11 @@ export const DefaultPage = ({pageId, personComponent}) => {
         setModalState({shown: false});
     }
 
+    const scrollToVacancy = () => {
+        if (!vacancyRef?.current) return;
+        vacancyRef.current.scrollIntoView({behavior: 'smooth'});
+    }
+
     return (
         <Wrapper ref={wrapperRef}>
             <AboutBlock>
@@ -170,8 +177,8 @@ export const DefaultPage = ({pageId, personComponent}) => {
             
             <SpacingContent>
                 <Opportunities opportunities={opportunities} onClickOpp={handleOpenModal}/>
-                <Vacancies vacancies={vacancies} />
-                <TestBlock person={testPerson} testName={testName} questions={testQuestions}/>
+                <Vacancies ref={vacancyRef} vacancies={vacancies} />
+                <TestBlock scrollToVacancy={scrollToVacancy} person={testPerson} testName={testName} questions={testQuestions}/>
                 <BotBlock />
                 <Addictions />
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>

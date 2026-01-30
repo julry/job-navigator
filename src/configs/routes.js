@@ -98,7 +98,7 @@ export const routes = [
         element: <Page3 />
     },
     {
-        //Экономика и управление втб
+        //Экономика и финанс втб
         path: '/economy ',
         element: <Page3 />
     },

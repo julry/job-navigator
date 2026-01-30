@@ -4,6 +4,7 @@ import { ColoredSpan, Text, Title } from "./shared/Texts";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import { motion } from "framer-motion";
+import { openBot } from "../utils/openBot";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -12,8 +13,6 @@ const Wrapper = styled.div`
         display: flex;
         justify-content: space-between;
         gap: 60px;
-
-        /* padding-top: 50px; */
     `}
 `;
 
@@ -113,7 +112,7 @@ const ResultBlock = styled(motion.div)`
     width: 499px;
     background-color: ${({$background}) => $background ?? 'var(--color-gray)'};
     padding: 20px 25px;
-    bottom: -188px;
+    bottom: -268px;
 
     & p {
         color: var(--color-white-text);
@@ -174,7 +173,7 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ isBrand, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
@@ -294,8 +293,8 @@ export const TestBlock = ({ testName, person, defaultColor, accentColor = 'var(-
                 <ResultBlock $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
                     <EndButtonWrapper>
-                        <Button $type="secondary">прокачать навыки</Button>
-                        <Button $type="secondary">вакансии</Button>
+                        <Button $isBrand={isBrand} onClick={openBot} $type="secondary">прокачать навыки</Button>
+                        <Button $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
                     </EndButtonWrapper>
                 </ResultBlock>
                 <Image 

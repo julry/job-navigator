@@ -1,0 +1,1 @@
+export const openBot = () => window?.open('https://vk.com/write-234984375?ref_source=lending', '_blank');

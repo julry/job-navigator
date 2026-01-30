@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { media } from "../styles/media";
-import { ColoredSpan, Title } from "./shared/Texts";
+import { ColoredSpan, NoTransformSpan, Title } from "./shared/Texts";
 import { Button } from "./shared/Button";
 
 const Wrapper = styled.div`
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
     height: 100%;
     flex-direction: column;
     gap: 40px;
+    margin: 80px 0;
 
     ${media.desktop`
         flex-direction: row;
@@ -26,9 +27,18 @@ const Wrapper = styled.div`
 `;
 
 const TitleStyled = styled(Title)`
+    font-size: 36px;
     ${media.desktop`
         max-width: 440px;
     `}
+
+    @media screen and (max-width: 374px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 334px) {
+        font-size: 26px;
+    }
 `
 
 const TextWrapper = styled.div`
@@ -59,12 +69,19 @@ const ButtonStyled = styled(Button)`
     `}
 `;
 
+const TextDesk = styled.span`
+    display: none;
+    ${media.desktop`
+        display: inline;
+    `}
+`;
+
 export const AboutCompany = ({defaultColor, accentColor, children, companyName}) => (
     <Wrapper>
         <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>{companyName.replace(' ', ' ')}</ColoredSpan></TitleStyled>
         <TextWrapper $accentColor={accentColor}>
             {children}
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>хочу попасть в {companyName}</ButtonStyled>
+            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>хочу{' '}<TextDesk>попасть{' '}</TextDesk>в{' '}<NoTransformSpan>{companyName}</NoTransformSpan>!</ButtonStyled>
         </TextWrapper>
     </Wrapper>
 )

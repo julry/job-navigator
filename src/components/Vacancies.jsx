@@ -34,9 +34,9 @@ const Link = styled(Button)`
     `}
 `;
 
-export const Vacancies = ({textColor, vacancies = [],  accentColor = 'var(--color-orange)'}) => {
+export const Vacancies = ({ref, textColor, vacancies = [],  accentColor = 'var(--color-orange)'}) => {
     return (
-        <Wrapper>
+        <Wrapper ref={ref}>
             <Title $color={textColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
             <LinksWrapper>
                 {vacancies.map(({name, link}) => (

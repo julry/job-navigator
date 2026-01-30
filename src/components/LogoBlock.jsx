@@ -4,7 +4,7 @@ import { media } from "../styles/media";
 const Wrapper = styled.div`
     position: absolute;
     left: 0;
-    top: 445px;
+    top: 595px;
     z-index: 2;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -18,7 +18,7 @@ const Wrapper = styled.div`
 
     ${media.desktop`   
         width: 47%;
-        bottom: 0;
+        bottom: -3px;
         top: auto;
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;

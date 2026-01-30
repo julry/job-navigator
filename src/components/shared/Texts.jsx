@@ -67,3 +67,23 @@ export const Subtitle = styled(Title)`
         font-size: 24px;
     }
 `;
+
+export const SubtitleSm = styled(Title)`
+    font-size: 16px;
+
+    @media screen and (max-width: 374px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 334px) {
+        font-size: 12px;
+    }
+
+    @media screen and (min-width: 1200px){
+        font-size: 24px;
+    }
+`;
+
+export const NoTransformSpan = styled.span`
+    text-transform: none;
+`;

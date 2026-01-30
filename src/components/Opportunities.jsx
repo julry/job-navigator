@@ -18,6 +18,7 @@ const Wrapper = styled.div`
     align-items: center;
     position: relative;
     background-color: inherit;
+    padding-bottom: ${({$hasButton}) => $hasButton ? 135 : 0}px;
 
     gap: 30px;
 
@@ -146,9 +147,10 @@ const LinesWrapperDesktop = styled(LinesWrapper)`
 const ButtonStyled = styled(Button)`
     position: absolute;
     right: 0;
-    bottom: 40px;
+    bottom: 80px;
 
     ${media.desktop`
+        bottom: 40px;
         max-width: min(838px, 58vw);
     `}
 `;
@@ -216,7 +218,7 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
 };
 
 export const Opportunities = ({
-    onClickOpp, companyName, defaultColor, hasButton, companyLink,
+    onClickOpp, companyName, defaultColor, hasButton, companyLink, linesColor,
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
@@ -263,10 +265,10 @@ export const Opportunities = ({
                             </Ellipse>
                         )
                     }
-                    <LinesWrapper $defaultColor={defaultColor} {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
+                    <LinesWrapper $defaultColor={linesColor} {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
                         {OPPS_TO_LINES_MOBILE[opportunities.length]}
                     </LinesWrapper>
-                    <LinesWrapperDesktop $defaultColor={defaultColor} {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
+                    <LinesWrapperDesktop $defaultColor={linesColor} {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
                         {OPPS_TO_LINES_DESK[opportunities.length]}
                     </LinesWrapperDesktop>
                 </OpportunitiesBlock>

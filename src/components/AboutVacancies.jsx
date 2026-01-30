@@ -33,7 +33,6 @@ const Wrapper = styled.div`
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
         height: 775px;
-        
 
         &::after {
             content: '';
@@ -168,7 +167,11 @@ const AddPicture = styled.img`
     `};
 `;
 
-export const AboutVacancies = ({ className, accentColor, defaultColor = 'var(--color-gray)', addPicture = defaultAdd, vacanciesDescr = []}) => {
+const ButtonStyled = styled(Button)`
+    ${({$isBrand}) => !$isBrand ? 'background-color: var(--color-orange); color: var(--color-white);' : ''};
+`;
+
+export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor = 'var(--color-gray)', addPicture = defaultAdd, vacanciesDescr = []}) => {
     const [hoveredCard, setHoveredCard] = useState();
 
     const touchTimerRef = useRef(null);
@@ -228,7 +231,7 @@ export const AboutVacancies = ({ className, accentColor, defaultColor = 'var(--c
                 и развитии в профессии?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
-            <Button $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</Button>
+            <ButtonStyled $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
         </AddBlock>
     </Wrapper>
 )

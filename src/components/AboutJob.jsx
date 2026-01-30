@@ -6,7 +6,7 @@ import { OrangeSpot } from "./shared/svg/OrangeSport";
 const Wrapper = styled.div`
     position: relative;
     z-index: 0;
-    height: 575px;
+    height: ${({$isBrand}) => $isBrand ? 725 : 575}px;
     width: 100%;
     max-width: 851px;
     --afterHeight: 38px;
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const OrangeSpotStyled = styled(OrangeSpot)`
     position: absolute;
-    top: 172px;
+    top: 30%;
     left: 13%;
     width: 580px;
     height: 622px;
@@ -118,8 +118,8 @@ const TextDesktop = styled(SmallText)`
     }
 `;
 
-export const AboutJob = ({ spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
-    <Wrapper>
+export const AboutJob = ({ isBrand, spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
+    <Wrapper $isBrand={isBrand}>
         <Content>
             <TitleStyled $size={jobTitleSize} $color={textColor}>{jobTitle}</TitleStyled>
             <SubTitle>чем занимаются специалисты</SubTitle>

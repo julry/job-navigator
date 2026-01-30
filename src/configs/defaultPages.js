@@ -116,7 +116,7 @@ export const defaultPages = [
                 leftDesc: -205.5,
                 width: 188,
                 height: 179,
-                bottom: -95,
+                bottom: -175,
                 left: 56,
             },
             bot: {
@@ -127,7 +127,7 @@ export const defaultPages = [
                 leftDesc: -203,
                 width: 205,
                 height: 178,
-                bottom: -272,
+                bottom: -352,
                 left: 56.4,
             },
         }
@@ -222,7 +222,7 @@ export const defaultPages = [
                 leftDesc: -137,
                 width: 131,
                 height: 239,
-                bottom: -147,
+                bottom: -227,
                 left: 74.7,
             },
             bot: {
@@ -233,7 +233,7 @@ export const defaultPages = [
                 leftDesc: -71.5,
                 width: 149,
                 height: 186,
-                bottom: -262,
+                bottom: -342,
                 left: 87
             },
         }
@@ -331,7 +331,7 @@ export const defaultPages = [
                 leftDesc: -186,
                 width: 158,
                 height: 258,
-                bottom: -125,
+                bottom: -205,
                 left: 64.7,
             },
             bot: {
@@ -342,7 +342,7 @@ export const defaultPages = [
                 leftDesc: -101,
                 width: 245,
                 height: 225,
-                bottom: -262,
+                bottom: -342,
                 left: 75
             },
         }
@@ -440,7 +440,7 @@ export const defaultPages = [
                 leftDesc: -186,
                 width: 158,
                 height: 258,
-                bottom: -125,
+                bottom: -205,
                 left: 64.7,
             },
             bot: {
@@ -451,7 +451,7 @@ export const defaultPages = [
                 leftDesc: -101,
                 width: 245,
                 height: 225,
-                bottom: -262,
+                bottom: -342,
                 left: 75
             },
         },
@@ -499,7 +499,7 @@ export const defaultPages = [
             jobs: ['Автомеханик', 'Автослесарь', 'Машинист локомотива', 'Специалист по автосервису']
         },
         {
-            //Управление в технических системах
+            //финансы в технических системах
             id: 'techcontrol',
             title: 'Те, кто настраивают и управляют автоматикой и роботами',
             jobs: ['Наладчик КИПиА', 'Мехатроник', 'Специалист по автоматизации', 'Оператор автоматических линий']

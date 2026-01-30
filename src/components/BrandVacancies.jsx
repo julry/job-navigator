@@ -6,6 +6,20 @@ import { Button } from "./shared/Button";
 const Wrapper = styled.div`
     padding: 80px 0;
     width: 100%;
+    margin-top: 280px;
+
+   ${media.desktop`
+    margin-top: 0;
+   `}
+`;
+
+const TitleStyled = styled(Title)`
+    font-size: 32px;
+
+     ${media.desktop`
+        font-size: 48px;
+        text-align: center;
+    `};
 `;
 
 const CompanyInfoWrapper = styled.div`
@@ -66,7 +80,7 @@ const LinksWrapper = styled.div`
 const Link = styled(Button)`
     height: 120px;
     font-size: 16px;
-    padding: 10px 5px;
+    padding: 10px;
     text-transform: lowercase;
 
      ${media.desktop`
@@ -86,8 +100,8 @@ const SubTitle = styled(Title)`
 const PictureWrapper = styled.img`
     position: absolute;
     object-fit: contain;
-    bottom: 89px;
-    right: -33px;
+    bottom: 65px;
+    right: -48px;
     width: 180px;
     height: 158px;
 
@@ -100,14 +114,18 @@ const PictureWrapper = styled.img`
 `;
 
 const ButtonStyled = styled(Button)`
-    margin-top: 40px;
+    margin-top: 120px;
     text-transform: none;
+
+    ${media.desktop`
+        margin-top: 40px;
+    `}
 `;
 
-export const BrandVacancies = ({picture, companyName, defaultColor, accentColor, format, gives = [], takes = [], vacancies = [], }) => {
+export const BrandVacancies = ({ref, picture, companyName, defaultColor, accentColor, format, gives = [], takes = [], vacancies = [], }) => {
     return (
-        <Wrapper>
-            <Title $color={defaultColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
+        <Wrapper ref={ref}>
+            <TitleStyled $color={defaultColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</TitleStyled>
             <CompanyInfoWrapper $accentColor={accentColor}>
                 <SubTitle $color={defaultColor}>оплачиваемая практика для студентов</SubTitle>
                 <br/>
