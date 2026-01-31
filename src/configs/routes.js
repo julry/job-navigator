@@ -9,6 +9,7 @@ import { StroyPage } from "../pages/Stroy";
 import { MachinePage } from "../pages/Machine";
 import { BioTechPage } from "../pages/Biotech";
 import { SafetechPage } from "../pages/Safetech";
+import { GeologyPage } from "../pages/Geology";
 
 export const routes = [
     {
@@ -53,7 +54,7 @@ export const routes = [
     {
         //Прикладная геология, горное дело, нефтегазовое дело и геодезия
         path: '/geology',
-        element: <div />
+        element: <GeologyPage />
     },
     {
         //Технологии материалов

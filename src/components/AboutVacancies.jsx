@@ -7,6 +7,7 @@ import { Title } from "./shared/Texts";
 import { Button } from "./shared/Button";
 
 import defaultAdd from '../assets/images/default/defaultPhone.png'
+import { openBot } from "../utils/openBot";
 
 const Wrapper = styled.div`
     position: relative;
@@ -239,7 +240,7 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
                 и развитии в профессии?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
-            <ButtonStyled $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
+            <ButtonStyled onClick={openBot} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
         </AddBlock>
     </Wrapper>
 )

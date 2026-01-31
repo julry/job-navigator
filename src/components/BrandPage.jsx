@@ -186,7 +186,7 @@ export const BrandPage = ({
         vacancyRef.current.scrollIntoView({behavior: 'smooth'});
     }
     return (
-        <Wrapper $defaultColor={defaultColor} ref={wrapperRef}>
+        <Wrapper $defaultColor={defaultColor}>
             <AboutBlock>
                 {!modalState.shown && (<CompasButton onClick={() => navigate('/')} />)}
                 {!modalState.shown && (

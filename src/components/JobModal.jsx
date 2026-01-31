@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../styles/media";
 import { CompasButton } from "./shared/CompasButton";
@@ -103,6 +103,18 @@ const CardContent = styled.div`
             max-width: 420px;
         }
    `}
+
+   @media screen  and (max-width: 350px){
+        & p {
+            font-size: 14px;
+        }
+    }
+
+    @media screen  and (max-width: 330px){
+        & p {
+            font-size: 13px;
+        }
+    }
 `
 
 const NoiseSvg = styled.div`
@@ -128,6 +140,14 @@ const CardTitle = styled(Title)`
     color: ${({ $color }) => $color ?? 'var(--color-white-text)'};
     margin-bottom: 30px;
     max-width: 600px;
+
+    @media screen  and (max-width: 350px){
+        font-size: 22px;
+    }
+
+    @media screen  and (max-width: 330px){
+        font-size: 20px;
+    }
 `;
 
 const FilterSvg = styled.svg`
@@ -173,6 +193,7 @@ const CardsWrapper = styled.div`
 
 const MenuBlock = styled.div`
     position: relative;
+
     ${media.desktop`
         display: none;
     `}
@@ -240,6 +261,10 @@ const MobileLines = styled.div`
     ${media.desktop`
         display: none;
     `}
+    
+    @media screen and (max-width: 330px) {
+       display: none;
+    }
 `;
 
 const DesktopLines = styled.div`
@@ -305,7 +330,7 @@ const ButtonStyled = styled(Button)`
     ${({ $hasActiveStyles, $activeStyles }) => $hasActiveStyles ? $activeStyles : ''};
 
     @media screen and (min-width: 400px) {
-        width: 240px;
+        width: 220px;
     }
 
     ${media.tablet`
@@ -315,6 +340,14 @@ const ButtonStyled = styled(Button)`
     &:hover {
         border: 1px solid var(--color-orange);
         ${({ $hasActiveStyles, $activeStyles }) => $hasActiveStyles ? $activeStyles : ''};
+    }
+
+    @media screen  and (max-width: 350px){
+       width: 190px;
+    }
+
+    @media screen  and (max-width: 330px){
+        width: 170px;
     }
 `;
 
@@ -400,13 +433,21 @@ const CommonSkillsWrapper = styled.div`
     width: 100%;
     max-width: 710px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     margin-bottom: 50px;
+    gap: 10px;
+
+    ${media.desktop`
+        justify-content: space-between;
+        flex-direction: row;
+    `}
 `;
 
 export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead }) => {
     const [chosen, setChosen] = useState(id);
-    const contentRef = useRef();
+    const [shownUpBtn, setShowUpBtn] = useState(true);
+    const title = useRef();
+    const lastCardRef = useRef();
 
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id);
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
@@ -422,8 +463,14 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
     const {titleColor: titleColorCommonSkills, ...commonSkills} = commonSkillStyles ?? {};
 
     const scrollContentTop = () => {
-        contentRef?.current?.scrollTo({ top: 0, behavior: 'smooth' });
+        title?.current?.scrollIntoView({behavior: 'smooth', block: 'end'});
     }
+
+    useEffect(() => {
+        const lastCard = lastCardRef?.current?.getBoundingClientRect();
+        const bottom = lastCard.top + lastCard.height;
+        setShowUpBtn(window.innerWidth < 1200 || bottom > window.innerHeight);
+    }, [chosen]);
 
     const handleChoose = (id) => {
         setChosen(id);
@@ -446,7 +493,6 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                 </svg>
             </ClosedButton>
             <Content
-                ref={contentRef}
                 animate={{ boxShadow: '0 -2px 35px 2px var(--color-gray)' }}
                 exit={{ boxShadow: 'unset' }}
                 transition={{
@@ -480,7 +526,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                     <MenuMan src={menuPerson} alt="" />
                     <MenuHead src={menuPersonHead} alt="" />
                 </MenuBlockDesktop>
-                <TitleStyled $fontSize={textSize} $color={textColor}>
+                <TitleStyled $fontSize={textSize} $color={textColor} ref={title}>
                     {chosenOpportunity.text}
                 </TitleStyled>
                 {isBrand && (chosenOpportunity.readyFor?.length || chosenOpportunity.skills?.length) && (
@@ -517,7 +563,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                 )}
                 <CardsWrapper $bottom={pictureBottom}>
                     {jobs.map((job, index) => (
-                        <Card key={job.id}>
+                        <Card key={job.id} ref={index === jobs.length - 1 ? lastCardRef : null}>
                             <CardContent
                                 $withPicture={index === (jobs.length - 1) && !isBrand && hasPicture}
                                 $backgroundColor={backgroundColor}
@@ -577,7 +623,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
 
                 <MenuBlock>
                     <TitleStyled $color={textColor}>
-                        <ColoredSpan>посмотреть</ColoredSpan> другие направления
+                        <ColoredSpan $color={backgroundColor}>посмотреть</ColoredSpan> другие направления
                     </TitleStyled>
                     <MenuMan src={menuPerson} alt="" />
                     <MobileLines>
@@ -604,12 +650,12 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                         ))}
                     </MenuContent>
                 </MenuBlock>
-                <UpButton $pictureBottom={pictureBottom} onClick={scrollContentTop}>
+                {shownUpBtn && (<UpButton $pictureBottom={pictureBottom} onClick={scrollContentTop}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={textColor ?? "var(--color-gray)"} />
                         <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke={textColor ?? "var(--color-gray)"} stroke-width="2" />
                     </svg>
-                </UpButton>
+                </UpButton>)}
                 <FilterSvg width="100%" height="100%">
                     <rect width="100%" height="100%" fill="none" filter="url(#noiseFilter)" clip-path="url(#clip)" />
                     <defs>

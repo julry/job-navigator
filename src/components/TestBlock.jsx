@@ -124,7 +124,7 @@ const ResultBlock = styled(motion.div)`
         z-index: 2;
         background-color: ${({$background}) => $background ?? 'var(--color-orange)'};
         padding: 35px 30px;
-        bottom: 117px;
+        bottom: ${({$testBlockMargin = 0}) => 117 - $testBlockMargin}px;
         border-radius: 40px;
 
         & p {
@@ -173,7 +173,7 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ isBrand, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ isBrand, testBlockMargin,testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
@@ -230,7 +230,7 @@ export const TestBlock = ({ isBrand, scrollToVacancy, testName, person, defaultC
             <TextBlock>
                 <Title $color={defaultColor}><ColoredSpan $color={accentColor}>проверь</ColoredSpan> себя</Title>
                 <Text $color={defaultColor}>
-                    готов ли ты к старту в {testName}?{'\n'}
+                    готов ли ты {testFullName ?? `к старту в ${testName}`}?{'\n'}
                     заполни чек-лист — узнай, какие навыки
                     и качества успешного кандидата
                     уже у тебя есть
@@ -290,7 +290,7 @@ export const TestBlock = ({ isBrand, scrollToVacancy, testName, person, defaultC
                     посмотреть результат
                 </DesktopButton>
                 </TestContent>
-                <ResultBlock $background={defaultColor} {...endAnimation}>
+                <ResultBlock $testBlockMargin={testBlockMargin} $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
                     <EndButtonWrapper>
                         <Button $isBrand={isBrand} onClick={openBot} $type="secondary">прокачать навыки</Button>

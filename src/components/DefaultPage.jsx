@@ -116,9 +116,12 @@ export const DefaultPage = ({pageId, personComponent}) => {
         jobTitle,
         jobDescription,
         jobDescriptionSm,
+        jobInfoHeight,
         jobTitleSize = 36,
         testQuestions, 
         testName,
+        testFullName,
+        testBlockMargin,
         opportunitiesPerson,
         opportunitiesPersonDesk,
         opportunities,
@@ -169,7 +172,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                         </svg>
                     </ClosedButton>
                 )}
-                <AboutJob jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
+                <AboutJob wrapperHeight={jobInfoHeight} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>
                     {personComponent}
                 </PictureWrapper>
@@ -179,7 +182,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
             <SpacingContent>
                 <Opportunities opportunities={opportunities} onClickOpp={handleOpenModal}/>
                 <Vacancies ref={vacancyRef} vacancies={vacancies} />
-                <TestBlock scrollToVacancy={scrollToVacancy} person={testPerson} testName={testName} questions={testQuestions}/>
+                <TestBlock testBlockMargin={testBlockMargin} testFullName={testFullName} scrollToVacancy={scrollToVacancy} person={testPerson} testName={testName} questions={testQuestions}/>
                 <BotBlock testAdditionMargin={testAdditionMargin}/>
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">

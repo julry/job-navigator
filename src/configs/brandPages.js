@@ -89,9 +89,9 @@ export const brandPages = [
         testName: 'строительстве и экспуатации сооружений',
         opportunities: opportunitiesConfig.stroy,
         opportunitiesPerson: {
-            width: 183,
-            height: 343,
-            left: 32,
+            width: 202 * 0.8,
+            height: 309 * 0.8,
+            left: 22,
             img: stroy,
         },
         opportunitiesPersonDesk: {

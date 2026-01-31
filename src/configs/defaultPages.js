@@ -1,27 +1,28 @@
 
 import { ColoredSpan, NoTransformSpan, ShortScreen } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
+
 import chemT from '../assets/images/default/chemical_top.png';
 import chemB from '../assets/images/default/chemical_bot.png';
-
 import itT from '../assets/images/default/itTop.png';
 import itB from '../assets/images/default/itBot.png';
-
 import infosecT from '../assets/images/default/infoSecTop.png';
 import infosecB from '../assets/images/default/infoSecBot.png';
+import biotechB from '../assets/images/default/biotechBot.png';
+import biotechT from '../assets/images/default/biotechTop.png';
+import geologyB from '../assets/images/default/geologyBot.png';
+import geologyT from '../assets/images/default/geologyTop.png';
+import safetechB from '../assets/images/default/safetechBot.png';
+import safetechT from '../assets/images/default/safetechTop.png';
+import energeticsB from '../assets/images/default/energeticsBot.png';
+import energeticsT from '../assets/images/default/energeticsTop.png';
+import machineB from '../assets/images/default/machineBot.png';
+import machineT from '../assets/images/default/machineTop.png';
 
 import agro from '../assets/images/default/people/agro.png';
 import biotech from '../assets/images/default/people/biotech.png';
 import education from '../assets/images/default/people/education.png';
 import energetics from '../assets/images/default/people/energetics.png';
-import energeticsB from '../assets/images/default/energeticsBot.png';
-import biotechB from '../assets/images/default/biotechBot.png';
-import biotechT from '../assets/images/default/biotechTop.png';
-import safetechB from '../assets/images/default/safetechBot.png';
-import safetechT from '../assets/images/default/safetechTop.png';
-import energeticsT from '../assets/images/default/energeticsTop.png';
-import machineB from '../assets/images/default/machineBot.png';
-import machineT from '../assets/images/default/machineTop.png';
 import geology from '../assets/images/default/people/geology.png';
 import himTech from '../assets/images/default/people/himtech.png';
 import infosec from '../assets/images/default/people/infosec.png';
@@ -31,6 +32,8 @@ import safetech from '../assets/images/default/people/safetech.png';
 import service from '../assets/images/default/people/service.png';
 import techcontrol from '../assets/images/default/people/techcontrol.png';
 import transport from '../assets/images/default/people/transport.png';
+
+
 
 export const defaultPages = [
     {
@@ -783,10 +786,106 @@ export const defaultPages = [
         },
     },
     {
-        //Прикладная геология, горное дело, нефтегазовое дело и геодезия
         id: 'geology',
-        title: 'те, кто исследуют недра и находят полезные ископаемые',
-        jobs: ['Геолог', 'Бурильщик', 'Маркшейдер', 'Геодезист', 'Оператор нефтегазовых установок']
+        jobTitleSize: 27,
+        jobInfoHeight: 645,
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Прикладная геология</ColoredSpan>, горное дело, нефтегазовое дело и геодезия</>,
+        jobDescription: 'Полезные ископаемые нужны обществу каждый день: это и энергия, и материалы для самых разных вещей. А специалисты этой специальности умеют их находить и организовывать добычу и исследования в лабораториях. Они изучают геологические структуры и породы, оценивают месторождения, учатся добывать и разведывать местоположения полезных ископаемых. Это полезно как для энергетики и промышленности, так и для экономической сферы.\n\nЭта работа соединяет химию и математику, обеспечивая контроль над изменениями поверхности Земли и сырьевую базу страны',
+        jobDescriptionSm: 'Полезные ископаемые нужны обществу каждый день: это и энергия, и материалы для самых разных вещей.\n\nА специалисты этой специальности умеют их находить и организовывать добычу и исследования в лабораториях.\n\nОни изучают геологические структуры и породы, оценивают месторождения, учатся добывать и разведывать местоположения полезных ископаемых. Это полезно как для энергетики\nи промышленности, так и для\nэкономической сферы.\n\nЭта работа соединяет химию\nи математику, обеспечивая\nконтроль над изменениями\nповерхности Земли\nи сырьевую базу страны',
+        vacanciesDescr: [
+            { id: 0, name: 'Нефтяные и газовые компании', desc: 'Добывать полезные ископаемые' },
+            { id: 1, name: 'Строительные компании', desc: 'Строить дороги, мосты, трубопроводы' },
+            { id: 2, name: 'Научные учреждения', desc: 'Изучать природные ресурсы' },
+            { id: 3, name: 'Экологический контроль', desc: 'Следить, чтобы производства не вредили окружающей среде' },
+        ],
+        testQuestions: [
+            {
+                id: 'q-0',
+                text: 'Умею проводить полевые и лабораторные исследования (например, бурение)'
+            },
+            {
+                id: 'q-1',
+                text: 'Знаю основные принципы безопасности при работе с технологическими процессами'
+            },
+            {
+                id: 'q-2',
+                text: 'Умею проводить инженерно-технические расчеты'
+            },
+            {
+                id: 'q-3',
+                text: 'Понимаю принцип работы с геодезическими приборами'
+            },
+            {
+                id: 'q-4',
+                text: 'Умею составлять карту и работать с технической документацией'
+            },
+            {
+                id: 'q-7',
+                text: 'Обладаю аналитическим мышлением',
+                isSoft: true,
+            },
+            {
+                id: 'q-8',
+                text: 'Внимателен к деталям',
+                isSoft: true
+            },
+            {
+                id: 'q-9',
+                text: 'Умею работать в команде',
+                isSoft: true
+            },
+            {
+                id: 'q-10',
+                text: 'Стрессоустойчив и ответственен',
+                isSoft: true
+            },
+            {
+                id: 'q-11',
+                text: 'Увлекаюсь экологией и забочусь о планете',
+                isSoft: true
+            },
+        ],
+        testName: 'техносферной безопасности',
+        testFullName: 'работать с окружающей средой',
+        opportunities: opportunitiesConfig.geology,
+        opportunitiesPerson: {
+            width: 241,
+            height: 332,
+            left: 16,
+            img: geology,
+        },
+        opportunitiesPersonDesk: {
+            width: 281,
+            height: 463,
+            left: 440,
+            img: geology,
+            bottom: -137,
+        },
+        testBlockMargin: 60,
+        testPerson: {
+            top: {
+                widthDesc: 169,
+                heightDesc: 303,
+                src: geologyT,
+                bottomDesc: 35,
+                leftDesc: -103,
+                width: 134,
+                height: 248,
+                bottom: -235,
+                left: 76,
+            },
+            bot: {
+                widthDesc: 177,
+                heightDesc: 208,
+                src: geologyB,
+                bottomDesc: -110,
+                leftDesc: -46,
+                width: 144,
+                height: 169,
+                bottom: -345,
+                left: 86
+            },
+        },
     },
     {
         //Технологии материалов
