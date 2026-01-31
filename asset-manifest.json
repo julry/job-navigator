@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.21f30e41.css",
-    "main.js": "./static/js/main.c74418a5.js",
+    "main.js": "./static/js/main.3dd3fae8.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -19,6 +19,7 @@
     "static/media/himtech.png": "./static/media/himtech.4fdc3a4fc275fedcfc5e.png",
     "static/media/agro.png": "./static/media/agro.77d91278da833c814713.png",
     "static/media/trade.png": "./static/media/trade.37bdbb360f4bd225b371.png",
+    "static/media/techprom.png": "./static/media/techprom.83de8a280d8c6775575e.png",
     "static/media/geology.png": "./static/media/geology.e0853ac8f670a8e4f76c.png",
     "static/media/biotech.png": "./static/media/biotech.709315e258bb4a14549e.png",
     "static/media/energetics.png": "./static/media/energetics.2ffed73f9864ee862fe5.png",
@@ -49,7 +50,9 @@
     "static/media/energeticsTop.png": "./static/media/energeticsTop.d2145c5986ab0f3d3740.png",
     "static/media/alabugaAdvant2.png": "./static/media/alabugaAdvant2.9ad1413785cb35b57c61.png",
     "static/media/agroMountin.png": "./static/media/agroMountin.c914fb80053ded2dd69c.png",
+    "static/media/geologyTop.png": "./static/media/geologyTop.fee208b778c6630b7d86.png",
     "static/media/economyMountin.png": "./static/media/economyMountin.b5ca509cf7e8536aaa76.png",
+    "static/media/geologyBot.png": "./static/media/geologyBot.de22f5821bd8e7c2d5fe.png",
     "static/media/techcontrolMountin.png": "./static/media/techcontrolMountin.375485b5f7646b4e826a.png",
     "static/media/himTechMountin.png": "./static/media/himTechMountin.d413a1a9a06a3aa4303e.png",
     "static/media/himTechObj.png": "./static/media/himTechObj.a8045f8effd0bc86824a.png",
@@ -90,10 +93,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.21f30e41.css.map": "./static/css/main.21f30e41.css.map",
-    "main.c74418a5.js.map": "./static/js/main.c74418a5.js.map"
+    "main.3dd3fae8.js.map": "./static/js/main.3dd3fae8.js.map"
   },
   "entrypoints": [
     "static/css/main.21f30e41.css",
-    "static/js/main.c74418a5.js"
+    "static/js/main.3dd3fae8.js"
   ]
 }
