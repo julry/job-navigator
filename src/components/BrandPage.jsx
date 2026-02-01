@@ -11,25 +11,86 @@ import { AnimatePresence } from "framer-motion";
 import { JobModal } from "./JobModal";
 import { useNavigate } from "react-router-dom";
 import { CompasButton } from "./shared/CompasButton";
-import { SmallText } from "./shared/Texts";
+import { ColoredSpan, SmallText, TextDesk } from "./shared/Texts";
 import { BrandVacancies } from "./BrandVacancies";
 import { brandPages } from "../configs/brandPages";
 import { LogoBlock } from "./LogoBlock";
 import { AboutCompany } from "./AboutCompany";
 import { Advantages } from "./Advantages";
 import { openBot } from "../utils/openBot";
+import { Button } from "./shared/Button";
 
 const Wrapper = styled.div`
-    padding-top: 34px;
+    padding-top: 88px;
     margin: 0 auto;
 
     ${media.tablet`
         max-width: 550px;
-        padding-top: 40px;
     `}
 
     ${media.desktop`
+        padding-top: 92px;
         max-width: 1440px;
+    `}
+`;
+
+
+const Header = styled.div`
+    position: absolute;
+    top: -88px;
+    left: 0;
+    z-index: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 15px;
+    padding-left: 74px;
+
+
+    ${media.desktop`
+        top: -92px;
+        padding: 25px 60px;
+        padding-left: 150px;
+    `}
+`;
+
+const CompasButtonStyled = styled(CompasButton)`
+    display: block;
+    top: -5px;
+    left: -5px;
+    right: auto;
+
+    width: 80px;
+    height: 80px;
+
+    ${media.desktop`
+        top: -10px;
+        left: 5px;
+        width: 140px;
+        height: 140px;
+    `}
+`;
+
+const HeaderTitle = styled.h3`
+    font-size: 16px;
+    line-height: 85%;
+    white-space: pre-line;
+    color: var(--color-white-text);
+
+    ${media.desktop`
+        font-size: 26px;
+    `}
+`;
+
+const ButtonStyled = styled(Button)`
+    width: 110px;
+    background-color: var(--color-orange);
+    height: 40px;
+
+    ${media.desktop`
+        width: 240px;
+        height: 45px;
     `}
 `;
 
@@ -78,28 +139,6 @@ const UpButton = styled.button`
     align-items: center;
     justify-content: center;
     background-color: transparent;
-`;
-
-const ClosedButton = styled.button`
-    position: absolute;
-    top: -20px;
-    right: 25px;
-
-    width: 47px;
-    height: 40px;
-
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    background-color: var(--color-gray);
-    border: 1px solid var(--color-white);
-    z-index: 10;
-
-    ${media.desktop`
-        display: none;
-    `}
 `;
 
 const Footer = styled.div`
@@ -188,14 +227,11 @@ export const BrandPage = ({
     return (
         <Wrapper $defaultColor={defaultColor}>
             <AboutBlock>
-                {!modalState.shown && (<CompasButton onClick={() => navigate('/')} />)}
-                {!modalState.shown && (
-                    <ClosedButton onClick={() => navigate('/')}>
-                        <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 19L9.38597 8.89595L9.34211 9.40848L0.482459 0H2.19298L10.2632 8.63969H9.64914L17.6754 0H19.3421L10.4386 9.55491L10.4825 8.85935L20 19H18.2018L9.69299 9.77457L10.1755 9.81118L1.71052 19H0Z" fill="#FFF2EC"/>
-                        </svg>
-                    </ClosedButton>
-                )}
+                <Header>
+                        <CompasButtonStyled onClick={() => navigate('/')} />
+                        <HeaderTitle onClick={() => navigate('/')}><ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий</HeaderTitle>
+                        <ButtonStyled $style={modalStyles?.buttonStyle} onClick={openBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
+                    </Header>
                 <AboutJob isBrand spotColor={defaultColor} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>
                     {personComponent}
@@ -241,7 +277,7 @@ export const BrandPage = ({
                         © 2005-2026 FutureToday.{'\n'}Все права защищены.
                     </FooterText>
                     <BotFooterText>
-                        <SmallText $color={defaultColor}>{'перейти в бот'}</SmallText>
+                        <SmallText $color={defaultColor}>{'перейти в бот'}</SmallText>
                         <svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 6.36395C0.447715 6.36395 9.65645e-08 6.81167 0 7.36395C-9.65645e-08 7.91624 0.447715 8.36395 1 8.36395L1 7.36395L1 6.36395ZM26.7071 8.07106C27.0976 7.68054 27.0976 7.04737 26.7071 6.65685L20.3431 0.292888C19.9526 -0.0976362 19.3195 -0.0976364 18.9289 0.292888C18.5384 0.683412 18.5384 1.31658 18.9289 1.7071L24.5858 7.36396L18.9289 13.0208C18.5384 13.4113 18.5384 14.0445 18.9289 14.435C19.3195 14.8255 19.9526 14.8255 20.3431 14.435L26.7071 8.07106ZM1 7.36395L1 8.36395L26 8.36396L26 7.36396L26 6.36396L1 6.36395L1 7.36395Z" fill={defaultColor}/>
                         </svg>

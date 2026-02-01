@@ -32,6 +32,6 @@ export const BotBlock = ({ isBrand, defaultColor, styles, testAdditionMargin = 0
         <Text>
             хочешь узнать больше полезной инфы{'\n'}о навыках и развитии в профессии?
         </Text>
-        <Button $isBrand={isBrand} onClick={openBot} $style={styles} $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
+        <Button $isBrand={isBrand} onClick={openBot} $style={styles} $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
     </Wrapper>
 )

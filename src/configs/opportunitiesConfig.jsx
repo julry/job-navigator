@@ -60,7 +60,7 @@ export const opportunitiesConfig = {
         },
         {
             id: 'control',
-            text: 'контроль и управление\nкачеством',
+            text: 'контроль и управление\nкачеством',
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -169,
             jobs: [
@@ -131,7 +131,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'cyberspec',
                     title: <><ColoredSpan>сетевой администратор</ColoredSpan> / специалист по кибербезопасности</>,
-                    desc: <>Проектирует и защищает сетевую инфраструктуру, настраивает маршрутизацию, <NoTransformSpan>VPN</NoTransformSpan>, межсетевые экраны</>
+                    desc: <>Проектирует и защищает сетевую инфраструктуру, настраивает маршрутизацию, <NoTransformSpan>VPN</NoTransformSpan>, межсетевые экраны</>
                 },
                 {
                     id: 'quality',
@@ -257,7 +257,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'aispec',
                     title: <><ColoredSpan>специалист</ColoredSpan> в области машинного обучения  и ИИ</>,
-                    desc: 'участвует в создании и обучении алгоритмов нейросетей, умных системи компьютерного зрения',
+                    desc: 'участвует в создании и обучении алгоритмов нейросетей, умных системи компьютерного зрения',
                 },
             ]
         },
@@ -273,7 +273,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'helpersef',
                     title: <><ColoredSpan>стажер</ColoredSpan> / помощник администратора безопасности</>,
-                    desc: 'мониторит логи, помогает настраивать базовые правила в firewall, ведетжурналы событий'
+                    desc: 'мониторит логи, помогает настраивать базовые правила в firewall, ведетжурналы событий'
                 },
                 {
                     id: 'safetym',
@@ -308,12 +308,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'auditib',
                     title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</NoTransformSpan>,
-                    desc: <NoTransformSpan>проверяет соответствие стандартам (ISO 27001, ФЗ-152, GDPR), составляетотчеты и рекомендации</NoTransformSpan>
+                    desc: <NoTransformSpan>проверяет соответствие стандартам (ISO 27001, ФЗ-152, GDPR), составляетотчеты и рекомендации</NoTransformSpan>
                 },
                 {
                     id: 'criminalist',
                     title: <><ColoredSpan>криминалист</ColoredSpan></>,
-                    desc: 'организует работу лаборатории, проводит Расследует киберинциденты, извлекает и анализирует цифровые улики с устройств'
+                    desc: 'организует работу лаборатории, проводит Расследует киберинциденты, извлекает и анализирует цифровые улики с устройств'
                 },
                 {
                     id: 'auditmanager',
@@ -393,7 +393,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'sufsppIT',
                     title: <><ColoredSpan>специалист</ColoredSpan> по киберразведке</>,
-                    desc: 'Собирает и анализирует данные об угрозах, атаках и прогнозирует риски',
+                    desc: 'Собирает и анализирует данные об угрозах, атаках и прогнозирует риски',
                 },
                  
                 {
@@ -437,7 +437,7 @@ export const opportunitiesConfig = {
         },
         {
             id: 'adsudit',
-            text: 'Электросети и подстанции',
+            text: 'Электросети и подстанции',
             textSize: 27,
             style: { 'grid-area': '2/1/3/2' },
             pictureBottom: -199,
@@ -445,12 +445,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'auditassistance',
                     title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту электросетей (помощник)</>,
-                    desc: 'Участвует в плановых обходах, мелком ремонте, заготовке материалов'
+                    desc: 'Участвует в плановых обходах, мелком ремонте, заготовке материалов'
                 },
                 {
                     id: 'a00tassistance',
                     title: <><ColoredSpan>Электромонтер</ColoredSpan> по эксплуатации распределительных сетей</>,
-                    desc: 'Обслуживает воздушные и кабельные линии, выполняет переключения, устраняет повреждения'
+                    desc: 'Обслуживает воздушные и кабельные линии, выполняет переключения, устраняет повреждения'
                 },
                 {
                     id: 'a432uditib',
@@ -466,7 +466,7 @@ export const opportunitiesConfig = {
         },
         {
             id: 'sa31fety',
-            text: 'Теплоэнергетика и теплоснабжение',
+            text: 'Теплоэнергетика и теплоснабжение',
             textSize: 27,
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -229,
@@ -483,7 +483,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 's321hifr',
-                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
+                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
                     desc: 'Настраивает тепловые схемы, проводит испытания оборудования'
                 },
                 {
@@ -495,7 +495,7 @@ export const opportunitiesConfig = {
         },
         {
             id: 'safet00ycontrol',
-            text: 'Автоматизация, защита и метрология',
+            text: 'Автоматизация, защита и метрология',
             style: { 'grid-area': '4/1/5/2' },
             pictureBottom: -189,
             jobs: [
@@ -506,17 +506,17 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 's32dsaudspp2',
-                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту и обслуживанию электрооборудования</>,
+                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту и обслуживанию электрооборудования</>,
                     desc: 'Специализируется на силовом оборудовании (трансформаторы, выключатели, электродвигатели)'
                 },
                 {
                     id: 'it-consul53t',
-                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по релейной защите и автоматике <NoTransformSpan>(РЗА)</NoTransformSpan></>,
-                    desc: 'Настраивает и обслуживает устройства, предотвращающие аварии в энергосистеме'
+                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по релейной защите и автоматике <NoTransformSpan>(РЗА)</NoTransformSpan></>,
+                    desc: 'Настраивает и обслуживает устройства, предотвращающие аварии в энергосистеме'
                 },
                 {
                     id: 'it432Manager',
-                    title: <><ColoredSpan>Инженер-наладчик</ColoredSpan> / Специалист по <NoTransformSpan>АСУ ТП</NoTransformSpan> в энергетике</>,
+                    title: <><ColoredSpan>Инженер-наладчик</ColoredSpan> / Специалист по <NoTransformSpan>АСУ ТП</NoTransformSpan> в энергетике</>,
                     desc: <>Программирует контроллеры, настраивает <NoTransformSpan>SCADA-системы</NoTransformSpan>, внедряет цифровые решения</>
                 },
             ]
@@ -553,7 +553,7 @@ export const opportunitiesConfig = {
     machine: [
         {
             id: 'mmeroijea',
-            text: 'Металлообработка и станочные работы',
+            text: 'Металлообработка и станочные работы',
             textSize: 27,
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -264,
@@ -572,7 +572,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'a2nalyticSaf',
                     title: <><ColoredSpan>Оператор</ColoredSpan>  станков <NoTransformSpan>с ЧПУ</NoTransformSpan> / Наладчик станков</>,
-                    desc: <>Программирует и обслуживает современные обрабатывающие центры, <NoTransformSpan>3D-принтеры</NoTransformSpan>, лазерные комплексы</>
+                    desc: <>Программирует и обслуживает современные обрабатывающие центры, <NoTransformSpan>3D-принтеры</NoTransformSpan>, лазерные комплексы</>
                 },
                 {
                     id: 'saf21Manager32',
@@ -591,12 +591,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'fdslvds32dw',
                     title: <><ColoredSpan>Слесарь-сборщик</ColoredSpan> (помощник)</>,
-                    desc: 'Участвует в сборке узлов по инструкциям, готовит инструмент и компоненты'
+                    desc: 'Участвует в сборке узлов по инструкциям, готовит инструмент и компоненты'
                 },
                 {
                     id: 'asdvp3rofed',
                     title: <><ColoredSpan>Слесарь-монтажник</ColoredSpan> технологического оборудования</>,
-                    desc: 'Собирает и устанавливает промышленные станки, конвейеры, прессы на месте эксплуатации'
+                    desc: 'Собирает и устанавливает промышленные станки, конвейеры, прессы на месте эксплуатации'
                 },
                 {
                     id: 'sdvowss',
@@ -605,7 +605,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'bfp22',
-                    title: <><ColoredSpan>Мастер</ColoredSpan> по монтажу и пусконаладке / Инженер-механик</>,
+                    title: <><ColoredSpan>Мастер</ColoredSpan> по монтажу и пусконаладке / Инженер-механик</>,
                     desc: 'Руководит комплексным монтажом линий, проводит испытания, сдает объекты в эксплуатацию'
                 }
             ]
@@ -625,11 +625,11 @@ export const opportunitiesConfig = {
                 {
                     id: 'ascyh5n',
                     title: <><ColoredSpan>Мехатроник</ColoredSpan> / Специалист по обслуживанию роботов</>,
-                    desc: 'Диагностирует и ремонтирует роботизированные комплексы, датчики, приводы, системы управления'
+                    desc: 'Диагностирует и ремонтирует роботизированные комплексы, датчики, приводы, системы управления'
                 },
                 {
                     id: 'bndfqwhjsc',
-                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
+                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
                     desc: 'Настраивает тепловые схемы, проводит испытания оборудования'
                 },
                 {
@@ -686,7 +686,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'vxooppsfhturwn',
                     title: <><ColoredSpan>Чертежник-конструктор</ColoredSpan></>,
-                    desc: <>Создает и оформляет чертежи деталей и сборочных единиц <NoTransformSpan>в CAD-системах (Компас, AutoCAD)</NoTransformSpan></>
+                    desc: <>Создает и оформляет чертежи деталей и сборочных единиц <NoTransformSpan>в CAD-системах (Компас, AutoCAD)</NoTransformSpan></>
                 },
                 {
                     id: 'oregjsfkbnaodwl',
@@ -757,7 +757,7 @@ export const opportunitiesConfig = {
         },
         {
             id: 'sa3cds1fety',
-            text: 'Экологическая безопасность и очистка',
+            text: 'Экологическая безопасность и очистка',
             textSize: 27,
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -139,
@@ -798,7 +798,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'technologpopere',
                     title: <><ColoredSpan>Технолог</ColoredSpan> по переработке отходов</>,
-                    desc: 'Разрабатывает и контролирует технологии переработки вторсырья (пластик, бумага, стекло)'
+                    desc: 'Разрабатывает и контролирует технологии переработки вторсырья (пластик, бумага, стекло)'
                 },
                 {
                     id: 'othodifns',
@@ -894,7 +894,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'vdfkjnweicx222009',
-                    title: <><ColoredSpan>Руководитель</ColoredSpan>службы <NoTransformSpan>ГО и ЧС</NoTransformSpan> предприятия / Менеджер по кризисным ситуациям</>,
+                    title: <><ColoredSpan>Руководитель</ColoredSpan>службы <NoTransformSpan>ГО и ЧС</NoTransformSpan> предприятия / Менеджер по кризисным ситуациям</>,
                     desc: 'Организует систему управления в кризисных ситуациях, взаимодействует с надзорными органами, обучает персонал'
                 }
             ]
@@ -909,7 +909,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'bieodps',
                     title: <><ColoredSpan>Техник-эколог</ColoredSpan> / Мониторинговый лаборант</>,
-                    desc: 'Проводит наблюдения за состоянием воздуха, воды, почвы в зоне влияния предприятия, отбирает пробы'
+                    desc: 'Проводит наблюдения за состоянием воздуха, воды, почвы в зоне влияния предприятия, отбирает пробы'
                 },
                 {
                     id: 'secutriyen',
@@ -996,12 +996,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'labefojdt',
                     title: <><ColoredSpan>Лаборант</ColoredSpan> / Помощник геолога</>,
-                    desc: 'Участвует в полевых работах, заполняет документы, занимается первичной обработкой проб',
+                    desc: 'Участвует в полевых работах, заполняет документы, занимается первичной обработкой проб',
                 },
                 {
                     id: 'geolfvfsb ',
                     title: <><ColoredSpan>Геолог</ColoredSpan></>,
-                    desc: 'Участвует в исследованиях, отбирает и обрабатывает породы, составляет геологические карты'
+                    desc: 'Участвует в исследованиях, отбирает и обрабатывает породы, составляет геологические карты'
                 },
                 {
                     id: 'naxscvfhrgeol',
@@ -1098,6 +1098,526 @@ export const opportunitiesConfig = {
             ]
         },
     ],
+    materials: [
+        {
+            id: 'peoizzodskl',
+            text: 'Производство материалов',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -86,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <><ColoredSpan>Стажер-техник </ColoredSpan>(производства или материала)</>,
+                    desc: 'Учится считать расход материалов, изучает сметы и операционные карты'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Оператор</ColoredSpan></>,
+                    desc: 'Настраивает и запускает автоматические линии, проводит первичный визуальный контроль продукции, ведет сменную отчетность.'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Техник-технолог</ColoredSpan> (производства или материала)</>,
+                    desc: 'Разрабатывает операционные карты, выбирает необходимое оборудование для работы, рассчитывает расход материалов и составляет техническую документацию'
+                },
+                {
+                    id: 'Gvdsnjwxxjabvlwbzlfgtjnswl',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> смены</>,
+                    desc: 'Управляет сменой, выбирает состав на смену, следит за производительностью сотрудников'
+                },
+            ]
+        },
+        {
+            id: 'metalurhgrfkbksf',
+            text: 'Металлургия',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -96,
+            jobs: [
+                {
+                    id: 'dsvmdhelpr',
+                    title: <><ColoredSpan>Помощник</ColoredSpan> машиниста крана</>,
+                    desc: 'Учится работать с краном, технику безопасности, помогает проводить вспомогательные операции'
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Машинист</ColoredSpan> крана</>,
+                    desc: 'Проводит самостоятельные работы на кране, осваивает разные типы кранов', 
+                },
+                {
+                    id: 'obfsdkcfedstargshjbaff',
+                    title: <><ColoredSpan>Старший</ColoredSpan>  машинист крана</>,
+                    desc: 'Проводит сложные работы на кране, занимается обучением команды машинистов'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '3/1/4/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <><ColoredSpan>Инженер-</ColoredSpan>материаловед</>,
+                    desc: 'Производит и изучает материалы',
+                },
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по{' '}<NoTransformSpan>3D-печати</NoTransformSpan></>,
+                    desc: 'Создает изделия в сфере медицины и инженерии',
+                },
+            ]
+        },
+    ],
+    transport: [
+        {
+            id: 'dfdfdsfscvbnhmjko',
+            text: 'Автомеханика',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -115,
+            jobs: [
+                {
+                    id: 'vdvavsdv',
+                    title: <><ColoredSpan>Мастер</ColoredSpan> технической диагностики</>,
+                    desc: 'Проводит компьютерную диагностику, работает с профессиональным оборудованием, решает сложные неисправности'
+                },
+                {
+                    id: 'geolfvfbcgfmkdssb ',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> технического отдела / Главный механик </>,
+                    desc: 'Координирует работу отдела, контролирует качество работы и выполнение сроков, заказывает детали и утверждает сметы, а ещё проводит обучение сотрудников'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Оператор</ColoredSpan> / Аппаратчик автоматических линий</>,
+                    desc: 'Настраивает и запускает автоматические линии, работает с приборами для контроля процесса, проводит первичный контроль продукции, ведет отчетность'
+                },
+                {
+                    id: 'vbfmds',
+                    title: <><ColoredSpan>Владелец</ColoredSpan> <NoTransformSpan> СТО</NoTransformSpan></>,
+                    desc: <>Контролирует работу всего <NoTransformSpan>СТО</NoTransformSpan>, координирует команду, а еще умеет чинить самые сложные неисправности и стратегически планирует развитие бизнеса</>  
+                },
+            ]
+        },
+        {
+            id: 'logizsticea',
+            text: 'Логистика',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -120,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <><ColoredSpan>Диспетчер</ColoredSpan></>,
+                    desc: 'Координирует заказы на внутренних или международных рейсах'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Старший</ColoredSpan> диспетчер</>,
+                    desc: 'Распределяет задачи между диспетчерами и контролирует их работу, ведет документооборот'
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> отдела логистики</>,
+                    desc: 'Ведет полный цикл организации перевозок, ведет переговоры с подрядчиками, контролирует и составляет логистический бюджет.'
+                },
+                {
+                    id: 'fd432brckd',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan> службы логистики</>,
+                    desc: 'Управляет складами, создает планы грузоперевозок, ведет международные переговоры о логистике.'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '3/1/4/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfgsgffvsvet',
+                    title: <ColoredSpan>Машинист</ColoredSpan>,
+                    desc: 'Управляет различными механизмами и транспортными средствами',
+                },
+                {
+                    id: 'sdvlmlbbtepv',
+                    title: <ColoredSpan>Таможенник</ColoredSpan>,
+                    desc: 'Оформляет документы, контролирует платежи, классифицирует товары и сделки',
+                },
+            ]
+        },
+    ],
+    techcontrol: [
+        {
+            id: 'g3rtfvsobwvfsklbr',
+            textSize: 26,
+            blockTextSize: 10,
+            text: 'Программирование Автоматизированных Систем Управления Техническими Процессами',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -106,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <><ColoredSpan>Техник-</ColoredSpan>программист</>,
+                    desc: 'Работает с базами данных, разрабатывает проекты с помощью наставника'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Инженер-</ColoredSpan>программист</>,
+                    desc: 'Пишет скрипты, разрабатывает проекты «под ключ», создает алгоритмы и интерфейс, обучает команду.'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Ведущий</ColoredSpan> инженер</>,
+                    desc: 'Руководит командой разработчиков, ведет переговоры с заказчиком, выбирает оборудование и ПО для работы, проводит отбор в команду.'
+                },
+            ]
+        },
+        {
+            id: 'gornyy',
+            text: 'Инженерия',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -106,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <><ColoredSpan>Оператор</ColoredSpan> / Дежурный</>,
+                    desc: 'Настраивает и поддерживает работу автоматизированных систем на предприятиях'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Старший</ColoredSpan> оператор</>,
+                    desc: 'Координирует работу операторов смены, обучает персонал, принимает решение в нештатных ситуациях.',
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Технолог</ColoredSpan></>,
+                    desc: 'Управляет результатом, анализирует результаты процессов, разрабатывает регламенты, несет ответственность за работу всего цеха.'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '3/1/4/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <ColoredSpan>Аналитик</ColoredSpan>,
+                    desc: 'Разбирается с данными, анализирует ключевые показатели, предсказывает результат'
+                },
+                {
+                    id: 'sewdfvsvet',
+                    title: <ColoredSpan>Программист</ColoredSpan>,
+                    desc: 'Разрабатывает и пишет скрипты, оптимизирует работу процессов'
+                },
+                {
+                    id: 'ecopdmcmt',
+                    title: <ColoredSpan>Менеджер</ColoredSpan>,
+                    desc: 'Координирует команду, управляет проектами'
+                },
+            ]
+        },
+    ],
+    techprom: [
+        {
+            id: 'gradtobwvfsklbr',
+            text: 'Конструирование',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -86,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <ColoredSpan>Техник-конструктор</ColoredSpan>,
+                    desc: 'Подбирает материалы для производства, занимается пошивом'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Старший конструктор</ColoredSpan></>,
+                    desc: 'Руководит группой конструкторов, участвует в процессе производства, обучает сотрудников'
+                },
+            ]
+        },
+        {
+            id: 'gor2nyy',
+            text: 'Технологии',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -96,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <ColoredSpan>Техник-технолог</ColoredSpan>,
+                    desc: 'Проводит технологические операции, работает на специализированном оборудовании, рассчитывает стоимость материалов.'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Инженер-технолог</ColoredSpan></>,
+                    desc: 'Разрабатывает технологии для линеек, участвует в аналитических процессах для снижения себестоимости продукции'
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> технологического отдела</>,
+                    desc: 'Управляет результатом цеха, утверждает план технологических процессов, выбирает и покупает новое оборудование'
+                },
+            ]
+        },
+        {
+            id: 'fgjbnbnjge00987dk',
+            text: 'Контроль качества',
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -79,
+            jobs: [
+                {
+                    id: 'bieo23dpvfspvfsdmlbqdlc,lss',
+                    title: <><ColoredSpan>Контролер</ColoredSpan> качества</>,
+                    desc: 'Проверяет стандарты качества, изучает причины появления дефектов, работает с измерительными приборами'
+                },
+                {
+                    id: 'sbsfe34cutriyen',
+                    title: <><ColoredSpan>Начальник</ColoredSpan> Отдела Технического Контроля</>,
+                    desc: 'Разрабатывает службу и методы контроля на производстве, анализирует статистику брака, выбирает заказчиков и коммуницирует с ними'
+                },
+                {
+                    id: 'bsmaainfamgreimb',
+                    title: <><ColoredSpan>Аудитор</ColoredSpan> системы проверки качества</>,
+                    desc: 'Разрабатывает стандарты проверки качества работы на производстве'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '4/1/5/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <><ColoredSpan>Стилист</ColoredSpan> / технолог</>,
+                    desc: 'Анализирует продажи, создает одежду для брендов, производит материалы'
+                },
+                {
+                    id: 'e632dfvsvet',
+                    title: <><ColoredSpan>Консультант</ColoredSpan> / аудитор</>,
+                    desc: 'Проверяет стандарты качества, оформляет сертификаты качества для производства.'
+                },
+            ]
+        },
+    ],
+    agro: [
+        {
+            id: 'grtobwvfsklbr',
+            text: 'Растениеводство и агрономия',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -125,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <><ColoredSpan>Агроном</ColoredSpan></>,
+                    desc: 'Работает на полях с различными культурами, исследует и анализирует культуры, подготавливает почву, защищает ее от вредителей, организует сбор урожая'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Старший</ColoredSpan>агроном</>,
+                    desc: 'Координирует работу команды, проводит обучение'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Главный</ColoredSpan> агроном</>,
+                    desc: 'Управляет всем циклом растениеводства в хозяйстве, планирует бюджет, подбирает гибриды'
+                },
+            ]
+        },
+        {
+            id: 'gornyy',
+            text: 'Зоотехника',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -96,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <><ColoredSpan>Зоотехник</ColoredSpan></>,
+                    desc: 'Работает на ферме, разводит, содержит, кормит животных'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Старший</ColoredSpan> Зоотехник</>,
+                    desc: 'Руководит всей фермой, добивается выполнения производственных показателей.'
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Главный</ColoredSpan> Зоотехник холдинга</>,
+                    desc: 'Разрабатывает стандарты и технологические карты для фермы, внедряет различные инновации.'
+                },
+            ]
+        },
+        {
+            id: 'fgjbnbnjgedehtibnfwjnvjsdk',
+            text: 'Лесное дело',
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -199,
+            jobs: [
+                {
+                    id: 'bieodpvfspvfsdmlbqdlc,lss',
+                    title: <><ColoredSpan>Техник-</ColoredSpan>лесовод</>,
+                    desc: 'Занимается лесопосадками, следит за пожарной безопасностью'
+                },
+                {
+                    id: 'sbsfecutriyen',
+                    title: <><ColoredSpan>Участковый</ColoredSpan> лесничий </>,
+                    desc: 'Руководит группой лесников, планирует лесохозяйственные работы, контролирует свой участок леса'
+                },
+                {
+                    id: 'bsmaainfamgreimb',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan> лесничества</>,
+                    desc: 'Взаимодействует с арендаторами и органами власти, планирует работу на участках и утверждает состав сотрудников'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '4/1/5/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <ColoredSpan>Ветеринар</ColoredSpan>,
+                    desc: 'Заботится о здоровье животных'
+                },
+                {
+                    id: 'ecerw34fvsvet',
+                    title: <ColoredSpan>Пчеловод</ColoredSpan>,
+                    desc: 'Разводит пчел, ухаживает за ними и получает продукты пчеловодства'
+                },
+            ]
+        },
+    ],
+    service: [
+        {
+            id: 'grtobwvfsklbr',
+            text: 'Гостиничный сервис',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -85,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <ColoredSpan>Портье</ColoredSpan>,
+                    desc: 'Встречает гостей, оформляет им заезды и выезды, ведет документы для подсчета'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Администратор</ColoredSpan></>,
+                    desc: 'Координирует работу смены, обучает персонал, решает конфликтные ситуации'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Управляющий</ColoredSpan> отелем</>,
+                    desc: 'Управляет всеми службами гостиницы, добивается выполнения финансовых планов, разрабатывает стандарты сервиса'
+                },
+            ]
+        },
+        {
+            id: 'gornyy',
+            text: 'Туризм',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -96,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <><ColoredSpan>Менеджер</ColoredSpan> по продаже туров</>,
+                    desc: 'Собирает турпроекты, рассчитывает стоимость, общается с клиентами'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Руководитель</ColoredSpan> турагентства</>,
+                    desc: 'Придумывает схему продаж, анализирует результаты, управляет всей командой, ищет партнеров'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '3/1/4/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'e32fvs54vet',
+                    title: <ColoredSpan>Экскурсовод</ColoredSpan>,
+                    desc: 'Проводит экскурсии, знакомит людей с историей и достопримечательностями'
+                },
+                {
+                    id: 'efvs54vet',
+                    title: <ColoredSpan>Event-менеджер</ColoredSpan>,
+                    desc: 'Организует и проводит мероприятия различных форматов'
+                },
+            ]
+        },
+    ],
+    education: [
+        {
+            id: 'grtobwvfsklbr',
+            text: 'Дошкольное образование',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -126,
+            jobs: [
+                {
+                    id: 'labefojdt',
+                    title: <><ColoredSpan>Воспитатель</ColoredSpan></>,
+                    desc: 'Организует игры, проводит активности с детьми младшего возраста, общается с родителями'
+                },
+                {
+                    id: 'geolfvfsb ',
+                    title: <><ColoredSpan>Старший воспитатель</ColoredSpan></>,
+                    desc: 'Организует работу других воспитателей, составляет программы обучения детей, внедряет новые технологии'
+                },
+                {
+                    id: 'naxscvfhrgeol',
+                    title: <><ColoredSpan>Заведующий</ColoredSpan> детским садом</>,
+                    desc: 'Управляет дошкольным учреждением, следит за финансовыми отчетами, взаимодействует с районной администрацией'
+                },
+            ]
+        },
+        {
+            id: 'gornyy',
+            text: 'Преподавание',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -146,
+            jobs: [
+                {
+                    id: 'baffivfdkbpr',
+                    title: <><ColoredSpan>Учитель</ColoredSpan> начальных классов</>,
+                    desc: 'Преподает основные предметы, работает классным руководителем, коммуницирует с родителями'
+                },
+                {
+                    id: 'obfsdkcjbaff',
+                    title: <><ColoredSpan>Учитель-методист</ColoredSpan></>,
+                    desc: 'Разрабатывает методические материалы, обучает молодых специалистов, проводит мастер-классы'
+                },
+                {
+                    id: 'fdbrckd',
+                    title: <><ColoredSpan>Заместитель директора</ColoredSpan> по учебно-воспитательной работе</>,
+                    desc: 'Руководит образовательным процессом, составляет расписание, контролирует качество преподавания'
+                },
+            ]
+        },
+        {
+            id: 'other',
+            text: 'смежные профессии',
+            style: { 'grid-area': '3/1/4/2' },
+            hasPicture: false,
+            jobs: [
+                {
+                    id: 'ecoprvsdfvsvet',
+                    title: <><ColoredSpan>Социальный</ColoredSpan> педагог</>,
+                    desc: 'Работает с детьми, которые испытывают психологические проблемы',
+                },
+                {
+                    id: 'epsiprvsdfvsvet',
+                    title: <><ColoredSpan>Педагог</ColoredSpan> по внеучебной деятельности</>,
+                    desc: 'Организует внеучебную деятельность образовательного учреждения: конкурсы, мероприятия'
+                },
+            ]
+        },
+    ],
     stroy: [
         {
             id: 'pgsBuildings',
@@ -1105,13 +1625,13 @@ export const opportunitiesConfig = {
             textSize: 27,
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -194,
-            skills: ['умение работать в команде', 'пространственное мышление', 'ответственность',],
+            skills: ['умение работать в команде', 'пространственное мышление', 'ответственность',],
             readyFor: ['работа на строительной площадке', 'соблюдение техники безопасности', 'решение нестандартных задач'],
             jobs: [
                 {
                     id: 'jun',
                     title: 'младший специалист',
-                    desc: 'Помогает в работе на объекте, изучает чертежи и технологии под руководством наставника',
+                    desc: 'Помогает в работе на объекте, изучает чертежи и технологии под руководством наставника',
                     skills: [
                         {
                             name: 'обучаемость',
@@ -1330,7 +1850,7 @@ export const opportunitiesConfig = {
                     </>,
                     skills: [
                         {
-                            name: 'знание спецтехники и материалов',
+                            name: 'знание спецтехники и материалов',
                             width: 100,
                             id: 'a2c423'
                         },
@@ -1352,7 +1872,7 @@ export const opportunitiesConfig = {
                     desc: 'Контролирует узкоспециализированные работы (монтаж опор, бетонирование сложных конструкций)',
                     skills: [
                         {
-                            name: 'знание специфических технологий и нормативов',
+                            name: 'знание специфических технологий и нормативов',
                             width: 100,
                             id: 's2d2nip'
                         },
@@ -1436,7 +1956,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'jun1',
                     title: 'младший специалист (электромонтер)',
-                    desc:'Помогает в прокладке кабельных трасс, монтаже электрощитового оборудования, установке розеток',
+                    desc:'Помогает в прокладке кабельных трасс, монтаже электрощитового оборудования, установке розеток',
                     skills: [
                         {
                             name: 'знания электротехники, аккуратность',

@@ -13,14 +13,9 @@ const Wrapper = styled.button`
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
-    display: none;
 
     width: 152px;
     height: 152px;
-
-    ${media.desktop`
-        display: block;
-    `}
 `;
 
 const Element = styled.img`

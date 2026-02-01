@@ -94,6 +94,12 @@ export const NoDesktop = styled.span`
         display: none;
     `}
 `;
+export const TextDesk = styled.span`
+    display: none;
+    ${media.desktop`
+        display: inline;
+    `}
+`;
 
 export const ShortScreen = styled.span`
     @media screen and (min-width: 1320px){

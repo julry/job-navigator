@@ -13,13 +13,13 @@ import { ModalLinesDesk } from "./shared/svg/ModalLinesDesk";
 const Wrapper = styled(motion.div)`
     position: absolute;
     inset: 0;
-    padding-top: 34px;
     overflow-x: hidden;
-
+    padding-top: 88px;
+   
     z-index: 302;
 
     ${media.desktop`
-        padding-top: 40px;
+        padding-top: 92px;
     `}
 
      backface-visibility: hidden;
@@ -328,6 +328,8 @@ const ButtonStyled = styled(Button)`
     width: 206px;
     ${({ $styles }) => $styles};
     ${({ $hasActiveStyles, $activeStyles }) => $hasActiveStyles ? $activeStyles : ''};
+    ${({$blockTextSize}) => $blockTextSize ? 'font-size:' + $blockTextSize + 'px' : ''};
+    line-height: 100%;
 
     @media screen and (min-width: 400px) {
         width: 220px;
@@ -370,7 +372,7 @@ const UpButton = styled.button`
 
 const ClosedButton = styled.button`
     position: absolute;
-    top: 14px;
+    top: 68px;
     right: 25px;
 
     width: 47px;
@@ -384,10 +386,6 @@ const ClosedButton = styled.button`
     background-color: var(--color-gray);
     border: 1px solid var(--color-white);
     z-index: 10;
-
-    ${media.desktop`
-        display: none;
-    `}
 `;
 
 const CardInnerWrapper = styled.div`
@@ -486,7 +484,6 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
             exit={{ y: '100vh', boxShadow: 'unset' }}
             transition={{ duration: 0.3 }}
         >
-            <CompasButtonStyled onClick={onClose} />
             <ClosedButton onClick={onClose}>
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M0 19L9.38597 8.89595L9.34211 9.40848L0.482459 0H2.19298L10.2632 8.63969H9.64914L17.6754 0H19.3421L10.4386 9.55491L10.4825 8.85935L20 19H18.2018L9.69299 9.77457L10.1755 9.81118L1.71052 19H0Z" fill="#FFF2EC" />
@@ -505,7 +502,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                         <ModalLinesDesk accentColor={activeLineColor} defaultColor={lineColor} amount={opportunities.length} active={chosenId} />
                     </DesktopLines>
                     <MenuContent>
-                        {opportunities.map(({ text, id }) => (
+                        {opportunities.map(({ text, id, blockTextSize }) => (
                             <ButtonWrapper>
                                 {id === chosen && (
                                     <ButtonNoiseSvg $backgroundColor={activeTabStyles?.backgroundColor} />
@@ -514,6 +511,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                                     onClick={() => handleChoose(id)}
                                     $isActive={id === chosen}
                                     $type='secondary'
+                                    $blockTextSize={blockTextSize}
                                     $hasActiveStyles={id === chosen && isBrand}
                                     $activeStyles={activeTabStyles}
                                     $styles={isBrand ? tabStyles : {}}
@@ -631,7 +629,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                     </MobileLines>
                     <MenuHead src={menuPersonHead} alt="" />
                     <MenuContent>
-                        {opportunities.map(({ text, id }) => (
+                        {opportunities.map(({ text, id, blockTextSize }) => (
                             <ButtonWrapper>
                                 {id === chosen && (
                                     <ButtonNoiseSvg $backgroundColor={activeTabStyles.backgroundColor} />
@@ -640,6 +638,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                                     onClick={() => handleChoose(id)}
                                     $isActive={id === chosen}
                                     $type='secondary'
+                                    $blockTextSize={blockTextSize}
                                     $hasActiveStyles={id === chosen && isBrand}
                                     $activeStyles={activeTabStyles}
                                     $styles={isBrand ? tabStyles : {}}

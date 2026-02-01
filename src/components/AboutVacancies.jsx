@@ -240,7 +240,7 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
                 и развитии в профессии?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
-            <ButtonStyled onClick={openBot} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
+            <ButtonStyled onClick={openBot} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
         </AddBlock>
     </Wrapper>
 )

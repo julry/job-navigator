@@ -86,7 +86,7 @@ const StudentPic = styled.img`
 
 const Opportunity = styled(Button)`
     max-width: 480px;
-
+    ${({$blockTextSize}) => $blockTextSize ? 'font-size:' + $blockTextSize + 'px' : ''};
     ${({ $style }) => $style};
 
     ${media.desktop`
@@ -231,8 +231,8 @@ export const Opportunities = ({
             </div>
             <Info>
                 <OpportunitiesBlock $gap={OPPS_TO_GAP_LINES_DESKTOP[opportunities.length]}>
-                    {opportunities.map(({ text, style, id }) => (
-                        <Opportunity $defaultColor={defaultColor} $accentColor={accentColor} key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
+                    {opportunities.map(({ text, style, id, blockTextSize }) => (
+                        <Opportunity $blockTextSize={blockTextSize} $defaultColor={defaultColor} $accentColor={accentColor} key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
                     )
                     )}
                     <StudentPic src={person} alt="" />
@@ -274,7 +274,7 @@ export const Opportunities = ({
                 </OpportunitiesBlock>
                 {hasButton && (
                     <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>
-                        откликайся в {companyName}
+                        откликайся в {companyName}
                     </ButtonStyled>
                 )}
             </Info>

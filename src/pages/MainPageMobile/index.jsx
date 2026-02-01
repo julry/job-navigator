@@ -272,7 +272,7 @@ export const MainPageMobile = () => {
                 <CompasHeader>
                     навигатор профессий{'\n'}
                     — Это <ColoredSpan>интерактивный
-                        помощник</ColoredSpan> для студентов колледжей и техникумов
+                        помощник</ColoredSpan> для студентов колледжей и техникумов
                 </CompasHeader>
                 <SmallText>
                     Мы создали его, чтобы помочь тебе понять свою специальность, узнать, как вырасти в профессии и найти первую работу {'\n\n'}
@@ -298,7 +298,7 @@ export const MainPageMobile = () => {
                                     <PictureWrapper $width={166} $height={142}>
                                         <TextWrapper $isInversed $top={33} $width={206} $spacing={165}>
                                             Техника
-                                            и технологии{'\n'}
+                                            и технологии{'\n'}
                                             строительства
                                         </TextWrapper>
                                         <Person src={stroy} alt="" $width={55} $height={125} $top={0} $left={100} />
@@ -313,7 +313,7 @@ export const MainPageMobile = () => {
                     <PictureWrapper $width={166} $height={142}>
                         <TextWrapper $top={33} $width={206} $spacing={165}>
                             Техника
-                            и технологии{'\n'}
+                            и технологии{'\n'}
                             строительства
                         </TextWrapper>
                         <Person src={stroy} alt="" $width={55} $height={125} $top={0} $left={100} />
@@ -372,7 +372,7 @@ export const MainPageMobile = () => {
                                 <PictureWrapper $width={243} $height={148}>
                                     <TextWrapper $isInversed $top={42} $width={175} $spacing={87}>
                                         Экономика{'\n'}
-                                        и финансы
+                                        и финансы
                                     </TextWrapper>
                                     <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={17} />
                                     <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={-30} />
@@ -386,7 +386,7 @@ export const MainPageMobile = () => {
                     <PictureWrapper $width={243} $height={148}>
                         <TextWrapper $top={42} $width={155} $spacing={77}>
                             Экономика{'\n'}
-                            и финансы
+                            и финансы
                         </TextWrapper>
                         <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={47} />
                         <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={0} />
@@ -474,7 +474,7 @@ export const MainPageMobile = () => {
                             component: (
                                 <PictureWrapper $width={262} $height={165}>
                                     <TextWrapper $isInversed $top={20} $height={50} $width={272} $spacing={70}>
-                                        Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
+                                        Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
                                     </TextWrapper>
                                     <Person $isMirror src={geology} alt="" $width={85 * 1.3} $height={137 * 1.3} $top={-30} $left={40} />
                                     <ImageElement src={geologyMountin} alt="" $width={262} $height={165} $top={0} $left={-65} />
@@ -487,7 +487,7 @@ export const MainPageMobile = () => {
                 >
                     <PictureWrapper $width={262} $height={165}>
                         <TextWrapper $isRight $top={0} $height={50} $width={272} $spacing={70}>
-                            Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
+                            Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
                         </TextWrapper>
                         <Person src={geology} alt="" $width={85 * 1.3} $height={137 * 1.3} $top={-30} $left={125} />
                         <ImageElement src={geologyMountin} alt="" $width={262} $height={165} $top={0} $left={0} />
@@ -554,7 +554,7 @@ export const MainPageMobile = () => {
                             component: (
                                 <PictureWrapper $width={186} $height={173}>
                                 <TextWrapper $isInversed $top={43} $width={242} $spacing={139}>
-                                    Сервис и туризм
+                                    Сервис и туризм
                                 </TextWrapper>
                                 <Person $isMirror src={service} alt="" $width={77} $height={144} $top={0} $left={58} />
                                 <ImageElement src={serviceMountin} alt="" $width={195} $height={108} $top={65} $left={-20} />
@@ -567,7 +567,7 @@ export const MainPageMobile = () => {
                 >
                     <PictureWrapper $width={186} $height={173}>
                         <TextWrapper $isRight $top={43} $width={192} $spacing={94}>
-                            Сервис и туризм
+                            Сервис и туризм
                         </TextWrapper>
                         <Person $isMirror src={service} alt="" $width={77} $height={144} $top={0} $left={63} />
                         <ImageElement src={serviceMountin} alt="" $width={195} $height={108} $top={65} $left={-15} />
@@ -636,7 +636,7 @@ export const MainPageMobile = () => {
                                     <TextWrapper $isInversed $top={37} $height={50} $width={261} $spacing={122}>
                                         Техносферная{'\n'}
                                         безопасность{'\n'}
-                                        и природообустройство
+                                        и природообустройство
                                     </TextWrapper>
                                     <Person src={safetech} alt="" $width={79 * 1.45} $height={147 * 1.45} $top={-47} $left={0} />
                                     <ImageElement $isMirror src={safetechMountin} alt="" $width={231} $height={116} $top={39} $left={-30} />
@@ -651,7 +651,7 @@ export const MainPageMobile = () => {
                         <TextWrapper $isRight $top={42} $height={50} $width={231} $spacing={142}>
                             Техносферная{'\n'}
                             безопасность{'\n'}
-                            и природообустройство
+                            и природообустройство
                         </TextWrapper>
                         <Person $isMirror src={safetech} alt="" $width={79 * 1.45} $height={147 * 1.45} $top={-42} $left={31} />
                         <ImageElement src={safetechMountin} alt="" $width={231} $height={116} $top={44} $left={0} />
@@ -718,7 +718,7 @@ export const MainPageMobile = () => {
                             component: (
                                 <PictureWrapper $width={193} $height={147}>
                                     <TextWrapper $isInversed $top={26} $width={280} $spacing={130}>
-                                        Техника и технологии{'\n'}наземного транспорта
+                                        Техника и технологии{'\n'}наземного транспорта
                                     </TextWrapper>
                                     <Person src={transportMain} alt="" $width={92} $height={177} $top={-20} $left={0} />
                                     <ImageElement src={transportMountin} alt="" $width={213} $height={108} $top={55} $left={-20} />
@@ -731,7 +731,7 @@ export const MainPageMobile = () => {
                 >
                     <PictureWrapper $width={193} $height={147}>
                         <TextWrapper $top={26} $width={240} $spacing={90}>
-                            Техника и технологии{'\n'}наземного транспорта
+                            Техника и технологии{'\n'}наземного транспорта
                         </TextWrapper>
                         <Person src={transportMain} alt="" $width={92} $height={177} $top={0} $left={0} />
                         <ImageElement src={transportMountin} alt="" $width={213} $height={108} $top={75} $left={-20} />
@@ -819,7 +819,7 @@ export const MainPageMobile = () => {
                     полезной инфы о навыках{'\n'}
                     и развитии в профессии?
                 </p>
-                <ButtonStyled onClick={openBot}>переходи в бота!</ButtonStyled>
+                <ButtonStyled onClick={openBot}>переходи в бота!</ButtonStyled>
             </BotInfo>
             <UpButton onClick={() => wrapperRef?.current?.scrollTo({ top: 0, behavior: "smooth" })}>
                 <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { media } from "../styles/media";
-import { ColoredSpan, NoTransformSpan, Title } from "./shared/Texts";
+import { ColoredSpan, NoTransformSpan, Title, TextDesk } from "./shared/Texts";
 import { Button } from "./shared/Button";
 
 const Wrapper = styled.div`
@@ -69,12 +69,6 @@ const ButtonStyled = styled(Button)`
     `}
 `;
 
-const TextDesk = styled.span`
-    display: none;
-    ${media.desktop`
-        display: inline;
-    `}
-`;
 
 export const AboutCompany = ({defaultColor, accentColor, children, companyName}) => (
     <Wrapper>
