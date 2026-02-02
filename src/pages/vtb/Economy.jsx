@@ -12,6 +12,7 @@ import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
 import { SmallText } from "../../components/shared/Texts";
 import { HorizontalContent } from "./Horizontal";
+import { ProgressComponent } from "./Progress";
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -135,6 +136,7 @@ export const EconomyPage = () => {
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} />}
             modalStyles={modalStyles}
+            modalContent={<ProgressComponent defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} picture={vtbMenu} />}
         />
     )
 }

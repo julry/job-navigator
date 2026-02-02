@@ -72,9 +72,10 @@ const HouseSm = styled(AbsoluteImage)`
     transform: rotate(30deg);
 `;
 
+
 export const About = ({ defaultColor, accentColor }) => (
     <>
-        <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>«Алабуга Девелопмент»</ColoredSpan></TitleStyled>
+        <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>«Алабуга Девелопмент»</ColoredSpan></TitleStyled>
         <TextWrapper $accentColor={accentColor}>
             <AbsolutImageStyled
                 src={house}
@@ -145,7 +146,7 @@ export const About = ({ defaultColor, accentColor }) => (
                 к детальной работе и хотят строить будущее в буквальном смысле.
                 Приходи за масштабными задачами!
             </Text>
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>хочу{' '}<TextDesk>попасть{' '}</TextDesk>в{' '}<NoTransformSpan>«Алабуга Девелопмент»</NoTransformSpan>!</ButtonStyled>
+            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу{' '}<TextDesk>попасть{' '}</TextDesk>в{' '}«Алабуга Девелопмент»!</NoTransformSpan></ButtonStyled>
         </TextWrapper>
     </>
 )

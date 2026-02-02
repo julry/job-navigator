@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../styles/media";
@@ -199,7 +199,7 @@ const MenuBlock = styled.div`
     `}
 `;
 
-const MenuBlockDesktop = styled.div`
+const MenuBlockDesktop = styled(motion.div)`
     position: sticky;
     margin-left: auto;
     top: 86px;
@@ -366,7 +366,7 @@ const UpButton = styled.button`
     
     z-index: 10;
     ${media.desktop`
-        margin-top: ${({$pictureBottom}) => -1 * $pictureBottom}px;
+        margin-top: ${({$pictureBottom, $hasChildren}) =>$hasChildren ? 60 : -1 * $pictureBottom}px;
     `}
 `;
 
@@ -450,8 +450,23 @@ export const JobModal = ({
 }) => {
     const [chosen, setChosen] = useState(id);
     const [shownUpBtn, setShowUpBtn] = useState(true);
+   
     const title = useRef();
     const lastCardRef = useRef();
+    const contentRef = useRef();
+
+    const { scrollY } = useScroll({container: contentRef});
+    const [y, setY] = useState(0);
+
+    useMotionValueEvent(scrollY, "change", () => {
+        if (children === undefined) return;
+
+        const lastCard = lastCardRef?.current?.getBoundingClientRect();
+        const bottom = lastCard?.top + lastCard?.height;
+        if (scrollY.get() - bottom > 100) {
+            setY((bottom - scrollY.get()) / 2)
+        }
+    });
 
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id) ?? {};
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
@@ -500,6 +515,7 @@ export const JobModal = ({
                 </svg>
             </ClosedButton>
             <Content
+                ref={contentRef}
                 animate={{ boxShadow: '0 -2px 35px 2px var(--color-gray)' }}
                 exit={{ boxShadow: 'unset' }}
                 transition={{
@@ -507,7 +523,7 @@ export const JobModal = ({
                     duration: 0.15
                 }}
             >
-                <MenuBlockDesktop>
+                <MenuBlockDesktop animate={{y}}>
                     <DesktopLines>
                         <ModalLinesDesk accentColor={activeLineColor} defaultColor={lineColor} amount={opportunities.length} active={chosenId} />
                     </DesktopLines>
@@ -668,7 +684,7 @@ export const JobModal = ({
                         ))}
                     </MenuContent>
                 </MenuBlock>
-                {shownUpBtn && (<UpButton $pictureBottom={pictureBottom} onClick={scrollContentTop}>
+                {shownUpBtn && (<UpButton $hasChildren={children !== undefined} $pictureBottom={pictureBottom} onClick={scrollContentTop}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={textColor ?? "var(--color-gray)"} />
                         <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke={textColor ?? "var(--color-gray)"} stroke-width="2" />

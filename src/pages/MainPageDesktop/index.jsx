@@ -3,7 +3,7 @@ import { ColoredSpan, SmallText, Title } from "../../components/shared/Texts";
 import compasBg from '../../assets/images/compas/compasMain.png';
 import compasArrow from '../../assets/images/compas/compasArrow.png';
 import { media } from "../../styles/media";
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
 
 import { calculateAngle } from "../../utils/calculateAngle";
@@ -238,20 +238,6 @@ export const MainPageDesktop = () => {
     );
 
     const handleMouseEnter = (e) => {
-        // const innerWidth = window.innerWidth;
-        // const isXs = innerWidth < 1300;
-        // const isSm = innerWidth < 1400;
-
-        // let cardLeft = (innerWidth - 1440) / 2 + left;
-
-        // if (isSm) {
-        //     cardLeft = left * 0.9;
-        // }
-
-        // if (isXs) {
-        //     cardLeft = left * 0.86;
-        // }
-
         const {x = 0, y = 0, width: compassWidth = 0, height: compassHeight = 0} = compasRef?.current?.getBoundingClientRect() ?? {};
 
         const compassCenter = {
