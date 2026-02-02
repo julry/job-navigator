@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.21f30e41.css",
-    "main.js": "./static/js/main.3379bdb4.js",
+    "main.css": "./static/css/main.09cb1d86.css",
+    "main.js": "./static/js/main.28e35f84.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -10,10 +10,12 @@
     "static/media/machineBot.png": "./static/media/machineBot.e12d92274b68b2246713.png",
     "static/media/KOT-EitaiGothic-Bold.otf": "./static/media/KOT-EitaiGothic-Bold.3f67f8e705c2ae8c8317.otf",
     "static/media/alabugaVacancies.png": "./static/media/alabugaVacancies.6492486ab8506be42de3.png",
+    "static/media/lemanaVac.png": "./static/media/lemanaVac.e9004b69040a329e3ce0.png",
     "static/media/vtbVacancies.png": "./static/media/vtbVacancies.ef1697abd02c38e96b3b.png",
     "static/media/compasMain.png": "./static/media/compasMain.dde02df6ddca9ae569c8.png",
     "static/media/economy.png": "./static/media/economy.d531ebff6de1437a7a72.png",
     "static/media/machineTop.png": "./static/media/machineTop.1b210939cba318dc694c.png",
+    "static/media/lemanaShown.png": "./static/media/lemanaShown.35c10d91dc20019307ac.png",
     "static/media/educationBot.png": "./static/media/educationBot.5262ecf475e1b7652428.png",
     "static/media/pravo.png": "./static/media/pravo.7ad0026843ed6dd7d1d4.png",
     "static/media/infosec.png": "./static/media/infosec.22d6029d5b63d5f7c465.png",
@@ -47,6 +49,7 @@
     "static/media/vtbStudent.png": "./static/media/vtbStudent.4ab286328212c9f1f901.png",
     "static/media/vtbMenuHead.png": "./static/media/vtbMenuHead.ade9e957c35e44fe67d8.png",
     "static/media/infoSecBot.png": "./static/media/infoSecBot.bf3450e3a0d78bd85d6c.png",
+    "static/media/lemanaBot.png": "./static/media/lemanaBot.4edda74ca314c007567f.png",
     "static/media/alabugaMenuHead.png": "./static/media/alabugaMenuHead.04de08a716b96ee21761.png",
     "static/media/agroTop.png": "./static/media/agroTop.6f1212c25840101436e1.png",
     "static/media/electricsMountin.png": "./static/media/electricsMountin.7ce72b4d97b445e3b925.png",
@@ -107,6 +110,7 @@
     "static/media/educationMountin.png": "./static/media/educationMountin.c44688207c8ce7ab7f7c.png",
     "static/media/transportMountin.png": "./static/media/transportMountin.1cd5b5d78f96499ab43d.png",
     "static/media/chemical_top.png": "./static/media/chemical_top.6d753595f028f12257a1.png",
+    "static/media/lemanaTop.png": "./static/media/lemanaTop.749fab921e05f647311a.png",
     "static/media/serviceMountin.png": "./static/media/serviceMountin.a215f733aaccae38bf51.png",
     "static/media/defaultPhone.png": "./static/media/defaultPhone.672938e7037842dc0a1e.png",
     "static/media/pravoMountin.png": "./static/media/pravoMountin.235bbf06f27e790c15b8.png",
@@ -129,11 +133,11 @@
     "static/media/agroMountinSm.png": "./static/media/agroMountinSm.109f099e5d69b0c154d0.png",
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
-    "main.21f30e41.css.map": "./static/css/main.21f30e41.css.map",
-    "main.3379bdb4.js.map": "./static/js/main.3379bdb4.js.map"
+    "main.09cb1d86.css.map": "./static/css/main.09cb1d86.css.map",
+    "main.28e35f84.js.map": "./static/js/main.28e35f84.js.map"
   },
   "entrypoints": [
-    "static/css/main.21f30e41.css",
-    "static/js/main.3379bdb4.js"
+    "static/css/main.09cb1d86.css",
+    "static/js/main.28e35f84.js"
   ]
 }
