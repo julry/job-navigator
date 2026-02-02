@@ -20,6 +20,7 @@ import { EducationPage } from "../pages/Education";
 import { EconomyPage } from "../pages/vtb/Economy";
 import { PravoPage } from "../pages/vtb/Pravo";
 import { TradePage } from "../pages/Trade";
+import { RadioElectronicPage } from "../pages/RadioElectronic";
 
 export const routes = [
     {
@@ -119,7 +120,7 @@ export const routes = [
     {
         //Электроника, радиотехника и системы связи – Билайн
         path: '/radioelectronic',
-        element: <Page3 />
+        element: <RadioElectronicPage />
     },
     {
         //Техника и технологии строительства – Алабуга

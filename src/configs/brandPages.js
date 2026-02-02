@@ -17,6 +17,11 @@ import trade from '../assets/images/lemana/lemanaShown.png';
 import tradeT from '../assets/images/lemana/lemanaTop.png';
 import tradeB from '../assets/images/lemana/lemanaBot.png';
 
+import radioelectronic from '../assets/images/default/people/radioelectronicShown.png';
+import radioelectronicT from '../assets/images/beeline/beelineTop.png';
+import radioelectronicB from '../assets/images/beeline/beelineBot.png';
+import beelineVac from '../assets/images/beeline/beelineVac.png';
+
 export const brandPages = [
     {
         id: 'pravo',
@@ -396,8 +401,133 @@ export const brandPages = [
     {
         //Электроника, радиотехника и системы связи – Билайн
         id: 'radioelectronic',
-        title: 'Те, кто обеспечивают связь по всей стране',
-        jobs: ['Техническое обслуживание сетей', 'Монтаж электронных приборов', 'Радиоаппаратостроение']
+        jobTitle: <><ColoredSpan $color='var(--color-beeline-accent)'>Электроника</ColoredSpan>, радиотехника и системы связи</>,
+        jobDescription: 'Wi-Fi, телекоммуникационные сети, интернет и мобильная связь — это все работает благодаря крутым инженерам связи\n\nОни разрабатывают и собирают устройства, разбираются в микросхемах, радиоволнах и телекоммуникационных сетях. Благодаряим люди могут общаться на расстоянии, работают телефоны и интернет\n\nСпециалисты устраняют цифровое\nнеравенство, обеспечивают работу\nсоциальных проектов — от мониторинга\nвулканов до телемедицины — и создают\nбудущее, в котором технологии\nслужат людям',
+        jobDescriptionSm: 'Wi-Fi, телекоммуникационные сети, интернет и мобильная связь — это все работает благодаря крутым инженерам связи\n\nОни разрабатывают и собирают устройства, разбираются в микросхемах, радиоволнах и телекоммуникационных сетях. Благодаряим люди могут общаться на расстоянии, работают телефоны и интернет\n\nСпециалисты устраняют цифровое\nнеравенство, обеспечивают работу социальных проектов — от мониторинга вулканов до телемедицины — и создают будущее, в котором технологии\nслужат людям',
+        testQuestions: [
+            {
+                id: 'q-0',
+                text: 'Знаю основы электроники, радиотехники, телекоммуникаций'
+            },
+            {
+                id: 'q-1',
+                text: 'Умею работать с измерительным и монтажным оборудованием'
+            },
+            {
+                id: 'q-2',
+                text: 'Разбираюсь, как настраивать сети и исправлять неполадки'
+            },
+            {
+                id: 'q-3',
+                text: <NoTransformSpan>знаю стандарты связи (3G/4G/5G, Wi‑Fi, GPON)</NoTransformSpan>
+            },
+            {
+                id: 'q-4',
+                text: 'Умею читать техническую документацию и схемы'
+            },
+            {
+                id: 'q-6',
+                text: 'ответственный и внимательный',
+                isSoft: true,
+            },
+            {
+                id: 'q-7',
+                text: 'Быстро обучаюсь и хочу развиваться в отрасли',
+                isSoft: true,
+            },
+            {
+                id: 'q-8',
+                text: 'Хочу работать с клиентами и командой — техниками, подрядчиками',
+                isSoft: true
+            },
+            {
+                id: 'q-9',
+                text: 'Готов к выездам и работе в нестандартных условиях',
+                isSoft: true
+            },
+            {
+                id: 'q-10',
+                text: 'Хочу освоить новые программы и технологии',
+                isSoft: true
+            },
+        ],
+        vacanciesDescr: [
+            { id: 0, isSmall: true, name: 'Операторы связи и провайдеры', desc: 'Строить и обслуживать сети связи, обеспечивая миллионам людей стабильный интернет и мобильную связь' },
+            { id: 1, isSmall: true, name: 'Компании-производители электроники и сетевого оборудования', desc: 'Участвовать в разработке, сборке и тестировании разных устройств — от базовых станций и роутеров до сложных систем связи' },
+            { id: 2, isSmall: true, name: 'IT и стартапы', desc: 'Обеспечивать работу цифровой инфраструктуры, на которой работают социальные сети, облачные сервисы и онлайн-платформы.' },
+            { id: 3, isSmall: true, name: 'Научно-исследовательские и проектные институты', desc: <NoTransformSpan>работать над технологиями будущего: участвовать в разработке новых стандартов связи (вроде 6G) и систем IoT (интернета вещей)</NoTransformSpan>},
+            { id: 4, isSmall: true, name: 'Сервисные и инжиниринговые компании', desc: 'Проектировать и внедрять комплексные телеком-решения для бизнеса, промышленности и государственных структур' },
+        ],
+        testName: 'электронике, радиотехнике и системах связи',
+        opportunities: opportunitiesConfig.radioelectronic,
+        opportunitiesPerson: {
+            width: 173,
+            height: 319,
+            left: 18,
+            img: radioelectronic,
+        },
+        opportunitiesPersonDesk: {
+            width: 207,
+            height: 380,
+            left: 403,
+            img: radioelectronic,
+            bottom: -220,
+        },
+        vacancies: {
+            picture: beelineVac,
+            subTitleWidth: 200,
+            customTitle: <>краткосрочные стажировки для студентов</>,
+            lines: ['эксплуатация сети', 'энергетика', 'строительство сети и др.'],
+            advantages: [
+                'гибкая занятость, возможность совмещать с учебой (от 20ч в неделю)',
+                'гибридный, офисный или разъездной формат',
+                'наставник, который поможет адаптироваться и составить план обучения'
+            ],
+            shouldShortLast: false,
+            qualities: [
+                'учишься на экономической или юридической специальности',
+                'готов работать от 30 часов в неделю'
+            ],
+            buttonStyles: `
+                background-color: var(--color-beeline-accent);
+                color: var(--color-beeline-dark);
+
+                &:hover {
+                    background-color: var(--color-beeline-dark);
+                }
+            `,
+            vacancies: [
+                { name: 'Инженер по эксплуатации сети', link: '' },
+                { name: 'Техник по обслуживанию сетей', link: '' },
+                { name: 'Монтажник сетей', link: '' },
+                { name: 'Сервисный инженер', link: '' },
+            ],
+        },
+        testAdditionalMarginDesk: 20,
+        testPerson: {
+            top: {
+                widthDesc: 118,
+                heightDesc: 371,
+                src: radioelectronicT,
+                bottomDesc: 40,
+                leftDesc: -92,
+                width: 83,
+                height: 261,
+                bottom: -232,
+                left: 80.9,
+            },
+            bot: {
+                widthDesc: 227 * 1.1,
+                heightDesc: 264 * 1.1,
+                src: radioelectronicB,
+                bottomDesc: -95,
+                leftDesc: -60,
+                width: 136 * 1.1,
+                height: 157 * 1.1,
+                bottom: -327,
+                left: 87
+            },
+        }
     },
     {
         //Техника и технологии строительства – Алабуга

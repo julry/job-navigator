@@ -130,7 +130,7 @@ export const TradePage = () => {
             advantageComponent={<Advantages defaultColor={'var(--color-lemana-dark)'}  accentColor={'var(--color-lemana-accent)'} />}
             modalStyles={modalStyles}
             spotColor={'var(--color-lemana-accent)'}
-            spotTop="50%"
+            spotTop="50%" spotLeft={'340px'}
             additionalInfoComponent={<VacanciesComponent defaultColor={'var(--color-lemana-dark)'}/>}
         />
     )

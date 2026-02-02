@@ -57,7 +57,14 @@ const VacanciesInfo = styled.div`
     text-align: center;
 
     ${media.desktop`
-        display: none;
+        top: 20px;
+        right: 30px;
+        width: 380px;
+        transform: none;
+
+        & p {
+            white-space: unset;
+        }
     `}
 `;
 

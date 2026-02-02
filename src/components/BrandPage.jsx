@@ -187,7 +187,8 @@ export const BrandPage = ({
     opportunityPerson, companyName, logoComponent, aboutComponent,
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
     botButtonStyles, modalContent, vacanciesComponent, botBlockStyles,
-    horizontalComponent, hasHorizontal, spotColor, spotTop, additionalInfoComponent
+    horizontalComponent, hasHorizontal, spotColor, spotTop, spotTopD, additionalInfoComponent,
+    spotLeft,
 }) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -237,7 +238,7 @@ export const BrandPage = ({
                         <HeaderTitle onClick={() => navigate('/')}><ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий</HeaderTitle>
                         <ButtonStyled $style={modalStyles?.buttonStyle} onClick={openBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
                     </Header>
-                <AboutJob isBrand spotTop={spotTop} spotColor={ spotColor ?? defaultColor} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
+                <AboutJob isBrand spotTopD={spotTopD} spotLeft={spotLeft} spotTop={spotTop} spotColor={spotColor ?? defaultColor} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>
                     {personComponent}
                 </PictureWrapper>

@@ -138,7 +138,7 @@ export const HorizontalContent = () => (
                 </SmallTextStyled>
                 <br />
                 <SmallTextStyled>
-                    <ColoredSpan $color="var(--color-vtb-accent)">Что доучить:</ColoredSpan> специфика работы с партнёрами и юридическими лицами
+                    <ColoredSpan $color="var(--color-vtb-accent)">Что доучить:</ColoredSpan> специфика работы с партнёрами и юридическими лицами
                 </SmallTextStyled>
             </InfoBlock>
         </Line>
@@ -168,7 +168,7 @@ export const HorizontalContent = () => (
             <LineSvgDesk color="var(--color-vtb-blue)" />
             <InfoBlock>
                 <SmallTextStyled>
-                    <ColoredSpan $color="var(--color-vtb-accent)">Что общее:</ColoredSpan> работа с клиентами, знание банковских продуктов и сервиса
+                    <ColoredSpan $color="var(--color-vtb-accent)">Что общее:</ColoredSpan> работа с клиентами, знание банковских продуктов и сервиса
                 </SmallTextStyled>
                 <br />
                 <SmallTextStyled>

@@ -90,6 +90,8 @@ const CardContent = styled.div`
 
     ${({ $withPicture }) => $withPicture ? 'height: 440px' : ''};
 
+    ${({$lastCardPadding}) => $lastCardPadding ? 'padding-bottom: ' + $lastCardPadding.mob + 'px' : ''};
+
     & p {
         color: ${({ $textColor }) => $textColor ?? 'var(--color-white)'} !important;
         font-size: 16px;
@@ -98,6 +100,7 @@ const CardContent = styled.div`
    ${media.desktop`
         min-height: 210px;
         ${({ $withPicture }) => $withPicture ? 'height: 380px' : ''};
+        ${({$lastCardPadding}) => $lastCardPadding ? 'padding-bottom: ' + $lastCardPadding.desk + 'px' : ''};
 
         & ${Text} {
             max-width: 420px;
@@ -432,6 +435,10 @@ const Skill = styled.div`
     text-align: center;
     ${({ $styles }) => $styles}; 
     margin-bottom: 10px;
+
+    ${media.desktop`
+        width: ${({ $widthDesk }) => $widthDesk ?? 100}%;
+    `}
 `;
 
 const CommonSkillsWrapper = styled.div`
@@ -446,6 +453,11 @@ const CommonSkillsWrapper = styled.div`
         justify-content: space-between;
         flex-direction: row;
     `}
+`;
+
+const AboutBlock = styled.div`
+    max-width: 710px;
+    margin-bottom: 30px;
 `;
 
 export const JobModal = ({ 
@@ -475,7 +487,7 @@ export const JobModal = ({
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id) ?? {};
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
 
-    const { pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, skillsWidth = []} = chosenOpportunity;
+    const { aboutJob, lastCardPadding, pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, skillsWidth = [], skillsWidthDesk = []} = chosenOpportunity;
 
     const { 
         textColor, titleColor, cardTitleColor, activeTabStyles = {}, 
@@ -557,6 +569,9 @@ export const JobModal = ({
                 <TitleStyled $fontSize={textSize} $color={titleColor ?? textColor} ref={title}>
                     {chosen === 'horizontal' ? 'переход между направлениями' : chosenOpportunity.text}
                 </TitleStyled>
+                {aboutJob && (<AboutBlock>
+                    <Text>{aboutJob}</Text>
+                </AboutBlock>)}
                 {isBrand && (chosenOpportunity.readyFor?.length || chosenOpportunity.skills?.length) && (
                     <CommonSkillsWrapper>
                         <SkillWrapper>
@@ -580,6 +595,7 @@ export const JobModal = ({
                                 {chosenOpportunity.skills?.map((skill, index) => (
                                     <Skill
                                         $width={skillsWidth?.[index]}
+                                        $widthDesk={skillsWidthDesk?.[index] ?? skillsWidth?.[index]}
                                         key={chosenOpportunity.id + index + '_common'}
                                         $styles={commonSkills}
                                     >
@@ -597,6 +613,7 @@ export const JobModal = ({
                         <Card key={job.id} ref={index === jobs.length - 1 ? lastCardRef : null}>
                             <CardContent
                                 $withPicture={index === (jobs.length - 1) && !isBrand && hasPicture}
+                                $lastCardPadding={index === (jobs.length - 1) ? lastCardPadding : undefined}
                                 $backgroundColor={backgroundColor}
                                 $textColor={textColor}
                             >

@@ -30,8 +30,8 @@ const OrangeSpotStyled = styled(OrangeSpot)`
     ${media.desktop`
         width: 706px;
         height: 778px;
-        top: 140px;
-        left: 155px;
+        top: ${({$spotTopD}) => $spotTopD ?? 140}px;
+        left: ${({$spotLeft}) => $spotLeft ?? '155px'};
     `}
 `;
 
@@ -118,7 +118,7 @@ const TextDesktop = styled(SmallText)`
     }
 `;
 
-export const AboutJob = ({ wrapperHeight, spotTop, isBrand, spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
+export const AboutJob = ({ wrapperHeight, spotTopD, spotLeft, spotTop, isBrand, spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
     <Wrapper $isBrand={isBrand} $wrapperHeight={wrapperHeight}>
         <Content>
             <TitleStyled $size={jobTitleSize} $color={textColor}>{jobTitle}</TitleStyled>
@@ -127,7 +127,7 @@ export const AboutJob = ({ wrapperHeight, spotTop, isBrand, spotColor, jobTitleS
                 <TextDesktop>{jobDescription}</TextDesktop>
                 <TextMobile>{jobDescriptionMob}</TextMobile>
             </TextWrapper>
-            <OrangeSpotStyled $spotTop={spotTop} accentColor={spotColor}/>
+            <OrangeSpotStyled $spotTopD={spotTopD} $spotLeft={spotLeft} $spotTop={spotTop} accentColor={spotColor}/>
         </Content>
     </Wrapper>
 )

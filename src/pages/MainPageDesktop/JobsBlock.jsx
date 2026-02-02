@@ -123,6 +123,7 @@ const TextWrapper = styled.div`
     justify-content: ${({ $isRight }) => $isRight ? 'flex-end' : 'flex-start'};
     right: ${({ $isRight, $spacing }) => $isRight ? -$spacing + 'px' : 'auto'};
     left: ${({ $isRight, $spacing }) => $isRight ? 'auto' : -$spacing + 'px'};
+    cursor: pointer;
 
     @media screen and (max-width: 1400px){
         transform: scale(0.9);
@@ -171,7 +172,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseEnter={(e) => handleHover(e, {top: 368, left: 1083, width: 230, height: 211 }, 'education')}
             onMouseLeave={handleStopHover}
         >
-            <TextWrapper $isRight $top={58} $width={170} $spacing={108}>Образование{'\n'}и педагогические{'\n'}науки</TextWrapper>
+            <TextWrapper onClick={() => handleNavigate('education')} $isRight $top={58} $width={170} $spacing={108}>Образование{'\n'}и педагогические{'\n'}науки</TextWrapper>
             <Person onClick={() => handleNavigate('education')} src={education} alt="" $width={134} $height={200} $top={0} $left={80} />
             <ImageElement src={educationMountin} alt="" $width={230} $height={127} $top={84} $left={0} />
             <DetailsModal 
@@ -187,7 +188,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseEnter={(e) => handleHover(e, { top: 460, left: 0, width: 240, height: 183 }, 'techcontrol')}
             onMouseLeave={handleStopHover}
         >
-            <TextWrapper $isRight $top={58} $width={152} $spacing={80}>Управление{'\n'}в технических{'\n'}системах</TextWrapper>
+            <TextWrapper onClick={() => handleNavigate('techcontrol')} $isRight $top={58} $width={152} $spacing={80}>Управление{'\n'}в технических{'\n'}системах</TextWrapper>
             <Person onClick={() => handleNavigate('techcontrol')} $isMirror src={techcontrol} alt="" $width={168} $height={295} $top={-80} $left={135.5} />
             <ImageElement src={techcontrolMountin} alt="" $width={227} $height={175} $top={9} $left={0} />
             <DetailsModal 
@@ -203,7 +204,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseEnter={(e) => handleHover(e, { top: 683, left: 205, width: 252, height: 213 }, 'pravo')}
             onMouseLeave={handleStopHover}
         >
-            <TextWrapper $isRight={false} $top={40} $width={181} $height={30} $spacing={-24}>юриспруденция</TextWrapper>
+            <TextWrapper onClick={() => handleNavigate('pravo')} $isRight={false} $top={40} $width={181} $height={30} $spacing={-24}>юриспруденция</TextWrapper>
             <Person onClick={() => handleNavigate('pravo')} src={pravo} alt="" $width={104} $height={184} $top={0} $left={141} />
             <ImageElement src={pravoMountin} alt="" $width={252} $height={159} $top={54} $left={0} />
             <DetailsModal 
@@ -220,7 +221,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseEnter={(e) => handleHover(e, { top: 713, left: 1146, width: 251, height: 192 }, 'radioelectronic')}
             onMouseLeave={handleStopHover}
         >
-            <TextWrapper $isRight={false} $top={70} $width={164} $spacing={119}>Электроника,{'\n'}радиотехника{'\n'}и системы связи</TextWrapper>
+            <TextWrapper onClick={() => handleNavigate('radioelectronic')} $isRight={false} $top={70} $width={164} $spacing={119}>Электроника,{'\n'}радиотехника{'\n'}и системы связи</TextWrapper>
             <Person  onClick={() => handleNavigate('radioelectronic')} src={radioelectronic} alt="" $width={83} $height={175} $top={0} $left={13} />
             <ImageElement src={radioelectronicMoutin} alt="" $width={251} $height={192} $top={1} $left={0} />
             <DetailsModal 
@@ -235,7 +236,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseEnter={(e) => handleHover(e, { top: 580, left: 633, width: 327, height: 210 }, 'geology')}
             onMouseLeave={handleStopHover}
             $top={580} $left={633} $width={327} $height={206}>
-            <TextWrapper $isRight $top={40} $width={233} $spacing={150}>
+            <TextWrapper onClick={() => handleNavigate('geology')} $isRight $top={40} $width={233} $spacing={150}>
                 Прикладная геология,{'\n'}горное дело, нефтегазовое{'\n'}дело и геодезия
             </TextWrapper>
             <Person  onClick={() => handleNavigate('geology')} src={geology} alt="" $width={106 * 1.3} $height={170 * 1.3} $top={-25} $left={168} />
@@ -254,7 +255,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             $top={775} $left={465} $width={306} $height={208}
             style={{ zIndex: chosen === 'trade' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={48} $width={155} $spacing={50}>
+            <TextWrapper onClick={() => handleNavigate('trade')} $isRight $top={48} $width={155} $spacing={50}>
                 Торговое дело{'\n'}и логистика
             </TextWrapper>
             <Person onClick={() => handleNavigate('trade')} src={trade} alt="" $width={146} $height={185} $top={0} $left={160} />
@@ -271,7 +272,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'stroy' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={44} $width={157} $spacing={30}>
+            <TextWrapper onClick={() => handleNavigate('stroy')} $isRight $top={44} $width={157} $spacing={30}>
                 Техника{'\n'}
                 и технологии{'\n'}
                 строительства
@@ -290,9 +291,9 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'economy' ? 10 : 2 }}
         >
-            <TextWrapper $top={48} $width={157} $spacing={45}>
+            <TextWrapper onClick={() => handleNavigate('economy')} $top={48} $width={157} $spacing={45}>
                 Экономика{'\n'}
-                и финанс
+                и финансы
             </TextWrapper>
             <Person  onClick={() => handleNavigate('economy')} src={economy} alt="" $width={95} $height={168} $top={0} $left={59} />
             <ImageElement src={economyMountin} alt="" $width={342} $height={155} $top={25} $left={0} />
@@ -309,7 +310,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'service' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={48} $width={121} $spacing={-16}>
+            <TextWrapper onClick={() => handleNavigate('service')} $isRight $top={48} $width={121} $spacing={-16}>
                 Сервис{'\n'}
                 и туризм
             </TextWrapper>
@@ -327,7 +328,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'infosec' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={30} $width={204} $spacing={30}>
+            <TextWrapper onClick={() => handleNavigate('infosec')} $isRight $top={30} $width={204} $spacing={30}>
                 Информационная{'\n'}безопасность
             </TextWrapper>
             <Person onClick={() => handleNavigate('infosec')} src={infosec} alt="" $width={175} $height={230} $top={-20} $left={15} />
@@ -345,7 +346,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             $top={1461} $left={14} $width={312} $height={202}
             style={{ zIndex: chosen === 'machine' ? 10 : 2 }}
         >
-            <TextWrapper $top={16} $width={175} $height={30} $spacing={-21}>
+            <TextWrapper $top={16} onClick={() => handleNavigate('machine')} $width={175} $height={30} $spacing={-21}>
                 машиностроение
             </TextWrapper>
             <Person onClick={() => handleNavigate('machine')} src={machine} alt="" $width={117} $height={181} $top={0} $left={145} />
@@ -362,7 +363,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'safetech' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={7} $width={184} $spacing={-5}>
+            <TextWrapper onClick={() => handleNavigate('safetech')} $isRight $top={7} $width={184} $spacing={-5}>
                 Техносферная{'\n'}
                 безопасность{'\n'}
                 и природообустройство
@@ -381,7 +382,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'energetics' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={40} $width={170} $spacing={53}>
+            <TextWrapper onClick={() => handleNavigate('energetics')} $isRight $top={40} $width={170} $spacing={53}>
                 Электро-{'\n'}и теплоэнергетика
             </TextWrapper>
             <Person  onClick={() => handleNavigate('energetics')} src={energetics} alt="" $width={120 * 1.35} $height={200 * 1.35} $top={-42} $left={121} />
@@ -398,7 +399,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'it' ? 10 : 2 }}
         >
-            <TextWrapper $top={33} $width={173} $spacing={8}>
+            <TextWrapper $top={33} $width={173} $spacing={8} onClick={() => handleNavigate('it')}>
                 Информатика{'\n'}и вычислительная{'\n'}техника
             </TextWrapper>
             <Person onClick={() => handleNavigate('it')} src={it} alt="" $width={104 * 1.35} $height={189 * 1.35} $top={-42} $left={80} />
@@ -415,7 +416,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'biotech' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={18} $width={203} $spacing={18}>
+            <TextWrapper onClick={() => handleNavigate('biotech')} $isRight $top={18} $width={203} $spacing={18}>
                 Промышленная экология{'\n'}и биотехнологии
             </TextWrapper>
             <Person onClick={() => handleNavigate('biotech')} src={biotech} alt="" $width={92 * 1.45} $height={188 * 1.45} $top={-42} $left={10} />
@@ -432,7 +433,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
              style={{ zIndex: chosen === 'materials' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={49} $width={135} $spacing={67}>
+            <TextWrapper onClick={() => handleNavigate('materials')} $isRight $top={49} $width={135} $spacing={67}>
                 Технологии{'\n'}материалов
             </TextWrapper>
             <Person  onClick={() => handleNavigate('materials')} src={materials} alt="" $width={83} $height={189} $top={0} $left={154} />
@@ -449,10 +450,10 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'agro' ? 10 : 2 }}
         >
-            <TextWrapper $top={49} $width={201} $spacing={22}>
+            <TextWrapper $top={49} $width={201} $spacing={22} onClick={() => handleNavigate('agro')}>
                 Сельское, лесное{'\n'}и рыбное хозяйство
             </TextWrapper>
-            <Person src={agro} alt="" $width={109 * 1.4} $height={182 * 1.4} $top={-40} $left={90} />
+            <Person onClick={() => handleNavigate('agro')} src={agro} alt="" $width={109 * 1.4} $height={182 * 1.4} $top={-40} $left={90} />
             <ImageElement src={agroMountin} alt="" $width={342} $height={129} $top={84} $left={0} />
             <DetailsModal 
                 isActive={chosen === 'agro'} 
@@ -466,7 +467,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'himtech' ? 10 : 2 }}
         >
-            <TextWrapper $isRight $top={49} $width={130} $spacing={61}>
+            <TextWrapper onClick={() => handleNavigate('himtech')} $isRight $top={49} $width={130} $spacing={61}>
                 химические{'\n'}технологии
             </TextWrapper>
             <Person onClick={() => handleNavigate('himtech')} $isMirror src={himtech} alt="" $width={84 * 1.2} $height={183 * 1.2} $top={-45} $left={130} />
@@ -484,7 +485,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'transport' ? 10 : 2 }}
         >
-            <TextWrapper $top={55} $width={192} $spacing={116}>
+            <TextWrapper onClick={() => handleNavigate('transport')} $top={55} $width={192} $spacing={116}>
                 Техника и технологии{'\n'}наземного транспорта
             </TextWrapper>
             <Person onClick={() => handleNavigate('transport')} src={transportMain} alt="" $width={112} $height={180} $top={0} $left={23} />
@@ -502,7 +503,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
             style={{ zIndex: chosen === 'techprom' ? 10 : 2 }}
         >
-            <TextWrapper $top={74} $width={161} $spacing={29}>
+            <TextWrapper onClick={() => handleNavigate('techprom')} $top={74} $width={161} $spacing={29}>
                 Технологии легкой{'\n'}промышленности
             </TextWrapper>
             <Person onClick={() => handleNavigate('techprom')} src={techprom} alt="" $width={128} $height={200} $top={0} $left={101} />

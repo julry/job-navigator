@@ -25,7 +25,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'quality',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по контролю качества (лаборатория)</>,
+                    title: <><ColoredSpan>специалист</ColoredSpan> по контролю качества (лаборатория)</>,
                     desc: 'координирует все процессы контроля, внедряет новые методы анализа, готовит отчёты для производства'
                 }
             ]
@@ -99,7 +99,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'truboprov',
-                    title: <><ColoredSpan>мастер по обслуживанию</ColoredSpan> магистральных трубопроводов</>,
+                    title: <><ColoredSpan>мастер по обслуживанию</ColoredSpan> магистральных трубопроводов</>,
                     desc: 'Следит за состоянием трубопроводов, проводит диагностику, ремонт и профилактику',
                 },
                 // {
@@ -154,12 +154,12 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'developer',
-                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</NoTransformSpan>,
+                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> по / веб-разработчик</NoTransformSpan>,
                     desc: 'Создает приложения, сайты, базы данных',
                 },
                 {
                     id: 'fullstack',
-                    title: <><ColoredSpan>fullstack-разработчик</ColoredSpan> /  cпециалист по mobile-разработке</>,
+                    title: <><ColoredSpan>fullstack-разработчик</ColoredSpan> /  cпециалист по mobile-разработке</>,
                     desc: 'Работает над всей цепочкой продукта: интерфейс, логика, серверная часть, мобильные версии'
                 },
                 {
@@ -188,7 +188,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'voip',
-                    title: <NoTransformSpan><ColoredSpan>специалист</ColoredSpan> по телекоммуникациям VoIP‑инженер</NoTransformSpan>,
+                    title: <NoTransformSpan><ColoredSpan>специалист</ColoredSpan> по телекоммуникациям VoIP‑инженер</NoTransformSpan>,
                     desc: <>Работает с телефонными сетями, видеоконференцсвязью, системами<NoTransformSpan>IP‑телефонии</NoTransformSpan></>
                 },
                  
@@ -208,7 +208,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'supp1',
                     title: <><ColoredSpan>cпециалист</ColoredSpan> технической поддержки (саппорт 1‑й линии)</>,
-                    desc: 'принимает заявки от пользователей, решает типовые проблемы (сброс паролей, установка ПО)'
+                    desc: 'принимает заявки от пользователей, решает типовые проблемы (сброс паролей, установка ПО)'
                 },
                 {
                     id: 'supp2',
@@ -245,13 +245,13 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'suppIT',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по технической поддержке</>,
+                    title: <><ColoredSpan>специалист</ColoredSpan> по технической поддержке</>,
                     desc: 'консультирует пользователей, оперативно решает их технические проблемы',
                 },
                  
                 {
                     id: 'dataS',
-                    title: <><ColoredSpan>специалист</ColoredSpan> по работе с данными / Data-аналитик</>,
+                    title: <><ColoredSpan>специалист</ColoredSpan> по работе с данными / Data-аналитик</>,
                     desc: <NoTransformSpan>собирает и анализирует большие массивы данных (Big Data), строит отчетыи визуализации для принятия бизнес-решений</NoTransformSpan>,
                 },
                 {
@@ -283,13 +283,13 @@ export const opportunitiesConfig = {
                  
                 {
                     id: 'analyticSaf',
-                    title: <><ColoredSpan>Инженер</ColoredSpan> по кибербезопасности / аналитик угроз</>,
+                    title: <><ColoredSpan>Инженер</ColoredSpan> по кибербезопасности / аналитик угроз</>,
                     desc: <>расследует инциденты, анализирует вредоносный код, настраивает <NoTransformSpan>SIEM-системы (Splunk, ArcSight)</NoTransformSpan></>
                 },
                 {
                     id: 'safManager',
                     title: <NoTransformSpan><ColoredSpan>руководитель</ColoredSpan> направления ИБ /Архитектор безопасных сетей</NoTransformSpan>,
-                    desc: 'проектирует архитектуру безопасности, управляет бюджетом на защитныерешения, координирует команду'
+                    desc: 'проектирует архитектуру безопасности, управляет бюджетом на защитныерешения, координирует команду'
                 }
             ]
         },
@@ -307,7 +307,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'auditib',
-                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> ПО / веб-разработчик</NoTransformSpan>,
+                    title: <NoTransformSpan><ColoredSpan>разработчик </ColoredSpan> по / веб-разработчик</NoTransformSpan>,
                     desc: <NoTransformSpan>проверяет соответствие стандартам (ISO 27001, ФЗ-152, GDPR), составляетотчеты и рекомендации</NoTransformSpan>
                 },
                 {
@@ -332,7 +332,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'testSaf',
                     title: <><ColoredSpan>тестировщик</ColoredSpan> безопасности</>,
-                    desc: <>проводит базовые тесты на уязвимости web-приложений, использует сканеры <NoTransformSpan>(Burp Suite, OWASP ZAP)</NoTransformSpan></>
+                    desc: <>проводит базовые тесты на уязвимости web-приложений, использует сканеры <NoTransformSpan>(Burp Suite, OWASP ZAP)</NoTransformSpan></>
                 },
                 {
                     id: 'appsec',
@@ -342,7 +342,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'shifr',
                     title: <><ColoredSpan>специалист</ColoredSpan> по шифрованию</>,
-                    desc: <NoTransformSpan>работает с алгоритмами шифрования, ключевой инфраструктурой (PKI), защитой данных на rest и in transit</NoTransformSpan>
+                    desc: <NoTransformSpan>работает с алгоритмами шифрования, ключевой инфраструктурой (PKI), защитой данных на rest и in transit</NoTransformSpan>
                 },
                 {
                     id: 'mainArch',
@@ -375,7 +375,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'itManager',
                     title: <><ColoredSpan>руководитель</ColoredSpan> службы <NoTransformSpan>ИБ</NoTransformSpan></>,
-                    desc: 'Определяет стратегию безопасности компании, отвечает за бюджет, взаимодействует с советом директоров'
+                    desc: 'Определяет стратегию безопасности компании, отвечает за бюджет, взаимодействует с советом директоров'
                 },
             ]
         },
@@ -388,7 +388,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'othfdserpo',
                     title: <><ColoredSpan>Этичный хакер</ColoredSpan></>,
-                    desc: 'Легально взламывает системы по заказу компании для поиска уязвимостей'
+                    desc: 'Легально взламывает системы по заказу компании для поиска уязвимостей'
                 },
                 {
                     id: 'sufsppIT',
@@ -454,13 +454,13 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'a432uditib',
-                    title: <NoTransformSpan><ColoredSpan>Электромонтер-линейщик </ColoredSpan> по монтажу ВЛ высокого напряжения</NoTransformSpan>,
+                    title: <NoTransformSpan><ColoredSpan>Электромонтер-линейщик </ColoredSpan> по монтажу ВЛ высокого напряжения</NoTransformSpan>,
                     desc: 'Специализируется на монтаже и ремонте высоковольтных линий, работает на высоте'
                 },
                 {
                     id: 'auccxditmanager',
                     title: <><ColoredSpan>Мастер</ColoredSpan> участка сетей / Диспетчер электросетей</>,
-                    desc: 'Планирует работы на участке, выдает наряды-допуски, управляет режимами сети дистанционно'
+                    desc: 'Планирует работы на участке, выдает наряды-допуски, управляет режимами сети дистанционно'
                 }
             ]
         },
@@ -483,7 +483,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 's321hifr',
-                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
+                    title: <><ColoredSpan>Техник-теплотехник</ColoredSpan>  / Инженер по наладке и испытаниям</>,
                     desc: 'Настраивает тепловые схемы, проводит испытания оборудования'
                 },
                 {
@@ -501,22 +501,22 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'sudsfpdsp1',
-                    title: <><ColoredSpan>Электрослесарь</ColoredSpan> по ремонту оборудования электростанций</>,
+                    title: <><ColoredSpan>Электрослесарь</ColoredSpan> по ремонту оборудования электростанций</>,
                     desc: 'Ремонтирует релейную защиту, автоматику, приборы учета',
                 },
                 {
                     id: 's32dsaudspp2',
-                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту и обслуживанию электрооборудования</>,
-                    desc: 'Специализируется на силовом оборудовании (трансформаторы, выключатели, электродвигатели)'
+                    title: <><ColoredSpan>Электромонтер</ColoredSpan> по ремонту и обслуживанию электрооборудования</>,
+                    desc: 'Специализируется на силовом оборудовании (трансформаторы, выключатели, электродвигатели)'
                 },
                 {
                     id: 'it-consul53t',
-                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по релейной защите и автоматике <NoTransformSpan>(РЗА)</NoTransformSpan></>,
+                    title: <><ColoredSpan>Электромеханик</ColoredSpan> по релейной защите и автоматике <NoTransformSpan>(РЗА)</NoTransformSpan></>,
                     desc: 'Настраивает и обслуживает устройства, предотвращающие аварии в энергосистеме'
                 },
                 {
                     id: 'it432Manager',
-                    title: <><ColoredSpan>Инженер-наладчик</ColoredSpan> / Специалист по <NoTransformSpan>АСУ ТП</NoTransformSpan> в энергетике</>,
+                    title: <><ColoredSpan>Инженер-наладчик</ColoredSpan> / Специалист по <NoTransformSpan>АСУ ТП</NoTransformSpan> в энергетике</>,
                     desc: <>Программирует контроллеры, настраивает <NoTransformSpan>SCADA-системы</NoTransformSpan>, внедряет цифровые решения</>
                 },
             ]
@@ -539,7 +539,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'datadfsS',
-                    title: <><ColoredSpan>Специалист</ColoredSpan> по энергоаудиту</>,
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по энергоаудиту</>,
                     desc: 'Проводит обследование предприятий, ищет потери, рассчитывает энергоэффективность',
                 },
                 {
@@ -561,12 +561,12 @@ export const opportunitiesConfig = {
                 {
                     id: 'redeaw',
                     title: <><ColoredSpan>Станочник</ColoredSpan> широкого профиля (помощник)</>,
-                    desc: 'Выполняет простые операции на токарных, фрезерных, сверлильных станках под руководством'
+                    desc: 'Выполняет простые операции на токарных, фрезерных, сверлильных станках под руководством'
                 },
                 {
                     id: 'seinfeaetym',
                     title: <><ColoredSpan>Токарь-универсал</ColoredSpan> / Фрезеровщик-универсал</>,
-                    desc: 'Работает на универсальных станках, изготавливает сложные детали по чертежам, настраивает оборудование',
+                    desc: 'Работает на универсальных станках, изготавливает сложные детали по чертежам, настраивает оборудование',
                 },
                  
                 {
@@ -591,7 +591,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'fdslvds32dw',
                     title: <><ColoredSpan>Слесарь-сборщик</ColoredSpan> (помощник)</>,
-                    desc: 'Участвует в сборке узлов по инструкциям, готовит инструмент и компоненты'
+                    desc: 'Участвует в сборке узлов по инструкциям, готовит инструмент и компоненты'
                 },
                 {
                     id: 'asdvp3rofed',
@@ -600,12 +600,12 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'sdvowss',
-                    title: <NoTransformSpan><ColoredSpan>Электромеханик</ColoredSpan> по торговому и холодильному оборудованию</NoTransformSpan>,
+                    title: <NoTransformSpan><ColoredSpan>Электромеханик</ColoredSpan> по торговому и холодильному оборудованию</NoTransformSpan>,
                     desc: 'Специализируется на монтаже и ремонте коммерческого оборудования (витрины, холодильники, печи)'
                 },
                 {
                     id: 'bfp22',
-                    title: <><ColoredSpan>Мастер</ColoredSpan> по монтажу и пусконаладке / Инженер-механик</>,
+                    title: <><ColoredSpan>Мастер</ColoredSpan> по монтажу и пусконаладке / Инженер-механик</>,
                     desc: 'Руководит комплексным монтажом линий, проводит испытания, сдает объекты в эксплуатацию'
                 }
             ]
@@ -634,7 +634,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'vdskERdn',
-                    title: <><ColoredSpan>Наладчик</ColoredSpan> <NoTransformSpan>КИПиА</NoTransformSpan> / Специалист по автоматизированным системам</>,
+                    title: <><ColoredSpan>Наладчик</ColoredSpan> <NoTransformSpan>КИПиА</NoTransformSpan> / Специалист по автоматизированным системам</>,
                     desc: <>Настраивает датчики, контроллеры, системы визуализации <NoTransformSpan>(SCADA), программирует ПЛК</NoTransformSpan></>
                 },
                 {
@@ -662,7 +662,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'itsdvkm232323',
-                    title: <><ColoredSpan>Мастер</ColoredSpan> <NoTransformSpan>ОТК</NoTransformSpan> / Специалист по метрологическому обеспечению<NoTransformSpan>(РЗА)</NoTransformSpan></>,
+                    title: <><ColoredSpan>Мастер</ColoredSpan> <NoTransformSpan>ОТК</NoTransformSpan> / Специалист по метрологическому обеспечению<NoTransformSpan>(РЗА)</NoTransformSpan></>,
                     desc: 'Руководит отделом технического контроля, ведет документацию, работает с претензиями'
                 },
                 {
@@ -797,7 +797,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'technologpopere',
-                    title: <><ColoredSpan>Технолог</ColoredSpan> по переработке отходов</>,
+                    title: <><ColoredSpan>Технолог</ColoredSpan> по переработке отходов</>,
                     desc: 'Разрабатывает и контролирует технологии переработки вторсырья (пластик, бумага, стекло)'
                 },
                 {
@@ -826,7 +826,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'biofdkvnw',
                     title: <><ColoredSpan>Биоинформатик</ColoredSpan> (лаборант с цифровыми навыками)</>,
-                    desc: 'Работает с базами биологических данных, помогает анализировать результаты исследований'
+                    desc: 'Работает с базами биологических данных, помогает анализировать результаты исследований'
                 },
                 {
                     id: 'setifsf',
@@ -889,12 +889,12 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'specjfdbgnkndovbkcbslk',
-                    title: <><ColoredSpan>Специалист</ColoredSpan> по промышленной безопасности / Аналитик рисков</>,
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по промышленной безопасности / Аналитик рисков</>,
                     desc: 'Оценивает опасность производственных объектов, разрабатывает меры по предотвращению аварий.'
                 },
                 {
                     id: 'vdfkjnweicx222009',
-                    title: <><ColoredSpan>Руководитель</ColoredSpan>службы <NoTransformSpan>ГО и ЧС</NoTransformSpan> предприятия / Менеджер по кризисным ситуациям</>,
+                    title: <><ColoredSpan>Руководитель</ColoredSpan>службы <NoTransformSpan>ГО и ЧС</NoTransformSpan> предприятия / Менеджер по кризисным ситуациям</>,
                     desc: 'Организует систему управления в кризисных ситуациях, взаимодействует с надзорными органами, обучает персонал'
                 }
             ]
@@ -913,8 +913,8 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'secutriyen',
-                    title: <><ColoredSpan>Инженер</ColoredSpan> по охране окружающей среды</>,
-                    desc: 'Разрабатывает проекты по восстановлению нарушенных земель, рекультивации полигонов, минимизации воздействия'
+                    title: <><ColoredSpan>Инженер</ColoredSpan> по охране окружающей среды</>,
+                    desc: 'Разрабатывает проекты по восстановлению нарушенных земель, рекультивации полигонов, минимизации воздействия'
                 },
                 {
                     id: 'sprbjcndjsosrkfmmfkvmcdvff',
@@ -938,7 +938,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'dsvvewcscxcv',
                     title: <><ColoredSpan>Рабочий</ColoredSpan> по природо<ShortScreen>- </ShortScreen>обустройству / Машинист мелиоративных машин</>,
-                    desc: 'Выполняет работы по восстановлению ландшафтов, строительству водоемов, укреплению берегов',
+                    desc: 'Выполняет работы по восстановлению ландшафтов, строительству водоемов, укреплению берегов',
                 },
                 {
                     id: 'technikghyfjvsljhfr',
@@ -975,8 +975,8 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'vgjeiwvniiieuchsjfnvj',
-                    title: <><ColoredSpan>Инспектор</ColoredSpan> по маломерным судам <NoTransformSpan>(ГИМС)</NoTransformSpan></>,
-                    desc: 'Работает с базами биологических данных, помогает анализировать результаты исследований'
+                    title: <><ColoredSpan>Инспектор</ColoredSpan> по маломерным судам <NoTransformSpan>(ГИМС)</NoTransformSpan></>,
+                    desc: 'Работает с базами биологических данных, помогает анализировать результаты исследований'
                 },
                 {
                     id: 'setifsf',
@@ -1093,7 +1093,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'ecoprvsdfvsvet',
                     title: <>Строительный, дорожный и горнодобывающий <ColoredSpan>рабочий</ColoredSpan></>,
-                    desc: 'Развивает сырьевую базу страны, работает с инфраструктурой',
+                    desc: 'Развивает сырьевую базу страны, работает с инфраструктурой',
                 },
             ]
         },
@@ -1136,17 +1136,17 @@ export const opportunitiesConfig = {
                 {
                     id: 'dsvmdhelpr',
                     title: <><ColoredSpan>Помощник</ColoredSpan> машиниста крана</>,
-                    desc: 'Учится работать с краном, технику безопасности, помогает проводить вспомогательные операции'
+                    desc: 'Учится работать с краном, технику безопасности, помогает проводить вспомогательные операции'
                 },
                 {
                     id: 'fdbrckd',
                     title: <><ColoredSpan>Машинист</ColoredSpan> крана</>,
-                    desc: 'Проводит самостоятельные работы на кране, осваивает разные типы кранов', 
+                    desc: 'Проводит самостоятельные работы на кране, осваивает разные типы кранов', 
                 },
                 {
                     id: 'obfsdkcfedstargshjbaff',
                     title: <><ColoredSpan>Старший</ColoredSpan>  машинист крана</>,
-                    desc: 'Проводит сложные работы на кране, занимается обучением команды машинистов'
+                    desc: 'Проводит сложные работы на кране, занимается обучением команды машинистов'
                 },
             ]
         },
@@ -1257,7 +1257,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'labefojdt',
                     title: <><ColoredSpan>Техник-</ColoredSpan>программист</>,
-                    desc: 'Работает с базами данных, разрабатывает проекты с помощью наставника'
+                    desc: 'Работает с базами данных, разрабатывает проекты с помощью наставника'
                 },
                 {
                     id: 'geolfvfsb ',
@@ -1308,7 +1308,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'sewdfvsvet',
                     title: <ColoredSpan>Программист</ColoredSpan>,
-                    desc: 'Разрабатывает и пишет скрипты, оптимизирует работу процессов'
+                    desc: 'Разрабатывает и пишет скрипты, оптимизирует работу процессов'
                 },
                 {
                     id: 'ecopdmcmt',
@@ -1405,14 +1405,14 @@ export const opportunitiesConfig = {
     agro: [
         {
             id: 'grtobwvfsklbr',
-            text: 'Растениеводство и агрономия',
+            text: 'Растениеводство и агрономия',
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -125,
             jobs: [
                 {
                     id: 'labefojdt',
                     title: <><ColoredSpan>Агроном</ColoredSpan></>,
-                    desc: 'Работает на полях с различными культурами, исследует и анализирует культуры, подготавливает почву, защищает ее от вредителей, организует сбор урожая'
+                    desc: 'Работает на полях с различными культурами, исследует и анализирует культуры, подготавливает почву, защищает ее от вредителей, организует сбор урожая'
                 },
                 {
                     id: 'geolfvfsb ',
@@ -1435,7 +1435,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'baffivfdkbpr',
                     title: <><ColoredSpan>Зоотехник</ColoredSpan></>,
-                    desc: 'Работает на ферме, разводит, содержит, кормит животных'
+                    desc: 'Работает на ферме, разводит, содержит, кормит животных'
                 },
                 {
                     id: 'obfsdkcjbaff',
@@ -1445,7 +1445,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'fdbrckd',
                     title: <><ColoredSpan>Главный</ColoredSpan> Зоотехник холдинга</>,
-                    desc: 'Разрабатывает стандарты и технологические карты для фермы, внедряет различные инновации.'
+                    desc: 'Разрабатывает стандарты и технологические карты для фермы, внедряет различные инновации.'
                 },
             ]
         },
@@ -1468,7 +1468,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'bsmaainfamgreimb',
                     title: <><ColoredSpan>Руководитель</ColoredSpan> лесничества</>,
-                    desc: 'Взаимодействует с арендаторами и органами власти, планирует работу на участках и утверждает состав сотрудников'
+                    desc: 'Взаимодействует с арендаторами и органами власти, планирует работу на участках и утверждает состав сотрудников'
                 },
             ]
         },
@@ -1547,7 +1547,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'efvs54vet',
                     title: <ColoredSpan>Event-менеджер</ColoredSpan>,
-                    desc: 'Организует и проводит мероприятия различных форматов'
+                    desc: 'Организует и проводит мероприятия различных форматов'
                 },
             ]
         },
@@ -1594,7 +1594,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'fdbrckd',
-                    title: <><ColoredSpan>Заместитель директора</ColoredSpan> по учебно-воспитательной работе</>,
+                    title: <><ColoredSpan>Заместитель директора</ColoredSpan> по учебно-воспитательной работе</>,
                     desc: 'Руководит образовательным процессом, составляет расписание, контролирует качество преподавания'
                 },
             ]
@@ -1608,7 +1608,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'ecoprvsdfvsvet',
                     title: <><ColoredSpan>Социальный</ColoredSpan> педагог</>,
-                    desc: 'Работает с детьми, которые испытывают психологические проблемы',
+                    desc: 'Работает с детьми, которые испытывают психологические проблемы',
                 },
                 {
                     id: 'epsiprvsdfvsvet',
@@ -1626,7 +1626,7 @@ export const opportunitiesConfig = {
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -194,
             skills: ['умение работать в команде', 'пространственное мышление', 'ответственность',],
-            readyFor: ['работа на строительной площадке', 'соблюдение техники безопасности', 'решение нестандартных задач'],
+            readyFor: ['работа на строительной площадке', 'соблюдение техники безопасности', 'решение нестандартных задач'],
             jobs: [
                 {
                     id: 'jun',
@@ -1728,8 +1728,8 @@ export const opportunitiesConfig = {
             textSize: 27,
             style: { 'grid-area': '2/1/3/2' },
             pictureBottom: -114,
-            skills: ['понимание геологии и материаловедения', 'внимательность к допускам и измерениям',],
-            readyFor: ['работа на открытом воздухе в разных погодных условиях', 'высокая ответственность за долговечность объекта'],
+            skills: ['понимание геологии и материаловедения', 'внимательность к допускам и измерениям',],
+            readyFor: ['работа на открытом воздухе в разных погодных условиях', 'высокая ответственность за долговечность объекта'],
             jobs: [
                 {
                     id: 'jun1',
@@ -1791,7 +1791,7 @@ export const opportunitiesConfig = {
                             id: 'pl4an'
                         },
                         {
-                            name: 'работа с ПО',
+                            name: 'работа с ПО',
                             width: 59,
                             id: '431322'
                         },
@@ -1840,7 +1840,7 @@ export const opportunitiesConfig = {
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -114,
             skills: ['аналитический склад ума', 'понимание механики грунтов и сложных нагрузок',],
-            readyFor: ['работа на уникальных, часто удаленных объектах', 'жесткие стандарты качества и безопасности'],
+            readyFor: ['работа на уникальных, часто удаленных объектах', 'жесткие стандарты качества и безопасности'],
             jobs: [
                 {
                     id: 'jun1',
@@ -1921,7 +1921,7 @@ export const opportunitiesConfig = {
                             id: 'acdv'
                         },
                         {
-                            name: 'взаимодействие с госэкспертизой',
+                            name: 'взаимодействие с госэкспертизой',
                             width: 100,
                             id: 'efpwe'
                         },
@@ -2052,12 +2052,12 @@ export const opportunitiesConfig = {
     economy: [
         {
             id: 'clients work',
-            text: 'Работа с клиентами (розничный бизнес)',
+            text: 'Работа с клиентами (розничный бизнес)',
             textSize: 27,
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -252,
-            skills: ['умение общаться с разными людьми', 'знание банковских продуктов', 'ориентация на клиента', 'финансовая грамотность'],
-            readyFor: ['работа в офисе', 'много общения с клиентами',],
+            skills: ['умение общаться с разными людьми', 'знание банковских продуктов', 'ориентация на клиента', 'финансовая грамотность'],
+            readyFor: ['работа в офисе', 'много общения с клиентами',],
             jobs: [
                 {
                     id: 'jun',
@@ -2065,7 +2065,7 @@ export const opportunitiesConfig = {
                     desc: 'Изучает продукты банка,помогает консультировать клиентов, оформляет документы',
                     skills: [
                         {
-                            name: 'работа с документами',
+                            name: 'работа с документами',
                             width: 100,
                             id: 'details'
                         },
@@ -2119,7 +2119,7 @@ export const opportunitiesConfig = {
                             id: 'plan',
                         },
                         {
-                            name: 'знание банковских продуктов и сервиса',
+                            name: 'знание банковских продуктов и сервиса',
                             width: 100,
                             id: '432'
                         },
@@ -2183,7 +2183,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'specc',
                     title: <><ColoredSpan $color="var(--color-vtb-accent)">менеджер</ColoredSpan> по работе с бизнесом</>,
-                    desc: 'Работает с юридическими лицами и подбирает решения под бизнес-задачи',
+                    desc: 'Работает с юридическими лицами и подбирает решения под бизнес-задачи',
                     skills: [
                         {
                             name: 'аналитическое мышление',
@@ -2253,16 +2253,16 @@ export const opportunitiesConfig = {
             textSize: 27,
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -252,
-            readyFor: ['офисный или гибридный, сменный график','много взаимодействия с клиентами', 'много работы за компьютером'],
-            skills: ['умение общаться с разными людьми', 'эмоциональный интеллект', 'грамотная речь', 'внимание к деталям'],
+            readyFor: ['офисный или гибридный, сменный график','много взаимодействия с клиентами', 'много работы за компьютером'],
+            skills: ['умение общаться с разными людьми', 'эмоциональный интеллект', 'грамотная речь', 'внимание к деталям'],
             jobs: [
                 {
                     id: 'jun1',
                     title: <><ColoredSpan $color="var(--color-vtb-accent)">специалист</ColoredSpan> контакт-центра </>,
-                    desc: 'Отвечает на вопросы клиентов на входящей линии',
+                    desc: 'Отвечает на вопросы клиентов на входящей линии',
                     skills: [
                         {
-                            name: 'умение общаться с людьми',
+                            name: 'умение общаться с людьми',
                             width: 100,
                             id: 'ac423'
                         },
@@ -2289,7 +2289,7 @@ export const opportunitiesConfig = {
                     desc: 'Анализирует обращения, разбирает сложные кейсы и помогает улучшать качество сервиса',
                     skills: [
                         {
-                            name: 'умение общаться с людьми',
+                            name: 'умение общаться с людьми',
                             width: 100,
                             id: 's22nip'
                         },
@@ -2304,7 +2304,7 @@ export const opportunitiesConfig = {
                             id: 'practic432e'
                         },
                         {
-                            name: 'внимание к деталям',
+                            name: 'внимание к деталям',
                             width: 100,
                             id: 'proce342sselbapfs'
                         },
@@ -2347,12 +2347,12 @@ export const opportunitiesConfig = {
             pictureBottom: -252,
             aboutJob: (
                 <>
-                    <ColoredSpan $color={'var(--color-lemana-accent)'}>коммерция в гипермаркетах</ColoredSpan> — это работа в сердце ритейла: от персональных консультаций по товарам для ремонта до управления ассортиментом на полках
+                    <ColoredSpan $color={'var(--color-lemana-accent)'}>коммерция в гипермаркетах</ColoredSpan> — это работа в сердце ритейла: от персональных консультаций по товарам для ремонта до управления ассортиментом на полках
                     {'\n\n'}
                     здесь каждый день помогают клиентам благоустраивать жилье, сопровождают их от идеи до реализации любого проекта по обустройству дома
                 </>
             ),
-            skills: ['умение общаться с разными людьми', 'адаптивность', 'ориентир на результат'],
+            skills: ['умение общаться с разными людьми', 'адаптивность', 'ориентир на результат'],
             readyFor: ['физически активная, подвижная работа', 'желание помогать клиентам', 'дружелюбие'],
             jobs: [
                 {
@@ -2371,7 +2371,7 @@ export const opportunitiesConfig = {
                             id: 'educ'
                         },
                         {
-                            name: 'работа в команде',
+                            name: 'работа в команде',
                             width: 48,
                             id: 'chert'
                         },
@@ -2380,7 +2380,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'specc',
                     title: <><ColoredSpan $color="var(--color-white)">кассир-консультант</ColoredSpan></>,
-                    desc: 'Обслуживает на кассе и отвечает за свой сектор ',
+                    desc: 'Обслуживает на кассе и отвечает за свой сектор ',
                     skills: [
                         {
                             name: 'внимательность',
@@ -2393,7 +2393,7 @@ export const opportunitiesConfig = {
                             id: 'processes'
                         },
                         {
-                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
+                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
                             width: 50,
                             id: 'practice'
                         },
@@ -2474,7 +2474,7 @@ export const opportunitiesConfig = {
                 </>
             ),
             skills: ['знание основ безопасности', 'соблюдение стандартов работы', 'ориентир на результат'],
-            readyFor: ['работа на складе или в гипермаркете','физически активная, подвижная работа',],
+            readyFor: ['работа на складе или в гипермаркете','физически активная, подвижная работа',],
             jobs: [
                 {
                     id: 'jun',
@@ -2501,10 +2501,10 @@ export const opportunitiesConfig = {
                 {
                     id: 'specc',
                     title: <><ColoredSpan $color="var(--color-white)">администратор</ColoredSpan> цепи поставок</>,
-                    desc: 'Ведёт учёт, проверяет, чтобы товар хранился в целости и сохранности',
+                    desc: 'Ведёт учёт, проверяет, чтобы товар хранился в целости и сохранности',
                     skills: [
                         {
-                            name: 'работа с электронными системами',
+                            name: 'работа с электронными системами',
                             width: 100,
                             id: 'snip'
                         },
@@ -2523,7 +2523,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'senSpecc',
                     title: <><ColoredSpan $color="var(--color-white)">менеджер</ColoredSpan> цепи поставок</>,
-                    desc: 'Организует работу команды на складе',
+                    desc: 'Организует работу команды на складе',
                     skills: [
                         {
                             name: 'лидерство',
@@ -2550,7 +2550,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'mainSpecc',
                     title:  <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> цепи поставок</>,
-                    desc: 'Планирует графики поставок, следит, чтобы приходило всё вовремя и всё нужное',
+                    desc: 'Планирует графики поставок, следит, чтобы приходило всё вовремя и всё нужное',
                     skills: [
                         {
                             name: 'аналитика',
@@ -2589,23 +2589,23 @@ export const opportunitiesConfig = {
         },
         {
             id: 'businessprosupergoog',
-            text: <NoTransformSpan>работа с бизнес-клиентами / Лемана ПРО</NoTransformSpan>,
+            text: <NoTransformSpan>работа с бизнес-клиентами / Лемана ПРО</NoTransformSpan>,
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -252,
             aboutJob: (
                 <>
-                    <ColoredSpan $color={'var(--color-lemana-accent)'}>ПРО</ColoredSpan> — это направление, где специалисты помогают компаниям и профессионалам в сфере строительства и ремонта, от небольших бригад до крупных застройщиков, развивать свой бизнес
+                    <ColoredSpan $color={'var(--color-lemana-accent)'}>ПРО</ColoredSpan> — это направление, где специалисты помогают компаниям и профессионалам в сфере строительства и ремонта, от небольших бригад до крупных застройщиков, развивать свой бизнес
                     {'\n\n'}
-                    Это участие в сложных проектах, работа с крупными клиентами, обучение на производстве и сообщество профессионалов
+                    Это участие в сложных проектах, работа с крупными клиентами, обучение на производстве и сообщество профессионалов
                 </>
             ),
             skills: ['знание рынка B2B', 'аналитический склад ума'],
-            readyFor: [<NoTransformSpan>работа в гипермаркете в отделе ПРО</NoTransformSpan>,'понимание задач клиента', 'работа с рынком b2b'],
+            readyFor: [<NoTransformSpan>работа в гипермаркете в отделе ПРО</NoTransformSpan>,'понимание задач клиента', 'работа с рынком b2b'],
             jobs: [
                 {
                     id: 'jun',
                     title: <><ColoredSpan $color="var(--color-white)">специалист</ColoredSpan> по продажам проектов</>,
-                    desc: 'консультирует и сопровождает клиентов',
+                    desc: 'консультирует и сопровождает клиентов',
                     skills: [
                         {
                             name: 'исполнительность',
@@ -2613,12 +2613,12 @@ export const opportunitiesConfig = {
                             id: 'details'
                         },
                         {
-                            name: 'внимание к деталям',
+                            name: 'внимание к деталям',
                             width: 100,
                             id: 'educ'
                         },
                         {
-                            name: 'работа с документами',
+                            name: 'работа с документами',
                             width: 100,
                             id: 'chert'
                         },
@@ -2640,7 +2640,7 @@ export const opportunitiesConfig = {
                             id: 'processes'
                         },
                         {
-                            name: 'работа с возражениями',
+                            name: 'работа с возражениями',
                             width: 100,
                             id: 'practice'
                         },
@@ -2667,6 +2667,249 @@ export const opportunitiesConfig = {
                             id: 'te32am',
                         },
                     ]
+                },
+            ]
+        },
+    ],
+    radioelectronic: [
+        {
+            id: 'radioelectronicdsvds',
+            text: 'Эксплуатация сети',
+            textSize: 27,
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -192,
+            skills: ['знание сетевых протоколов', <NoTransformSpan>работа с оборудованием БС</NoTransformSpan>, 'Excel', <NoTransformSpan>autoCAD</NoTransformSpan>, 'логическое мышление'],
+            skillsWidth: [100, 100, 48, 48, 100],
+            readyFor: ['работа в гибридном формате', 'выезды на объекты'],
+            lastCardPadding: {
+                mob: 100,
+                desk: 100,
+            },
+            jobs: [
+                {
+                    id: 'jun',
+                    title: <><ColoredSpan $color="var(--color-white)">стажер</ColoredSpan> в направлении эксплуатации сети</>,
+                    desc: 'Осваивает азы настройки и мониторинга оборудования, помогает в проверках и отчетах, чтобы сеть всегда работала как часы',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'вежливость',
+                            width: 48,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'работа в команде',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-white)">инженер</ColoredSpan> по эксплуатации сети</>,
+                    desc: 'Отвечает за стабильность сети: оперативно находит и устраняет сбои, проводит плановое обслуживание',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'аккуратность',
+                            width: 46,
+                            id: 'processes'
+                        },
+                        {
+                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
+                            width: 50,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">старший</ColoredSpan> инженер</>,
+                    desc: 'Координирует работу команды, анализирует эффективность сети, планирует развитие узлов',
+                    skills: [
+                        {
+                            name: 'ответственность',
+                            width: 100,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 100,
+                            id: 'plan',
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> подразделения / региональный инженер сети</>,
+                },
+            ]
+        },
+        {
+            id: 'logistoka432gipermarket',
+            text: 'Энергетика в телекоме',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -132,
+            skills: ['электротехническая база', 'умение работать с чертежами', 'знание систем электропитания', 'внимательность'],
+            readyFor: ['офисный формат','можно без выезда',],
+            lastCardPadding: {
+                mob: 180,
+                desk: 100,
+            },
+             jobs: [
+                {
+                    id: 'j423un',
+                    title: <><ColoredSpan $color="var(--color-white)">стажер</ColoredSpan> в направлении энергетика</>,
+                    desc: 'Ведет базы данных, документации, работает со схемами и проектами',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'вежливость',
+                            width: 48,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'работа в команде',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'spe14cc',
+                    title: <><ColoredSpan $color="var(--color-white)">инженер</ColoredSpan>-энергетик</>,
+                    desc: 'Проектирует и сопровождает системы электропитания на объектах связи',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'аккуратность',
+                            width: 46,
+                            id: 'processes'
+                        },
+                        {
+                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
+                            width: 50,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpe432cc',
+                    title: <><ColoredSpan $color="var(--color-white)">ведущий</ColoredSpan> инженер сети</>,
+                    desc: 'Контролирует энергетическую эффективность, модернизирует инфраструктуру',
+                    skills: [
+                        {
+                            name: 'ответственность',
+                            width: 100,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 100,
+                            id: 'plan',
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">главный</ColoredSpan> инженер</>,
+                },
+            ]
+        },
+        {
+            id: 'irgjbfdprmvx,fkkfdnefksbFBsb',
+            text: 'Строительство сети',
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -195,
+            skills: ['проектирование', 'работа с подрядчиками', 'планирование сроков', <NoTransformSpan>autoCAD</NoTransformSpan>, 'работа в команде', 'коммуникация'],
+            skillsWidthDesk: [100, 100, 57, 39, 57, 39],
+            skillsWidth: [100, 100, 100, 48, 48, 100],
+            readyFor: ['разъездной формат','часто на объектах',],
+            lastCardPadding: {
+                desk: 100,
+                mob: 100,
+            },
+            jobs: [
+                {
+                    id: 'j432423un',
+                    title: <><ColoredSpan $color="var(--color-white)">стажер</ColoredSpan> по направлению строительства сети</>,
+                    desc: 'Участвует в проектировании и приемке на объектов связи, оформляет отчеты и работает с техническими подразделениями',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'вежливость',
+                            width: 48,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'работа в команде',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 's342pe14cc',
+                    title: <><ColoredSpan $color="var(--color-white)">инженер</ColoredSpan> по строительству сети</>,
+                    desc: 'Планирует размещение базовых станций, проверяет подрядчиков',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'аккуратность',
+                            width: 46,
+                            id: 'processes'
+                        },
+                        {
+                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
+                            width: 50,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpe432cc',
+                    title: <><ColoredSpan $color="var(--color-white)">ведущий</ColoredSpan> инженер / координатор проектов строительства</>,
+                    desc: 'Управляет проектами по расширению сети, контролирует сроки и качество',
+                    skills: [
+                        {
+                            name: 'ответственность',
+                            width: 100,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 100,
+                            id: 'plan',
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> направления / технический директор проекта</>,
                 },
             ]
         },
