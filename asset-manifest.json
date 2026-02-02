@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.21f30e41.css",
-    "main.js": "./static/js/main.575d5db0.js",
+    "main.js": "./static/js/main.778f1317.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -117,6 +117,7 @@
     "static/media/alabugaAddBot.png": "./static/media/alabugaAddBot.05e798af77e4896b3b35.png",
     "static/media/techpromMain.png": "./static/media/techpromMain.ea2c7193a0dca05dc281.png",
     "static/media/machine.png": "./static/media/machine.54c0ec62399fc0995b24.png",
+    "static/media/vtbProgress.png": "./static/media/vtbProgress.04a47b5c3bbfba0b76e6.png",
     "static/media/transportMain.png": "./static/media/transportMain.f2a7033b61b58a9524fe.png",
     "static/media/serviceMain.png": "./static/media/serviceMain.15d3430b6a75daca7ab9.png",
     "static/media/materialsObjectL.png": "./static/media/materialsObjectL.b17bbbe07f8acb8175f8.png",
@@ -129,10 +130,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.21f30e41.css.map": "./static/css/main.21f30e41.css.map",
-    "main.575d5db0.js.map": "./static/js/main.575d5db0.js.map"
+    "main.778f1317.js.map": "./static/js/main.778f1317.js.map"
   },
   "entrypoints": [
     "static/css/main.21f30e41.css",
-    "static/js/main.575d5db0.js"
+    "static/js/main.778f1317.js"
   ]
 }
