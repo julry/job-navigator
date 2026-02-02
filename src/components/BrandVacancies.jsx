@@ -9,7 +9,7 @@ const Wrapper = styled.div`
     margin-top: 280px;
 
    ${media.desktop`
-    margin-top: 0;
+        margin-top: ${({$testAdditionMarginDesk}) => $testAdditionMarginDesk}px;
    `}
 `;
 
@@ -28,7 +28,7 @@ const CompanyInfoWrapper = styled.div`
     padding: 20px;
     width: 100%;
     border-radius: 30px;
-    border: 2px solid ${({$accentColor}) => $accentColor};
+    border: 2px solid ${({ $accentColor }) => $accentColor};
 
     ${media.desktop`
         padding: 30px 40px;
@@ -39,7 +39,7 @@ const CompanyInfoWrapper = styled.div`
 const InfoLine = styled.div`
     display: flex;
     gap: 5px;
-    max-width: ${({$isLast}) => $isLast ? 220 : 644}px;
+    max-width: ${({ $isLast }) => $isLast ? 220 : 644}px;
 
     & + & {
         margin-top: 5px;
@@ -91,8 +91,10 @@ const Link = styled(Button)`
 
 const SubTitle = styled(Title)`
     font-size: 20px;
+    max-width: ${({ $subTitleWidth }) => $subTitleWidth ? $subTitleWidth + 'px' : 'none'};
 
     ${media.desktop`
+        max-width: none;
         font-size: 24px;
     `}
 `;
@@ -117,40 +119,51 @@ const ButtonStyled = styled(Button)`
     margin-top: 120px;
     text-transform: none;
 
+    margin-top: ${({ $shouldShortLast }) => $shouldShortLast ? 120 : 150}px;
+
+
     ${media.desktop`
         margin-top: 40px;
     `}
 `;
 
-export const BrandVacancies = ({ref, picture, companyName, defaultColor, accentColor, format, gives = [], takes = [], vacancies = [], }) => {
+export const BrandVacancies = ({
+    ref, picture, companyName, defaultColor, accentColor, buttonText, shouldShortLast, customTitle, subTitleWidth,
+    format, children, gives = [], takes = [], vacancies = [], lines = [], advantages = [], based = [], testAdditionMarginDesk = 0,
+}) => {
     return (
-        <Wrapper ref={ref}>
+        <Wrapper ref={ref} $testAdditionMarginDesk={testAdditionMarginDesk}>
             <TitleStyled $color={defaultColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</TitleStyled>
             <CompanyInfoWrapper $accentColor={accentColor}>
-                <SubTitle $color={defaultColor}>оплачиваемая практика для студентов</SubTitle>
-                <br/>
-                <Text $color={defaultColor}>возможность пройти практику по профессии, предусмотренную твоим учебным планом</Text>
-                {format.length > 0 && (
+                {children}
+                <SubTitle $color={defaultColor} $subTitleWidth={subTitleWidth}>{customTitle ?? 'оплачиваемая практика для студентов'}</SubTitle>
+                {!customTitle && (
+                    <>
+                        <br />
+                        <Text $color={defaultColor}>возможность пройти практику по профессии, предусмотренную твоим учебным планом</Text>
+                    </>
+                )}
+                {format?.length > 0 && (
                     <InfoBlock>
                         <Text $color={accentColor}>формат</Text>
-                         <br/>
+                        <br />
                         <InfoLine>
                             <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor}/>
+                                <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
                             </svg>
                             <Text $color={defaultColor}>{format}</Text>
                         </InfoLine>
                     </InfoBlock>
                 )}
-                {gives.length > 0 && (
+                {gives?.length > 0 && (
                     <InfoBlock>
                         <Text $color={accentColor}>что даёт</Text>
-                        <br/>
+                        <br />
                         {
                             gives.map((give) => (
                                 <InfoLine>
                                     <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor}/>
+                                        <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
                                     </svg>
                                     <Text $color={defaultColor}>{give}</Text>
                                 </InfoLine>
@@ -158,16 +171,15 @@ export const BrandVacancies = ({ref, picture, companyName, defaultColor, accentC
                         }
                     </InfoBlock>
                 )}
-
-                {takes.length > 0 && (
+                {takes?.length > 0 && (
                     <InfoBlock>
                         <Text $color={accentColor}>что нужно</Text>
-                        <br/>
+                        <br />
                         {
                             takes.map((take) => (
-                                <InfoLine $isLast>
+                                <InfoLine $isLast={shouldShortLast}>
                                     <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor}/>
+                                        <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
                                     </svg>
                                     <Text $color={defaultColor}>{take}</Text>
                                 </InfoLine>
@@ -175,14 +187,62 @@ export const BrandVacancies = ({ref, picture, companyName, defaultColor, accentC
                         }
                     </InfoBlock>
                 )}
-                <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>
-                        начать карьеру в {companyName}
+                {lines?.length > 0 && (
+                    <InfoBlock>
+                        <Text $color={accentColor}>направления</Text>
+                        <br />
+                        {
+                            lines.map((line) => (
+                                <InfoLine>
+                                    <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
+                                    </svg>
+                                    <Text $color={defaultColor}>{line}</Text>
+                                </InfoLine>
+                            ))
+                        }
+                    </InfoBlock>
+                )}
+                {advantages?.length > 0 && (
+                    <InfoBlock>
+                        <Text $color={accentColor}>преимущества</Text>
+                        <br />
+                        {
+                            advantages.map((advantage) => (
+                                <InfoLine>
+                                    <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
+                                    </svg>
+                                    <Text $color={defaultColor}>{advantage}</Text>
+                                </InfoLine>
+                            ))
+                        }
+                    </InfoBlock>
+                )}
+                {based?.length > 0 && (
+                    <InfoBlock>
+                        <Text $color={accentColor}>базовые требования</Text>
+                        <br />
+                        {
+                            based.map((base) => (
+                                <InfoLine $isLast={shouldShortLast}>
+                                    <svg width="32" height="15" viewBox="0 0 32 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 6.36426C0.447715 6.36426 0 6.81197 0 7.36426C0 7.91654 0.447715 8.36426 1 8.36426V7.36426V6.36426ZM31.4225 8.07136C31.813 7.68084 31.813 7.04768 31.4225 6.65715L25.0585 0.29319C24.668 -0.0973344 24.0348 -0.0973344 23.6443 0.29319C23.2538 0.683714 23.2538 1.31688 23.6443 1.7074L29.3011 7.36426L23.6443 13.0211C23.2538 13.4116 23.2538 14.0448 23.6443 14.4353C24.0348 14.8259 24.668 14.8259 25.0585 14.4353L31.4225 8.07136ZM1 7.36426V8.36426H30.7154V7.36426V6.36426H1V7.36426Z" fill={defaultColor} />
+                                    </svg>
+                                    <Text $color={defaultColor}>{base}</Text>
+                                </InfoLine>
+                            ))
+                        }
+                    </InfoBlock>
+                )}
+                <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor} $shouldShortLast={shouldShortLast}>
+                    {buttonText ?? `начать карьеру в ${companyName}`}
                 </ButtonStyled>
                 <PictureWrapper src={picture} alt="" />
             </CompanyInfoWrapper>
-            
+
             <LinksWrapper>
-                {vacancies.map(({name, link}) => (
+                {vacancies.map(({ name, link }) => (
                     <Link $defaultColor={defaultColor} $accentColor={accentColor} key={name}>
                         {name}
                     </Link>

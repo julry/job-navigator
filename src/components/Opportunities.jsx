@@ -1,6 +1,6 @@
 import styled from "styled-components"
 import { media } from "../styles/media";
-import { ColoredSpan, Text, Title } from "./shared/Texts";
+import { ColoredSpan, NoTransformSpan, Text, Title } from "./shared/Texts";
 import defaultMan from '../assets/images/default_man.png';
 import { Button } from "./shared/Button";
 import { Opp3Mobile } from "./shared/svg/Opp3Mobile";
@@ -9,9 +9,9 @@ import { Opp5Mobile } from "./shared/svg/Opp5Mobile";
 import { Opp3Desktop } from "./shared/svg/Opp3Desktop";
 import { Opp4Desktop } from "./shared/svg/Opp4Desktop";
 import { Opp5Desktop } from "./shared/svg/Opp5Desktop";
+import { AdditionalLine } from "./shared/svg/AdditionalLineDesk";
 
 const Wrapper = styled.div`
-    position: relative;
     z-index: 2;
     display: flex;
     flex-direction: column;
@@ -155,6 +155,18 @@ const ButtonStyled = styled(Button)`
     `}
 `;
 
+const OpportunityHorizontal = styled(Opportunity)`
+    border: 2px solid ${({$defaultColor}) => $defaultColor};
+    background: var(--color-white);
+    color: ${({$defaultColor}) => $defaultColor};
+    grid-area: 2/2/3/3;
+
+    &:hover {
+        background: ${({$defaultColor}) => $defaultColor};
+        color: var(--color-white);
+    }
+`
+
 const textVariants = {
     brand: 'перед тобой — карта роста в профессии. она показывает, с каких ролей можно начать и до чего дорасти\n\nсмотри разные ветки и выбирай, что тебе больше нравится!',
     default: 'тут ты можешь посмотреть варианты своей будущей профессии и узнать о карьерном росте на каждой позиции',
@@ -218,7 +230,7 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
 };
 
 export const Opportunities = ({
-    onClickOpp, companyName, defaultColor, hasButton, companyLink, linesColor,
+    onClickOpp, companyName, defaultColor, hasButton, companyLink, linesColor, hasHorizontal,
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
@@ -234,6 +246,11 @@ export const Opportunities = ({
                     {opportunities.map(({ text, style, id, blockTextSize }) => (
                         <Opportunity $blockTextSize={blockTextSize} $defaultColor={defaultColor} $accentColor={accentColor} key={id} onClick={() => onClickOpp(id)} $style={style}>{text}</Opportunity>
                     )
+                    )}
+                    {hasHorizontal && (
+                        <OpportunityHorizontal onClick={() => onClickOpp('horizontal')} $defaultColor={defaultColor}>
+                            переход между направлениями
+                        </OpportunityHorizontal>
                     )}
                     <StudentPic src={person} alt="" />
                     {
@@ -271,10 +288,15 @@ export const Opportunities = ({
                     <LinesWrapperDesktop $defaultColor={linesColor} {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
                         {OPPS_TO_LINES_DESK[opportunities.length]}
                     </LinesWrapperDesktop>
+                    {hasHorizontal && (
+                        <LinesWrapperDesktop $left={438} $top={59}>
+                            <AdditionalLine color={linesColor}/>
+                        </LinesWrapperDesktop>
+                    )}
                 </OpportunitiesBlock>
                 {hasButton && (
                     <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>
-                        откликайся в {companyName}
+                        откликайся{' '}<NoTransformSpan>{' '}в {companyName}!</NoTransformSpan>
                     </ButtonStyled>
                 )}
             </Info>

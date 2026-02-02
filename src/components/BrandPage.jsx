@@ -186,7 +186,8 @@ export const BrandPage = ({
     pageId, personComponent, accentColor, defaultColor, addPicture,
     opportunityPerson, companyName, logoComponent, aboutComponent,
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
-    botButtonStyles,
+    botButtonStyles, modalContent, vacanciesComponent, botBlockStyles,
+    horizontalComponent, hasHorizontal
 }) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -202,8 +203,11 @@ export const BrandPage = ({
         testPerson,
         vacanciesDescr,
         vacancies,
-        companyLink
+        companyLink,
+        testAdditionalMarginDesk,
+        testBlockMargin,
     } = brandPages.find((page) => page.id === pageId) ?? {};
+
 
     const navigate = useNavigate();
 
@@ -224,6 +228,7 @@ export const BrandPage = ({
         if (!vacancyRef?.current) return;
         vacancyRef.current.scrollIntoView({behavior: 'smooth'});
     }
+
     return (
         <Wrapper $defaultColor={defaultColor}>
             <AboutBlock>
@@ -251,6 +256,7 @@ export const BrandPage = ({
                 </AboutCompany>
                 <Opportunities 
                     textVariant={'brand'}
+                    hasHorizontal={hasHorizontal}
                     companyLink={companyLink} 
                     companyName={companyName} 
                     hasButton 
@@ -260,12 +266,21 @@ export const BrandPage = ({
                     person={opportunityPerson}
                     onClickOpp={handleOpenModal}
                 />
-                <TestBlock isBrand scrollToVacancy={scrollToVacancy} defaultColor={defaultColor} accentColor={accentColor} person={testPerson} testName={testName} questions={testQuestions}/>
-                <BrandVacancies ref={vacancyRef} companyName={companyName} {...vacancies} defaultColor={defaultColor} accentColor={accentColor} />
+                <TestBlock testBlockMargin={testBlockMargin} isBrand scrollToVacancy={scrollToVacancy} defaultColor={defaultColor} accentColor={accentColor} person={testPerson} testName={testName} questions={testQuestions}/>
+                <BrandVacancies 
+                    testAdditionMarginDesk={testAdditionalMarginDesk}
+                    ref={vacancyRef} 
+                    companyName={companyName} 
+                    {...vacancies} 
+                    defaultColor={defaultColor} 
+                    accentColor={accentColor} 
+                >
+                    {vacanciesComponent}
+                </BrandVacancies>
                 <Advantages companyName={companyName} defaultColor={defaultColor} accentColor={accentColor}>
                     {advantageComponent}
                 </Advantages>
-                <BotBlock isBrand styles={botButtonStyles} defaultColor={defaultColor} backgroundColor={accentColor}/>
+                <BotBlock isBrand styles={botButtonStyles} {...botBlockStyles}/>
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={defaultColor}/>
@@ -311,7 +326,10 @@ export const BrandPage = ({
                         id={modalState.id} 
                         onClose={handleCloseModal} 
                         styles={modalStyles}
-                    />
+                        horizontalComponent={horizontalComponent}
+                    >
+                        {modalContent}
+                    </JobModal>
                 )}
             </AnimatePresence>
         </Wrapper>

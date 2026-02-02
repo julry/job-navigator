@@ -18,6 +18,7 @@ import { AgroPage } from "../pages/Agro";
 import { ServicePage } from "../pages/Service";
 import { EducationPage } from "../pages/Education";
 import { EconomyPage } from "../pages/vtb/Economy";
+import { PravoPage } from "../pages/vtb/Pravo";
 
 export const routes = [
     {
@@ -102,7 +103,7 @@ export const routes = [
     {
         // втб юрист
         path: '/pravo',
-        element: <Page3 />
+        element: <PravoPage />
     },
     {
         // Торговое дело и логистика – Лемана ПРО

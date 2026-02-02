@@ -1,102 +1,166 @@
-import { InfoLine } from "../../components/shared/InfoLine";
-import { NoTransformSpan, Subtitle, Text } from "../../components/shared/Texts";
-import {AbsoluteImage} from '../../components/shared/AbsoluteImage';
-import house from '../../assets/images/alabuga/alabugaH.png';
-import kran from '../../assets/images/alabuga/alabugaK.png';
-import { media } from "../../styles/media";
 import styled from "styled-components";
+import house from '../../assets/images/vtb/vtbHouse.png';
+import money from '../../assets/images/vtb/vtbMoney.png';
+import { InfoLine } from "../../components/shared/InfoLine";
+import { NoTransformSpan, Subtitle, Text, ColoredSpan, Title } from "../../components/shared/Texts";
+import { AbsoluteImage } from '../../components/shared/AbsoluteImage';
+import { media } from "../../styles/media";
+import { Button } from "../../components/shared/Button";
+
+const TitleStyled = styled(Title)`
+    font-size: 36px;
+
+    ${media.desktop`
+        width: 29vw;
+        font-size: 52px;
+        max-width: 440px;
+    `}
+
+    @media screen and (max-width: 374px) {
+        font-size: 30px;
+    }
+
+    @media screen and (max-width: 334px) {
+        font-size: 26px;
+    }
+`
+
+const TextWrapper = styled.div`
+    position: relative;
+    flex: 1;
+    background-color: ${({ $accentColor }) => $accentColor};
+    padding: 20px;
+    border-radius: 30px;
+    z-index: 3;
+
+    ${media.desktop`
+        border-radius: 40px;
+        padding: 30px 40px;
+    `}
+`;
+
+const ButtonStyled = styled(Button)`
+    margin-top: 40px;
+    border: 1px solid ${({ $defaultColor }) => $defaultColor};
+    background-color: var(--color-white);
+    color:  ${({ $defaultColor }) => $defaultColor};
+    
+    ${media.desktop`
+        background-color:  ${({ $accentColor }) => $accentColor};
+        border: 1px solid ${({ $defaultColor }) => $defaultColor};
+        color:  var(--color-white);
+
+        &:hover {
+            background-color: var(--color-white);
+            color:  ${({ $defaultColor }) => $defaultColor};
+        }
+    `}
+`;
 
 const AbsolutImageStyled = styled(AbsoluteImage)`
+    z-index: ${({$zIndex = 2}) => $zIndex};
+
+    transform: rotate(${({$rotate = 0}) => $rotate}deg);
+
     ${media.desktop`
-        right: ${({$leftD, $rightD}) => $leftD ? 'auto' : $rightD}px;
-        left: ${({$leftD}) => $leftD ? $leftD + 'px' : 'auto'};
+        right: ${({ $leftD, $rightD }) => $leftD ? 'auto' : $rightD}px;
+        left: ${({ $leftD }) => $leftD ? $leftD + 'px' : 'auto'};
     `};
 `;
 
-const Kran = styled(AbsolutImageStyled)`
-    transform: rotate(-10deg) scale(-1,1);
+const Money = styled(AbsolutImageStyled)`
+    display: none;
 
     ${media.desktop`
-        transform: none;
+        display: block;
         right: auto;
-        left: ${({$leftD}) => $leftD}px;
+        left: ${({ $leftD }) => $leftD}px;
     `};
 `;
 
-const HouseSm = styled(AbsoluteImage)`
-    transform: rotate(30deg);
-`;
 
-export const About = ({defaultColor}) => (
-    <>
-        <AbsolutImageStyled 
-            src={house}
+export const About = ({ defaultColor, accentColor }) => (
+    <>  
+        <TitleStyled $color={defaultColor}>работа{'\n'}в <ColoredSpan $color={accentColor}>ВТБ</ColoredSpan></TitleStyled>
+        <AbsolutImageStyled
+                src={house}
+                alt=""
+                $right={-50}
+                $top={30}
+                $width={412 * 0.5}
+                $height={564 * 0.5}
+                $leftD={250}
+                $topD={155}
+                $widthD={412}
+                $heightD={564}
+        />
+        <AbsolutImageStyled
+                src={money}
+                alt=""
+                $right={30}
+                $top={200}
+                $width={151 * 0.45}
+                $height={81 * 0.45}
+                $leftD={40}
+                $topD={498}
+                $widthD={151 * 1.3}
+                $heightD={81 * 1.3}
+                $zIndex={10}
+        />
+        <AbsolutImageStyled
+                src={money}
+                alt=""
+                $right={90}
+                $top={185}
+                $width={151 * 0.6}
+                $height={81 * 0.6}
+                $leftD={253}
+                $topD={406}
+                $widthD={151}
+                $heightD={81}
+                $rotate={40}
+                $zIndex={10}
+        />
+        <Money
+            src={money}
             alt=""
             $right={-90}
             $top={750}
             $width={413 * 0.5}
             $height={532 * 0.5}
-            $leftD={255}
-            $topD={195}
-            $widthD={413}
-            $heightD={532}
+            $leftD={-5}
+            $topD={278}
+            $widthD={151 / 1.1}
+            $heightD={81 / 1.1}
+            $rotate={50}
         />
-        <HouseSm 
-            src={house}
-            alt=""
-            $right={-20}
-            $top={1000}
-            $width={413 * 0.25}
-            $height={532 * 0.25}
-            $leftD={-4000}
-            $topD={-4000}
-            $widthD={0}
-            $heightD={0}
-        />
-        <Kran 
-            src={kran}
-            alt=""
-            $right={-20}
-            $top={10}
-            $width={357 * 0.5}
-            $height={483 * 0.5}
-            $leftD={-30}
-            $topD={153}
-            $widthD={357}
-            $heightD={483}
-        />
-        <Subtitle $color={defaultColor}>«Алабуга Девелопмент» — это сильная команда, ключевой застройщик и управляющая компания крупнейшей в России Особой экономической зоны «Алабуга»</Subtitle>
-        <br />
-        <Text $color={defaultColor}>
-            здесь реализуется полный цикл, от идеи до сдачи объекта: мы работаем
-            с мировыми заказчиками и воплощаем в жизнь большие строительные проекты 
-        </Text>
-        <br />
-        <Text $color={defaultColor}>
-            за 16 лет мы реализовали 50+ проектов и построили инфраструктуру на 1,1 млрд долларов. 
-        </Text>
-        <br />
-        <Text $color={defaultColor}>
-            у нас одна из сильнейших в стране команд: 800 инженеров, 60 сертифицированных руководителей проектов и центр компетенций по BIM-технологиям
-        </Text>
-        <br />
-        <Text $color={defaultColor}>
-            здесь можно начать с оплачиваемой практики и вырасти до руководителя проектов
-        </Text>
-        <br />
-        <Text $color={defaultColor}>
-            в <NoTransformSpan>«Алабуга Девелопмент»</NoTransformSpan> ты сможешь:
-        </Text>
-        <br />
-        <InfoLine defaultColor={defaultColor}>работать над проектами мирового уровня</InfoLine>
-        <InfoLine defaultColor={defaultColor}>получить опыт под руководством опытного наставника</InfoLine>
-        <InfoLine defaultColor={defaultColor}>получать высокую зарплату: 120+ тысяч рублей на стартовых позициях</InfoLine>
-        <InfoLine defaultColor={defaultColor}>освоить современные технологии, включая BIM, и расти профессионально</InfoLine>
-        <br />
-        <Text $color={defaultColor}>
-            Здесь ждут мотивированных студентов, которые ценят точность, готовы
-            к детальной работе и хотят строить будущее в буквальном смысле.
-            Приходи за масштабными задачами!
-        </Text>
+        <TextWrapper $accentColor={defaultColor}>
+            
+            <Subtitle $color={'var(--color-white-text)'}>
+                ВТБ — один из крупнейших банков России, который задаёт тренды в финансовой сфере
+            </Subtitle>
+            <br />
+            <Text $color={'var(--color-white-text)'}>
+                более тысячи отделений банка
+                в 1000+ городах от Калининграда
+                до Владивостока. приходи
+                на стажировку и погружайся
+                в реальные задачи — с обучением, поддержкой и высокой зарплатой
+            </Text>
+            <br />
+            <Text $color={accentColor}>
+                в <NoTransformSpan>ВТБ</NoTransformSpan> ты сможешь:
+            </Text>
+            <br />
+            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>разобраться в банковских продуктах</InfoLine>
+            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>научиться подбирать самые подходящие решения для клиента</InfoLine>
+            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>работать с современными онлайн-сервисами, которые упрощают рутину</InfoLine>
+            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>
+                получить стабильную работу с хорошей зарплатой, <NoTransformSpan>ДМС</NoTransformSpan>{' '}
+и возможностью роста в крупном банке
+</InfoLine>
+            <br />
+            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>приходи за новыми возможностями!</ButtonStyled>
+        </TextWrapper>
     </>
 )

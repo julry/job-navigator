@@ -2048,5 +2048,295 @@ export const opportunitiesConfig = {
             ]
         }
     
-    ]
+    ],
+    economy: [
+        {
+            id: 'clients work',
+            text: 'Работа с клиентами (розничный бизнес)',
+            textSize: 27,
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -252,
+            skills: ['умение общаться с разными людьми', 'знание банковских продуктов', 'ориентация на клиента', 'финансовая грамотность'],
+            readyFor: ['работа в офисе', 'много общения с клиентами',],
+            jobs: [
+                {
+                    id: 'jun',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> программы «ВТБ Юниор»</>,
+                    desc: 'Изучает продукты банка,помогает консультировать клиентов, оформляет документы',
+                    skills: [
+                        {
+                            name: 'работа с документами',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'обучаемость',
+                            width: 52,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'переговоры',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">клиентский</ColoredSpan> менеджер</>,
+                    desc: 'Рассказывает клиентам о продуктах банка и помогает подобрать подходящие решения',
+                    skills: [
+                        {
+                            name: 'консультирование',
+                            width: 59,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'продажи',
+                            width: 39,
+                            id: 'processes'
+                        },
+                        {
+                            name: 'знание банковских продуктов и сервиса',
+                            width: 100,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpecc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">ведущий / главный</ColoredSpan> менеджер</>,
+                    desc: 'Решает сложные задачии обучает новых коллег',
+                    skills: [
+                        {
+                            name: 'умение работать со сложными клиентами',
+                            width: 100,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 100,
+                            id: 'plan',
+                        },
+                        {
+                            name: 'знание банковских продуктов и сервиса',
+                            width: 100,
+                            id: '432'
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title:  <><ColoredSpan $color="var(--color-vtb-accent)">руководитель</ColoredSpan>  группы / заместитель начальника отдела</>,
+                    skills: [
+                        {
+                            name: 'управление',
+                            width: 49,
+                            id: 't32am'
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 49,
+                            id: 'pl432an'
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: '431322'
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            id: 'roadBuildens',
+            text: 'Работа с малым и средним бизнесом',
+            textSize: 27,
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -262,
+            skills: ['переговоры','аналитика', 'excel', 'crm', 'финансовая грамотность'],
+            skillsWidth: [49, 49, 49, 49, 100],
+            readyFor: ['работа в офисе', 'встреча с клиентами', 'полный рабочий день'],
+            jobs: [
+                {
+                    id: 'jun1',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> «ВТБ Юниор» / помощник менеджера</>,
+                    desc: 'Помогает сопровождать клиентов-предпринимателей',
+                    skills: [
+                        {
+                            name: 'работа с документами',
+                            width: 100,
+                            id: 'ac423'
+                        },
+                        {
+                            name: 'обучаемость',
+                            width: 46,
+                            id: 'isp3'
+                        },
+                        {
+                            name: 'переговоры',
+                            width: 52,
+                            id: 'tech'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">менеджер</ColoredSpan> по работе с бизнесом</>,
+                    desc: 'Работает с юридическими лицами и подбирает решения под бизнес-задачи',
+                    skills: [
+                        {
+                            name: 'аналитическое мышление',
+                            width: 100,
+                            id: 's22nip'
+                        },
+                        {
+                            name: 'переговоры',
+                            width: 100,
+                            id: 'proce342sses'
+                        },
+                        {
+                            name: 'знание банковских продуктов и сервиса',
+                            width: 100,
+                            id: 'practic432e'
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">ведущий менеджер</ColoredSpan>  / эксперт по направлению</>,
+                    desc: 'Разрабатывает индивидуальные решения для клиентов',
+                    skills: [
+                        {
+                            name: 'аналитика',
+                            width: 39,
+                            id: 'pl4an'
+                        },
+                        {
+                            name: 'экспертиза',
+                            width: 100,
+                            id: 't200am'
+                        },
+                        {
+                            name: 'переговоры',
+                            width: 59,
+                            id: '431322'
+                        },
+                    ]
+                },
+                {
+                    id: 'mai3nSpecc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">руководитель</ColoredSpan>  группы / заместитель начальника отдела</>,
+                    skills: [
+                        {
+                            name: 'управление',
+                            width: 100,
+                            id: 't21300am'
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 100,
+                            id: '32fdledmfl'
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: 'pl431an'
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            id: 'admanjoenvjdf',
+            text: 'Контакт-центр и дистанционные сервисы',
+            textSize: 27,
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -252,
+            readyFor: ['офисный или гибридный, сменный график','много взаимодействия с клиентами', 'много работы за компьютером'],
+            skills: ['умение общаться с разными людьми', 'эмоциональный интеллект', 'грамотная речь', 'внимание к деталям'],
+            jobs: [
+                {
+                    id: 'jun1',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">специалист</ColoredSpan> контакт-центра </>,
+                    desc: 'Отвечает на вопросы клиентов на входящей линии',
+                    skills: [
+                        {
+                            name: 'умение общаться с людьми',
+                            width: 100,
+                            id: 'ac423'
+                        },
+                        {
+                            name: 'эмоциональный интеллект',
+                            width: 100,
+                            id: 'isp3'
+                        },
+                        {
+                            name: 'грамотная речь',
+                            width: 100,
+                            id: 'tech'
+                        },
+                        {
+                            name: 'внимание к деталям',
+                            width: 100,
+                            id: 'dskpvne'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">старший</ColoredSpan> специалист / наставник</>,
+                    desc: 'Анализирует обращения, разбирает сложные кейсы и помогает улучшать качество сервиса',
+                    skills: [
+                        {
+                            name: 'умение общаться с людьми',
+                            width: 100,
+                            id: 's22nip'
+                        },
+                        {
+                            name: 'эмоциональный интеллект',
+                            width: 100,
+                            id: 'proce342sses'
+                        },
+                        {
+                            name: 'грамотная речь',
+                            width: 100,
+                            id: 'practic432e'
+                        },
+                        {
+                            name: 'внимание к деталям',
+                            width: 100,
+                            id: 'proce342sselbapfs'
+                        },
+                        {
+                            name: 'решение сложных вопросов',
+                            width: 100,
+                            id: 'pracre34tic432e'
+                        },
+                    ]
+                },
+                {
+                    id: 'mai3nSpecc',
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">руководитель</ColoredSpan>  группы / заместитель начальника отдела</>,
+                    skills: [
+                        {
+                            name: 'управление',
+                            width: 100,
+                            id: 't21300am'
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 100,
+                            id: '32fdledmfl'
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: 'pl431an'
+                        },
+                    ]
+                },
+            ]
+        },
+    ],
 }

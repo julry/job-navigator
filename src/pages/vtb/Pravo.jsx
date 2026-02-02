@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/default/people/economy.png';
+import pers from '../../assets/images/vtb/pravoLand.png';
 import addPicture from '../../assets/images/vtb/vtbAddBot.png';
 import vtbStudent from '../../assets/images/vtb/vtbStudent.png';
 import vtbMenu from '../../assets/images/vtb/vtbMenu.png';
@@ -15,21 +15,21 @@ import { HorizontalContent } from "./Horizontal";
 
 const PersonWrapper = styled.div`
     position: absolute;
-    top: 493px;
-    right: 0px;
-    width: 177px;
-    height: 307px;
+    top: 423px;
+    right: -50px;
+    width: ${251 * 1.2}px;
+    height: ${314 * 1.2}px;
     z-index: 4;
     
     ${media.desktop`
-        width: 261px;
-        height: 477px;
-        top: 222px;
-        right: 14.8%;
+        width: 337px;
+        height: 506px;
+        top: 262px;
+        right: 8.8%;
 
         @media screen and (max-width: 1400px) {
             transform: scale(0.8);
-            top: 280px;
+            top: 300px;
             right: 4%;
         }
     `}
@@ -60,7 +60,7 @@ const VacanciesInfo = styled.div`
     `}
 `;
 
-export const EconomyPage = () => {
+export const PravoPage = () => {
     const modalStyles = { 
         textColor: 'var(--color-white)', 
         titleColor: 'var(--color-vtb-blue)', 
@@ -107,7 +107,7 @@ export const EconomyPage = () => {
 
     return (
         <BrandPage
-            pageId="economy"
+            pageId="pravo"
             hasHorizontal
             defaultColor={'var(--color-vtb-blue)'}
             accentColor={'var(--color-vtb-accent)'}

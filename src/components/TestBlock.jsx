@@ -173,7 +173,7 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ isBrand, testBlockMargin,testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);

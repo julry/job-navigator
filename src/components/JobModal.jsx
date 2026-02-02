@@ -414,7 +414,10 @@ const SkillContent = styled.div`
 `;
 
 const SkillWrapper = styled.div`
-    width: 300px;
+    max-width: 300px;
+    width: 100%;
+
+    ${({$shoudShowPicture}) => $shoudShowPicture ? 'margin-bottom: 60px' : ''};
 `;
 
 const Skill = styled.div`
@@ -441,21 +444,24 @@ const CommonSkillsWrapper = styled.div`
     `}
 `;
 
-export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead }) => {
+export const JobModal = ({ 
+    isBrand, styles, opportunities, children, id, onClose, horizontalComponent,
+    picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
+}) => {
     const [chosen, setChosen] = useState(id);
     const [shownUpBtn, setShowUpBtn] = useState(true);
     const title = useRef();
     const lastCardRef = useRef();
 
-    const chosenOpportunity = opportunities.find((opp) => chosen === opp.id);
+    const chosenOpportunity = opportunities.find((opp) => chosen === opp.id) ?? {};
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
 
-    const { pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, } = chosenOpportunity;
+    const { pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, skillsWidth = []} = chosenOpportunity;
 
     const { 
-        textColor, cardTitleColor, activeTabStyles = {}, 
+        textColor, titleColor, cardTitleColor, activeTabStyles = {}, 
         tabStyles, activeLineColor, lineColor, backgroundColor, 
-        commonSkillStyles, skillStyles 
+        commonSkillStyles, skillStyles, accentColor
     } = styles ?? {};
 
     const {titleColor: titleColorCommonSkills, ...commonSkills} = commonSkillStyles ?? {};
@@ -465,8 +471,12 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
     }
 
     useEffect(() => {
+        if (chosen === 'horizontal') {
+             setShowUpBtn(false);
+             return;
+        }
         const lastCard = lastCardRef?.current?.getBoundingClientRect();
-        const bottom = lastCard.top + lastCard.height;
+        const bottom = lastCard?.top + lastCard?.height;
         setShowUpBtn(window.innerWidth < 1200 || bottom > window.innerHeight);
     }, [chosen]);
 
@@ -475,7 +485,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
         scrollContentTop();
     }
 
-    const shoudShowPicture = !isBrand ? hasPicture : jobs[jobs.length - 1].desc === undefined;
+    const shoudShowPicture = !isBrand ? hasPicture : jobs?.[jobs.length - 1]?.desc === undefined;
 
     return (
         <Wrapper
@@ -524,8 +534,8 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                     <MenuMan src={menuPerson} alt="" />
                     <MenuHead src={menuPersonHead} alt="" />
                 </MenuBlockDesktop>
-                <TitleStyled $fontSize={textSize} $color={textColor} ref={title}>
-                    {chosenOpportunity.text}
+                <TitleStyled $fontSize={textSize} $color={titleColor ?? textColor} ref={title}>
+                    {chosen === 'horizontal' ? 'переход между направлениями' : chosenOpportunity.text}
                 </TitleStyled>
                 {isBrand && (chosenOpportunity.readyFor?.length || chosenOpportunity.skills?.length) && (
                     <CommonSkillsWrapper>
@@ -549,6 +559,7 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                             <SkillContent>
                                 {chosenOpportunity.skills?.map((skill, index) => (
                                     <Skill
+                                        $width={skillsWidth?.[index]}
                                         key={chosenOpportunity.id + index + '_common'}
                                         $styles={commonSkills}
                                     >
@@ -559,7 +570,9 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                         </SkillWrapper>
                     </CommonSkillsWrapper>
                 )}
-                <CardsWrapper $bottom={pictureBottom}>
+                {
+                    chosen === 'horizontal' ? horizontalComponent : (
+                        <CardsWrapper $bottom={pictureBottom}>
                     {jobs.map((job, index) => (
                         <Card key={job.id} ref={index === jobs.length - 1 ? lastCardRef : null}>
                             <CardContent
@@ -568,14 +581,18 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                                 $textColor={textColor}
                             >
                                 <CardTitle $color={cardTitleColor}>{job.title}</CardTitle>
-                                <CardInnerWrapper>
+                                <CardInnerWrapper $noDesc={index === (jobs.length - 1) && !job.desc}>
                                     <DescWrapper $isBrand={isBrand}>
-                                        {job.desc !== undefined && (<Text>что делает</Text>)}
-                                        <br />
-                                        <Text $color={textColor}>{job.desc}</Text>
+                                        {(job.desc !== undefined || job?.desc?.length > 0) && (
+                                            <>
+                                                <Text>что делает</Text>
+                                                <br />
+                                                <Text $color={textColor}>{job.desc}</Text>
+                                            </>
+                                        )}
                                     </DescWrapper>
                                     {isBrand && job.skills?.length && (
-                                        <SkillWrapper>
+                                        <SkillWrapper $shoudShowPicture={shoudShowPicture && index === (jobs.length - 1)}>
                                             <Text>навыки/скиллы</Text>
                                             <br />
                                             <SkillContent>
@@ -618,10 +635,12 @@ export const JobModal = ({ isBrand, styles, opportunities, id, onClose, picture,
                         </>
                     )}
                 </CardsWrapper>
-
+                    )
+                }
+                {children}
                 <MenuBlock>
-                    <TitleStyled $color={textColor}>
-                        <ColoredSpan $color={backgroundColor}>посмотреть</ColoredSpan> другие направления
+                    <TitleStyled $color={titleColor ?? textColor}>
+                        <ColoredSpan $color={accentColor ?? backgroundColor}>посмотреть</ColoredSpan> другие направления
                     </TitleStyled>
                     <MenuMan src={menuPerson} alt="" />
                     <MobileLines>

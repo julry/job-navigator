@@ -81,6 +81,11 @@ export const StroyPage = () => {
         }
     `;
 
+    const botBlockStyles = {
+        defaultColor: 'var(--color-alabuga-blue)',
+        backgroundColor: 'var(--color-alabuga-accent)'
+    }
+
     return (
         <BrandPage
             pageId="stroy"
@@ -92,12 +97,13 @@ export const StroyPage = () => {
             menuPerson={alabugaMenu}
             menuPersonHead={alabugaMenuHead}
             companyName='«Алабуга Девелопмент»'
+            botBlockStyles={botBlockStyles}
             personComponent={
                 <PersonWrapper>
                     <Person src={pers} alt="" />
                 </PersonWrapper>
             }
-            aboutComponent={<About defaultColor={'var(--color-alabuga-blue)'} />}
+            aboutComponent={<About defaultColor={'var(--color-alabuga-blue)'} accentColor={'var(--color-alabuga-accent)'}/>}
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-alabuga-blue)'}  accentColor={'var(--color-alabuga-accent)'} />}
             modalStyles={modalStyles}

@@ -11,7 +11,7 @@ const Wrapper = styled.div`
     }
 
     ${media.desktop`
-        margin-left: 0;
+        margin-left: -30px;
         padding: 35px 0px 0;
         padding-right: 0;
     `}
@@ -30,6 +30,5 @@ export const LogoComponent = () => (
                 </clipPath>
             </defs>
         </svg>
-
     </Wrapper>
 )

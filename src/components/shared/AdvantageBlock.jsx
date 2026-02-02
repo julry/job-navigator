@@ -15,7 +15,7 @@ const Advantage = styled(motion.div)`
     padding: 14px 20px;
 
     background-color: transparent;
-    border: 1px solid ${({$accentColor}) => $accentColor};
+    box-shadow: inset 0 0 1px 1px ${({$accentColor}) => $accentColor};
     color: ${({$defaultColor}) => $defaultColor};
     border-radius: 30px;
 
@@ -38,7 +38,7 @@ const AdvantageInfo = styled(Advantage)`
     margin-top: 0;
     inset: 0;
     z-index: 10;
-    background-color: ${({$accentColor}) => $accentColor};
+    padding: 0;
 `;
 
 
@@ -67,8 +67,6 @@ export const AdvantageBlock = ({isWide, isActive, defaultColor, accentColor, chi
                 duration: 0.5,
                 ease: "easeOut",
             }}
-            $defaultColor={defaultColor}
-            $accentColor={accentColor}
             animate={isActive ? {x: 0} : {x: '100%'}}
         >
             {infoComponent}
