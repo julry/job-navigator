@@ -2339,4 +2339,336 @@ export const opportunitiesConfig = {
             ]
         },
     ],
+    trade: [
+        {
+            id: 'fmvavjfidshops',
+            text: 'Коммерция / Гипермаркеты',
+            style: { 'grid-area': '1/1/2/2' },
+            pictureBottom: -252,
+            aboutJob: (
+                <>
+                    <ColoredSpan $color={'var(--color-lemana-accent)'}>коммерция в гипермаркетах</ColoredSpan> — это работа в сердце ритейла: от персональных консультаций по товарам для ремонта до управления ассортиментом на полках
+                    {'\n\n'}
+                    здесь каждый день помогают клиентам благоустраивать жилье, сопровождают их от идеи до реализации любого проекта по обустройству дома
+                </>
+            ),
+            skills: ['умение общаться с разными людьми', 'адаптивность', 'ориентир на результат'],
+            readyFor: ['физически активная, подвижная работа', 'желание помогать клиентам', 'дружелюбие'],
+            jobs: [
+                {
+                    id: 'jun',
+                    title: <><ColoredSpan $color="var(--color-white)">Практикант</ColoredSpan>  / Продавец-консультант</>,
+                    desc: 'Изучает ассортимент и помогает покупателям',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'вежливость',
+                            width: 48,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'работа в команде',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-white)">кассир-консультант</ColoredSpan></>,
+                    desc: 'Обслуживает на кассе и отвечает за свой сектор ',
+                    skills: [
+                        {
+                            name: 'внимательность',
+                            width: 100,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'аккуратность',
+                            width: 46,
+                            id: 'processes'
+                        },
+                        {
+                            name: <NoTransformSpan>работа в 1С</NoTransformSpan>,
+                            width: 50,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">менеджер</ColoredSpan> сектора по обслуживанию клиентов</>,
+                    desc: 'Управляет ассортиментом и командой своего отдела',
+                    skills: [
+                        {
+                            name: 'ответственность',
+                            width: 100,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 100,
+                            id: 'plan',
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title:  <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> сектора по обслуживанию клиентов</>,
+                    desc: 'Отвечает за работу всей торговой точки',
+                    skills: [
+                        {
+                            name: 'управление командой',
+                            width: 61,
+                            id: 't32am'
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 35,
+                            id: 'pl432an'
+                        },
+                        {
+                            name: 'решение нестандартных задач',
+                            width: 100,
+                            id: '431322'
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc3243',
+                    title:  <><ColoredSpan $color="var(--color-white)">директор</ColoredSpan> магазина</>,
+                    skills: [
+                        {
+                            name: 'управление',
+                            width: 48,
+                            id: 't32am'
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 48,
+                            id: 'pl432an'
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: '431322'
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            id: 'logistokagipermarket',
+            text: 'Логистика / Работа в гипермаркетах и на складах',
+            style: { 'grid-area': '2/1/3/2' },
+            pictureBottom: -252,
+            aboutJob: (
+                <>
+                    <ColoredSpan $color={'var(--color-lemana-accent)'}>Логистика</ColoredSpan> — это управление точными и сложными проектами: от приёмки многотонных фур на складе до момента, когда товар оказывается на полке или в руках у покупателя
+                    {'\n\n'}
+                    каждый день здесь получают и обрабатывают всё больше заказов, оптимизируют процессы сборки и доставки товаров — у компании есть собственная маршрутизация и система управления складом 
+                </>
+            ),
+            skills: ['знание основ безопасности', 'соблюдение стандартов работы', 'ориентир на результат'],
+            readyFor: ['работа на складе или в гипермаркете','физически активная, подвижная работа',],
+            jobs: [
+                {
+                    id: 'jun',
+                    title: <><ColoredSpan $color="var(--color-white)">Практикант</ColoredSpan> / сотрудник склада</>,
+                    desc: 'Принимает, отгружает и комплектует товары, которые отправятся в магазин',
+                    skills: [
+                        {
+                            name: 'физическая выносливость',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'внимательность',
+                            width: 48,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'аккуратность',
+                            width: 48,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-white)">администратор</ColoredSpan> цепи поставок</>,
+                    desc: 'Ведёт учёт, проверяет, чтобы товар хранился в целости и сохранности',
+                    skills: [
+                        {
+                            name: 'работа с электронными системами',
+                            width: 100,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'организованность',
+                            width: 100,
+                            id: 'processes'
+                        },
+                        {
+                            name: 'знание складской логистики',
+                            width: 100,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">менеджер</ColoredSpan> цепи поставок</>,
+                    desc: 'Организует работу команды на складе',
+                    skills: [
+                        {
+                            name: 'лидерство',
+                            width: 44,
+                            id: 'team',
+                        },
+                        {
+                            name: 'наставничество',
+                            width: 52,
+                            id: 'plan',
+                        },
+                        {
+                            name: 'организация процессов',
+                            width: 100,
+                            id: 'te32am',
+                        },
+                        {
+                            name: 'контроль безопасности',
+                            width: 100,
+                            id: 'pl41an',
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc',
+                    title:  <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> цепи поставок</>,
+                    desc: 'Планирует графики поставок, следит, чтобы приходило всё вовремя и всё нужное',
+                    skills: [
+                        {
+                            name: 'аналитика',
+                            width: 100,
+                            id: 'pl432an'
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: '431322'
+                        },
+                    ]
+                },
+                {
+                    id: 'mainSpecc3243',
+                    title:  <><ColoredSpan $color="var(--color-white)">директор</ColoredSpan> склада</>,
+                    skills: [ 
+                        {
+                            name: 'управление персоналом',
+                            width: 100,
+                            id: 't32am'
+                        },
+                        {
+                            name: 'решение проблем',
+                            width: 48,
+                            id: 'pl432an'
+                        },
+                        {
+                            name: 'ответственность',
+                            width: 48,
+                            id: '431322'
+                        },
+                    ]
+                },
+            ]
+        },
+        {
+            id: 'businessprosupergoog',
+            text: <NoTransformSpan>работа с бизнес-клиентами / Лемана ПРО</NoTransformSpan>,
+            style: { 'grid-area': '3/1/4/2' },
+            pictureBottom: -252,
+            aboutJob: (
+                <>
+                    <ColoredSpan $color={'var(--color-lemana-accent)'}>ПРО</ColoredSpan> — это направление, где специалисты помогают компаниям и профессионалам в сфере строительства и ремонта, от небольших бригад до крупных застройщиков, развивать свой бизнес
+                    {'\n\n'}
+                    Это участие в сложных проектах, работа с крупными клиентами, обучение на производстве и сообщество профессионалов
+                </>
+            ),
+            skills: ['знание рынка B2B', 'аналитический склад ума'],
+            readyFor: [<NoTransformSpan>работа в гипермаркете в отделе ПРО</NoTransformSpan>,'понимание задач клиента', 'работа с рынком b2b'],
+            jobs: [
+                {
+                    id: 'jun',
+                    title: <><ColoredSpan $color="var(--color-white)">специалист</ColoredSpan> по продажам проектов</>,
+                    desc: 'консультирует и сопровождает клиентов',
+                    skills: [
+                        {
+                            name: 'исполнительность',
+                            width: 100,
+                            id: 'details'
+                        },
+                        {
+                            name: 'внимание к деталям',
+                            width: 100,
+                            id: 'educ'
+                        },
+                        {
+                            name: 'работа с документами',
+                            width: 100,
+                            id: 'chert'
+                        },
+                    ]
+                },
+                {
+                    id: 'specc',
+                    title: <><ColoredSpan $color="var(--color-white)">менеджер</ColoredSpan> по продаже проектов</>,
+                    desc: 'Подбирает персональные решения для клиентов и ведёт переговоры',
+                    skills: [
+                        {
+                            name: 'переговоры',
+                            width: 42,
+                            id: 'snip'
+                        },
+                        {
+                            name: 'знание продукта',
+                            width: 54,
+                            id: 'processes'
+                        },
+                        {
+                            name: 'работа с возражениями',
+                            width: 100,
+                            id: 'practice'
+                        },
+                    ]
+                },
+                {
+                    id: 'senSpecc',
+                    title: <><ColoredSpan $color="var(--color-white)">руководитель</ColoredSpan> отдела продаж</>,
+                    desc: 'Координирует работу команды менеджеров, ставит цели и обучает коллег ',
+                    skills: [
+                        {
+                            name: 'управление',
+                            width: 48,
+                            id: 'team',
+                        },
+                        {
+                            name: 'аналитика',
+                            width: 48,
+                            id: 'plan',
+                        },
+                        {
+                            name: 'планирование',
+                            width: 100,
+                            id: 'te32am',
+                        },
+                    ]
+                },
+            ]
+        },
+    ],
 }

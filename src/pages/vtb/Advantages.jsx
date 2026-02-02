@@ -207,8 +207,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                 infoComponent={
                     <InfoComponent $defaultColor={defaultColor}>
                         <Subtitle $color={accentColor}>
-                            корпоративные{'\n'}
-                            плюшки
+                            тимбилдинги{'\n'}и крутая команда
                         </Subtitle>
                         <TextInfo $color={'var(--color-white)'}>
                             регулярно проводятся онлайн и офлайн-корпоративы, квизы и вебинары, чтобы дружить с коллегами

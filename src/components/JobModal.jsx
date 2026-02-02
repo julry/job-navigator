@@ -386,6 +386,10 @@ const ClosedButton = styled.button`
     background-color: var(--color-gray);
     border: 1px solid var(--color-white);
     z-index: 10;
+
+    ${media.desktop`
+        top: 80px;
+    `}
 `;
 
 const CardInnerWrapper = styled.div`

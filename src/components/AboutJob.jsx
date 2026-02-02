@@ -22,7 +22,7 @@ const Wrapper = styled.div`
 
 const OrangeSpotStyled = styled(OrangeSpot)`
     position: absolute;
-    top: 30%;
+    top: ${({$spotTop}) => $spotTop ?? '30%'};
     left: 13%;
     width: 580px;
     height: 622px;
@@ -118,7 +118,7 @@ const TextDesktop = styled(SmallText)`
     }
 `;
 
-export const AboutJob = ({ wrapperHeight, isBrand, spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
+export const AboutJob = ({ wrapperHeight, spotTop, isBrand, spotColor, jobTitleSize, jobTitle, jobDescription, jobDescriptionMob, textColor}) => (
     <Wrapper $isBrand={isBrand} $wrapperHeight={wrapperHeight}>
         <Content>
             <TitleStyled $size={jobTitleSize} $color={textColor}>{jobTitle}</TitleStyled>
@@ -127,7 +127,7 @@ export const AboutJob = ({ wrapperHeight, isBrand, spotColor, jobTitleSize, jobT
                 <TextDesktop>{jobDescription}</TextDesktop>
                 <TextMobile>{jobDescriptionMob}</TextMobile>
             </TextWrapper>
-            <OrangeSpotStyled accentColor={spotColor}/>
+            <OrangeSpotStyled $spotTop={spotTop} accentColor={spotColor}/>
         </Content>
     </Wrapper>
 )

@@ -25,7 +25,7 @@ const Wrapper = styled.div`
     ${media.desktop`
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
-        padding-bottom: ${({$hasButton}) => $hasButton ? 275 : 185}px;
+        padding-bottom: ${({$hasButton, $length}) => $hasButton ? (385 - $length * 20) : 185}px;
         flex-direction: row;
         justify-content: space-between;
     `}
@@ -234,7 +234,7 @@ export const Opportunities = ({
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
-        <Wrapper $hasButton={hasButton}>
+        <Wrapper $hasButton={hasButton} $length={opportunities.length}>
             <div>
                 <Title $color={defaultColor}>дерево{'\n'}<ColoredSpan $color={accentColor}>возможностей</ColoredSpan> </Title>
                 <TextBlock>
