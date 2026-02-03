@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.7d6faa10.css",
-    "main.js": "./static/js/main.529d5db8.js",
+    "main.js": "./static/js/main.c65cc504.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -147,6 +147,7 @@
     "static/media/beelineAddBot.png": "./static/media/beelineAddBot.72381a9778a8232b408e.png",
     "static/media/lemanaAddBot.png": "./static/media/lemanaAddBot.e2d3157108f0b1ad37a1.png",
     "static/media/machine.png": "./static/media/machine.54c0ec62399fc0995b24.png",
+    "static/media/beelineProgress.png": "./static/media/beelineProgress.62bb81c8def70d888c9f.png",
     "static/media/vtbProgress.png": "./static/media/vtbProgress.04a47b5c3bbfba0b76e6.png",
     "static/media/transportMain.png": "./static/media/transportMain.f2a7033b61b58a9524fe.png",
     "static/media/serviceMain.png": "./static/media/serviceMain.15d3430b6a75daca7ab9.png",
@@ -160,10 +161,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.7d6faa10.css.map": "./static/css/main.7d6faa10.css.map",
-    "main.529d5db8.js.map": "./static/js/main.529d5db8.js.map"
+    "main.c65cc504.js.map": "./static/js/main.c65cc504.js.map"
   },
   "entrypoints": [
     "static/css/main.7d6faa10.css",
-    "static/js/main.529d5db8.js"
+    "static/js/main.c65cc504.js"
   ]
 }
