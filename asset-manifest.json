@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.7d6faa10.css",
-    "main.js": "./static/js/main.1e3b1758.js",
+    "main.js": "./static/js/main.91e34a28.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -66,7 +66,6 @@
     "static/media/techcontrolBot.png": "./static/media/techcontrolBot.b7998db5ec4def40b77a.png",
     "static/media/alabugaH.png": "./static/media/alabugaH.2805faba15f0fe1ea3c5.png",
     "static/media/techpromTop.png": "./static/media/techpromTop.2249c014267a36fc6739.png",
-    "static/media/beelineAdvant2.png": "./static/media/beelineAdvant2.e46d2453156bbe95cb6e.png",
     "static/media/beelineAdvant3.png": "./static/media/beelineAdvant3.c9d8d74ada211206418f.png",
     "static/media/transportBot.png": "./static/media/transportBot.d986961e07409f212b90.png",
     "static/media/materialsMountin.png": "./static/media/materialsMountin.b2ae6af7974f64112ea8.png",
@@ -119,12 +118,14 @@
     "static/media/techpromMountin.png": "./static/media/techpromMountin.85f8ec87a72e22bd4d1f.png",
     "static/media/vtbAdvent4.png": "./static/media/vtbAdvent4.2aeedf54438b75308538.png",
     "static/media/biotechTop.png": "./static/media/biotechTop.5676c18225b1797f66c7.png",
+    "static/media/beelineAdvant2.png": "./static/media/beelineAdvant2.c4b2459f6719eb6072bd.png",
     "static/media/agroBot.png": "./static/media/agroBot.76b587d9db17f24337b4.png",
     "static/media/vtbMoney.png": "./static/media/vtbMoney.347835acc633375e5edc.png",
     "static/media/machineMountin.png": "./static/media/machineMountin.ed603196d5b8e49fdd93.png",
     "static/media/vtbAdvent1.png": "./static/media/vtbAdvent1.73500ebb1df0590ccabb.png",
     "static/media/stroyMountin.png": "./static/media/stroyMountin.61f8ff3896b18c82c0d5.png",
     "static/media/alabugaAdvant5.png": "./static/media/alabugaAdvant5.6873980c70b9e583871c.png",
+    "static/media/beelineAdvant6.png": "./static/media/beelineAdvant6.e5d298f56fed35929759.png",
     "static/media/cloudLg.png": "./static/media/cloudLg.54266d141a67bb517c25.png",
     "static/media/educationMountin.png": "./static/media/educationMountin.c44688207c8ce7ab7f7c.png",
     "static/media/transportMountin.png": "./static/media/transportMountin.1cd5b5d78f96499ab43d.png",
@@ -161,10 +162,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.7d6faa10.css.map": "./static/css/main.7d6faa10.css.map",
-    "main.1e3b1758.js.map": "./static/js/main.1e3b1758.js.map"
+    "main.91e34a28.js.map": "./static/js/main.91e34a28.js.map"
   },
   "entrypoints": [
     "static/css/main.7d6faa10.css",
-    "static/js/main.1e3b1758.js"
+    "static/js/main.91e34a28.js"
   ]
 }
