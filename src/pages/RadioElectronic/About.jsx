@@ -1,8 +1,8 @@
 import { InfoLine } from "../../components/shared/InfoLine";
 import { NoTransformSpan, Subtitle, Text, Title, ColoredSpan } from "../../components/shared/Texts";
 import { AbsoluteImage } from '../../components/shared/AbsoluteImage';
-import house from '../../assets/images/beeline/beelineAbout1.png';
-import box from '../../assets/images/beeline/beelineAbout3.png';
+import phone from '../../assets/images/beeline/beelineAbout1.png';
+import plate from '../../assets/images/beeline/beelineAbout3.png';
 import radio from '../../assets/images/beeline/beelinePhone2.png';
 import { media } from "../../styles/media";
 import styled from "styled-components";
@@ -12,7 +12,7 @@ const TitleStyled = styled(Title)`
     font-size: 36px;
 
     ${media.desktop`
-        max-width: 440px;
+        width: 440px;
     `}
 
     @media screen and (max-width: 374px) {
@@ -69,80 +69,49 @@ const MobileAbsolutImageStyled = styled(AbsolutImageStyled)`
 `;
 
 
-export const About = ({ defaultColor, accentColor }) => (
+export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
     <>
-        <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>Билайне</ColoredSpan></TitleStyled>
-        {/* <AbsolutImageStyled
-                src={house}
+        <TitleStyled $color={defaultColor}>работа{'\n'}в <ColoredSpan $color={accentColor}>Билайне</ColoredSpan></TitleStyled>
+        <AbsolutImageStyled
+                src={phone}
                 alt=""
-                $right={-90}
-                $top={-10}
-                $width={500 * 0.5}
-                $height={350 * 0.5}
-                $leftD={195}
-                $topD={195}
-                $widthD={500}
-                $heightD={350}
-                $zIndex={0}
+                $right={-15}
+                $top={100}
+                $width={109 * 0.6}
+                $height={176 * 0.6}
+                $leftD={157}
+                $topD={233}
+                $widthD={109 * 1.2}
+                $heightD={176 * 1.2}
         />
         <AbsolutImageStyled
-                src={box}
+                src={plate}
                 alt=""
-                $right={90}
-                $top={50}
-                $width={63}
-                $height={58}
-                $rotate={-35}
-                $rotateD={-35}
-                $leftD={-40}
-                $topD={355}
-                $widthD={63 * 3}
-                $heightD={58 * 3}
+                $right={0}
+                $top={40}
+                $width={224 * 0.8}
+                $height={141 * 0.8}
+                $leftD={370}
+                $topD={305}
+                $widthD={224 * 1.5}
+                $heightD={141 * 1.5}
+                $zIndex={0}
         />
 
          <AbsolutImageStyled
-                src={box}
+                src={radio}
                 alt=""
-                $right={-20}
-                $top={80}
-                $rotate={-25}
-                $rotateD={15}
-                $width={63}
-                $height={58}
-                $leftD={275}
-                $topD={405}
-                $widthD={63 * 3}
-                $heightD={58 * 3}
+                $right={20}
+                $top={100}
+                $width={123 * 0.8}
+                $height={292 * 0.8}
+                $leftD={45}
+                $topD={205}
+                $widthD={123 * 2}
+                $heightD={292 * 2}
         />
-         <AbsolutImageStyled
-                src={box}
-                alt=""
-                $right={5}
-                $top={190}
-                $rotate={10}
-                $rotateD={10}
-                $width={63 * 1.2}
-                $height={58 * 1.2}
-                $leftD={145}
-                $topD={555}
-                $widthD={63 * 3}
-                $heightD={58 * 3}
-        />
-        <MobileAbsolutImageStyled
-                src={box}
-                alt=""
-                $right={0}
-                $top={630}
-                $width={63}
-                $height={58}
-                $rotate={-35}
-                $leftD={195}
-                $topD={195}
-                $widthD={500}
-                $heightD={350}
-        /> */}
+      
         <TextWrapper $accentColor={accentColor}>
-            
             <Subtitle $color={defaultColor}>
                <NoTransformSpan>Билайн</NoTransformSpan> — один из лидеров телекоммуникационного рынка России, который создаёт цифровую инфраструктуру для миллионов людей
             </Subtitle>
@@ -154,9 +123,6 @@ export const About = ({ defaultColor, accentColor }) => (
             <Text $color={defaultColor}>
                 в <NoTransformSpan>Билайне</NoTransformSpan>:
             </Text>
-
-
-
             <br />
             <InfoLine defaultColor={defaultColor}>развивают мобильную и фиксированную связь </InfoLine>
             <InfoLine defaultColor={defaultColor}>внедряют передовые <NoTransformSpan>технологии 5G и IoT</NoTransformSpan> </InfoLine>
@@ -165,7 +131,7 @@ export const About = ({ defaultColor, accentColor }) => (
             <Text $color={defaultColor}>
                 Можно начать карьеру с позиции стажёра, инженера или монтажника — и вырасти до руководителя команды
             </Text>
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу попасть в{' '}Билайн!</NoTransformSpan></ButtonStyled>
+            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу попасть в{' '}Билайн!</NoTransformSpan></ButtonStyled>
         </TextWrapper>
     </>
 )

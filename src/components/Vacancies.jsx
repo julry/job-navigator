@@ -2,6 +2,7 @@ import { media } from "../styles/media";
 import styled from 'styled-components';
 import { ColoredSpan, Title } from './shared/Texts';
 import { Button } from "./shared/Button";
+import {openLink} from '../utils/openLink';
 
 const Wrapper = styled.div`
     padding: 80px 0;
@@ -40,7 +41,7 @@ export const Vacancies = ({ref, textColor, vacancies = [],  accentColor = 'var(-
             <Title $color={textColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
             <LinksWrapper>
                 {vacancies.map(({name, link}) => (
-                    <Link key={name}>
+                    <Link key={name} onClick={() => openLink(link)}>
                         {name}
                     </Link>
                 ))}

@@ -118,6 +118,12 @@ export const defaultPages = [
                 isSoft: true
             },
         ],
+        vacanciesLinks: [
+            {name: 'Лаборант химического анализа', link: 'https://fut.ru/s/lab-assist-vac2026'},
+            {name: 'Машинист технологических насосов', link: 'https://fut.ru/s/machinist-vac2026'},
+            {name: 'Оператор нефтепереработки', link: 'https://fut.ru/s/oil-operator-vac2026'},
+            {name: 'Мастер шиномонтажа', link: 'https://fut.ru/s/mastershin_26'},
+        ],
         testName: 'химической промышленности',
         opportunities: opportunitiesConfig.chemical,
         opportunitiesPerson: {
@@ -171,6 +177,12 @@ export const defaultPages = [
             { id: 3, isSmall: true, name: 'Государственный сектор', desc: 'Создавать и обслуживать информационные системы, порталы и базы в государственных организациях' },
             { id: 4, isSmall: true, name: 'Компании по автоматизации и “умным” системам', desc: 'Настраивать технологии “интернета вещей” (IoT) и роботизированные решения: от датчиков на производстве до умных лампочек и колонок' },
             { id: 5, isSmall: true, name: 'IT-аутсорсинг и сервисные компании', desc: 'Помогать решать проблемы с программами или искать и исправлять ошибки в софте, чтобы он работал идеально' },
+        ],
+        vacanciesLinks: [
+            {name: 'Системный администратор', link: 'https://fut.ru/s/admin_2'},
+            {name: 'Специалист технической поддержки', link: 'https://fut.ru/s/tech_2'},
+            {name: 'Техник по обслуживанию компьютеров', link: 'https://fut.ru/s/computer_1'},
+            {name: 'Программист-стажёр', link: 'https://fut.ru/s/program_0'},
         ],
         testQuestions: [
             {
@@ -241,15 +253,15 @@ export const defaultPages = [
         },
         testPerson: {
             top: {
-                widthDesc: 213,
-                heightDesc: 389,
+                widthDesc: 304 * 0.5,
+                heightDesc: 727 * 0.5,
                 src: itT,
                 bottomDesc: 26,
-                leftDesc: -137,
-                width: 131,
-                height: 239,
-                bottom: -227,
-                left: 74.7,
+                leftDesc: -127,
+                width:  304 * 0.38,
+                height: 727 * 0.38,
+                bottom: -232,
+                left: 71,
             },
             bot: {
                 widthDesc: 224,
@@ -276,6 +288,10 @@ export const defaultPages = [
             { id: 2, isSmall: true, name: 'IT-компании-разработчики систем безопасности', desc: 'Создавать продукты для защиты данных: антивирусы, системы мониторинга, средства шифрования' },
             { id: 3, isSmall: true, name: 'Государственный сектор', desc: 'Обеспечивать защиту государственных информационных ресурсов, систем и данных' },
             { id: 4, isSmall: true, name: 'Консалтинг и аудит', desc: 'Проводить независимые проверки (аудит) безопасности и помогать разным компаниям выстроить эффективную защиту' },
+        ],
+        vacanciesLinks: [
+            {name: 'Специалист по информационной безопасности', link: 'https://fut.ru/s/infosec_2'},
+            {name: 'Специалист технической поддержки', link: 'https://fut.ru/s/support_7'},
         ],
         testQuestions: [
             {
@@ -350,15 +366,15 @@ export const defaultPages = [
         },
         testPerson: {
             top: {
-                widthDesc: 250,
-                heightDesc: 326,
+                widthDesc: 321 * 0.5,
+                heightDesc: 625 * 0.5,
                 src: infosecT,
                 bottomDesc: 71,
-                leftDesc: -186,
-                width: 158,
-                height: 258,
+                leftDesc: -142,
+                width: 321 * 0.38,
+                height: 625 * 0.38,
                 bottom: -205,
-                left: 64.7,
+                left: 68,
             },
             bot: {
                 widthDesc: 250,
@@ -385,6 +401,12 @@ export const defaultPages = [
             { id: 2, isSmall: true, name: 'Промышленные предприятия и заводы', desc: 'Отвечать за бесперебойное энергоснабжение цехов, ремонтировать оборудование и снижать энергозатраты' },
             { id: 3, isSmall: true, name: 'Компании в сфере возобновляемой энергетики', desc: 'Работать на солнечных электростанциях и ветропарках — будущее за экологичной энергетикой!' },
             { id: 4, isSmall: true, name: 'Сервисные и монтажные организации', desc: 'Собирать, запускать и обслуживать сложное энергетическое оборудование у заказчиков' },
+        ],
+        vacanciesLinks: [
+            {name: 'Электромонтёр', link: 'https://fut.ru/s/elecmon_1'},
+            {name: 'Слесарь-электрик', link: 'https://fut.ru/s/slesel_3'},
+            {name: 'Оператор котельной', link: 'https://fut.ru/s/boiler-vac2026'},
+            {name: 'Электромеханик по лифтам', link: 'https://fut.ru/s/elevator-vac2026'},
         ],
         testQuestions: [
             {
@@ -455,18 +477,18 @@ export const defaultPages = [
                 heightDesc: 379,
                 src: energeticsT,
                 bottomDesc: 3,
-                leftDesc: -115,
+                leftDesc: -138,
                 width: 105,
-                height: 304,
-                bottom: -285,
-                left: 78,
+                height: 304 * 0.9,
+                bottom: -265,
+                left: 73.5,
             },
             bot: {
                 widthDesc: 387,
                 heightDesc: 352,
                 src: energeticsB,
-                bottomDesc: -211,
-                leftDesc: -141,
+                bottomDesc: -181,
+                leftDesc: -165,
                 width: 292,
                 height: 265,
                 bottom: -462,
@@ -487,6 +509,12 @@ export const defaultPages = [
             { id: 3, isSmall: true, name: 'Сервисные и инжиниринговые компании', desc: 'Запускать, налаживать и обслуживать сложное промышленное оборудование на предприятиях' },
             { id: 4, isSmall: true, name: 'Компании по автоматизации и роботизации', desc: 'Программировать промышленных роботов и автоматические линии, обеспечивая их бесперебойную работу' },
             { id: 5, name: 'Предприятия тяжелой и транспортной промышленности', },
+        ],
+        vacanciesLinks: [
+            {name: 'Оператор станков ЧПУ', link: 'https://fut.ru/s/operator-chpy-vac2026'},
+            {name: 'Слесарь по ремонту оборудования', link: 'https://fut.ru/s/plumber-vac2026'},
+            {name: 'Сварщик', link: 'https://fut.ru/s/welder-vac2026'},
+            {name: <>Наладчик <NoTransformSpan>КИПиА (начинающий)</NoTransformSpan></>, link: 'https://fut.ru/s/adjuster-vac2026'},
         ],
         testQuestions: [
             {
@@ -562,13 +590,13 @@ export const defaultPages = [
         },
         testPerson: {
             top: {
-                widthDesc: 190,
-                heightDesc: 378,
+                widthDesc: 274 * 0.5,
+                heightDesc: 707 * 0.5,
                 src: machineT,
                 bottomDesc: 84,
                 leftDesc: -113,
-                width: 141,
-                height: 280,
+                width: 274 * 0.38,
+                height: 707 * 0.38,
                 bottom: -218,
                 left: 75,
             },
@@ -598,6 +626,12 @@ export const defaultPages = [
             { id: 3, isSmall: true, name: 'Биотехнологические производства', desc: 'Участвовать в создании полезных продуктов с помощью микроорганизмов: от ферментов до биодобавок' },
             { id: 4, isSmall: true, name: 'Консалтинг и экологический аудит', desc: 'Помогать компаниям стать экологичными: проводить проверки и давать рекомендации ' },
             { id: 5, isSmall: true, name: 'Компании водоподготовки и очистки сточных вод', desc: 'Обеспечивать, чтобы в наши краны и реки попадала только чистая вода, управляя системами очистки'},
+        ],
+        vacanciesLinks: [
+            {name: 'Пекарь', link: 'https://fut.ru/s/baker-vac2026'},
+            {name: 'Повар', link: 'https://fut.ru/s/cook-vac2006'},
+            {name: 'Наладчик пищевого оборудования', link: 'https://fut.ru/s/foodadjuster-vac2026'},
+            {name: 'Лаборант пищевого производства ', link: 'https://fut.ru/s/labassistant-vac2006'},
         ],
         testQuestions: [
             {
@@ -671,15 +705,15 @@ export const defaultPages = [
         },
         testPerson: {
             top: {
-                widthDesc: 213,
-                heightDesc: 263,
+                widthDesc: 317 * 0.5,
+                heightDesc: 513 * 0.5,
                 src: biotechT,
                 bottomDesc: 146,
                 leftDesc: -139,
-                width: 163,
-                height: 201,
+                width: 317 * 0.37,
+                height: 513 * 0.37,
                 bottom: -176,
-                left: 68,
+                left: 69,
             },
             bot: {
                 widthDesc: 300,
@@ -706,6 +740,12 @@ export const defaultPages = [
             { id: 2, isSmall: true, name: 'Службы МЧС и пожарного надзора', desc: 'Придумывать, как защитить леса, поля и населенные пункты от пожаров' },
             { id: 3, name: 'Государственный сектор', desc: 'Следить за состоянием воздуха, воды и почвы и выявлять нарушения' },
             { id: 4, name: 'Компании по обращению с отходами и эко-технологиям', desc: 'Организовывать переработку мусора и производственных отходов'},
+        ],
+        vacanciesLinks: [
+            {name: 'Спасатель', link: 'https://fut.ru/s/rescuer-vac2026'},
+            {name: 'Пожарный', link: 'https://fut.ru/s/firefighter-vac2026'},
+            {name: 'Диспетчер аварийной службы', link: 'https://fut.ru/s/dispatcher-vac2026'},
+            {name: 'Инспектор в области охраны окружающей среды', link: 'https://fut.ru/s/environmentalinspector-vac2026'},
         ],
         testQuestions: [
             {
@@ -812,6 +852,12 @@ export const defaultPages = [
             { id: 2, name: 'Научные учреждения', desc: 'Изучать природные ресурсы' },
             { id: 3, name: 'Экологический контроль', desc: 'Следить, чтобы производства не вредили окружающей среде' },
         ],
+        vacanciesLinks: [
+            {name: 'Техник-лаборант', link: 'https://fut.ru/s/tech9'},
+            {name: 'Бурильщик', link: 'https://fut.ru/s/tech8'},
+            {name: 'Оператор по добыче нефти и газа', link: 'https://fut.ru/s/tech7'},
+            {name: 'Техник-геодезист', link: 'https://fut.ru/s/tech6'},
+        ],
         testQuestions: [
             {
                 id: 'q-0',
@@ -878,22 +924,22 @@ export const defaultPages = [
         testBlockMargin: 60,
         testPerson: {
             top: {
-                widthDesc: 169,
-                heightDesc: 303,
+                widthDesc: 244 * 0.5,
+                heightDesc: 603 * 0.5,
                 src: geologyT,
                 bottomDesc: 35,
                 leftDesc: -103,
-                width: 134,
-                height: 248,
+                width: 244 * 0.38,
+                height: 603 * 0.38,
                 bottom: -235,
-                left: 76,
+                left: 77,
             },
             bot: {
                 widthDesc: 177,
                 heightDesc: 208,
                 src: geologyB,
                 bottomDesc: -110,
-                leftDesc: -46,
+                leftDesc: -47,
                 width: 144,
                 height: 169,
                 bottom: -345,
@@ -912,6 +958,12 @@ export const defaultPages = [
             { id: 2, name: 'Научная сфера', desc: 'Производить новые сплавы и нанотехнологии' },
             { id: 3, name: 'Медицина', desc: 'Разрабатывать материалы для имплантатов и протезов' },
             { id: 4, name: 'Пищевая промышленность', desc: 'Создавать упаковки и пищевые материалы' },
+        ],
+        vacanciesLinks: [
+            {name: 'Инженер-технолог', link: 'https://fut.ru/s/tech5'},
+            {name: 'Подручный сталевара', link: 'https://fut.ru/s/tech4'},
+            {name: 'Плавильщик металла', link: 'https://fut.ru/s/tech3'},
+            {name: 'Обработка металлов давлением', link: 'https://fut.ru/s/tech2'},
         ],
         testQuestions: [
             {
@@ -1001,7 +1053,7 @@ export const defaultPages = [
     {
         id: 'transport',
         jobTitleSize: 27,
-        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Техника</ColoredSpan>и технологии наземного транспорта</>,
+        jobTitle: <><ColoredSpan $color='var(--color-orange)'>Техника</ColoredSpan> и технологии наземного транспорта</>,
         jobDescription: 'Благодаря этим специалистам ездят поезда, автобусы, трамваи и вообще весь наземный транспорт. Они занимаются ремонтом и обслуживанием.\n\nСпециалисты разбираются в устройстве двигателей, организуют транспортные процессы и внедряют современные решения для управления транспортом',
         jobDescriptionSm: 'Благодаря этим специалистам ездят поезда, автобусы, трамваи и вообще весь наземный транспорт. Они занимаются ремонтом и обслуживанием.\n\nСпециалисты разбираются в устройстве двигателей, организуют транспортные процессы и внедряют современные решения для управления\nтранспортом',
         vacanciesDescr: [
@@ -1010,6 +1062,13 @@ export const defaultPages = [
             { id: 2, name: 'Ремонтный сервис, техобслуживание', desc: 'Проводить ремонт и диагностику техники' },
             { id: 3, name: 'Государственные органы', desc: 'Заниматься контролем, экспертизой и безопасностью наземного транспорта' },
             { id: 4, name: 'Сфера страхования', desc: 'Оценивать ущерб техники' },
+        ],
+        vacanciesLinks: [
+            {name: 'Диспетчер автомобильного транспорта', link: 'https://fut.ru/s/tech1'},
+            {name: 'Автомеханик / Автослесарь', link: 'https://fut.ru/s/tech0_2026'},
+            {name: 'Машинист дорожно-строительной техники', link: 'https://fut.ru/s/tech_2026'},
+            {name: 'Диспетчер', link: 'https://fut.ru/s/tech1_2026'},
+            {name: 'Машинист электропоезда', link: 'https://fut.ru/s/tech2_2026'},
         ],
         testQuestions: [
             {
@@ -1104,6 +1163,12 @@ export const defaultPages = [
             { id: 2, name: 'Промышленная сфера', desc: 'производить автоматизированное оборудование' },
             { id: 3, name: 'Государственные органы', desc: 'Заниматься автоматизацией работы государственных информационных систем и приложений' },
         ],
+        vacanciesLinks: [
+            {name: <NoTransformSpan>контролёр ОТК</NoTransformSpan>, link: 'https://fut.ru/s/tech3_2026'},
+            {name: <NoTransformSpan>наладчик КИПиА</NoTransformSpan>, link: 'https://fut.ru/s/tech4_2026'},
+            {name: 'Метролог', link: 'https://fut.ru/s/tech5_2026'},
+            {name: 'Оператор производственной линии', link: 'https://fut.ru/s/tech6_2026'},
+        ],
         testQuestions: [
             {
                 id: 'q-0',
@@ -1196,6 +1261,13 @@ export const defaultPages = [
             { id: 1, name: 'Сфера дизайна', desc: 'Разрабатывать лекало, техническую документацию, подбирать нужные материалы' },
             { id: 2, name: 'Сфера контроля качества', desc: 'Разработка стандартов качества в сертифицированных центрах и службах контроля на предприятиях' },
             { id: 3, name: 'IT сфера', desc: 'Разработка 3D-дизайнов и 3D-моделирование' },
+        ],
+        vacanciesLinks: [
+            {name: 'Швея-портной', link: 'https://fut.ru/s/tech7_2026'},
+            {name: 'Мастер по ремонту обуви', link: 'https://fut.ru/s/tech8_2026'},
+            {name: 'Печатник / Полиграфист', link: 'https://fut.ru/s/printer_2026 '},
+            {name: 'Ткач', link: 'https://fut.ru/s/weaver_2026 '},
+            {name: 'Сборщик мебели / Столяр', link: 'https://fut.ru/s/carpenter_2026'},
         ],
         testQuestions: [
             {
@@ -1292,6 +1364,12 @@ export const defaultPages = [
             { id: 2, name: 'Рыбное хозяйство', desc: 'Работа на рыбоводных хозяйствах и предприятиях по разведению рыбы' },
             { id: 3, name: 'Государственная сфера', desc: 'Заниматься охраной природы и экологическим надзором' },
         ],
+        vacanciesLinks: [
+            {name: 'Тракторист-машинист сельскохозяйственного производства', link: 'https://fut.ru/s/techtractor_2026'},
+            {name: 'Обработчик рыбы', link: 'https://fut.ru/s/fish_2026 '},
+            {name: 'Рабочий зеленого хозяйства', link: 'https://fut.ru/s/farm_2026'},
+            {name: 'Кинолог', link: 'https://fut.ru/s/cynologist_2026 '},
+        ],
         testQuestions: [
             {
                 id: 'q-0',
@@ -1380,6 +1458,12 @@ export const defaultPages = [
             { id: 1, name: 'Туроператорская деятельность', desc: 'Продавать путевки на отдых, подбирать предложения по вкусу клиента' },
             { id: 2, name: 'Экскурсионные услуги', desc: 'Работать в сфере экскурсий и гид-индустрии' },
             { id: 3, name: 'Event-индустрия', desc: 'Заниматься организацией мероприятий различных тематик' },
+        ],
+        vacanciesLinks: [
+            {name: 'Менеджер по туризму', link: 'https://fut.ru/s/meneger_vac2026'},
+            {name: 'Администратор гостиницы или отеля', link: 'https://fut.ru/s/admin_vac2026'},
+            {name: 'Парикмахер / Барбер', link: 'https://fut.ru/s/barber_vac2026'},
+            {name: 'Флорист', link: 'https://fut.ru/s/flowers_vac2026'},
         ],
         testQuestions: [
             {
@@ -1470,6 +1554,12 @@ export const defaultPages = [
             { id: 3, name: 'коррекционные службы и реабилитационные центры'},
             { id: 4, name: 'учебные центры и отделения колледжей'},
             { id: 5, name: 'онлайн-школы и разработчики учебных курсов'},
+        ],
+        vacanciesLinks: [
+            {name: 'Воспитатель в детском саду', link: 'https://fut.ru/s/detsad_vac2026'},
+            {name: 'Учитель начальных классов', link: 'https://fut.ru/s/teacher_vac2026'},
+            {name: 'Педагог дополнительного образования', link: 'https://fut.ru/s/dpo_vac2026'},
+            {name: 'Методист', link: 'https://fut.ru/s/metodist_vac2026'},
         ],
         testQuestions: [
             {

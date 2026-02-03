@@ -2,6 +2,7 @@ import { media } from "../styles/media";
 import styled from 'styled-components';
 import { ColoredSpan, Text, Title } from './shared/Texts';
 import { Button } from "./shared/Button";
+import { openLink } from "../utils/openLink";
 
 const Wrapper = styled.div`
     padding: 80px 0;
@@ -33,6 +34,7 @@ const CompanyInfoWrapper = styled.div`
     ${media.desktop`
         padding: 30px 40px;
         border-radius: 40px;
+        min-height: 600px;
     `};
 `;
 
@@ -123,13 +125,17 @@ const ButtonStyled = styled(Button)`
 
 
     ${media.desktop`
-        margin-top: 40px;
+        position: absolute;
+        bottom: 30px;
+        left: 40px;
+        width: calc(100% - 80px);
+        /* margin-top: 40px; */
     `}
 `;
 
 export const BrandVacancies = ({
     ref, picture, companyName, defaultColor, accentColor, buttonText, shouldShortLast, customTitle, subTitleWidth, additionalInfoComponent, buttonStyles,
-    format, children, qualities = [], gives = [], takes = [], vacancies = [], lines = [], advantages = [], based = [], testAdditionMarginDesk = 0,
+    format, companyLink, children, qualities = [], gives = [], takes = [], vacancies = [], lines = [], advantages = [], based = [], testAdditionMarginDesk = 0,
 }) => {
     return (
         <Wrapper ref={ref} $testAdditionMarginDesk={testAdditionMarginDesk}>
@@ -255,7 +261,7 @@ export const BrandVacancies = ({
                         }
                     </InfoBlock>
                 )}
-                <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor} $shouldShortLast={shouldShortLast} $style={buttonStyles}>
+                <ButtonStyled onClick={() => openLink(companyLink)} $defaultColor={defaultColor} $accentColor={accentColor} $shouldShortLast={shouldShortLast} $style={buttonStyles}>
                     {buttonText ?? `начать карьеру в ${companyName}`}
                 </ButtonStyled>
                 <PictureWrapper src={picture} alt="" />
@@ -263,7 +269,7 @@ export const BrandVacancies = ({
                 {additionalInfoComponent}
             <LinksWrapper>
                 {vacancies.map(({ name, link }) => (
-                    <Link $defaultColor={defaultColor} $accentColor={accentColor} key={name} $style={buttonStyles}>
+                    <Link onClick={() => openLink(link)} $defaultColor={defaultColor} $accentColor={accentColor} key={name} $style={buttonStyles}>
                         {name}
                     </Link>
                 ))}

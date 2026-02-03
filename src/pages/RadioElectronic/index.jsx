@@ -133,7 +133,7 @@ export const RadioElectronicPage = () => {
                     <Person src={pers} alt="" />
                 </PersonWrapper>
             }
-            aboutComponent={<About defaultColor={'var(--color-beeline-dark)'} accentColor={'var(--color-beeline-accent)'}/>}
+            getAboutComponent={({scrollToVacancy}) => <About scrollToVacancy={scrollToVacancy} defaultColor={'var(--color-beeline-dark)'} accentColor={'var(--color-beeline-accent)'}/>}
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-beeline-dark)'}  accentColor={'var(--color-beeline-accent)'} />}
             modalStyles={modalStyles}

@@ -8,11 +8,12 @@ const Wrapper = styled.div`
     width: 100%;
     border-radius: 40px;
     padding: 30px 20px;
+    max-width: 900px;
     background-color: ${({$backgroundColor}) => $backgroundColor};
-    margin-top: ${({$isBrand, $testAdditionMargin}) => $isBrand ? 40 : 345 + $testAdditionMargin}px;
+    margin: ${({$isBrand, $testAdditionMargin}) => $isBrand ? 40 : 345 + $testAdditionMargin}px auto 0;
 
     ${media.desktop`
-        margin-top: 170px;
+        margin: 170px auto 0;
         padding: 30px 40px;
     `}
 
@@ -23,6 +24,7 @@ const Wrapper = styled.div`
     & ${Button} {
         ${({$isBrand}) => !$isBrand ? 'background-color: var(--color-orange); color: var(--color-white);' : ''};
         margin-top: 24px;
+        font-size: 16px;
     }
 `;
 
@@ -30,7 +32,7 @@ const Wrapper = styled.div`
 export const BotBlock = ({ isBrand, defaultColor, styles, testAdditionMargin = 0, backgroundColor = 'var(--color-gray)'}) => (
     <Wrapper $testAdditionMargin={testAdditionMargin} $isBrand={isBrand} $backgroundColor={backgroundColor} $defaultColor={defaultColor}>
         <Text>
-            хочешь узнать больше полезной инфы{'\n'}о навыках и развитии в профессии?
+            хочешь узнать больше полезной инфы о навыках и развитии в профессии?
         </Text>
         <Button $isBrand={isBrand} onClick={openBot} $style={styles} $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
     </Wrapper>

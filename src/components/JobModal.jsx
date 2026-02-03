@@ -14,19 +14,21 @@ const Wrapper = styled(motion.div)`
     position: absolute;
     inset: 0;
     overflow-x: hidden;
-    padding-top: 88px;
+    padding-top: 25px;
    
     z-index: 302;
 
     ${media.desktop`
-        padding-top: 92px;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding-top: 25px;
     `}
 
-     backface-visibility: hidden;
+    backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     
-    transform: translateZ(0);
-    -webkit-transform: translateZ(0);
+    /* transform: translateZ(0);
+    -webkit-transform: translateZ(0); */
 `;
 
 const Content = styled(motion.div)`
@@ -51,11 +53,6 @@ const Content = styled(motion.div)`
     `}
 `;
 
-const CompasButtonStyled = styled(CompasButton)`
-    top: -10px;
-`;
-
-
 const TitleStyled = styled(Title)`
     font-size: ${({ $fontSize }) => $fontSize}px;
     padding-bottom: 55px;
@@ -65,7 +62,6 @@ const TitleStyled = styled(Title)`
         font-size: 50px;
     }
 `;
-
 
 const Card = styled.div`
     position: relative;
@@ -375,7 +371,7 @@ const UpButton = styled.button`
 
 const ClosedButton = styled.button`
     position: absolute;
-    top: 68px;
+    top: 5px;
     right: 25px;
 
     width: 47px;
@@ -388,10 +384,10 @@ const ClosedButton = styled.button`
     
     background-color: var(--color-gray);
     border: 1px solid var(--color-white);
-    z-index: 10;
+    z-index: 500;
 
     ${media.desktop`
-        top: 80px;
+        top: 10px;
     `}
 `;
 
@@ -523,7 +519,7 @@ export const JobModal = ({
             initial={{ y: '100vh' }}
             animate={{ y: 0, boxShadow: '0 -2px 35px 2px var(--color-gray)' }}
             exit={{ y: '100vh', boxShadow: 'unset' }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: 0.3, boxShadow: {delay: 0.3} }}
         >
             <ClosedButton onClick={onClose}>
                 <svg width="20" height="19" viewBox="0 0 20 19" fill="none" xmlns="http://www.w3.org/2000/svg">

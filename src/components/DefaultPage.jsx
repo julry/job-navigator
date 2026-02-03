@@ -93,7 +93,7 @@ const Header = styled.div`
     position: absolute;
     top: -88px;
     left: 0;
-    z-index: 400;
+    z-index: 40;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -166,6 +166,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
         testPerson,
         vacanciesDescr,
         testAdditionMargin,
+        vacanciesLinks
     } = defaultPages.find((page) => page.id === pageId) ?? {};
 
     const navigate = useNavigate();
@@ -173,24 +174,11 @@ export const DefaultPage = ({pageId, personComponent}) => {
     const {wrapperRef} = useProgress();
     const vacancyRef = useRef();
 
-    const vacancies = [
-        {name: 'клиентский менеджер\nв отделении банка', link: ''},
-        {name: 'Представитель банка', link: ''},
-        {name: 'Менеджер по работе\nс партнёрами', link: ''},
-        {name: 'Специалист контактного\nцентра (чат)', link: ''},
-        {name: 'Специалист контактного\nцентра розничного бизнеса', link: ''},
-        {name: 'Менеджер прямых продаж', link: ''},
-        {name: 'Мобильный клиентский\nменеджер', link: ''},
-        {name: 'Кассир\n(без продаж, в офисе)', link: ''},
-    ];
-
     const handleOpenModal = (id) => {
-        wrapperRef.current.style = 'overflow: hidden';
         setModalState({shown: true, id});
     }
 
     const handleCloseModal = () => {
-        wrapperRef.current.style = '';
         setModalState({shown: false});
     }
 
@@ -200,7 +188,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
     }
 
     return (
-        <Wrapper ref={wrapperRef}>
+        <Wrapper>
             <AboutBlock>
                 <Header>
                     <CompasButtonStyled onClick={() => navigate('/')} />
@@ -216,7 +204,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
             
             <SpacingContent>
                 <Opportunities opportunities={opportunities} onClickOpp={handleOpenModal}/>
-                <Vacancies ref={vacancyRef} vacancies={vacancies} />
+                <Vacancies ref={vacancyRef} vacancies={vacanciesLinks} />
                 <TestBlock testBlockMargin={testBlockMargin} testFullName={testFullName} scrollToVacancy={scrollToVacancy} person={testPerson} testName={testName} questions={testQuestions}/>
                 <BotBlock testAdditionMargin={testAdditionMargin}/>
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>

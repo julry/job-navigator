@@ -6,16 +6,16 @@ import pers from '../assets/images/default/people/education.png';
 
 const PersonWrapper = styled.div`
     position: absolute;
-    top: 369px;
+    top: 393px;
     right: 15px;
-    width: 162px;
-    height: 231px;
+    width: ${162 * 0.95}px;
+    height: ${231 * 0.95}px;
     z-index: 4;
     
     ${media.desktop`
-        width: 326px;
-        height: 465px;
-        top: 255px;
+        width: ${326 * 0.95}px;
+        height: ${465 * 0.95}px;
+        top: 315px;
         right: 4.8%;
 
         @media screen and (max-width: 1400px) {

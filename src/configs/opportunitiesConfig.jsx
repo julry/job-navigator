@@ -1033,7 +1033,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'fdbrckd',
-                    title: <><ColoredSpan>Главный</ColoredSpan>инженер</>,
+                    title: <><ColoredSpan>Главный</ColoredSpan> инженер</>,
                     desc: 'Управляет всем горным предприятием, составляет правила безопасности на участке, утверждает бюджет для проекта, работает с экологическими службами и государственными органами'
                 },
             ]
@@ -1069,7 +1069,7 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'dsvvewcscxcv',
-                    title: <><ColoredSpan>Техник-</ColoredSpan> геодезист</>,
+                    title: <><ColoredSpan>Техник-</ColoredSpan>геодезист</>,
                     desc: 'Устанавливает и настраивает приборы, проводит измерения, обрабатывает полученные результаты.'
                 },
                 {

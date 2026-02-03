@@ -103,7 +103,7 @@ export const StroyPage = () => {
                     <Person src={pers} alt="" />
                 </PersonWrapper>
             }
-            aboutComponent={<About defaultColor={'var(--color-alabuga-blue)'} accentColor={'var(--color-alabuga-accent)'}/>}
+            getAboutComponent={({scrollToVacancy}) => <About scrollToVacancy={scrollToVacancy} defaultColor={'var(--color-alabuga-blue)'} accentColor={'var(--color-alabuga-accent)'}/>}
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-alabuga-blue)'}  accentColor={'var(--color-alabuga-accent)'} />}
             modalStyles={modalStyles}

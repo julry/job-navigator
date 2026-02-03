@@ -79,7 +79,7 @@ const Money = styled(AbsolutImageStyled)`
 `;
 
 
-export const About = ({ defaultColor, accentColor }) => (
+export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
     <>  
         <TitleStyled $color={defaultColor}>работа{'\n'}в <ColoredSpan $color={accentColor}>ВТБ</ColoredSpan></TitleStyled>
         <AbsolutImageStyled
@@ -160,7 +160,7 @@ export const About = ({ defaultColor, accentColor }) => (
 и возможностью роста в крупном банке
 </InfoLine>
             <br />
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>приходи за новыми возможностями!</ButtonStyled>
+            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}>приходи за новыми возможностями!</ButtonStyled>
         </TextWrapper>
     </>
 )

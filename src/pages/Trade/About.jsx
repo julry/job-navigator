@@ -70,7 +70,7 @@ const MobileAbsolutImageStyled = styled(AbsolutImageStyled)`
 `;
 
 
-export const About = ({ defaultColor, accentColor }) => (
+export const About = ({ defaultColor, accentColor, scrollToVacancy }) => (
     <>
         <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>Лемана ПРО</ColoredSpan></TitleStyled>
         <AbsolutImageStyled
@@ -167,7 +167,7 @@ export const About = ({ defaultColor, accentColor }) => (
             <Text $color={defaultColor}>
                 проектируй будущее в команде <NoTransformSpan>Лемана ПРО</NoTransformSpan> 
             </Text>
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу попасть в{' '}Лемана ПРО!</NoTransformSpan></ButtonStyled>
+            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу попасть в{' '}Лемана ПРО!</NoTransformSpan></ButtonStyled>
         </TextWrapper>
     </>
 )

@@ -52,3 +52,32 @@ button {
   border: none;
   cursor: pointer;
 }
+
+::-webkit-scrollbar {
+    width: 10px; /* Ширина всего скроллбара */
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;/* Цвет фона за скроллбаром */
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Цвет самой полосы */
+    border-radius: 30px;
+    padding: 100px 0;
+}
+
+/* Для Firefox */
+* {
+    scrollbar-color: var(--color-gray) transparent; /* Первый цвет - thumb, второй - track */
+    scrollbar-width: thin; /* Тонкая полоса */
+}
+
+/* Для IE и Edge */
+body {
+    scrollbar-base-color:transparent; /* Фон */
+    scrollbar-shadow-color: transparent;
+    scrollbar-face-color: var(--color-orange); /* Цвет полосы */
+}

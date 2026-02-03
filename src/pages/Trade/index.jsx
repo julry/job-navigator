@@ -125,7 +125,7 @@ export const TradePage = () => {
                     <Person src={pers} alt="" />
                 </PersonWrapper>
             }
-            aboutComponent={<About defaultColor={'var(--color-lemana-dark)'} accentColor={'var(--color-lemana-accent)'}/>}
+            getAboutComponent={({scrollToVacancy}) => <About scrollToVacancy={scrollToVacancy} defaultColor={'var(--color-lemana-dark)'} accentColor={'var(--color-lemana-accent)'}/>}
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-lemana-dark)'}  accentColor={'var(--color-lemana-accent)'} />}
             modalStyles={modalStyles}

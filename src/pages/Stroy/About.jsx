@@ -73,7 +73,7 @@ const HouseSm = styled(AbsoluteImage)`
 `;
 
 
-export const About = ({ defaultColor, accentColor }) => (
+export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
     <>
         <TitleStyled $color={defaultColor}>работа в <ColoredSpan $color={accentColor}>«Алабуга Девелопмент»</ColoredSpan></TitleStyled>
         <TextWrapper $accentColor={accentColor}>
@@ -142,7 +142,7 @@ export const About = ({ defaultColor, accentColor }) => (
                 к детальной работе и хотят строить будущее в буквальном смысле.
                 Приходи за масштабными задачами!
             </Text>
-            <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу{' '}<TextDesk>попасть{' '}</TextDesk>в{' '}«Алабуга Девелопмент»!</NoTransformSpan></ButtonStyled>
+            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу{' '}<TextDesk>попасть{' '}</TextDesk>в{' '}«Алабуга Девелопмент»!</NoTransformSpan></ButtonStyled>
         </TextWrapper>
     </>
 )

@@ -139,7 +139,7 @@ export const PravoPage = () => {
                     <Person src={pers} alt="" />
                 </PersonWrapper>
             }
-            aboutComponent={<About defaultColor={'var(--color-vtb-blue)'} accentColor={'var(--color-vtb-accent)'}/>}
+            getAboutComponent={({scrollToVacancy}) => <About scrollToVacancy={scrollToVacancy} defaultColor={'var(--color-vtb-blue)'} accentColor={'var(--color-vtb-accent)'}/>}
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} />}
             modalStyles={modalStyles}

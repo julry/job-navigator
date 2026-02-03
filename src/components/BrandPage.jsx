@@ -39,7 +39,7 @@ const Header = styled.div`
     position: absolute;
     top: -88px;
     left: 0;
-    z-index: 400;
+    z-index: 40;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -188,7 +188,7 @@ export const BrandPage = ({
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
     botButtonStyles, modalContent, vacanciesComponent, botBlockStyles,
     horizontalComponent, hasHorizontal, spotColor, spotTop, spotTopD, additionalInfoComponent,
-    spotLeft,
+    spotLeft, getAboutComponent,
 }) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -209,19 +209,16 @@ export const BrandPage = ({
         testBlockMargin,
     } = brandPages.find((page) => page.id === pageId) ?? {};
 
-
     const navigate = useNavigate();
 
     const {wrapperRef} = useProgress();
     const vacancyRef = useRef();
 
     const handleOpenModal = (id) => {
-        wrapperRef.current.style = 'overflow: hidden';
         setModalState({shown: true, id});
     }
 
     const handleCloseModal = () => {
-        wrapperRef.current.style = '';
         setModalState({shown: false});
     }
 
@@ -254,6 +251,7 @@ export const BrandPage = ({
                     companyName={companyName} 
                 >
                     {aboutComponent}
+                    {getAboutComponent?.({scrollToVacancy})}
                 </AboutCompany>
                 <Opportunities 
                     textVariant={'brand'}
