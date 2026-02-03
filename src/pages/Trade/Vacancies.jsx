@@ -51,7 +51,7 @@ export const VacanciesComponent = ({defaultColor}) => (
         </Card>
         <Card>
             <SubtitleSm $color={defaultColor}>Полноценная ставка</SubtitleSm>
-            <Text $color={defaultColor}>Работа на полный день с перспективой карьерного роста</Text>
+            <Text $color={defaultColor}>Работа на полный день с перспективой карьерного роста</Text>
         </Card>
     </Wrapper>
 )

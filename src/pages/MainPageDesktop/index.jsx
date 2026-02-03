@@ -21,6 +21,7 @@ const Wrapper = styled.div`
     z-index: 3;
     overflow-x: hidden;
     overflow-y: auto;
+    transform: translate3d(0,0,0);
 
     ${media.desktop`
         display: flex;
@@ -40,6 +41,7 @@ const TitleStyled = styled(motion.h3)`
     font-size: 55px;
     width: min-content;
     z-index: 320;
+    cursor: default;
 
     @media screen and (max-height: 920px) {
         padding-left: 45px;
@@ -146,7 +148,8 @@ const BotBlock = styled.div`
     border-bottom-right-radius: 0;
     border-right: none;
     background-color: var(--color-gray);
-    z-index: 10;
+    z-index: 13;
+    transform: translateZ(0);
 
     & ${SmallText} {
         color: var(--color-white);

@@ -94,6 +94,7 @@ const DetailedJob = styled.div`
 
     & svg {
         margin-top: 5px;
+        flex-shrink: 0;
     }
 
     ${media.tablet`
@@ -158,7 +159,7 @@ export const DetailsModal = ({jobId, marginTop, onClose, isActive, isMirror, com
                                     <svg width="13" height="8" viewBox="0 0 13 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M0.5 3.18201C0.223858 3.18201 2.41411e-08 3.40586 0 3.68201C-2.41411e-08 3.95815 0.223858 4.18201 0.5 4.18201L0.5 3.68201L0.5 3.18201ZM12.8536 4.03556C13.0488 3.8403 13.0488 3.52372 12.8536 3.32845L9.67157 0.146474C9.47631 -0.0487885 9.15973 -0.0487885 8.96447 0.146474C8.7692 0.341736 8.7692 0.658318 8.96447 0.85358L11.7929 3.68201L8.96447 6.51043C8.7692 6.7057 8.7692 7.02228 8.96447 7.21754C9.15973 7.4128 9.47631 7.4128 9.67157 7.21754L12.8536 4.03556ZM0.5 3.68201L0.5 4.18201L12.5 4.18201L12.5 3.68201L12.5 3.18201L0.5 3.18201L0.5 3.68201Z" fill="#FFF2EC"/>
                                     </svg>
-                                    <SmallText>{job}</SmallText>
+                                    <SmallText $color="var(--color-white)">{job}</SmallText>
                                 </DetailedJob>
                             ))}
                         </TextWrapper>

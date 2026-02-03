@@ -77,6 +77,7 @@ const HeaderTitle = styled.h3`
     line-height: 85%;
     white-space: pre-line;
     color: var(--color-white-text);
+    cursor: pointer;
 
     ${media.desktop`
         font-size: 26px;
@@ -113,6 +114,7 @@ const SpacingContent = styled.div`
 
     ${media.tablet`
         padding: 38px;
+        overflow: hidden;
     `}
 
     ${media.desktop`
@@ -188,7 +190,7 @@ export const BrandPage = ({
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
     botButtonStyles, modalContent, vacanciesComponent, botBlockStyles,
     horizontalComponent, hasHorizontal, spotColor, spotTop, spotTopD, additionalInfoComponent,
-    spotLeft, getAboutComponent,
+    spotLeft, getAboutComponent, progressComponent,
 }) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -264,7 +266,9 @@ export const BrandPage = ({
                     opportunities={opportunities} 
                     person={opportunityPerson}
                     onClickOpp={handleOpenModal}
+                    scrollToVacancy={scrollToVacancy}
                 />
+                {progressComponent}
                 <TestBlock testBlockMargin={testBlockMargin} isBrand scrollToVacancy={scrollToVacancy} defaultColor={defaultColor} accentColor={accentColor} person={testPerson} testName={testName} questions={testQuestions}/>
                 <BrandVacancies 
                     testAdditionMarginDesk={testAdditionalMarginDesk}

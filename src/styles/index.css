@@ -59,7 +59,7 @@ button {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: transparent;/* Цвет фона за скроллбаром */
+    background-color: transparent;/* Цвет фона за скроллбаром */
     border-radius: 10px;
 }
 
@@ -75,7 +75,7 @@ button {
     scrollbar-width: thin; /* Тонкая полоса */
 }
 
-/* Для IE и Edge */
+/* Для IE и Edge */
 body {
     scrollbar-base-color:transparent; /* Фон */
     scrollbar-shadow-color: transparent;

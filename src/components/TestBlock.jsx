@@ -137,12 +137,12 @@ const Image = styled(motion.img)`
     position: absolute;
     z-index: ${({$zIndex}) => $zIndex};
     bottom: ${({$bottom}) => $bottom}px;
-    left: ${({$left}) => $left}%;
     width: ${({$width}) => $width}px;
     height: ${({$height}) => $height}px;
+    left: calc(${({$left}) => $left / 100 * 335}px + (100% - 335px));
 
-    @media screen and (min-width: 376px){
-        left: calc(${({$left}) => $left}% + (100% - 335px)/2);
+    @media screen and (min-width: 555px){
+        left: calc(${({$left}) => $left / 100 * 375}px + 110px);
     }
     ${media.desktop`
         left: ${({$left}) => $left}px;
@@ -162,7 +162,7 @@ const EndButtonWrapper = styled.div`
         min-width: 150px;
 
         &:hover {
-            border: 1px solid var(--color-white);
+            border: 1px solid ${({$accentColor}) => $accentColor ?? 'var(--color-white)'};
         }
     }
 
@@ -214,15 +214,15 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
 
     const getEndText = () => {
         if (answers.length < 3) {
-            return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или переходи в наш ВК‑бот и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
+            return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или переходи в наш бот и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
         }
 
         if (answers.length > 5) {
-            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nно ты можешь прокачать их еще больше — переходи в наш ВК‑бот!' 
+            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nно ты можешь прокачать их еще больше — переходи в наш бот!' 
 
         }
 
-        return 'ты почти у цели.\nчтобы скорее прокачать навыки переходи в наш ВК‑бот\n\nа потом возвращайся\nи откликайся на вакансии!'
+        return 'ты почти у цели.\nчтобы скорее прокачать навыки переходи в наш бот\n\nа потом возвращайся\nи откликайся на вакансии!'
     }
 
     return (
@@ -292,9 +292,9 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
                 </TestContent>
                 <ResultBlock $testBlockMargin={testBlockMargin} $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
-                    <EndButtonWrapper>
-                        <Button $isBrand={isBrand} onClick={openBot} $type="secondary">прокачать навыки</Button>
-                        <Button $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
+                    <EndButtonWrapper $accentColor={isBrand ? accentColor : undefined}>
+                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={openBot} $type="secondary">прокачать навыки</Button>
+                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
                     </EndButtonWrapper>
                 </ResultBlock>
                 <Image 

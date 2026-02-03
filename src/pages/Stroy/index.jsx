@@ -50,11 +50,17 @@ export const StroyPage = () => {
             border: '1px solid var(--color-alabuga-blue)',
             color: 'var(--color-white)',
         }, 
-        tabStyles: {
-            backgroundColor: 'var(--color-white)',
-            border: '1px solid var(--color-alabuga-blue)',
-            color: 'var(--color-alabuga-blue)',
-        }, 
+         tabStyles: `
+            background-color: var(--color-white);
+            border: 1px solid var(--color-alabuga-blue);
+            color: var(--color-alabuga-blue);
+
+            &:hover {
+                background-color: var(--color-alabuga-blue);
+                border: 1px solid var(--color-alabuga-blue) !important;
+                color: var(--color-white);
+            }
+        `,
         cardTitleColor: 'var(--color-alabuga-blue)',
         activeLineColor: 'var(--color-alabuga-blue)', 
         lineColor: 'var(--color-alabuga-blue)', 

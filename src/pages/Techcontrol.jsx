@@ -19,8 +19,8 @@ const PersonWrapper = styled.div`
 
         @media screen and (max-width: 1400px) {
             transform: scale(0.8);
-            top: 250px;
-            right: 3%;
+            top: 280px;
+            right: -4%;
         }
     `}
 `;

@@ -13,13 +13,14 @@ import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 const InfoComponent = styled.div`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     background-color: ${({ $defaultColor }) => $defaultColor};
     width: 100%;
     height: 100%;
     padding: 15px;
+    gap: 10px;
 
     ${media.desktop`
+        gap: 15px;
         padding: 25px;
     `}
 `;
@@ -84,9 +85,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                     </InfoComponent>
                 }
             >
-                <SubtitleSm $color={defaultColor}
-
-                >
+                <SubtitleSm $color={defaultColor} >
                     полноценная{'\n'}система обучения,{'\n'}наставничества{'\n'}и развития
                 </SubtitleSm>
                 <AbsoluteImage
@@ -113,7 +112,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                             развития
                         </Subtitle>
                         <TextInfo $color={'var(--color-white)'}>
-                            компания предоставляет большую библиотеку курсов и помощь
+                            банк предоставляет большую библиотеку курсов и помощь
                             в составлении индивидуального
                             плана для развития навыков
                         </TextInfo>
@@ -179,8 +178,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
 место работы
                         </Subtitle>
                         <TextInfo $color={'var(--color-white)'}>
-                            у компании современный{'\n'}
-и уютный офис в центре города
+                            современные и уютные офисы{'\n'}во многих районах города
                         </TextInfo>
                     </InfoComponent>
                 }

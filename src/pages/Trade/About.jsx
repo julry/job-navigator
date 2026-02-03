@@ -158,7 +158,7 @@ export const About = ({ defaultColor, accentColor, scrollToVacancy }) => (
                 в <NoTransformSpan>Лемана ПРО</NoTransformSpan> ты сможешь:
             </Text>
             <br />
-            <InfoLine defaultColor={defaultColor} svgColor={"var(--color-white)"}>отвечать за ассортимент, закупки или логистику </InfoLine>
+            <InfoLine defaultColor={defaultColor} svgColor={"var(--color-white)"}>отвечать за ассортимент, закупки или логистику </InfoLine>
             <InfoLine defaultColor={defaultColor} svgColor={"var(--color-white)"}>помогать людям обустраивать свой дом и пространство вокруг него </InfoLine>
             <InfoLine defaultColor={defaultColor} svgColor={"var(--color-white)"}>строить карьеру в разных городах и направлениях (магазины, склады, офисы) внутри одной компании</InfoLine>
             <InfoLine defaultColor={defaultColor} svgColor={"var(--color-white)"}>сразу видеть результат своей работы на полках магазинов и складов</InfoLine>

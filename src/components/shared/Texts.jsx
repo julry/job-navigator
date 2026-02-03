@@ -83,6 +83,10 @@ export const SubtitleSm = styled(Title)`
     @media screen and (min-width: 1200px){
         font-size: 24px;
     }
+
+    @media screen and (min-width: 1200px) and (max-width: 1300px) {
+        font-size: 20px;
+    }
 `;
 
 export const NoTransformSpan = styled.span`

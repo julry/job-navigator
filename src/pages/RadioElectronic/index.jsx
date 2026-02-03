@@ -12,6 +12,7 @@ import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
 import { HorizontalContent } from "./Horizontal";
 import { SmallText } from "../../components/shared/Texts";
+import { ProgressComponent } from "./Progress";
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -79,11 +80,17 @@ export const RadioElectronicPage = () => {
             border: '1px solid var(--color-beeline-accent)',
             color: 'var(--color-dark)',
         }, 
-        tabStyles: {
-            backgroundColor: 'var(--color-white)',
-            border: '1px solid var(--color-beeline-dark)',
-            color: 'var(--color-beeline-dark)',
-        }, 
+        tabStyles: `
+            background-color: var(--color-white);
+            border: 1px solid var(--color-beeline-dark);
+            color: var(--color-beeline-dark);
+
+            &:hover {
+                background-color: var(--color-beeline-accent);
+                border: 1px solid var(--color-beeline-accent) !important;
+                color: var(--color-beeline-dark);
+            }
+        `,
         cardTitleColor: 'var(--color-dark)',
         activeLineColor: 'var(--color-beeline-accent)', 
         lineColor: 'var(--color-beeline-dark)', 
@@ -110,8 +117,8 @@ export const RadioElectronicPage = () => {
     `;
 
     const botBlockStyles = {
-        defaultColor: 'var(--color-white)',
-        backgroundColor: 'var(--color-beeline-dark)'
+        defaultColor: 'var(--color-beeline-dark)',
+        backgroundColor: 'var(--color-beeline-accent)'
     }
 
     return (
@@ -141,6 +148,7 @@ export const RadioElectronicPage = () => {
             spotTop="60%"
             spotTopD={180}
             spotLeft={'340px'}
+            progressComponent={<ProgressComponent defaultColor={'var(--color-beeline-dark)'}  accentColor={'var(--color-beeline-accent)'} />}
             vacanciesComponent={
                 <VacanciesInfo>
                     <SmallText $color="var(--color-white)">

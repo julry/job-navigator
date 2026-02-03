@@ -78,11 +78,17 @@ export const EconomyPage = () => {
             border: '1px solid var(--color-vtb-blue)',
             color: 'var(--color-white)',
         }, 
-        tabStyles: {
-            backgroundColor: 'var(--color-white)',
-            border: '1px solid var(--color-vtb-blue)',
-            color: 'var(--color-vtb-blue)',
-        }, 
+        tabStyles: `
+            background-color: var(--color-white);
+            border: 1px solid var(--color-vtb-blue);
+            color: var(--color-vtb-blue);
+
+            &:hover {
+                background-color: var(--color-vtb-blue);
+                border: 1px solid var(--color-vtb-blue) !important;
+                color: var(--color-white);
+            }
+        `,
         cardTitleColor: 'var(--color-white)',
         activeLineColor: 'var(--color-vtb-blue)', 
         lineColor: 'var(--color-vtb-blue)', 
@@ -103,8 +109,8 @@ export const EconomyPage = () => {
         color: var(--color-vtb-blue);
 
         &:hover {
-            background-color: var(--color-vtb-blue);
-            color: var(--color-vtb-accent);
+            color: var(--color-vtb-blue);
+            background-color: var(--color-vtb-accent);
         }
     `;
 

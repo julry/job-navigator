@@ -71,11 +71,17 @@ export const TradePage = () => {
             border: '1px solid var(--color-lemana-accent)',
             color: 'var(--color-dark)',
         }, 
-        tabStyles: {
-            backgroundColor: 'var(--color-white)',
-            border: '1px solid var(--color-lemana-dark)',
-            color: 'var(--color-lemana-dark)',
-        }, 
+        tabStyles: `
+            background-color: var(--color-white);
+            border: 1px solid var(--color-lemana-dark);
+            color: var(--color-lemana-dark);
+
+            &:hover {
+                background-color: var(--color-lemana-accent);
+                border: 1px solid var(--color-lemana-accent) !important;
+                color: var(--color-dark);
+            }
+        `,
         cardTitleColor: 'var(--color-dark)',
         activeLineColor: 'var(--color-lemana-accent)', 
         lineColor: 'var(--color-lemana-dark)', 

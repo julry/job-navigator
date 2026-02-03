@@ -34,7 +34,7 @@ const CompanyInfoWrapper = styled.div`
     ${media.desktop`
         padding: 30px 40px;
         border-radius: 40px;
-        min-height: 600px;
+        min-height: 620px;
     `};
 `;
 

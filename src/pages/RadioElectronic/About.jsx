@@ -113,13 +113,16 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
       
         <TextWrapper $accentColor={accentColor}>
             <Subtitle $color={defaultColor}>
-               <NoTransformSpan>Билайн</NoTransformSpan> — один из лидеров телекоммуникационного рынка России, который создаёт цифровую инфраструктуру для миллионов людей
+               <NoTransformSpan>Билайн</NoTransformSpan> — один из лидеров телеком-рынка  <NoTransformSpan>России</NoTransformSpan>, создающий цифровую среду, в которой люди могут быть собой, творить и оставаться на связи с теми, кто им важен
             </Subtitle>
             <br />
             <Text $color={defaultColor}>
-                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране. В <NoTransformSpan>Билайне</NoTransformSpan> очень ждут инженеров связи — здесь тебя обеспечат обучением, поддержкой наставника, конкурентной зарплатой и крутой корпоративной культурой
+                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране, а команда — это люди, которые не боятся предлагать новое и менять правила игры, потому что верят в идею
             </Text>
             <br />
+            <Text $color={defaultColor}>
+                здесь ищут не просто инженеров связи, а союзников, готовых менять ландшафт связи. ты получишь не просто обучение, а вызов, не просто наставника, а партнёра, который иногда верит в тебя больше, чем ты сам
+            </Text>
             <Text $color={defaultColor}>
                 в <NoTransformSpan>Билайне</NoTransformSpan>:
             </Text>
@@ -130,6 +133,10 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
             <br />
             <Text $color={defaultColor}>
                 Можно начать карьеру с позиции стажёра, инженера или монтажника — и вырасти до руководителя команды
+            </Text>
+            <br />
+            <Text $color={defaultColor}>
+                Слово за тобой, ресурсы, поддержка и доверие — за нами!
             </Text>
             <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}><NoTransformSpan>хочу попасть в{' '}Билайн!</NoTransformSpan></ButtonStyled>
         </TextWrapper>

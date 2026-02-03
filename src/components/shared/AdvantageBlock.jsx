@@ -30,6 +30,10 @@ const Advantage = styled(motion.div)`
         height: 200px;
         width: ${({$isWide}) => $isWide ? 'calc(100vw / 2.2)' : 'calc(100vw / 3.1)'};
         max-width: ${({$isWide}) => $isWide ? 644 : 420}px;
+
+        @media screen and (max-width: 1425px) {
+            width: ${({$isWide}) => $isWide ? 'calc(100vw / 2.3)' : 'calc(100vw / 3.45)'};
+        }
     `}
 `;
 

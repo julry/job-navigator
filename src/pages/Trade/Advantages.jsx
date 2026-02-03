@@ -195,7 +195,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
 от новичка до специалиста
                         </Subtitle>
                         <TextInfo $color={'var(--color-lemana-dark)'}>
-                            обучение на практике: коллеги помогут разобраться и найти свой путь в профессии
+                            обучение на практике: коллеги помогут разобраться и найти свой путь в профессии
                         </TextInfo>
                     </InfoComponent>
                 }

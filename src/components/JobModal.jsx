@@ -11,7 +11,7 @@ import { ModalLines } from "./shared/svg/ModalLines";
 import { ModalLinesDesk } from "./shared/svg/ModalLinesDesk";
 
 const Wrapper = styled(motion.div)`
-    position: absolute;
+    position: fixed;
     inset: 0;
     overflow-x: hidden;
     padding-top: 25px;
@@ -27,8 +27,8 @@ const Wrapper = styled(motion.div)`
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     
-    /* transform: translateZ(0);
-    -webkit-transform: translateZ(0); */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
 `;
 
 const Content = styled(motion.div)`
@@ -60,6 +60,10 @@ const TitleStyled = styled(Title)`
 
      @media screen and (min-width: 1200px){
         font-size: 50px;
+        
+        @media screen and (max-width: 1300px){
+            max-width: 610px;
+        }
     }
 `;
 
@@ -177,6 +181,11 @@ const PictureDesk = styled(Picture)`
     ${media.desktop`
         display: block;
     `}
+
+     @media screen  and (max-width: 1300px){
+       left: ${({ $left }) => $left > 200 ? $left - 200 : $left - 20}px;
+       bottom: ${({ $bottom }) => $bottom < 100 ? $bottom * 2  : $bottom * 1.3}px;
+    }
 `;
 
 const CardsWrapper = styled.div`
@@ -187,6 +196,9 @@ const CardsWrapper = styled.div`
 
     ${media.desktop`
        margin: 0;
+       @media screen  and (max-width: 1300px){
+            max-width: 510px;
+        }
     `}
 `;
 
@@ -448,12 +460,19 @@ const CommonSkillsWrapper = styled.div`
     ${media.desktop`
         justify-content: space-between;
         flex-direction: row;
+
+        @media screen and (max-width: 1300px){
+            max-width: 510px;
+        }
     `}
 `;
 
 const AboutBlock = styled.div`
     max-width: 710px;
     margin-bottom: 30px;
+    @media screen and (min-width: 1200px) and (max-width: 1400px){
+        max-width: 510px;
+    }
 `;
 
 export const JobModal = ({ 

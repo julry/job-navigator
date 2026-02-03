@@ -96,10 +96,12 @@ const OrangeBlock = styled.div`
 `;
 
 const BotBlockWrapper = styled.div`
-    position: relative;
+    position: sticky;
+    top: 100px;
     width: 100%;
     height: 40px;
     margin: 36px 0;
+    z-index: 10;
 `;
 
 const BotBlock = styled(OrangeBlock)`

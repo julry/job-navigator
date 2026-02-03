@@ -6,6 +6,7 @@ import adv1 from '../../assets/images/beeline/beelineAdvant1.png';
 import adv2 from '../../assets/images/beeline/beelineAdvant2.png';
 import adv3 from '../../assets/images/beeline/beelineAdvant3.png';
 import adv4 from '../../assets/images/beeline/beelineAdvant4.png';
+import adv5 from '../../assets/images/beeline/beelineAdvant6.png';
 import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 
 const InfoComponent = styled.div`
@@ -33,6 +34,11 @@ const Subtitle = styled.h3`
     ${media.desktop`
         font-size: 20px;
         max-width: 350px;
+
+        @media screen and (max-width: 1300px) {
+            font-size: 18px;
+            max-width: 240px;
+        }
     `}
 `;
 
@@ -77,20 +83,20 @@ export const Advantages = ({ defaultColor, accentColor }) => {
         }
         setActive(id);
     };
+    
     return (
         <>
             <AdvantageBlock
-                isWide
                 accentColor={defaultColor} defaultColor={accentColor}
                 isActive={active === 'first'}
                 onTouchStart={() => handleTouchStart('first')}
                 infoComponent={
                     <InfoComponent $defaultColor={accentColor}>
                         <Subtitle $color={defaultColor}>
-                            наставник и обучение{'\n'} за счет компании
+                            наставник и обучение{'\n'} за счет компании
                         </Subtitle>
                         <TextInfo $color={'var(--color-beeline-dark)'}>
-                            опытный куратор поможет не растеряться и влиться в команду, а ещё составитдля тебя индивидуальный план обучения
+                            опытный куратор поможет не растеряться и влиться в команду, а ещё составит для тебя индивидуальный план обучения
                         </TextInfo>
                     </InfoComponent>
                 }
@@ -99,7 +105,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                     $color={defaultColor}
                     $maxWidth={160}
                 >
-                     наставник и обучение{'\n'} за счет компании
+                     наставник и обучение{'\n'} за счет компании
                 </Subtitle>
                 <AbsoluteImage
                     src={adv1}
@@ -108,13 +114,13 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                     $top={1}
                     $width={146}
                     $height={162}
-                    $rightD={45}
-                    $topD={2}
-                    $widthD={169}
-                    $heightD={198}
+                    $rightD={15}
+                    $topD={21}
+                    $widthD={169 * 0.9}
+                    $heightD={198 * 0.9}
                 />
             </AdvantageBlock>
-             <AdvantageBlock isWide accentColor={defaultColor} defaultColor={accentColor}
+             <AdvantageBlock accentColor={defaultColor} defaultColor={accentColor}
                 isActive={active === '4th'}
                 onTouchStart={() => handleTouchStart('4th')}
                 infoComponent={
@@ -124,7 +130,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
 совмещения с учебой
                         </Subtitle>
                         <TextInfo $color={'var(--color-beeline-dark)'}>
-                            обучение на практике: коллеги помогут разобраться и найти свой путь в профессии
+                            обучение на практике: коллеги помогут разобраться и найти свой путь в профессии
                         </TextInfo>
                     </InfoComponent>
                 }
@@ -138,13 +144,51 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                     src={adv2}
                     alt=""
                     $right={8}
-                    $top={26}
+                    $top={6}
                     $width={154}
                     $height={136}
-                    $rightD={20}
-                    $topD={13}
-                    $widthD={210}
-                    $heightD={185}
+                    $rightD={8}
+                    $topD={8}
+                    $widthD={162}
+                    $heightD={163}
+                />
+                </ImageWrapper>
+            </AdvantageBlock>
+             <AdvantageBlock accentColor={defaultColor} defaultColor={accentColor}
+                isActive={active === '224th'}
+                onTouchStart={() => handleTouchStart('224th')}
+                infoComponent={
+                    <InfoComponent $defaultColor={accentColor}>
+                        <Subtitle $color={defaultColor}>
+                            официальное{'\n'}
+                            трудоустройство{'\n'}
+                            и оклад с 1-го дня{'\n'}
+                            на полной ставке
+                        </Subtitle>
+                        <TextInfo $color={'var(--color-beeline-dark)'}>
+                            Хорошая зарплата, которой хватает и на жизнь, и на развлечения
+                        </TextInfo>
+                    </InfoComponent>
+                }
+            >
+                <Subtitle $color={defaultColor} $maxWidth={180}>
+                    официальное{'\n'}
+                            трудоустройство{'\n'}
+                            и оклад с 1-го дня{'\n'}
+                            на полной ставке
+                </Subtitle>
+                <ImageWrapper>
+                    <AbsoluteImage
+                    src={adv5}
+                    alt=""
+                    $right={8}
+                    $top={16}
+                    $width={224 * 0.7}
+                    $height={150 * 0.7}
+                    $rightD={-20}
+                    $topD={0}
+                    $widthD={224}
+                    $heightD={150}
                 />
                 </ImageWrapper>
             </AdvantageBlock>

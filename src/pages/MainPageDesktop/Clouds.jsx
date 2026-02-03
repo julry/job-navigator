@@ -15,7 +15,7 @@ const AnimatedItem = styled(motion.div)`
     left: ${({ $left }) => $left}px;
     height: ${({ $height }) => $height}px;
     width: ${({ $width }) => $width}px;
-    z-index: 3;
+    z-index: 0;
     pointer-events: none;
 
     & img {

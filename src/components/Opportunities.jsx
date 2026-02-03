@@ -160,6 +160,7 @@ const OpportunityHorizontal = styled(Opportunity)`
     background: var(--color-white);
     color: ${({$defaultColor}) => $defaultColor};
     grid-area: 2/2/3/3;
+    z-index: 5;
 
     &:hover {
         background: ${({$defaultColor}) => $defaultColor};
@@ -230,7 +231,7 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
 };
 
 export const Opportunities = ({
-    onClickOpp, companyName, defaultColor, hasButton, companyLink, linesColor, hasHorizontal,
+    onClickOpp, companyName, defaultColor, hasButton, scrollToVacancy, linesColor, hasHorizontal,
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
@@ -295,7 +296,7 @@ export const Opportunities = ({
                     )}
                 </OpportunitiesBlock>
                 {hasButton && (
-                    <ButtonStyled $defaultColor={defaultColor} $accentColor={accentColor}>
+                    <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}>
                         откликайся{' '}<NoTransformSpan>{' '}в {companyName}!</NoTransformSpan>
                     </ButtonStyled>
                 )}

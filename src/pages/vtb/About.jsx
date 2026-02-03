@@ -142,8 +142,10 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
             <br />
             <Text $color={'var(--color-white-text)'}>
                 более тысячи отделений банка
-                в 1000+ городах от Калининграда
-                до Владивостока. приходи
+                <NoTransformSpan>
+                {' '}в 1000+ городах от Калининграда до Владивостока
+                </NoTransformSpan>
+                . приходи
                 на стажировку и погружайся
                 в реальные задачи — с обучением, поддержкой и высокой зарплатой
             </Text>
@@ -160,7 +162,7 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
 и возможностью роста в крупном банке
 </InfoLine>
             <br />
-            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}>приходи за новыми возможностями!</ButtonStyled>
+            <ButtonStyled onClick={scrollToVacancy} $defaultColor={defaultColor} $accentColor={accentColor}>приходи за новыми возможностями!</ButtonStyled>
         </TextWrapper>
     </>
 )

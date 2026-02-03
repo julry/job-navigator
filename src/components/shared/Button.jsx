@@ -19,7 +19,7 @@ export const Button = styled.button`
     white-space: pre-line;
     cursor: pointer;
 
-    color: var(--color-${({$type = 'main'}) => $type === 'main' ? 'white': 'dark'}-text);
+    color: ${({$type = 'main', $defaultColor = "var(--color-dark-text)"}) => $type === 'main' ? 'var(--color-white-text)':  $defaultColor};
     font-size: 12px;
     line-height: 110%;
     transition: background-color 0.3s;
