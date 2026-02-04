@@ -2,7 +2,7 @@ import styled from "styled-components"
 import { media } from "../../styles/media";
 import { Horizontal } from "../../components/shared/svg/Horizontal";
 import { HorizontalDesk } from "../../components/shared/svg/HorizontalDesk";
-import { ColoredSpan, NoTransformSpan, SmallText } from "../../components/shared/Texts";
+import { ColoredSpan, SmallText } from "../../components/shared/Texts";
 
 const Line = styled.div`
     display: flex;
@@ -139,7 +139,7 @@ export const HorizontalContent = () => (
                     <ColoredSpan $color="var(--color-lemana-accent)">Что общее:</ColoredSpan> глубокое понимание товарных потоков, знание ассортимента
                 </SmallTextStyled>
                 <SmallTextStyled>
-                    <ColoredSpan $color="var(--color-lemana-accent)">Что доучить:</ColoredSpan> переговоры, аналитика спроса, работа с документами
+                    <ColoredSpan $color="var(--color-lemana-accent)">Что доучить:</ColoredSpan> переговоры, аналитика спроса, работа с документами
                 </SmallTextStyled>
             </InfoBlock>
         </Line>

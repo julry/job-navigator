@@ -89,7 +89,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                         <Subtitle $color={defaultColor}>
                             официальное{'\n'}
                             трудоустройство{'\n'}
-                            и оклад с 1-го дня{'\n'}
+                            и оклад с 1-го дня{'\n'}
                             на полной ставке
                         </Subtitle>
                     </InfoComponent>
@@ -99,7 +99,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                 >
                     официальное{'\n'}
                     трудоустройство{'\n'}
-                    и оклад с 1-го дня{'\n'}
+                    и оклад с 1-го дня{'\n'}
                     на полной ставке
                 </Subtitle>
                 <AbsoluteImage

@@ -127,7 +127,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                     <InfoComponent $defaultColor={accentColor}>
                         <Subtitle $color={defaultColor}>
                            гибкий график и возможность
-совмещения с учебой
+совмещения с учебой
                         </Subtitle>
                         <TextInfo $color={'var(--color-beeline-dark)'}>
                             обучение на практике: коллеги помогут разобраться и найти свой путь в профессии
@@ -162,7 +162,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                         <Subtitle $color={defaultColor}>
                             официальное{'\n'}
                             трудоустройство{'\n'}
-                            и оклад с 1-го дня{'\n'}
+                            и оклад с 1-го дня{'\n'}
                             на полной ставке
                         </Subtitle>
                         <TextInfo $color={'var(--color-beeline-dark)'}>
@@ -174,7 +174,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                 <Subtitle $color={defaultColor} $maxWidth={180}>
                     официальное{'\n'}
                             трудоустройство{'\n'}
-                            и оклад с 1-го дня{'\n'}
+                            и оклад с 1-го дня{'\n'}
                             на полной ставке
                 </Subtitle>
                 <ImageWrapper>

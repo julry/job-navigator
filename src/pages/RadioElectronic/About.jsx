@@ -62,13 +62,6 @@ const AbsolutImageStyled = styled(AbsoluteImage)`
     `};
 `;
 
-const MobileAbsolutImageStyled = styled(AbsolutImageStyled)`
-    ${media.desktop`
-        display: none;
-    `};
-`;
-
-
 export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
     <>
         <TitleStyled $color={defaultColor}>работа{'\n'}в <ColoredSpan $color={accentColor}>Билайне</ColoredSpan></TitleStyled>
@@ -117,7 +110,7 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
             </Subtitle>
             <br />
             <Text $color={defaultColor}>
-                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране, а команда — это люди, которые не боятся предлагать новое и менять правила игры, потому что верят в идею
+                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране, а команда — это люди, которые не боятся предлагать новое и менять правила игры, потому что верят в идею
             </Text>
             <br />
             <Text $color={defaultColor}>

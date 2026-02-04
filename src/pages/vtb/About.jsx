@@ -156,9 +156,9 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
             <br />
             <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>разобраться в банковских продуктах</InfoLine>
             <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>научиться подбирать самые подходящие решения для клиента</InfoLine>
-            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>работать с современными онлайн-сервисами, которые упрощают рутину</InfoLine>
+            <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>работать с современными онлайн-сервисами, которые упрощают рутину</InfoLine>
             <InfoLine svgColor={accentColor} defaultColor={'var(--color-white)'}>
-                получить стабильную работу с хорошей зарплатой, <NoTransformSpan>ДМС</NoTransformSpan>{' '}
+                получить стабильную работу с хорошей зарплатой, <NoTransformSpan>ДМС</NoTransformSpan>{' '}
 и возможностью роста в крупном банке
 </InfoLine>
             <br />

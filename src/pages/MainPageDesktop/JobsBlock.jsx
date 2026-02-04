@@ -45,6 +45,8 @@ import tradeMountin from '../../assets/images/mountins/tradeMountin.png';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DetailsModal } from './DetailsModal';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
+import { popups } from '../../configs/popups';
 
 
 const ImageElement = styled(motion.img)`
@@ -161,6 +163,9 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
 
     const handleNavigate = (id) => {
         if (chosen === id) {
+            const info = popups.find((job) => job.id === id) ?? {};
+            reachMetrikaGoal(info.metrika);
+            
             navigate(`/${id}`);
         }
     }

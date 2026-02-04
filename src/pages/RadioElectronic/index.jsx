@@ -127,6 +127,7 @@ export const RadioElectronicPage = () => {
             hasHorizontal
             defaultColor={'var(--color-beeline-dark)'}
             accentColor={'var(--color-beeline-accent)'}
+            preloadImages={[ beelineMenu, beelineMenuHead ]}
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
             opportunityPerson={beelineStudent}

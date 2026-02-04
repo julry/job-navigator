@@ -10,7 +10,6 @@ import lemanaMenuHead from '../../assets/images/lemana/lemanaMenuHead.png';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
-import { SmallText } from "../../components/shared/Texts";
 import { HorizontalContent } from "./Horizontal";
 import { VacanciesComponent } from "./Vacancies";
 
@@ -40,25 +39,6 @@ const Person = styled(ImagePerson)`
     inset: 0;
     width: 100%;
     height: 100%;
-`;
-
-const VacanciesInfo = styled.div`
-    position: absolute;
-    top: 45px;
-    right: -10px;
-    width: 135px;
-    height: 50px;
-    border-radius: 40px;
-    transform: rotate(10deg);
-    background-color: var(--color-lemana-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    ${media.desktop`
-        display: none;
-    `}
 `;
 
 export const TradePage = () => {
@@ -98,18 +78,18 @@ export const TradePage = () => {
     };
     
     const botButtonStyles = `
-        background-color: var(--color-white);
-        color: var(--color-lemana-dark);
+        background-color: var(--color-lemana-dark);
+        color: var(--color-lemana-accent);
 
         &:hover {
-            background-color: var(--color-lemana-dark);
-            color: var(--color-lemana-accent);
+            background-color: var(--color-white);
+            color: var(--color-lemana-dark);
         }
     `;
 
     const botBlockStyles = {
-        defaultColor: 'var(--color-white)',
-        backgroundColor: 'var(--color-lemana-dark)'
+        defaultColor: 'var(--color-lemana-dark)',
+        backgroundColor: 'var(--color-lemana-accent)'
     }
 
     return (
@@ -119,6 +99,7 @@ export const TradePage = () => {
             defaultColor={'var(--color-lemana-dark)'}
             accentColor={'var(--color-lemana-accent)'}
             botButtonStyles={botButtonStyles}
+            preloadImages={[ lemanaMenu, lemanaMenuHead ]}
             addPicture={addPicture}
             opportunityPerson={lemanaStudent}
             menuPerson={lemanaMenu}

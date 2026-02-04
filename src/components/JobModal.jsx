@@ -2,7 +2,6 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../styles/media";
-import { CompasButton } from "./shared/CompasButton";
 import { Title, Text, ColoredSpan } from "./shared/Texts";
 import defaultMenuPerson from '../assets/images/default/modalPersonDefault.png';
 import defaultMenuHead from '../assets/images/default/menuDefaultHead.png';
@@ -51,6 +50,10 @@ const Content = styled(motion.div)`
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
     `}
+
+    @media screen and (max-width: 350px){
+        padding: 30px 10px;
+    }
 `;
 
 const TitleStyled = styled(Title)`
@@ -310,6 +313,10 @@ const MenuContent = styled.div`
         right: 0;
         left: auto;
     `}
+
+    @media screen and (max-width: 350px){
+       right: min(42.46vw, 133px);
+    }
 `;
 
 const MenuHead = styled(MenuMan)`
@@ -476,7 +483,7 @@ const AboutBlock = styled.div`
 `;
 
 export const JobModal = ({ 
-    isBrand, styles, opportunities, children, id, onClose, horizontalComponent,
+    isBrand, styles, opportunities, children, id, onClose, horizontalComponent, getModalContent,
     picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
 }) => {
     const [chosen, setChosen] = useState(id);
@@ -490,12 +497,14 @@ export const JobModal = ({
     const [y, setY] = useState(0);
 
     useMotionValueEvent(scrollY, "change", () => {
-        if (children === undefined) return;
+        if (getModalContent === undefined) return;
 
         const lastCard = lastCardRef?.current?.getBoundingClientRect();
         const bottom = lastCard?.top + lastCard?.height;
         if (scrollY.get() - bottom > 100) {
             setY((bottom - scrollY.get()) / 2)
+        } else {
+            setY(0);
         }
     });
 
@@ -507,7 +516,7 @@ export const JobModal = ({
     const { 
         textColor, titleColor, cardTitleColor, activeTabStyles = {}, 
         tabStyles, activeLineColor, lineColor, backgroundColor, 
-        commonSkillStyles, skillStyles, accentColor
+        commonSkillStyles, skillStyles, accentColor, upBtnColor
     } = styles ?? {};
 
     const {titleColor: titleColorCommonSkills, ...commonSkills} = commonSkillStyles ?? {};
@@ -554,13 +563,13 @@ export const JobModal = ({
                     duration: 0.15
                 }}
             >
-                <MenuBlockDesktop animate={{y}}>
+                <MenuBlockDesktop animate={{y}} transition={{type: false}}>
                     <DesktopLines>
                         <ModalLinesDesk accentColor={activeLineColor} defaultColor={lineColor} amount={opportunities.length} active={chosenId} />
                     </DesktopLines>
                     <MenuContent>
                         {opportunities.map(({ text, id, blockTextSize }) => (
-                            <ButtonWrapper>
+                            <ButtonWrapper key={id}>
                                 {id === chosen && (
                                     <ButtonNoiseSvg $backgroundColor={activeTabStyles?.backgroundColor} />
                                 )}
@@ -689,7 +698,7 @@ export const JobModal = ({
                 </CardsWrapper>
                     )
                 }
-                {children}
+                {getModalContent({oppId: chosen})}
                 <MenuBlock>
                     <TitleStyled $color={titleColor ?? textColor}>
                         <ColoredSpan $color={accentColor ?? backgroundColor}>посмотреть</ColoredSpan> другие направления
@@ -701,7 +710,7 @@ export const JobModal = ({
                     <MenuHead src={menuPersonHead} alt="" />
                     <MenuContent>
                         {opportunities.map(({ text, id, blockTextSize }) => (
-                            <ButtonWrapper>
+                            <ButtonWrapper key={id}>
                                 {id === chosen && (
                                     <ButtonNoiseSvg $backgroundColor={activeTabStyles.backgroundColor} />
                                 )}
@@ -720,14 +729,14 @@ export const JobModal = ({
                         ))}
                     </MenuContent>
                 </MenuBlock>
-                {shownUpBtn && (<UpButton $hasChildren={children !== undefined} $pictureBottom={pictureBottom} onClick={scrollContentTop}>
+                {shownUpBtn && (<UpButton $hasChildren={getModalContent !== undefined} $pictureBottom={pictureBottom} onClick={scrollContentTop}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={textColor ?? "var(--color-gray)"} />
-                        <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke={textColor ?? "var(--color-gray)"} stroke-width="2" />
+                        <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={upBtnColor ?? textColor ?? "var(--color-gray)"} />
+                        <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke={upBtnColor ?? textColor ?? "var(--color-gray)"} strokeWidth="2" />
                     </svg>
                 </UpButton>)}
                 <FilterSvg width="100%" height="100%">
-                    <rect width="100%" height="100%" fill="none" filter="url(#noiseFilter)" clip-path="url(#clip)" />
+                    <rect width="100%" height="100%" fill="none" filter="url(#noiseFilter)" clipPath="url(#clip)" />
                     <defs>
                         <clipPath id="clip">
                             <rect width="100%" height="100%" />
@@ -736,10 +745,10 @@ export const JobModal = ({
                             x="0" y="0"
                             width="110%" height="110%"
                             filterUnits="objectBoundingBox">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
                             <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur" in="SourceGraphic" />
-                            <feTurbulence type="fractalNoise" baseFrequency="1.6666666269302368 1.6666666269302368" numOctavвбes="3" seed="4986" />
+                            <feTurbulence type="fractalNoise" baseFrequency="1.6666666269302368 1.6666666269302368" numOctaves="3" seed="4986" />
                             <feDisplacementMap in="effect1_foregroundBlur" scale="4" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="105%" height="105%" />
                             <feMerge>
                                 <feMergeNode in="displacedImage" />

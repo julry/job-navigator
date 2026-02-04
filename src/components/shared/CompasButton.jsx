@@ -2,7 +2,6 @@ import styled from "styled-components";
 import compasBg from '../../assets/images/compas/compasMain.png';
 import compasArrow from '../../assets/images/compas/compasArrow.png';
 import compasText from '../../assets/images/compas/compasText.png';
-import { media } from "../../styles/media";
 
 const Wrapper = styled.button`
     position: absolute;
@@ -36,7 +35,6 @@ const Arrow = styled(Element)`
         transform: rotate(-25deg);
     }
 `;
-
 
 
 export const CompasButton = ({onClick, className}) => {

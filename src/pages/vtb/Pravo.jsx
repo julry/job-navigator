@@ -101,7 +101,8 @@ export const PravoPage = () => {
             color: 'var(--color-white)',
             backgroundColor: 'var(--color-vtb-accent)',
             titleColor: 'var(--color-vtb-blue)',
-        }
+        },
+        upBtnColor: 'var(--color-vtb-blue)'
     };
     
     const botButtonStyles = `
@@ -127,6 +128,7 @@ export const PravoPage = () => {
             accentColor={'var(--color-vtb-accent)'}
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
+            preloadImages={[ vtbMenu, vtbMenuHead ]}
             opportunityPerson={vtbStudent}
             menuPerson={vtbMenu}
             menuPersonHead={vtbMenuHead}
@@ -149,7 +151,7 @@ export const PravoPage = () => {
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} />}
             modalStyles={modalStyles}
-            modalContent={<ProgressComponent defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} picture={vtbMenu} />}
+            getModalContent={({oppId}) => <ProgressComponent key={oppId} oppId={oppId} defaultColor={'var(--color-vtb-blue)'}  accentColor={'var(--color-vtb-accent)'} picture={vtbMenu} />}
         />
     )
 }

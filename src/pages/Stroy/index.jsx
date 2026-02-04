@@ -10,6 +10,8 @@ import alabugaMenuHead from '../../assets/images/alabuga/alabugaMenuHead.png';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
+import { Button } from "../../components/shared/Button";
+import { openLink } from "../../utils/openLink";
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -42,6 +44,28 @@ const Person = styled(ImagePerson)`
 `;
 
 
+const ButtonWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    ${media.desktop`
+        ${Button} {
+            max-width: 400px;
+        }
+    `}
+
+    ${Button} {
+        font-size: 16px;
+        height: 120px;
+
+        &:hover {
+            color: var(--color-alabuga-blue)
+        }
+    }
+`;
+
 export const StroyPage = () => {
     const modalStyles = { 
         textColor: 'var(--color-alabuga-blue)', 
@@ -50,7 +74,7 @@ export const StroyPage = () => {
             border: '1px solid var(--color-alabuga-blue)',
             color: 'var(--color-white)',
         }, 
-         tabStyles: `
+        tabStyles: `
             background-color: var(--color-white);
             border: 1px solid var(--color-alabuga-blue);
             color: var(--color-alabuga-blue);
@@ -95,6 +119,7 @@ export const StroyPage = () => {
     return (
         <BrandPage
             pageId="stroy"
+            preloadImages={[ alabugaMenu, alabugaMenuHead ]}
             defaultColor={'var(--color-alabuga-blue)'}
             accentColor={'var(--color-alabuga-accent)'}
             botButtonStyles={botButtonStyles}
@@ -113,6 +138,11 @@ export const StroyPage = () => {
             logoComponent={<LogoComponent />}
             advantageComponent={<Advantages defaultColor={'var(--color-alabuga-blue)'}  accentColor={'var(--color-alabuga-accent)'} />}
             modalStyles={modalStyles}
+            additionalInfoComponent={(
+                <ButtonWrapper>
+                    <Button $defaultColor={'var(--color-alabuga-blue)'} $accentColor={'var(--color-alabuga-accent)'} onClick={() => openLink('https://fut.ru/s/alabuga_form')}>Подать заявку на практику</Button>
+                </ButtonWrapper>
+            )}
         />
     )
 }

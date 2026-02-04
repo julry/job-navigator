@@ -111,7 +111,7 @@ export const HorizontalContent = () => (
         <Line>
             <JobsBlock>
                 <JobWrapper><SmallTextStyled $color="var(--color-white)">контакт-центр</SmallTextStyled></JobWrapper>
-                <JobWrapper><SmallTextStyled $color="var(--color-white)">работа с бизнесом</SmallTextStyled></JobWrapper>
+                <JobWrapper><SmallTextStyled $color="var(--color-white)">работа с бизнесом</SmallTextStyled></JobWrapper>
             </JobsBlock>
             <LineSvg color="var(--color-vtb-blue)" />
             <LineSvgDesk color="var(--color-vtb-blue)" />
@@ -128,7 +128,7 @@ export const HorizontalContent = () => (
         <Line>
             <JobsBlock>
                 <JobWrapper><SmallTextStyled $color="var(--color-white)">Клиентский менеджер</SmallTextStyled></JobWrapper>
-                <JobWrapper><SmallTextStyled $color="var(--color-white)">менеджер по работе с партнерами</SmallTextStyled></JobWrapper>
+                <JobWrapper><SmallTextStyled $color="var(--color-white)">менеджер по работе с партнерами</SmallTextStyled></JobWrapper>
             </JobsBlock>
             <LineSvg color="var(--color-vtb-blue)" />
             <LineSvgDesk color="var(--color-vtb-blue)" />
@@ -138,7 +138,7 @@ export const HorizontalContent = () => (
                 </SmallTextStyled>
                 <br />
                 <SmallTextStyled>
-                    <ColoredSpan $color="var(--color-vtb-accent)">Что доучить:</ColoredSpan> специфика работы с партнёрами и юридическими лицами
+                    <ColoredSpan $color="var(--color-vtb-accent)">Что доучить:</ColoredSpan> специфика работы с партнёрами и юридическими лицами
                 </SmallTextStyled>
             </InfoBlock>
         </Line>
@@ -168,7 +168,7 @@ export const HorizontalContent = () => (
             <LineSvgDesk color="var(--color-vtb-blue)" />
             <InfoBlock>
                 <SmallTextStyled>
-                    <ColoredSpan $color="var(--color-vtb-accent)">Что общее:</ColoredSpan> работа с клиентами, знание банковских продуктов и сервиса
+                    <ColoredSpan $color="var(--color-vtb-accent)">Что общее:</ColoredSpan> работа с клиентами, знание банковских продуктов и сервиса
                 </SmallTextStyled>
                 <br />
                 <SmallTextStyled>

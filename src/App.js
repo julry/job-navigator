@@ -4,6 +4,8 @@ import { media } from './styles/media';
 import bg from './assets/images/bg.png';
 import { useRef } from 'react';
 import { AppContext } from './context/AppContext';
+import { useImagePreloader } from './hooks/useImagePreloader';
+import { preloadImages } from './configs/preloadImages';
 
 const Wrapper = styled.div`
    width: 100%;
@@ -48,6 +50,8 @@ const Wrapper = styled.div`
 
 function App({ router }) {
    const wrapperRef = useRef();
+
+   useImagePreloader(preloadImages);
 
    return (
          <AppContext.Provider value={{wrapperRef}}>

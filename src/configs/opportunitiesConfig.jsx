@@ -222,7 +222,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'itManager',
-                    title: <><ColoredSpan>руководитель</ColoredSpan> службы поддержки / <ColoredSpan>IT-менеджер</ColoredSpan></>,
+                    title: <><ColoredSpan>руководитель</ColoredSpan> службы поддержки / <ColoredSpan>IT‑менеджер</ColoredSpan></>,
                     desc: <NoTransformSpan>организует работу Help Desk, контролирует SLA, управляет командой</NoTransformSpan>
                 },
             ]
@@ -802,7 +802,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'othodifns',
-                    title: <><ColoredSpan>Специалист</ColoredSpan> по обращению с отходами <NoTransformSpan>I–IV</NoTransformSpan> опасности</>,
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по обращению с отходами <NoTransformSpan>I‑IV</NoTransformSpan> опасности</>,
                     desc: 'Организует сбор, транспортировку, обезвреживание и размещение опасных отходов'
                 },
                 {
@@ -884,7 +884,7 @@ export const opportunitiesConfig = {
                 },
                 {
                     id: 'uusjvnxbwbnchslzbvksdpbals',
-                    title: <><ColoredSpan>Специалист</ColoredSpan> по экстренному реагированию / Инженер-спасатель</>,
+                    title: <><ColoredSpan>Специалист</ColoredSpan> по экстренному реагированию / Инженер-спасатель</>,
                     desc: 'Проводит аварийно-спасательные работы с применением специального оборудования, разрабатывает планы эвакуации'
                 },
                 {
@@ -1128,7 +1128,7 @@ export const opportunitiesConfig = {
             ]
         },
         {
-            id: 'metalurhgrfkbksf',
+            id: 'me235etltalurhgrfkbksf',
             text: 'Металлургия',
             style: { 'grid-area': '2/1/3/2' },
             pictureBottom: -96,
@@ -1144,9 +1144,9 @@ export const opportunitiesConfig = {
                     desc: 'Управляет процессом плавки за пультом или у печи. Рассчитывает и добавляет легирующие добавки, следит за химическим составом и температурой, выпускает готовый металл', 
                 },
                 {
-                    id: 'obfsdkcfedstargshjbaff',
+                    id: 'obfsdkcfedstargsh34099012jbaff',
                     title: <><ColoredSpan>Вальцовщик стана </ColoredSpan> / Литейщик</>,
-                    desc: 'Придает металлу форму. Вальцовщик управляет прокатным станом, превращая слитки в листы или трубы. Литейщик разливает металл по формам для получения сложных деталей'
+                    desc: 'Придает металлу форму. Вальцовщик управляет прокатным станом, превращая слитки в листы или трубы. Литейщик разливает металл по формам для получения сложных деталей'
                 },
                 {
                     id: 'obfsdkcfedstargshjbaff',
@@ -1162,12 +1162,12 @@ export const opportunitiesConfig = {
             hasPicture: false,
             jobs: [
                 {
-                    id: 'ecoprvsdfvsvet',
-                    title: <><ColoredSpan>Инженер-</ColoredSpan>материаловед</>,
+                    id: 'ecop342rvsdfvsvet',
+                    title: <><ColoredSpan>Инженер-материаловед</ColoredSpan></>,
                     desc: 'Производит и изучает материалы',
                 },
                 {
-                    id: 'ecoprvsdfvsvet',
+                    id: 'e12009coprvsdfvsvet',
                     title: <><ColoredSpan>Специалист</ColoredSpan> по{' '}<NoTransformSpan>3D-печати</NoTransformSpan></>,
                     desc: 'Создает изделия в сфере медицины и инженерии',
                 },
@@ -1499,60 +1499,70 @@ export const opportunitiesConfig = {
     service: [
         {
             id: 'grtobwvfsklbr',
-            text: 'Гостиничный сервис',
+            text: 'Индустрия гостеприимства и впечатлений',
             style: { 'grid-area': '1/1/2/2' },
             pictureBottom: -85,
             jobs: [
                 {
                     id: 'labefojdt',
-                    title: <ColoredSpan>Портье</ColoredSpan>,
-                    desc: 'Встречает гостей, оформляет им заезды и выезды, ведет документы для подсчета'
+                    title: <ColoredSpan>Администратор / Хостес</ColoredSpan>,
+                    desc: 'Встречает гостей, координирует бронирование, создает первое впечатление и решает вопросы клиентов здесь и сейчас'
                 },
                 {
-                    id: 'geolfvfsb ',
-                    title: <><ColoredSpan>Администратор</ColoredSpan></>,
-                    desc: 'Координирует работу смены, обучает персонал, решает конфликтные ситуации'
+                    id: 'geolfvfsbsad',
+                    title: <><ColoredSpan>Специалист по сервису</ColoredSpan> (Повар / Официант / Агент)</>,
+                    desc: 'Создает основной продукт: готовит блюда, обслуживает гостей в зале или подбирает идеальный тур для путешествия'
                 },
                 {
                     id: 'naxscvfhrgeol',
-                    title: <><ColoredSpan>Управляющий</ColoredSpan> отелем</>,
-                    desc: 'Управляет всеми службами гостиницы, добивается выполнения финансовых планов, разрабатывает стандарты сервиса'
+                    title: <><ColoredSpan>Управляющий</ColoredSpan> объектом</>,
+                    desc: 'Руководит рестораном, отелем или агентством. Отвечает за прибыль, команду, стандарты качества и репутацию бренда'
                 },
             ]
         },
         {
             id: 'gornyy',
-            text: 'Туризм',
+            text: 'Индустрия красоты и эстетики',
             style: { 'grid-area': '2/1/3/2' },
             pictureBottom: -96,
             jobs: [
                 {
                     id: 'baffivfdkbpr',
-                    title: <><ColoredSpan>Менеджер</ColoredSpan> по продаже туров</>,
-                    desc: 'Собирает турпроекты, рассчитывает стоимость, общается с клиентами'
+                    title: <><ColoredSpan>Ассистент мастера</ColoredSpan> / Помощник</>,
+                    desc:'Подготавливает рабочее место, помогает в простых операциях, изучает техники и работает с инструментами под присмотром'
                 },
                 {
-                    id: 'obfsdkcjbaff',
-                    title: <><ColoredSpan>Руководитель</ColoredSpan> турагентства</>,
-                    desc: 'Придумывает схему продаж, анализирует результаты, управляет всей командой, ищет партнеров'
+                    id: 'ba32ffivfdkbpr',
+                    title: <><ColoredSpan>Мастер-универсал</ColoredSpan> / Флорист</>,
+                    desc:'Самостоятельно выполняет услуги: стрижки, макияж или сборку букетов. Консультирует клиента и создает образ'
+                },
+                {
+                    id: 'obfsdkkv999diakcjbaff',
+                    title: <><ColoredSpan>Арт-директор</ColoredSpan> / Топ-стилист</>,
+                    desc: 'Задает тренды, обучает команду, разрабатывает новые коллекции образов или букетов, управляет салоном или студией'
                 },
             ]
         },
         {
-            id: 'other',
-            text: 'смежные профессии',
+            id: 'transproagoj3324',
+            text: 'Технический сервис и Транспорт',
             style: { 'grid-area': '3/1/4/2' },
-            hasPicture: false,
+            pictureBottom: -96,
             jobs: [
                 {
-                    id: 'e32fvs54vet',
-                    title: <ColoredSpan>Экскурсовод</ColoredSpan>,
-                    desc: 'Проводит экскурсии, знакомит людей с историей и достопримечательностями'
+                    id: '123baf44fiv097fdk921pr',
+                    title: <><ColoredSpan>Техник / Проводник / Оператор</ColoredSpan></>,
+                    desc: 'Выполняет работу по инструкции: обслуживает пассажиров в пути, проводит осмотр оборудования или запускает процесс чистки изделий'
                 },
                 {
-                    id: 'efvs54vet',
-                    title: <ColoredSpan>Event-менеджер</ColoredSpan>,
-                    desc: 'Организует и проводит мероприятия различных форматов'
+                    id: 'ba32ffivfd432kbpr',
+                    title: <><ColoredSpan>Мастер участка / Бригадир</ColoredSpan></>,
+                    desc: 'Контролирует работу смены или бригады, следит за соблюдением техники безопасности и качеством выполнения работ'
+                },
+                {
+                    id: 'o432bfsdkkv999diakcjbaff',
+                    title: <><ColoredSpan>Руководитель службы</ColoredSpan> эксплуатации</>,
+                    desc: 'Отвечает за бесперебойную работу всей системы (транспорта, здания, инженерных сетей), планирует бюджеты и модернизацию'
                 },
             ]
         },
@@ -2056,7 +2066,7 @@ export const opportunitiesConfig = {
     ],
     economy: [
         {
-            id: 'clients work',
+            id: 'clientsWork_vtb',
             text: 'Работа с клиентами (розничный бизнес)',
             textSize: 27,
             style: { 'grid-area': '1/1/2/2' },
@@ -2066,7 +2076,7 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'jun',
-                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> программы «ВТБ Юниор»</>,
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> программы <NoTransformSpan>«ВТБ Юниор»</NoTransformSpan></>,
                     desc: 'Изучает продукты банка,помогает консультировать клиентов, оформляет документы',
                     skills: [
                         {
@@ -2154,7 +2164,7 @@ export const opportunitiesConfig = {
             ]
         },
         {
-            id: 'roadBuildens',
+            id: 'business_vtb',
             text: 'Работа с малым и средним бизнесом',
             textSize: 27,
             style: { 'grid-area': '2/1/3/2' },
@@ -2165,7 +2175,7 @@ export const opportunitiesConfig = {
             jobs: [
                 {
                     id: 'jun1',
-                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> «ВТБ Юниор» / помощник менеджера</>,
+                    title: <><ColoredSpan $color="var(--color-vtb-accent)">стажёр</ColoredSpan> <NoTransformSpan>«ВТБ Юниор»</NoTransformSpan> / помощник менеджера</>,
                     desc: 'Помогает сопровождать клиентов-предпринимателей',
                     skills: [
                         {
@@ -2214,7 +2224,7 @@ export const opportunitiesConfig = {
                     skills: [
                         {
                             name: 'аналитика',
-                            width: 39,
+                            width: 100,
                             id: 'pl4an'
                         },
                         {
@@ -2224,7 +2234,7 @@ export const opportunitiesConfig = {
                         },
                         {
                             name: 'переговоры',
-                            width: 59,
+                            width: 100,
                             id: '431322'
                         },
                     ]
@@ -2253,7 +2263,7 @@ export const opportunitiesConfig = {
             ]
         },
         {
-            id: 'admanjoenvjdf',
+            id: 'contact_vtb',
             text: 'Контакт-центр и дистанционные сервисы',
             textSize: 27,
             style: { 'grid-area': '3/1/4/2' },
@@ -2842,7 +2852,7 @@ export const opportunitiesConfig = {
             text: 'Строительство сети',
             style: { 'grid-area': '3/1/4/2' },
             pictureBottom: -195,
-            skills: ['проектирование', 'работа с подрядчиками', 'планирование сроков', <NoTransformSpan>autoCAD</NoTransformSpan>, 'работа в команде', 'коммуникация'],
+            skills: ['проектирование', 'работа с подрядчиками', 'планирование сроков', <NoTransformSpan>autoCAD</NoTransformSpan>, 'работа в команде', 'коммуникация'],
             skillsWidthDesk: [100, 100, 57, 39, 57, 39],
             skillsWidth: [100, 100, 100, 48, 48, 100],
             readyFor: ['разъездной формат','часто на объектах',],
@@ -2854,7 +2864,7 @@ export const opportunitiesConfig = {
                 {
                     id: 'j432423un',
                     title: <><ColoredSpan $color="var(--color-white)">стажер</ColoredSpan> по направлению строительства сети</>,
-                    desc: 'Участвует в проектировании и приемке на объектов связи, оформляет отчеты и работает с техническими подразделениями',
+                    desc: 'Участвует в проектировании и приемке на объектов связи, оформляет отчеты и работает с техническими подразделениями',
                     skills: [
                         {
                             name: 'внимательность',

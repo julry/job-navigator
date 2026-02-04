@@ -41,7 +41,7 @@ export const Vacancies = ({ref, textColor, vacancies = [],  accentColor = 'var(-
             <Title $color={textColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
             <LinksWrapper>
                 {vacancies.map(({name, link}) => (
-                    <Link key={name} onClick={() => openLink(link)}>
+                    <Link key={link} onClick={() => openLink(link)}>
                         {name}
                     </Link>
                 ))}

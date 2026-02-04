@@ -62,6 +62,10 @@ const DesktopButton = styled(Button)`
 const Subtitles = styled(Title)`
     font-size: 24px;
     margin-bottom: 25px;
+
+    @media screen and (max-width: 340px){
+        font-size: 20px;
+    }
 `;
 
 const TumblerWrapper = styled(motion.div)`
