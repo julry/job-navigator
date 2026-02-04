@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.7d6faa10.css",
-    "main.js": "./static/js/main.98206d3e.js",
+    "main.js": "./static/js/main.c7a8d8bf.js",
     "static/media/bg.png": "./static/media/bg.dd5f8349da909ae46497.png",
     "static/media/modalPersonDefault.png": "./static/media/modalPersonDefault.9fa45948b2d69042e76c.png",
     "static/media/KOT-EitaiGothic-Bold.ttf": "./static/media/KOT-EitaiGothic-Bold.c868a4e3059f7f70d41f.ttf",
@@ -162,10 +162,10 @@
     "static/media/educationMountinSm.png": "./static/media/educationMountinSm.aea526985981dcec5446.png",
     "index.html": "./index.html",
     "main.7d6faa10.css.map": "./static/css/main.7d6faa10.css.map",
-    "main.98206d3e.js.map": "./static/js/main.98206d3e.js.map"
+    "main.c7a8d8bf.js.map": "./static/js/main.c7a8d8bf.js.map"
   },
   "entrypoints": [
     "static/css/main.7d6faa10.css",
-    "static/js/main.98206d3e.js"
+    "static/js/main.c7a8d8bf.js"
   ]
 }
