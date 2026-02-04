@@ -1,7 +1,6 @@
 import styled from "styled-components"
 import { media } from "../styles/media";
-import { ColoredSpan, NoTransformSpan, Title, TextDesk } from "./shared/Texts";
-import { Button } from "./shared/Button";
+import { ColoredSpan, Title } from "./shared/Texts";
 
 const Wrapper = styled.div`
     display: flex;

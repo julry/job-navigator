@@ -1,6 +1,4 @@
-import { useState } from "react";
 import styled from "styled-components";
-import { media } from "../styles/media";
 import { motion } from "framer-motion";
 
 const Wrapper = styled.div`

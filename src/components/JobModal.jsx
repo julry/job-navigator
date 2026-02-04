@@ -698,7 +698,7 @@ export const JobModal = ({
                 </CardsWrapper>
                     )
                 }
-                {getModalContent({oppId: chosen})}
+                {getModalContent?.({oppId: chosen})}
                 <MenuBlock>
                     <TitleStyled $color={titleColor ?? textColor}>
                         <ColoredSpan $color={accentColor ?? backgroundColor}>посмотреть</ColoredSpan> другие направления

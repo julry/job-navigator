@@ -1,7 +1,6 @@
 import { Navigate } from "react-router-dom";
 import { MainPage } from "../pages/MainPage";
 import { HimTech } from "../pages/HimTech";
-import { Page3 } from "../pages/Page3";
 import { ITPage } from "../pages/IT";
 import { InfoSecPage } from "../pages/InfoSec";
 import { EnergeticsPage } from "../pages/Energetics";

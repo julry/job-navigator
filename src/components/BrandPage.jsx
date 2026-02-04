@@ -19,7 +19,6 @@ import { AboutCompany } from "./AboutCompany";
 import { Advantages } from "./Advantages";
 import { openBot } from "../utils/openBot";
 import { Button } from "./shared/Button";
-import { useImagePreloader } from "../hooks/useImagePreloader";
 
 const Wrapper = styled.div`
     padding-top: 88px;
@@ -211,8 +210,6 @@ export const BrandPage = ({
         testAdditionalMarginDesk,
         testBlockMargin,
     } = brandPages.find((page) => page.id === pageId) ?? {};
-
-    useImagePreloader(preloadImages);
 
     const navigate = useNavigate();
 

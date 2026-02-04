@@ -1,5 +1,5 @@
 import { useRef, useState } from "react"
-import { NoTransformSpan, SmallText, SubtitleSm } from "../../components/shared/Texts";
+import { NoTransformSpan, SubtitleSm } from "../../components/shared/Texts";
 import { AdvantageBlock } from "../../components/shared/AdvantageBlock";
 import adv1 from '../../assets/images/alabuga/alabugaAdvant1.png';
 import adv2 from '../../assets/images/alabuga/alabugaAdvant2.png';
