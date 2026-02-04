@@ -18,8 +18,8 @@ const Wrapper = styled.div`
 const ButtonsWrapper = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 15px;
+
 
     ${media.tablet`
         width: 100%;
@@ -38,13 +38,15 @@ const ButtonsWrapper = styled.div`
 
 const InfoWrapper = styled.div`
     display: flex;
-    align-items: center;
     gap: 15px;
     justify-content: space-between;
+    align-items: flex-start;
+
     margin-top: 30px;
     margin-bottom: 30px;
 
     ${media.tablet`
+        align-items: center;
         flex-direction: column;
     `}
 
