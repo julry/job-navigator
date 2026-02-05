@@ -21,7 +21,7 @@ import techprom from '../../assets/images/default/people/techpromMain.png';
 import stroy from '../../assets/images/default/people/stroy.png';
 import economy from '../../assets/images/default/people/economy.png';
 import pravo from '../../assets/images/default/people/pravo.png';
-import radioelectronic from '../../assets/images/default/people/radioelectronic.png';
+import radioelectronic from '../../assets/images/default/people/radioelectronicShown.png';
 import trade from '../../assets/images/default/people/trade.png';
 
 import agroMountin from '../../assets/images/mountins/agroMountin.png';
@@ -331,7 +331,7 @@ export const MainPageMobile = () => {
                                     <TextWrapper $isInversed $top={28} $width={244} $spacing={187} $style={{ fontSize: '11px' }}>
                                         Электроника, радиотехника{'\n'}и системы связи
                                     </TextWrapper>
-                                    <Person $isMirror src={radioelectronic} alt="" $width={57} $height={130} $top={-5} $left={13} />
+                                    <Person src={radioelectronic} alt="" $width={57} $height={130} $top={-5} $left={13} />
                                     <ImageElement src={radioelectronicMoutin} alt="" $width={182} $height={135} $top={-5} $left={-10} />
                                 </PictureWrapper>
                             ),
@@ -341,7 +341,7 @@ export const MainPageMobile = () => {
                 >
                     <PictureWrapper $width={155} $height={155} >
                         <TextWrapper $top={48} $width={244} $spacing={200}>Электроника, радиотехника{'\n'}и системы связи</TextWrapper>
-                        <Person src={radioelectronic} alt="" $width={67} $height={171} $top={0} $left={13} />
+                        <Person src={radioelectronic} alt="" $width={67} $height={171} $top={-10} $left={13} />
                         <ImageElement src={radioelectronicMoutin} alt="" $width={202} $height={155} $top={1} $left={0} />
                     </PictureWrapper>
                 </StaticBlock>

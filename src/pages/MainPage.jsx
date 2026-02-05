@@ -4,6 +4,10 @@ import { MainPageMobile } from "./MainPageMobile";
 
 const preloadLazyComponent = async () => {
   try {
+    await import('./Stroy');
+    await import('./Trade');
+    await import('./vtb/Economy');
+    await import('./vtb/Pravo');
     await import('./Agro');
     await import('./Biotech');
     await import('./Education');
@@ -19,7 +23,7 @@ const preloadLazyComponent = async () => {
     await import('./Techcontrol');
     await import('./Techprom');
     await import('./Transport');
-    console.log('Компонент готов к использованию');
+    
   } catch (error) {
     console.error('Ошибка:', error);
   }

@@ -19,7 +19,7 @@ import techprom from '../../assets/images/default/people/techpromMain.png';
 import stroy from '../../assets/images/default/people/stroy.png';
 import economy from '../../assets/images/default/people/economy.png';
 import pravo from '../../assets/images/default/people/pravo.png';
-import radioelectronic from '../../assets/images/default/people/radioelectronic.png';
+import radioelectronic from '../../assets/images/default/people/radioelectronicShown.png';
 import trade from '../../assets/images/default/people/trade.png';
 
 import agroMountin from '../../assets/images/mountins/agroMountin.png';
@@ -228,7 +228,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
             onMouseLeave={handleStopHover}
         >
             <TextWrapper onClick={() => handleNavigate('radioelectronic')} $isRight={false} $top={70} $width={164} $spacing={119}>Электроника,{'\n'}радиотехника{'\n'}и системы связи</TextWrapper>
-            <Person  onClick={() => handleNavigate('radioelectronic')} src={radioelectronic} alt="" $width={83} $height={175} $top={0} $left={13} />
+            <Person $isMirror onClick={() => handleNavigate('radioelectronic')} src={radioelectronic} alt="" $width={83} $height={175} $top={0} $left={13} />
             <ImageElement src={radioelectronicMoutin} alt="" $width={251} $height={192} $top={1} $left={0} />
             <DetailsModal 
                 isActive={chosen === 'radioelectronic'} 

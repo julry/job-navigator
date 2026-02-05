@@ -201,7 +201,7 @@ export const BrandPage = ({
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
     botButtonStyles, getModalContent, vacanciesComponent, botBlockStyles,
     horizontalComponent, hasHorizontal, spotColor, spotTop, spotTopD, additionalInfoComponent,
-    spotLeft, getAboutComponent, progressComponent, preloadImages = [],
+    spotLeft, getAboutComponent, progressComponent, opportunityLines
 }) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -282,6 +282,7 @@ export const BrandPage = ({
                     person={opportunityPerson}
                     onClickOpp={handleOpenModal}
                     scrollToVacancy={scrollToVacancy}
+                    opportunityLines={opportunityLines}
                 />
                 {progressComponent}
                 <TestBlock testBlockMargin={testBlockMargin} isBrand scrollToVacancy={scrollToVacancy} defaultColor={defaultColor} accentColor={accentColor} person={testPerson} testName={testName} questions={testQuestions}/>

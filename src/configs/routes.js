@@ -1,10 +1,5 @@
 import { Navigate } from "react-router-dom";
 import { MainPage } from "../pages/MainPage";
-import { PravoPage } from '../pages/vtb/Pravo';
-import { EconomyPage } from '../pages/vtb/Economy';
-import { StroyPage } from '../pages/Stroy';
-import { RadioElectronicPage } from '../pages/RadioElectronic';
-import { TradePage } from '../pages/Trade';
 
 export const routes = [
     {
@@ -194,27 +189,62 @@ export const routes = [
     {
         // втб юрист
         path: '/pravo',
-        element: <PravoPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/vtb/Pravo');
+                return { Component: component.PravoPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         // Торговое дело и логистика – Лемана ПРО
         path: '/trade',
-        element: <TradePage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Trade');
+                return { Component: component.TradePage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Экономика и финанс втб
         path: '/economy',
-        element: <EconomyPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/vtb/Economy');
+                return { Component: component.EconomyPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Электроника, радиотехника и системы связи – Билайн
         path: '/radioelectronic',
-        element: <RadioElectronicPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/RadioElectronic');
+                return { Component: component.RadioElectronicPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Техника и технологии строительства – Алабуга
         path: '/stroy',
-        element: <StroyPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Stroy');
+                return { Component: component.StroyPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         path: '*',

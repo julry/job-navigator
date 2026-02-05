@@ -1,6 +1,9 @@
 import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
+import opportunityLinesDesk from '../../assets/images/lines/oppLemana.png'
+import opportunityLines from '../../assets/images/lines/opp3mobileLemana.png'
+import additionalLines from '../../assets/images/lines/additionalLemana.png'
 import { ImagePerson } from "../../components/shared/ImagePerson";
 import pers from '../../assets/images/lemana/lemanaShown.png';
 import addPicture from '../../assets/images/lemana/lemanaAddBot.png';
@@ -102,6 +105,11 @@ export const TradePage = () => {
             preloadImages={[ lemanaMenu, lemanaMenuHead ]}
             addPicture={addPicture}
             opportunityPerson={lemanaStudent}
+            opportunityLines={{
+                desk: opportunityLinesDesk,
+                mob: opportunityLines,
+                additionaLine: additionalLines
+            }}
             menuPerson={lemanaMenu}
             menuPersonHead={lemanaMenuHead}
             horizontalComponent={<HorizontalContent />}

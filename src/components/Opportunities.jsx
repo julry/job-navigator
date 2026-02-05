@@ -3,13 +3,12 @@ import { media } from "../styles/media";
 import { ColoredSpan, NoTransformSpan, Text, Title } from "./shared/Texts";
 import defaultMan from '../assets/images/default_man.png';
 import { Button } from "./shared/Button";
-import { Opp3Mobile } from "./shared/svg/Opp3Mobile";
-import { Opp4Mobile } from "./shared/svg/Opp4Mobile";
-import { Opp5Mobile } from "./shared/svg/Opp5Mobile";
-import { Opp3Desktop } from "./shared/svg/Opp3Desktop";
-import { Opp4Desktop } from "./shared/svg/Opp4Desktop";
-import { Opp5Desktop } from "./shared/svg/Opp5Desktop";
-import { AdditionalLine } from "./shared/svg/AdditionalLineDesk";
+import opp3Mobile from '../assets/images/lines/opp3mobile.png'
+import opp4Mobile from '../assets/images/lines/opp4Mobile.png'
+import opp5Mobile from '../assets/images/lines/opp5mobile.png'
+import opp3 from '../assets/images/lines/opp3.png'
+import opp4 from '../assets/images/lines/opp4.png'
+import opp5 from '../assets/images/lines/opp5.png'
 
 const Wrapper = styled.div`
     z-index: 2;
@@ -118,15 +117,17 @@ const Ellipse = styled.svg`
 const LinesWrapper = styled.div`
     position: absolute;
     top: ${({ $top }) => $top}px;
-    left: 50%;
+    left: ${({ $left }) => $left ?? 50}%;
     width: ${({ $width }) => $width}px;
     height: ${({ $height }) => $height}px;
     z-index: 3;
     transform: translateX(-50%);
 
-    & path {
-        fill: ${({$defaultColor = 'var(--color-gray)'}) => $defaultColor};
+    & img {
+        width: 100%; 
+        height: 100%;
     }
+
 
     ${media.desktop`
         display: none;
@@ -174,15 +175,15 @@ const textVariants = {
 }
 
 const OPPS_TO_LINES_DESK = {
-    3: <Opp3Desktop />,
-    4: <Opp4Desktop />,
-    5: <Opp5Desktop />,
+    3: opp3,
+    4: opp4,
+    5: opp5,
 };
 
 const OPPS_TO_LINES_MOBILE = {
-    3: <Opp3Mobile />,
-    4: <Opp4Mobile />,
-    5: <Opp5Mobile />,
+    3: opp3Mobile,
+    4: opp4Mobile,
+    5: opp5Mobile,
 };
 
 const OPPS_TO_STYLE_LINES_MOBILE = {
@@ -197,7 +198,7 @@ const OPPS_TO_STYLE_LINES_MOBILE = {
         $height: 323,
     },
     5: {
-        $top: -6,
+        $top: 0,
         $width: 305,
         $height: 397,
     },
@@ -207,8 +208,8 @@ const OPPS_TO_STYLE_LINES_DESKTOP = {
     3: {
         $top: 32,
         $left: 261,
-        $width: 199,
-        $height: 190,
+        $width: 192,
+        $height: 145,
     },
     4: {
         $top: 32,
@@ -218,9 +219,9 @@ const OPPS_TO_STYLE_LINES_DESKTOP = {
     },
     5: {
         $top: 25,
-        $left: 241,
-        $width: 199,
-        $height: 190,
+        $left: 247,
+        $width: 224 * 0.9,
+        $height: 299 * 0.9,
     }
 };
 
@@ -231,7 +232,7 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
 };
 
 export const Opportunities = ({
-    onClickOpp, companyName, defaultColor, hasButton, scrollToVacancy, linesColor, hasHorizontal,
+    onClickOpp, companyName, defaultColor, hasButton, scrollToVacancy, opportunityLines, hasHorizontal,
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
@@ -283,15 +284,15 @@ export const Opportunities = ({
                             </Ellipse>
                         )
                     }
-                    <LinesWrapper $defaultColor={linesColor} {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
-                        {OPPS_TO_LINES_MOBILE[opportunities.length]}
+                    <LinesWrapper {...(OPPS_TO_STYLE_LINES_MOBILE[opportunities.length] ?? {})}>
+                         <img src={opportunityLines?.mob ?? OPPS_TO_LINES_MOBILE[opportunities.length]} alt="" />
                     </LinesWrapper>
-                    <LinesWrapperDesktop $defaultColor={linesColor} {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
-                        {OPPS_TO_LINES_DESK[opportunities.length]}
+                    <LinesWrapperDesktop {...(OPPS_TO_STYLE_LINES_DESKTOP[opportunities.length] ?? {})}>
+                        <img src={opportunityLines?.desk ?? OPPS_TO_LINES_DESK[opportunities.length]} alt="" />
                     </LinesWrapperDesktop>
-                    {hasHorizontal && (
-                        <LinesWrapperDesktop $left={438} $top={59}>
-                            <AdditionalLine color={linesColor}/>
+                    {hasHorizontal && opportunityLines?.additionaLine && (
+                        <LinesWrapperDesktop $left={438} $top={59} $width={135} $height={76}>
+                            <img src={opportunityLines?.additionaLine} alt=""/>
                         </LinesWrapperDesktop>
                     )}
                 </OpportunitiesBlock>

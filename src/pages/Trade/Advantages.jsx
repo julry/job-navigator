@@ -5,7 +5,7 @@ import { AdvantageBlock } from "../../components/shared/AdvantageBlock";
 import adv1 from '../../assets/images/lemana/lemanaAdvant1.png';
 import adv2 from '../../assets/images/lemana/lemanaAdvant2.png';
 import adv3 from '../../assets/images/lemana/lemanaAdvant3.png';
-import adv4 from '../../assets/images/lemana/lemanaAdvant4.png';
+import adv4 from '../../assets/images/beeline/beelineAdvant1.png';
 import adv5 from '../../assets/images/lemana/lemanaAdvant5.png';
 import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 

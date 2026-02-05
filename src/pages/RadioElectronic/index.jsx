@@ -13,6 +13,9 @@ import { Advantages } from "./Advantages";
 import { HorizontalContent } from "./Horizontal";
 import { SmallText } from "../../components/shared/Texts";
 import { ProgressComponent } from "./Progress";
+import opportunityLinesDesk from '../../assets/images/lines/oppBeeline.png'
+import opportunityLines from '../../assets/images/lines/opp3mobileBeeline.png'
+import additionalLines from '../../assets/images/lines/additionalBeeline.png'
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -136,6 +139,11 @@ export const RadioElectronicPage = () => {
             horizontalComponent={<HorizontalContent />}
             companyName='Билайн'
             botBlockStyles={botBlockStyles}
+            opportunityLines={{
+                desk: opportunityLinesDesk,
+                mob: opportunityLines,
+                additionaLine: additionalLines
+            }}
             personComponent={
                 <PersonWrapper>
                     <Person src={pers} alt="" />

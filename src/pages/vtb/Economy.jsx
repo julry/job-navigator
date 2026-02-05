@@ -13,6 +13,9 @@ import { Advantages } from "./Advantages";
 import { SmallText } from "../../components/shared/Texts";
 import { HorizontalContent } from "./Horizontal";
 import { ProgressComponent } from "./Progress";
+import opportunityLinesDesk from '../../assets/images/lines/oppVtb.png'
+import opportunityLines from '../../assets/images/lines/opp3mobileVtb.png'
+import additionalLines from '../../assets/images/lines/additionalVtb.png'
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -135,6 +138,11 @@ export const EconomyPage = () => {
             horizontalComponent={<HorizontalContent />}
             companyName='ВТБ'
             botBlockStyles={botBlockStyles}
+            opportunityLines={{
+                desk: opportunityLinesDesk,
+                mob: opportunityLines,
+                additionaLine: additionalLines
+            }}
             vacanciesComponent={
                 <VacanciesInfo>
                     <SmallText $color="var(--color-white)">

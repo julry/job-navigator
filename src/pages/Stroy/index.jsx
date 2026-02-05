@@ -12,6 +12,7 @@ import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
 import { Button } from "../../components/shared/Button";
 import { openLink } from "../../utils/openLink";
+import opportunityLinesDesk from '../../assets/images/lines/oppAlabuga.png'
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -125,6 +126,9 @@ export const StroyPage = () => {
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
             opportunityPerson={alabugaStudent}
+            opportunityLines={{
+                desk: opportunityLinesDesk,
+            }}
             menuPerson={alabugaMenu}
             menuPersonHead={alabugaMenuHead}
             companyName='«Алабуга Девелопмент»'
