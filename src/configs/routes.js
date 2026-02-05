@@ -1,25 +1,10 @@
 import { Navigate } from "react-router-dom";
 import { MainPage } from "../pages/MainPage";
-import { HimTech } from "../pages/HimTech";
-import { ITPage } from "../pages/IT";
-import { InfoSecPage } from "../pages/InfoSec";
-import { EnergeticsPage } from "../pages/Energetics";
-import { StroyPage } from "../pages/Stroy";
-import { MachinePage } from "../pages/Machine";
-import { BioTechPage } from "../pages/Biotech";
-import { SafetechPage } from "../pages/Safetech";
-import { GeologyPage } from "../pages/Geology";
-import { MaterialsPage } from "../pages/Materials";
-import { TransportPage } from "../pages/Transport";
-import { TechcontrolPage } from "../pages/Techcontrol";
-import { TechpromPage } from "../pages/Techprom";
-import { AgroPage } from "../pages/Agro";
-import { ServicePage } from "../pages/Service";
-import { EducationPage } from "../pages/Education";
-import { EconomyPage } from "../pages/vtb/Economy";
-import { PravoPage } from "../pages/vtb/Pravo";
-import { TradePage } from "../pages/Trade";
-import { RadioElectronicPage } from "../pages/RadioElectronic";
+import { PravoPage } from '../pages/vtb/Pravo';
+import { EconomyPage } from '../pages/vtb/Economy';
+import { StroyPage } from '../pages/Stroy';
+import { RadioElectronicPage } from '../pages/RadioElectronic';
+import { TradePage } from '../pages/Trade';
 
 export const routes = [
     {
@@ -29,77 +14,182 @@ export const routes = [
     {
         //Информатика и вычислительная техника
         path: '/it',
-        element: <ITPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/IT');
+                return { Component: component.ITPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        },
     },
     {
         //Информационная безопасность
         path: '/infosec',
-        element: <InfoSecPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/InfoSec');
+                return { Component: component.InfoSecPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Электро- и теплоэнергетика
         path: '/energetics',
-        element: <EnergeticsPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Energetics');
+                return { Component: component.EnergeticsPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Машиностроение
         path: '/machine',
-        element: <MachinePage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Machine');
+                return { Component: component.MachinePage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Химические технологии
         path: '/himtech',
-        element: <HimTech />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/HimTech');
+                return { Component: component.HimTech };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Промышленная экология и биотехнологии
         path: '/biotech',
-        element: <BioTechPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Biotech');
+                return { Component: component.BioTechPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Техносферная безопасность и природообустройство
         path: '/safetech',
-        element: <SafetechPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Safetech');
+                return { Component: component.SafetechPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Прикладная геология, горное дело, нефтегазовое дело и геодезия
         path: '/geology',
-        element: <GeologyPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Geology');
+                return { Component: component.GeologyPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Технологии материалов
         path: '/materials',
-        element: <MaterialsPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Materials');
+                return { Component: component.MaterialsPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Техника и технологии наземного транспорта
         path: '/transport',
-        element: <TransportPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Transport');
+                return { Component: component.TransportPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Управление в технических системах
         path: '/techcontrol',
-        element: <TechcontrolPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Techcontrol');
+                return { Component: component.TechcontrolPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Технологии легкой промышленности
-        path: '/techprom',
-        element: <TechpromPage />
+        path: '/techprom', 
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Techprom');
+                return { Component: component.TechpromPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Сельское, лесное и рыбное хозяйство
         path: '/agro',
-        element: <AgroPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Agro');
+                return { Component: component.AgroPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Сервис и туризм
         path: '/service',
-        element: <ServicePage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Service');
+                return { Component: component.ServicePage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         //Образование и педагогические науки
         path: '/education',
-        element: <EducationPage />
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Education');
+                return { Component: component.EducationPage };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
     },
     {
         // втб юрист

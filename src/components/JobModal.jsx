@@ -482,7 +482,7 @@ const AboutBlock = styled.div`
     }
 `;
 
-export const JobModal = ({ 
+const JobModal = ({ 
     isBrand, styles, opportunities, children, id, onClose, horizontalComponent, getModalContent,
     picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
 }) => {
@@ -761,3 +761,5 @@ export const JobModal = ({
         </Wrapper>
     )
 }
+
+export default JobModal;

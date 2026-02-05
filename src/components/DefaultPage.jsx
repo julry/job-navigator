@@ -8,14 +8,16 @@ import { BotBlock } from "./BotBlock";
 import { AboutJob } from "./AboutJob";
 import { AboutVacancies } from "./AboutVacancies";
 import { useProgress } from "../context/AppContext";
-import { useRef, useState } from "react";
+import { lazy, useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { JobModal } from "./JobModal";
+// import { JobModal } from "./JobModal";
 import { useNavigate } from "react-router-dom";
 import { CompasButton } from "./shared/CompasButton";
 import { ColoredSpan, SmallText, TextDesk } from "./shared/Texts";
 import { Button } from "./shared/Button";
 import { openBot } from "../utils/openBot";
+
+const JobModal = lazy(() =>import('./JobModal'));
 
 const Wrapper = styled.div`
     padding-top: 88px;
@@ -172,6 +174,15 @@ const ButtonStyled = styled(Button)`
     `}
 `;
 
+const preloadLazyComponent = async () => {
+  try {
+    await import('./JobModal');
+    console.log('Компонент готов к использованию');
+  } catch (error) {
+    console.error('Ошибка:', error);
+  }
+};
+
 export const DefaultPage = ({pageId, personComponent}) => {
     const [modalState, setModalState] = useState({shown: false});
     const {
@@ -210,6 +221,10 @@ export const DefaultPage = ({pageId, personComponent}) => {
         if (!vacancyRef?.current) return;
         vacancyRef.current.scrollIntoView({behavior: 'smooth'});
     }
+
+    useEffect(() => {
+        preloadLazyComponent();
+    }, []);
 
     return (
         <Wrapper>

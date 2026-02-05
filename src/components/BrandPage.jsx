@@ -6,9 +6,9 @@ import { BotBlock } from "./BotBlock";
 import { AboutJob } from "./AboutJob";
 import { AboutVacancies } from "./AboutVacancies";
 import { useProgress } from "../context/AppContext";
-import { useRef, useState } from "react";
+import { lazy, Suspense, useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
-import { JobModal } from "./JobModal";
+// import { JobModal } from "./JobModal";
 import { useNavigate } from "react-router-dom";
 import { CompasButton } from "./shared/CompasButton";
 import { ColoredSpan, SmallText, TextDesk } from "./shared/Texts";
@@ -19,6 +19,8 @@ import { AboutCompany } from "./AboutCompany";
 import { Advantages } from "./Advantages";
 import { openBot } from "../utils/openBot";
 import { Button } from "./shared/Button";
+
+const JobModal = lazy(() =>import('./JobModal'));
 
 const Wrapper = styled.div`
     padding-top: 88px;
@@ -184,6 +186,15 @@ const AboutVacanciesStyled = styled(AboutVacancies)`
     `}
 `;
 
+const preloadLazyComponent = async () => {
+  try {
+    await import('./JobModal');
+    console.log('Компонент готов к использованию');
+  } catch (error) {
+    console.error('Ошибка:', error);
+  }
+};
+
 export const BrandPage = ({
     pageId, personComponent, accentColor, defaultColor, addPicture,
     opportunityPerson, companyName, logoComponent, aboutComponent,
@@ -228,6 +239,10 @@ export const BrandPage = ({
         if (!vacancyRef?.current) return;
         vacancyRef.current.scrollIntoView({behavior: 'smooth'});
     }
+
+    useEffect(() => {
+            preloadLazyComponent();
+    }, []);
 
     return (
         <Wrapper $defaultColor={defaultColor}>
@@ -320,21 +335,23 @@ export const BrandPage = ({
             </SpacingContent>
 
             <AnimatePresence>
-                {modalState.shown && (
-                    <JobModal 
-                        isBrand
-                        menuPerson={menuPerson}
-                        menuPersonHead={menuPersonHead}
-                        picture={[opportunitiesPerson, opportunitiesPersonDesk]}  
-                        opportunities={opportunities} 
-                        id={modalState.id} 
-                        onClose={handleCloseModal} 
-                        styles={modalStyles}
-                        horizontalComponent={horizontalComponent}
-                        getModalContent={getModalContent}
-                    >
-                    </JobModal>
-                )}
+                <Suspense>
+                    {modalState.shown && (
+                        <JobModal 
+                            isBrand
+                            menuPerson={menuPerson}
+                            menuPersonHead={menuPersonHead}
+                            picture={[opportunitiesPerson, opportunitiesPersonDesk]}  
+                            opportunities={opportunities} 
+                            id={modalState.id} 
+                            onClose={handleCloseModal} 
+                            styles={modalStyles}
+                            horizontalComponent={horizontalComponent}
+                            getModalContent={getModalContent}
+                        >
+                        </JobModal>
+                    )}
+                </Suspense>
             </AnimatePresence>
         </Wrapper>
     )
