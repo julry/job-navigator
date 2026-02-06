@@ -227,6 +227,10 @@ export const ProgressComponent = ({ defaultColor, accentColor, oppId }) => {
     const buttons = ID_TO_BUTTONS[oppId];
     const maxBranches = ID_TO_MAX_BRANCHES[oppId];
 
+    if (!infoObject) {
+        return;
+    }
+
     const handleChangeBranch = () => {
         setBranch(prev => {
             if (!prev) return 1;

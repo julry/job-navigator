@@ -177,7 +177,6 @@ const ButtonStyled = styled(Button)`
 const preloadLazyComponent = async () => {
   try {
     await import('./JobModal');
-    console.log('Компонент готов к использованию');
   } catch (error) {
     console.error('Ошибка:', error);
   }
