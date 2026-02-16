@@ -16,6 +16,7 @@ import { CompasButton } from "./shared/CompasButton";
 import { ColoredSpan, SmallText, TextDesk } from "./shared/Texts";
 import { Button } from "./shared/Button";
 import { openBot } from "../utils/openBot";
+import { reachMetrikaGoal } from "../utils/reachMetrikaGoal";
 
 const JobModal = lazy(() =>import('./JobModal'));
 
@@ -200,7 +201,8 @@ export const DefaultPage = ({pageId, personComponent}) => {
         testPerson,
         vacanciesDescr,
         testAdditionMargin,
-        vacanciesLinks
+        vacanciesLinks,
+        botMetrika
     } = defaultPages.find((page) => page.id === pageId) ?? {};
 
     const navigate = useNavigate();
@@ -225,13 +227,20 @@ export const DefaultPage = ({pageId, personComponent}) => {
         preloadLazyComponent();
     }, []);
 
+    const handleOpenBot = () => {
+        if (botMetrika) {
+            reachMetrikaGoal(botMetrika);
+        }
+        openBot();
+    }
+
     return (
         <Wrapper>
             <AboutBlock>
                 <Header>
                     <CompasButtonStyled onClick={() => navigate('/')} />
                     <HeaderTitle onClick={() => navigate('/')}><ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий</HeaderTitle>
-                    <ButtonStyled onClick={openBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
+                    <ButtonStyled onClick={handleOpenBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
                 </Header>
                 <AboutJob wrapperHeight={jobInfoHeight} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>

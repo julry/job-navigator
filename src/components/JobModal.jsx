@@ -156,6 +156,11 @@ const CardTitle = styled(Title)`
     }
 `;
 
+const CardsInfoTitle = styled(CardTitle)`
+    color: ${({ $color }) => $color ?? 'var(--color-dark-text)'};
+    margin-top: ${({$isLast}) => $isLast ? 40 : 0}px;
+`;
+
 const FilterSvg = styled.svg`
     position: absolute;
     top: -2vh;
@@ -511,7 +516,11 @@ const JobModal = ({
     const chosenOpportunity = opportunities.find((opp) => chosen === opp.id) ?? {};
     const chosenId = opportunities.findIndex((opp) => chosen === opp.id);
 
-    const { aboutJob, lastCardPadding, pictureBottom = -20, textSize = 36, jobs = [], hasPicture = true, skillsWidth = [], skillsWidthDesk = []} = chosenOpportunity;
+    const { 
+        aboutJob, lastCardPadding, pictureBottom = -20, textSize = 36, 
+        jobs = [], hasPicture = true, skillsWidth = [], skillsWidthDesk = [],
+        hasTitles = true,
+    } = chosenOpportunity;
 
     const { 
         textColor, titleColor, cardTitleColor, activeTabStyles = {}, 
@@ -634,46 +643,54 @@ const JobModal = ({
                     chosen === 'horizontal' ? horizontalComponent : (
                         <CardsWrapper $bottom={pictureBottom}>
                     {jobs.map((job, index) => (
-                        <Card key={job.id} ref={index === jobs.length - 1 ? lastCardRef : null}>
-                            <CardContent
-                                $withPicture={index === (jobs.length - 1) && !isBrand && hasPicture}
-                                $lastCardPadding={index === (jobs.length - 1) ? lastCardPadding : undefined}
-                                $backgroundColor={backgroundColor}
-                                $textColor={textColor}
-                            >
-                                <CardTitle $color={cardTitleColor}>{job.title}</CardTitle>
-                                <CardInnerWrapper $noDesc={index === (jobs.length - 1) && !job.desc}>
-                                    <DescWrapper $isBrand={isBrand}>
-                                        {(job.desc !== undefined || job?.desc?.length > 0) && (
-                                            <>
-                                                <Text>что делает</Text>
+                        <>
+                            {index === 0 && hasTitles && (
+                                <CardsInfoTitle $color={titleColor ?? textColor}>с чего начать?</CardsInfoTitle>
+                            )}
+                            <Card key={job.id} ref={index === jobs.length - 1 ? lastCardRef : null}>
+                                <CardContent
+                                    $withPicture={index === (jobs.length - 1) && !isBrand && hasPicture}
+                                    $lastCardPadding={index === (jobs.length - 1) ? lastCardPadding : undefined}
+                                    $backgroundColor={backgroundColor}
+                                    $textColor={textColor}
+                                >
+                                    <CardTitle $color={cardTitleColor}>{job.title}</CardTitle>
+                                    <CardInnerWrapper $noDesc={index === (jobs.length - 1) && !job.desc}>
+                                        <DescWrapper $isBrand={isBrand}>
+                                            {(job.desc !== undefined || job?.desc?.length > 0) && (
+                                                <>
+                                                    <Text>что делает</Text>
+                                                    <br />
+                                                    <Text $color={textColor}>{job.desc}</Text>
+                                                </>
+                                            )}
+                                        </DescWrapper>
+                                        {isBrand && job.skills?.length && (
+                                            <SkillWrapper $shoudShowPicture={shoudShowPicture && index === (jobs.length - 1)}>
+                                                <Text>навыки/скиллы</Text>
                                                 <br />
-                                                <Text $color={textColor}>{job.desc}</Text>
-                                            </>
+                                                <SkillContent>
+                                                    {job.skills?.map((skill) => (
+                                                        <Skill
+                                                            key={skill.id}
+                                                            $styles={skillStyles}
+                                                            $width={skill.width ?? 100}
+                                                        >
+                                                            {skill.name}
+                                                        </Skill>
+                                                    ))}
+                                                </SkillContent>
+                                            </SkillWrapper>
                                         )}
-                                    </DescWrapper>
-                                    {isBrand && job.skills?.length && (
-                                        <SkillWrapper $shoudShowPicture={shoudShowPicture && index === (jobs.length - 1)}>
-                                            <Text>навыки/скиллы</Text>
-                                            <br />
-                                            <SkillContent>
-                                                {job.skills?.map((skill) => (
-                                                    <Skill
-                                                        key={skill.id}
-                                                        $styles={skillStyles}
-                                                        $width={skill.width ?? 100}
-                                                    >
-                                                        {skill.name}
-                                                    </Skill>
-                                                ))}
-                                            </SkillContent>
-                                        </SkillWrapper>
-                                    )}
-                                </CardInnerWrapper>
+                                    </CardInnerWrapper>
 
-                            </CardContent>
-                            <NoiseSvg $backgroundColor={backgroundColor} />
-                        </Card>
+                                </CardContent>
+                                <NoiseSvg $backgroundColor={backgroundColor} />
+                            </Card>
+                            {index === 0 && hasTitles && (
+                                <CardsInfoTitle $color={titleColor} $isLast >что будет дальше?</CardsInfoTitle>
+                            )}
+                        </>
                     ))}
                     {picture && shoudShowPicture && (
                         <>

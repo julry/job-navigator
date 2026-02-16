@@ -222,11 +222,10 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
         }
 
         if (answers.length > 5) {
-            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nно ты можешь прокачать их еще больше — переходи в наш бот!' 
-
+            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nкак успешно пройти собеседование и трудоустроиться — узнай в нашем боте!' 
         }
 
-        return 'ты почти у цели.\nчтобы скорее прокачать навыки переходи в наш бот\n\nа потом возвращайся\nи откликайся на вакансии!'
+        return 'ты почти у цели.\nпереходи в наш бот и прокачивай навыки, которые нужны для успешного трудоустройства!'
     }
 
     return (
@@ -234,10 +233,8 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
             <TextBlock>
                 <Title $color={defaultColor}><ColoredSpan $color={accentColor}>проверь</ColoredSpan> себя</Title>
                 <Text $color={defaultColor}>
-                    готов ли ты {testFullName ?? `к старту в ${testName}`}?{'\n'}
-                    заполни чек-лист — узнай, какие навыки
-                    и качества успешного кандидата
-                    уже у тебя есть
+                    готов ли ты {testFullName ?? `работать в ${testName}`}?{'\n'}
+                    отметь в чек-листе, какие знания и навыки у тебя уже есть, и получи персональную рекомендацию
                 </Text>
             </TextBlock>
             <TestWrapper>
@@ -297,7 +294,7 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
                 <ResultBlock $testBlockMargin={testBlockMargin} $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
                     <EndButtonWrapper $accentColor={isBrand ? accentColor : undefined}>
-                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={openBot} $type="secondary">прокачать навыки</Button>
+                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={openBot} $type="secondary">перейти в бот</Button>
                         <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
                     </EndButtonWrapper>
                 </ResultBlock>

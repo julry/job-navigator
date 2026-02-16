@@ -19,6 +19,7 @@ import { AboutCompany } from "./AboutCompany";
 import { Advantages } from "./Advantages";
 import { openBot } from "../utils/openBot";
 import { Button } from "./shared/Button";
+import { reachMetrikaGoal } from "../utils/reachMetrikaGoal";
 
 const JobModal = lazy(() =>import('./JobModal'));
 
@@ -219,6 +220,7 @@ export const BrandPage = ({
         companyLink,
         testAdditionalMarginDesk,
         testBlockMargin,
+        botMetrika
     } = brandPages.find((page) => page.id === pageId) ?? {};
 
     const navigate = useNavigate();
@@ -243,13 +245,20 @@ export const BrandPage = ({
             preloadLazyComponent();
     }, []);
 
+    const handleOpenBot = () => {
+        if (botMetrika) {
+            reachMetrikaGoal(botMetrika);
+        }
+        openBot();
+    }
+
     return (
         <Wrapper $defaultColor={defaultColor}>
             <AboutBlock>
                 <Header>
                         <CompasButtonStyled onClick={() => navigate('/')} />
                         <HeaderTitle onClick={() => navigate('/')}><ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий</HeaderTitle>
-                        <ButtonStyled onClick={openBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
+                        <ButtonStyled onClick={handleOpenBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
                     </Header>
                 <AboutJob isBrand spotTopD={spotTopD} spotLeft={spotLeft} spotTop={spotTop} spotColor={spotColor ?? defaultColor} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>

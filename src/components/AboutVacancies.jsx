@@ -144,11 +144,17 @@ const AddBlock = styled.div`
 
 const SubTitleAdd = styled(SubTitle)`
     max-width: 70%;
+    text-wrap: balance;
+    
     ${media.desktop`
         max-width: 460px;
         padding-bottom: 20px;
 
-         @media screen and (max-width: 1250px) {
+        @media screen and (max-width: 1400px) {
+            font-size: 22px;
+        }
+
+        @media screen and (max-width: 1200px) {
             font-size: 19px;
             max-width: 300px;
         }
@@ -169,10 +175,10 @@ const AddPicture = styled.img`
     z-index: 5;
 
     ${media.desktop`
-        right: -48px;
-        bottom: 9px;
-        width: 114px;
-        height: 166px;
+        right: -50px;
+        bottom: 14px;
+        width: 102px;
+        height: 149px;
     `};
 `;
 
@@ -235,9 +241,9 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
         ))}
         <AddBlock>
             <SubTitleAdd>
-                хочешь узнать больше
-                полезной инфы о навыках
-                и развитии в профессии?
+                хочешь узнать, как найти
+                работу по профессии
+                и успешно трудоустроиться?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
             <ButtonStyled onClick={openBot} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>

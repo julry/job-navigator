@@ -86,6 +86,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '4/1/5/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'nasos',
@@ -232,6 +233,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'otherpo',
@@ -384,6 +386,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'othfdserpo',
@@ -526,6 +529,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'o3thfdserpo',
@@ -676,6 +680,7 @@ export const opportunitiesConfig = {
             id: 'other',
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
+            hasTitles: false,
             hasPicture: false,
             jobs: [
                 {
@@ -817,6 +822,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprosvet',
@@ -962,6 +968,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfvsvet',
@@ -1089,6 +1096,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '5/1/6/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfvsvet',
@@ -1160,6 +1168,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '3/1/4/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecop342rvsdfvsvet',
@@ -1236,6 +1245,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '3/1/4/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfgsgffvsvet',
@@ -1304,6 +1314,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '3/1/4/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfvsvet',
@@ -1393,6 +1404,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '4/1/5/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfvsvet',
@@ -1481,6 +1493,7 @@ export const opportunitiesConfig = {
             id: 'other',
             text: 'смежные профессии',
             style: { 'grid-area': '4/1/5/2' },
+            hasTitles: false,
             hasPicture: false,
             jobs: [
                 {
@@ -1619,6 +1632,7 @@ export const opportunitiesConfig = {
             text: 'смежные профессии',
             style: { 'grid-area': '3/1/4/2' },
             hasPicture: false,
+            hasTitles: false,
             jobs: [
                 {
                     id: 'ecoprvsdfvsvet',
