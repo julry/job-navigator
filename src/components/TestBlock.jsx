@@ -110,13 +110,13 @@ const AnswerWrapper = styled.div`
 const ResultBlock = styled(motion.div)`
     position: absolute;
     left: 100%;
-    height: 278px;
+    height: 298px;
     z-index: 5;
     border-radius: 30px;
     width: 499px;
     background-color: ${({$background}) => $background ?? 'var(--color-gray)'};
-    padding: 20px 25px;
-    bottom: -268px;
+    padding: 15px 25px;
+    bottom: -282px;
 
     & p {
         color: var(--color-white-text);
@@ -140,7 +140,7 @@ const ResultBlock = styled(motion.div)`
 const Image = styled(motion.img)`
     position: absolute;
     z-index: ${({$zIndex}) => $zIndex};
-    bottom: ${({$bottom}) => $bottom}px;
+    bottom: ${({$bottom}) => $bottom - 10}px;
     width: ${({$width}) => $width}px;
     height: ${({$height}) => $height}px;
     left: calc(${({$left}) => $left / 100 * 335}px + (100% - 335px));
@@ -149,6 +149,7 @@ const Image = styled(motion.img)`
         left: calc(${({$left}) => $left / 100 * 375}px + 110px);
     }
     ${media.desktop`
+    b   ottom: ${({$bottom}) => $bottom}px;
         left: ${({$left}) => $left}px;
     `}
 `;
