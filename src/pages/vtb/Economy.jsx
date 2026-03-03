@@ -16,6 +16,8 @@ import { ProgressComponent } from "./Progress";
 import opportunityLinesDesk from '../../assets/images/lines/oppVtb.png'
 import opportunityLines from '../../assets/images/lines/opp3mobileVtb.png'
 import additionalLines from '../../assets/images/lines/additionalVtb.png'
+import compasBg from '../../assets/images/compas/vtbCompasMain.png';
+import compasArrow from '../../assets/images/compas/vtbCompasArrow.png';
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -123,6 +125,30 @@ export const EconomyPage = () => {
         backgroundColor: 'var(--color-vtb-blue)'
     }
 
+    const headerProps = {
+        wrapperBg:  'var(--color-vtb-blue)',
+        companyButton: {
+            text: 'о ВТБ'
+        },
+        buttonStyles: {
+            hoverStyles: {
+                second: `background:var(--color-vtb-blue);`,
+                main: `background: var(--color-vtb-blue);`,
+            },
+            hoverStylesColored: {
+                second: `background: transparent; border: 1px solid var(--color-white);`,
+                main: `background: transparent; border: 1px solid var(--color-white);`,
+            },
+            buttonStyle: `background: var(--color-vtb-accent); color: var(--color-vtb-blue)`,
+            buttonColor: `var(--color-vtb-accent)`,
+            border: `var(--color-vtb-accent)`,
+        },
+        compasProps: {
+            compasCustomArrow: compasArrow,
+            compasCustomBg: compasBg,
+        }
+    };
+
     return (
         <BrandPage
             pageId="economy"
@@ -143,6 +169,7 @@ export const EconomyPage = () => {
                 mob: opportunityLines,
                 additionaLine: additionalLines
             }}
+            headerProps={headerProps}
             vacanciesComponent={
                 <VacanciesInfo>
                     <SmallText $color="var(--color-white)">

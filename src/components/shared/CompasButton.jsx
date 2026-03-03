@@ -8,7 +8,7 @@ const Wrapper = styled.button`
     z-index: 10;
     top: -50px;
     right: -10px;
-    background: url(${compasBg});
+    background: url(${({$bg}) => $bg});
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
@@ -37,11 +37,11 @@ const Arrow = styled(Element)`
 `;
 
 
-export const CompasButton = ({onClick, className}) => {
+export const CompasButton = ({onClick, compasCustomBg, compasCustomArrow, compasCustomElement, className}) => {
     return (
-        <Wrapper className={className} onClick={onClick}>
-            <Element src={compasText} alt=""/>
-            <Arrow src={compasArrow} alt=""/>
+        <Wrapper $bg={compasCustomBg ?? compasBg} className={className} onClick={onClick}>
+            <Element src={compasCustomElement ?? compasText} alt=""/>
+            <Arrow src={compasCustomArrow ?? compasArrow} alt=""/>
         </Wrapper>
     );
 }

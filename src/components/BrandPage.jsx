@@ -7,11 +7,8 @@ import { AboutJob } from "./AboutJob";
 import { AboutVacancies } from "./AboutVacancies";
 import { useProgress } from "../context/AppContext";
 import { lazy, Suspense, useEffect, useRef, useState } from "react";
-import { AnimatePresence } from "framer-motion";
-// import { JobModal } from "./JobModal";
-import { useNavigate } from "react-router-dom";
-import { CompasButton } from "./shared/CompasButton";
-import { ColoredSpan, SmallText, TextDesk } from "./shared/Texts";
+import { AnimatePresence, motion } from "framer-motion";
+import { NoTransformSpan, SmallText } from "./shared/Texts";
 import { BrandVacancies } from "./BrandVacancies";
 import { brandPages } from "../configs/brandPages";
 import { LogoBlock } from "./LogoBlock";
@@ -20,6 +17,9 @@ import { Advantages } from "./Advantages";
 import { openBot } from "../utils/openBot";
 import { Button } from "./shared/Button";
 import { reachMetrikaGoal } from "../utils/reachMetrikaGoal";
+import { useHeaderScroll } from "../hooks/useHeaderScroll";
+import { Header } from "./shared/Header";
+import brandText from '../assets/images/compas/brandCompasText.png';
 
 const JobModal = lazy(() =>import('./JobModal'));
 
@@ -34,67 +34,6 @@ const Wrapper = styled.div`
     ${media.desktop`
         padding-top: 92px;
         max-width: 1440px;
-    `}
-`;
-
-
-const Header = styled.div`
-    position: absolute;
-    top: -88px;
-    left: 0;
-    z-index: 40;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 20px 15px;
-    padding-left: 74px;
-
-
-    ${media.desktop`
-        top: -92px;
-        padding: 25px 60px;
-        padding-left: 150px;
-    `}
-`;
-
-const CompasButtonStyled = styled(CompasButton)`
-    display: block;
-    top: -5px;
-    left: -5px;
-    right: auto;
-
-    width: 80px;
-    height: 80px;
-
-    ${media.desktop`
-        top: -10px;
-        left: 5px;
-        width: 140px;
-        height: 140px;
-    `}
-`;
-
-const HeaderTitle = styled.h3`
-    font-size: 16px;
-    line-height: 85%;
-    white-space: pre-line;
-    color: var(--color-white-text);
-    cursor: pointer;
-
-    ${media.desktop`
-        font-size: 26px;
-    `}
-`;
-
-const ButtonStyled = styled(Button)`
-    width: 110px;
-    background-color: var(--color-orange);
-    height: 40px;
-
-    ${media.desktop`
-        width: 240px;
-        height: 45px;
     `}
 `;
 
@@ -195,15 +134,36 @@ const preloadLazyComponent = async () => {
   }
 };
 
+const MenuStyled = styled(motion.div)`
+    position: fixed;
+    inset: 0;
+    transform-origin: 100% 0;
+    background-color: ${({$bg}) => $bg};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 20;
+`;
+
+const SecondButtonStyled = styled(Button)`
+    background: transparent;
+    border: 1px solid ${({$color}) => $color};
+    max-width: min(340px, 85vw);
+`;
+
 export const BrandPage = ({
     pageId, personComponent, accentColor, defaultColor, addPicture,
     opportunityPerson, companyName, logoComponent, aboutComponent,
     advantageComponent, menuPerson, menuPersonHead, modalStyles,
     botButtonStyles, getModalContent, vacanciesComponent, botBlockStyles,
     horizontalComponent, hasHorizontal, spotColor, spotTop, spotTopD, additionalInfoComponent,
-    spotLeft, getAboutComponent, progressComponent, opportunityLines
+    spotLeft, getAboutComponent, progressComponent, opportunityLines, headerProps = {},
 }) => {
     const [modalState, setModalState] = useState({shown: false});
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const {
         jobTitle,
         jobDescription,
@@ -223,10 +183,11 @@ export const BrandPage = ({
         botMetrika
     } = brandPages.find((page) => page.id === pageId) ?? {};
 
-    const navigate = useNavigate();
-
     const {wrapperRef} = useProgress();
     const vacancyRef = useRef();
+    const oppsRef = useRef();
+    const infoRef = useRef();
+    const {isFixed} = useHeaderScroll(wrapperRef);
 
     const handleOpenModal = (id) => {
         setModalState({shown: true, id});
@@ -239,6 +200,21 @@ export const BrandPage = ({
     const scrollToVacancy = () => {
         if (!vacancyRef?.current) return;
         vacancyRef.current.scrollIntoView({behavior: 'smooth'});
+        setIsMenuOpen(false);
+    }
+
+    const scrollToOpps = () => {
+        if (!oppsRef?.current) return;
+
+        oppsRef.current.scrollIntoView({behavior: 'smooth'});
+        setIsMenuOpen(false);
+    }
+
+    const scrollToInfo = () => {
+        if (!infoRef?.current) return;
+
+        infoRef.current.scrollIntoView({behavior: 'smooth'});
+        setIsMenuOpen(false);
     }
 
     useEffect(() => {
@@ -252,14 +228,19 @@ export const BrandPage = ({
         openBot();
     }
 
+    const headerUpdProps = {...headerProps, companyButton: {...headerProps.companyButton, onClick: scrollToInfo}, compasProps: {...headerProps.compasProps, compasCustomElement: brandText }};
+
     return (
         <Wrapper $defaultColor={defaultColor}>
             <AboutBlock>
-                <Header>
-                        <CompasButtonStyled onClick={() => navigate('/')} />
-                        <HeaderTitle onClick={() => navigate('/')}><ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий</HeaderTitle>
-                        <ButtonStyled onClick={handleOpenBot}><TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk></ButtonStyled>
-                    </Header>
+                 <Header 
+                    onClickBot={handleOpenBot} 
+                    onClickVacancy={scrollToVacancy}
+                    onClickOpps={scrollToOpps}
+                    onClickMenu={() => setIsMenuOpen(prev => !prev)}
+                    isMenuOpen={isMenuOpen}
+                    brandProps={headerUpdProps}
+                />
                 <AboutJob isBrand spotTopD={spotTopD} spotLeft={spotLeft} spotTop={spotTop} spotColor={spotColor ?? defaultColor} jobTitleSize={jobTitleSize} jobTitle={jobTitle} jobDescription={jobDescription} jobDescriptionMob={jobDescriptionSm} />
                 <PictureWrapper>
                     {personComponent}
@@ -269,7 +250,28 @@ export const BrandPage = ({
                     {logoComponent}
                 </LogoBlock>
             </AboutBlock>
-            <SpacingContent>
+            <AnimatePresence>
+                {
+                    isFixed && !modalState.shown && (
+                        <Header 
+                            initial={{y: -70, x: '-50%', left: '50%'}} 
+                            exit={{y: -100}} 
+                            animate={{y: 0}} 
+                            hasBg 
+                            onClickBot={handleOpenBot}
+                            onClickVacancy={scrollToVacancy}
+                            onClickOpps={scrollToOpps}
+                            onClickMenu={() => setIsMenuOpen(prev => !prev)}
+                            brandProps={headerUpdProps}
+                            isMenuOpen={isMenuOpen}
+                            transition={{
+                                duration: 0.3
+                            }}
+                        />
+                    )
+                }
+            </AnimatePresence>
+            <SpacingContent ref={infoRef}>
                 <AboutCompany 
                     defaultColor={defaultColor} 
                     accentColor={accentColor} 
@@ -279,6 +281,7 @@ export const BrandPage = ({
                     {getAboutComponent?.({scrollToVacancy})}
                 </AboutCompany>
                 <Opportunities 
+                    ref={oppsRef}
                     textVariant={'brand'}
                     hasHorizontal={hasHorizontal}
                     companyLink={companyLink} 
@@ -354,6 +357,8 @@ export const BrandPage = ({
                             opportunities={opportunities} 
                             id={modalState.id} 
                             onClose={handleCloseModal} 
+                            onOpenBot={handleOpenBot}
+                            brandProps={headerUpdProps}
                             styles={modalStyles}
                             horizontalComponent={horizontalComponent}
                             getModalContent={getModalContent}
@@ -361,6 +366,31 @@ export const BrandPage = ({
                         </JobModal>
                     )}
                 </Suspense>
+            </AnimatePresence>
+
+             <AnimatePresence>
+                {isMenuOpen && (
+                    <MenuStyled 
+                        initial={{scale: 0, opacity: 0}} 
+                        animate={{scale: 1, opacity: 1}} 
+                        exit={{scale: 0, opacity: 0}} 
+                        transition={{transformOrigin: '100% 0'}}
+                        $bg={headerProps.wrapperBg}
+                    >
+                        <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToOpps}>
+                            <NoTransformSpan>{headerProps.companyButton?.text}</NoTransformSpan>
+                        </SecondButtonStyled>
+                        <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToOpps}>
+                            кем работать
+                        </SecondButtonStyled>
+                        <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToVacancy}>
+                            вакансии
+                        </SecondButtonStyled>
+                        <SecondButtonStyled $color={headerProps.buttonStyles?.border}>
+                            советы про работу
+                        </SecondButtonStyled>
+                    </MenuStyled>
+                )}
             </AnimatePresence>
         </Wrapper>
     )

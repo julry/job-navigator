@@ -232,11 +232,11 @@ const OPPS_TO_GAP_LINES_DESKTOP = {
 };
 
 export const Opportunities = ({
-    onClickOpp, companyName, defaultColor, hasButton, scrollToVacancy, opportunityLines, hasHorizontal,
+    ref, onClickOpp, companyName, defaultColor, hasButton, scrollToVacancy, opportunityLines, hasHorizontal,
     opportunities = [], person = defaultMan, textVariant = 'default', accentColor = 'var(--color-orange)'
 }) => {
     return (
-        <Wrapper $hasButton={hasButton} $length={opportunities.length}>
+        <Wrapper ref={ref} $hasButton={hasButton} $length={opportunities.length}>
             <div>
                 <Title $color={defaultColor}>дерево{'\n'}<ColoredSpan $color={accentColor}>возможностей</ColoredSpan> </Title>
                 <TextBlock>

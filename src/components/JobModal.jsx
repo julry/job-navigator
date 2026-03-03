@@ -1,5 +1,5 @@
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
+import { Fragment, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../styles/media";
 import { Title, Text, ColoredSpan } from "./shared/Texts";
@@ -8,6 +8,8 @@ import defaultMenuHead from '../assets/images/default/menuDefaultHead.png';
 import { Button } from './shared/Button';
 import { ModalLines } from "./shared/svg/ModalLines";
 import { ModalLinesDesk } from "./shared/svg/ModalLinesDesk";
+import { useHeaderScroll } from "../hooks/useHeaderScroll";
+import { Header } from "./shared/Header";
 
 const Wrapper = styled(motion.div)`
     position: fixed;
@@ -488,8 +490,8 @@ const AboutBlock = styled.div`
 `;
 
 const JobModal = ({ 
-    isBrand, styles, opportunities, children, id, onClose, horizontalComponent, getModalContent,
-    picture, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
+    isBrand, styles, opportunities, onOpenBot, id, onClose, horizontalComponent, getModalContent,
+    picture, brandProps, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
 }) => {
     const [chosen, setChosen] = useState(id);
     const [shownUpBtn, setShowUpBtn] = useState(true);
@@ -500,6 +502,8 @@ const JobModal = ({
 
     const { scrollY } = useScroll({container: contentRef});
     const [y, setY] = useState(0);
+
+    const {isFixed} = useHeaderScroll(contentRef);
 
     useMotionValueEvent(scrollY, "change", () => {
         if (getModalContent === undefined) return;
@@ -563,6 +567,24 @@ const JobModal = ({
                     <path d="M0 19L9.38597 8.89595L9.34211 9.40848L0.482459 0H2.19298L10.2632 8.63969H9.64914L17.6754 0H19.3421L10.4386 9.55491L10.4825 8.85935L20 19H18.2018L9.69299 9.77457L10.1755 9.81118L1.71052 19H0Z" fill="#FFF2EC" />
                 </svg>
             </ClosedButton>
+            <AnimatePresence>
+                {
+                    isFixed && (
+                        <Header 
+                            initial={{y: -70, x: '-50%', left: '50%'}} 
+                            exit={{y: -100}} 
+                            animate={{y: 0}} 
+                            hasBg 
+                            isHiddenLinks
+                            brandProps={brandProps}
+                            onClickBot={onOpenBot}
+                            transition={{
+                                duration: 0.3
+                            }}
+                        />
+                    )
+                }
+            </AnimatePresence>
             <Content
                 ref={contentRef}
                 animate={{ boxShadow: '0 -2px 35px 2px var(--color-gray)' }}
@@ -643,7 +665,7 @@ const JobModal = ({
                     chosen === 'horizontal' ? horizontalComponent : (
                         <CardsWrapper $bottom={pictureBottom}>
                     {jobs.map((job, index) => (
-                        <>
+                        <Fragment key={job.id}>
                             {index === 0 && hasTitles && (
                                 <CardsInfoTitle $color={titleColor ?? textColor}>с чего начать?</CardsInfoTitle>
                             )}
@@ -690,7 +712,7 @@ const JobModal = ({
                             {index === 0 && hasTitles && (
                                 <CardsInfoTitle $color={titleColor} $isLast >что будет дальше?</CardsInfoTitle>
                             )}
-                        </>
+                        </Fragment>
                     ))}
                     {picture && shoudShowPicture && (
                         <>

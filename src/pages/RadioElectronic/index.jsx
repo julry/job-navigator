@@ -13,9 +13,11 @@ import { Advantages } from "./Advantages";
 import { HorizontalContent } from "./Horizontal";
 import { SmallText } from "../../components/shared/Texts";
 import { ProgressComponent } from "./Progress";
-import opportunityLinesDesk from '../../assets/images/lines/oppBeeline.png'
-import opportunityLines from '../../assets/images/lines/opp3mobileBeeline.png'
-import additionalLines from '../../assets/images/lines/additionalBeeline.png'
+import opportunityLinesDesk from '../../assets/images/lines/oppBeeline.png';
+import opportunityLines from '../../assets/images/lines/opp3mobileBeeline.png';
+import additionalLines from '../../assets/images/lines/additionalBeeline.png';
+import compasBg from '../../assets/images/compas/beelineCompasMain.png';
+import compasArrow from '../../assets/images/compas/beelineCompasArrow.png';
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -124,6 +126,26 @@ export const RadioElectronicPage = () => {
         backgroundColor: 'var(--color-beeline-accent)'
     }
 
+    const headerProps = {
+        wrapperBg:  'var(--color-beeline-dark)',
+        companyButton: {
+            text: 'о Билайне'
+        },
+        buttonStyles: {
+            hoverStyles: {
+                second: `background: var(--color-beeline-accent); color: var(--color-beeline-dark)`,
+                main: `background: var(--color-beeline-dark); border: 1px solid var(--color-beeline-accent);`,
+            },
+            buttonStyle: `background: var(--color-beeline-accent); color: var(--color-beeline-dark)`,
+            buttonColor: `var(--color-beeline-accent)`,
+            border: `var(--color-beeline-accent)`,
+        },
+        compasProps: {
+            compasCustomArrow: compasArrow,
+            compasCustomBg: compasBg,
+        }
+    };
+
     return (
         <BrandPage
             pageId="radioelectronic"
@@ -165,6 +187,7 @@ export const RadioElectronicPage = () => {
                     </SmallText>
                 </VacanciesInfo>
             }
+            headerProps={headerProps}
         />
     )
 }

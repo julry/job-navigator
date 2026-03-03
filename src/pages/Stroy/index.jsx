@@ -13,6 +13,8 @@ import { Advantages } from "./Advantages";
 import { Button } from "../../components/shared/Button";
 import { openLink } from "../../utils/openLink";
 import opportunityLinesDesk from '../../assets/images/lines/oppAlabuga.png'
+import compasBg from '../../assets/images/compas/alabugaCompasMain.png';
+import compasArrow from '../../assets/images/compas/alabugaCompasArrow.png';
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -117,6 +119,30 @@ export const StroyPage = () => {
         backgroundColor: 'var(--color-alabuga-accent)'
     }
 
+    const headerProps = {
+        wrapperBg:  'var(--color-alabuga-blue)',
+        companyButton: {
+            text: 'об «Алабуга Девелопмент»'
+        },
+        buttonStyles: {
+            hoverStyles: {
+                second: `background: var(--color-alabuga-accent); color: var(--color-alabuga-blue)`,
+                main: `background: var(--color-alabuga-blue); border: 1px solid var(--color-alabuga-accent);`,
+            },
+            hoverStylesColored: {
+                second: `background: transparent; border: 1px solid var(--color-white);`,
+                main: `background: transparent; border: 1px solid var(--color-white);`,
+            },
+            buttonStyle: `background: var(--color-alabuga-accent); color: var(--color-alabuga-blue)`,
+            buttonColor: `var(--color-alabuga-accent)`,
+            border: `var(--color-alabuga-accent)`,
+        },
+        compasProps: {
+            compasCustomArrow: compasArrow,
+            compasCustomBg: compasBg,
+        }
+    };
+
     return (
         <BrandPage
             pageId="stroy"
@@ -124,6 +150,7 @@ export const StroyPage = () => {
             defaultColor={'var(--color-alabuga-blue)'}
             accentColor={'var(--color-alabuga-accent)'}
             botButtonStyles={botButtonStyles}
+            headerProps={headerProps}
             addPicture={addPicture}
             opportunityPerson={alabugaStudent}
             opportunityLines={{

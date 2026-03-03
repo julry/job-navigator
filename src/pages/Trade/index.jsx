@@ -15,6 +15,8 @@ import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
 import { HorizontalContent } from "./Horizontal";
 import { VacanciesComponent } from "./Vacancies";
+import compasBg from '../../assets/images/compas/lemanaCompasMain.png';
+import compasArrow from '../../assets/images/compas/lemanaCompasArrow.png';
 
 const PersonWrapper = styled.div`
     position: absolute;
@@ -95,6 +97,26 @@ export const TradePage = () => {
         backgroundColor: 'var(--color-lemana-accent)'
     }
 
+    const headerProps = {
+        wrapperBg:  'var(--color-lemana-dark)',
+        companyButton: {
+            text: 'о Лемана ПРО'
+        },
+        buttonStyles: {
+            hoverStyles: {
+                second: `background: var(--color-lemana-accent); color: var(--color-lemana-dark)`,
+                main: `background: var(--color-lemana-dark); border: 1px solid var(--color-lemana-accent);`,
+            },
+            buttonStyle: `background: var(--color-lemana-accent); color: var(--color-lemana-dark)`,
+            buttonColor: `var(--color-lemana-accent)`,
+            border: `var(--color-lemana-accent)`,
+        },
+        compasProps: {
+            compasCustomArrow: compasArrow,
+            compasCustomBg: compasBg,
+        }
+    }
+
     return (
         <BrandPage
             pageId="trade"
@@ -104,6 +126,7 @@ export const TradePage = () => {
             botButtonStyles={botButtonStyles}
             preloadImages={[ lemanaMenu, lemanaMenuHead ]}
             addPicture={addPicture}
+            headerProps={headerProps}
             opportunityPerson={lemanaStudent}
             opportunityLines={{
                 desk: opportunityLinesDesk,
