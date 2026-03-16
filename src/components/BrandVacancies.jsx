@@ -8,6 +8,7 @@ const Wrapper = styled.div`
     padding: 80px 0;
     width: 100%;
     margin-top: 280px;
+    scroll-margin-top: 30px;
 
    ${media.desktop`
         margin-top: ${({$testAdditionMarginDesk}) => $testAdditionMarginDesk}px;

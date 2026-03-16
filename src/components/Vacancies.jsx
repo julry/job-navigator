@@ -7,6 +7,7 @@ import {openLink} from '../utils/openLink';
 const Wrapper = styled.div`
     padding: 80px 0;
     width: 100%;
+    scroll-margin-top: 30px;
 `;
 
 const LinksWrapper = styled.div`

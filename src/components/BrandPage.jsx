@@ -20,6 +20,7 @@ import { reachMetrikaGoal } from "../utils/reachMetrikaGoal";
 import { useHeaderScroll } from "../hooks/useHeaderScroll";
 import { Header } from "./shared/Header";
 import brandText from '../assets/images/compas/brandCompasText.png';
+import {Addictions} from './Addictions';
 
 const JobModal = lazy(() =>import('./JobModal'));
 
@@ -271,8 +272,9 @@ export const BrandPage = ({
                     )
                 }
             </AnimatePresence>
-            <SpacingContent ref={infoRef}>
+            <SpacingContent>
                 <AboutCompany 
+                    ref={infoRef}
                     defaultColor={defaultColor} 
                     accentColor={accentColor} 
                     companyName={companyName} 
@@ -312,6 +314,7 @@ export const BrandPage = ({
                     {advantageComponent}
                 </Advantages>
                 <BotBlock isBrand styles={botButtonStyles} {...botBlockStyles}/>
+                <Addictions pageId={pageId} textColor={defaultColor} accentColor={accentColor} />
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill={defaultColor}/>
@@ -377,7 +380,7 @@ export const BrandPage = ({
                         transition={{transformOrigin: '100% 0'}}
                         $bg={headerProps.wrapperBg}
                     >
-                        <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToOpps}>
+                        <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToInfo}>
                             <NoTransformSpan>{headerProps.companyButton?.text}</NoTransformSpan>
                         </SecondButtonStyled>
                         <SecondButtonStyled $color={headerProps.buttonStyles?.border} onClick={scrollToOpps}>

@@ -49,7 +49,7 @@ body {
   scrollbar-width: thin; /* Тонкая полоса */
 }
 
-p, span, button, div {
+p, span, button, div, li {
   letter-spacing: -0.03em;
   text-transform: lowercase;
 }

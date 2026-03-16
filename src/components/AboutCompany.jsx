@@ -9,8 +9,10 @@ const Wrapper = styled.div`
     flex-direction: column;
     gap: 40px;
     margin: 80px 0;
+    scroll-margin-top: 100px;
 
     ${media.desktop`
+        scroll-margin-top: 200px;
         flex-direction: row;
         gap: 63px;
     `}
@@ -25,8 +27,8 @@ const Wrapper = styled.div`
    
 `;
 
-export const AboutCompany = ({children}) => (
-    <Wrapper>
+export const AboutCompany = ({children, ref}) => (
+    <Wrapper ref={ref}>
         {children}
     </Wrapper>
 )

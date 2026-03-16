@@ -18,10 +18,12 @@ const Wrapper = styled.div`
     position: relative;
     background-color: inherit;
     padding-bottom: ${({$hasButton}) => $hasButton ? 135 : 0}px;
+    scroll-margin-top: 90px;
 
     gap: 30px;
 
     ${media.desktop`
+        scroll-margin-top: 200px;
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
         padding-bottom: ${({$hasButton, $length}) => $hasButton ? (385 - $length * 20) : 185}px;
