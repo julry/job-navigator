@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion"
+import {AnimatePresence, motion} from 'framer-motion';
 import styled from "styled-components"
 import { media } from "../../styles/media";
 
@@ -9,7 +9,7 @@ const Modal = styled(motion.div)`
     backdrop-filter: blur(3px);
     padding: 34px 4.8vw;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 
     z-index: 1000;
@@ -30,19 +30,20 @@ const Content = styled.div`
     overflow-x: hidden;
 
     ${media.desktop`
-        max-width: 1100px;
-        min-width: 76%;
+        overflow: hidden;
+        width: 1100px;
+        min-width: 1100px;
+        height: 770px;
         padding: 30px 40px;
         padding-right: 0;
         border-radius: 40px;
-        max-height: 767px;
     `}
 `;
 
 const ClosedButton = styled.button`
     position: absolute;
-    top: 5px;
-    right: 25px;
+    top: 15px;
+    right: 4.8vw;
 
     width: 47px;
     height: 40px;
@@ -57,12 +58,13 @@ const ClosedButton = styled.button`
     z-index: 500;
 
     ${media.desktop`
-        top: 10px;
+        --paddingRight: calc((100% - 1100px) / 2);
+        top: 64px;
+        right: var(--paddingRight)
     `}
 `;
 
-export const MaterialModal = ({isOpen, children, onClose}) => {
-    return (
+export const MaterialModal = ({isOpen, children, onClose}) => (
         <AnimatePresence>
             {
                 isOpen && (
@@ -80,4 +82,3 @@ export const MaterialModal = ({isOpen, children, onClose}) => {
             }
         </AnimatePresence>
     )
-}

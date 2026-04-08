@@ -121,9 +121,11 @@ const ButtonStyled = styled(Button)`
         width: 110px;
     }
 
-    &:hover {
-        background-color: ${({ $defaultColor }) => $defaultColor};
-        color: var(--color-white);
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${({ $defaultColor }) => $defaultColor};
+            color: var(--color-white);
+        }
     }
 `;
 

@@ -14,7 +14,7 @@ import post2Alabuga from '../assets/images/default/people/stroy.png';
 import bgAlabuga from '../assets/images/materials/alabugaPostBg.png';
 import bgAlabugaDesk from '../assets/images/materials/alabugaPostBgDesk.png';
 
-import post2Beeline from '../assets/images/materials/beeline2Post.png';
+import post2Beeline from '../assets/images/default/people/radioelectronicShown.png';
 import bgBeeline from '../assets/images/materials/beelinePostBg.png';
 import bgBeelineDesk from '../assets/images/materials/beelinePostBgDesk.png';
 
@@ -57,6 +57,7 @@ export const posts = {
         post1: yellow1Post,
         post2: post2Lemana,
         post3: orange3Post,
+        textActive: 'var(--color-lemana-dark)'
     },
     stroy: {
         bgColor: 'var(--color-alabuga-blue)',
@@ -65,6 +66,7 @@ export const posts = {
         post1: post1Alabuga,
         post2: post2Alabuga,
         post3: blue3Post,
+        textActive: 'var(--color-alabuga-blue)'
     },
     radioelectronic: {
         bgColor: 'var(--color-beeline-dark)',
@@ -73,5 +75,6 @@ export const posts = {
         post1: yellow1Post,
         post2: post2Beeline,
         post3: orange3Post,
+        textActive: 'var(--color-beeline-dark)'
     },
 }

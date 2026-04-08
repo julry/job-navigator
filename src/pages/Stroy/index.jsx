@@ -63,8 +63,10 @@ const ButtonWrapper = styled.div`
         font-size: 16px;
         height: 120px;
 
-        &:hover {
-            color: var(--color-alabuga-blue)
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color-alabuga-blue)
+            }
         }
     }
 `;
@@ -82,10 +84,12 @@ export const StroyPage = () => {
             border: 1px solid var(--color-alabuga-blue);
             color: var(--color-alabuga-blue);
 
-            &:hover {
-                background-color: var(--color-alabuga-blue);
-                border: 1px solid var(--color-alabuga-blue) !important;
-                color: var(--color-white);
+            @media (hover: hover) {
+                &:hover {
+                    background-color: var(--color-alabuga-blue);
+                    border: 1px solid var(--color-alabuga-blue) !important;
+                    color: var(--color-white);
+                }
             }
         `,
         cardTitleColor: 'var(--color-alabuga-blue)',
@@ -108,9 +112,11 @@ export const StroyPage = () => {
         background-color: transparent;
         color: var(--color-alabuga-blue);
 
-        &:hover {
-            background-color: var(--color-alabuga-blue);
-            color: var(--color-alabuga-accent);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-alabuga-blue);
+                color: var(--color-alabuga-accent);
+            }
         }
     `;
 
@@ -146,6 +152,7 @@ export const StroyPage = () => {
     return (
         <BrandPage
             pageId="stroy"
+            brandUrl="https://vk.cc/cWlePA"
             preloadImages={[ alabugaMenu, alabugaMenuHead ]}
             defaultColor={'var(--color-alabuga-blue)'}
             accentColor={'var(--color-alabuga-accent)'}

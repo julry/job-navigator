@@ -17,6 +17,7 @@ import { reachMetrikaGoal } from "../utils/reachMetrikaGoal";
 import { Header } from "./shared/Header";
 import { useHeaderScroll } from "../hooks/useHeaderScroll";
 import {Addictions} from './Addictions';
+import { MaterialModal } from "./materials/Modal";
 
 const JobModal = lazy(() =>import('./JobModal'));
 
@@ -167,6 +168,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
     const {wrapperRef} = useProgress();
     const vacancyRef = useRef();
     const oppsRef = useRef();
+    const advicesRef = useRef();
     const { isFixed } = useHeaderScroll(wrapperRef);
 
     const handleOpenModal = (id) => {
@@ -190,6 +192,13 @@ export const DefaultPage = ({pageId, personComponent}) => {
         setIsMenuOpen(false);
     }
 
+    const scrollToAdvices = () => {
+        if (!advicesRef?.current) return;
+
+        advicesRef.current.scrollIntoView({behavior: 'smooth'});
+        setIsMenuOpen(false);
+    }
+
     useEffect(() => {
         preloadLazyComponent();
     }, []);
@@ -208,6 +217,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                     onClickBot={handleOpenBot} 
                     onClickVacancy={scrollToVacancy}
                     onClickOpps={scrollToOpps}
+                    onClickAdvices={scrollToAdvices}
                     onClickMenu={() => setIsMenuOpen(prev => !prev)}
                     isMenuOpen={isMenuOpen}
                 />
@@ -228,6 +238,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                             onClickBot={handleOpenBot}
                             onClickVacancy={scrollToVacancy}
                             onClickOpps={scrollToOpps}
+                            onClickAdvices={scrollToAdvices}
                             onClickMenu={() => setIsMenuOpen(prev => !prev)}
                             isMenuOpen={isMenuOpen}
                             transition={{
@@ -242,7 +253,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                 <Vacancies ref={vacancyRef} vacancies={vacanciesLinks} />
                 <TestBlock testBlockMargin={testBlockMargin} testFullName={testFullName} scrollToVacancy={scrollToVacancy} person={testPerson} testName={testName} questions={testQuestions}/>
                 <BotBlock testAdditionMargin={testAdditionMargin}/>
-                <Addictions onClick={() => setModalState(prev =>( {...prev, isSmallModal: !prev.isSmallModal}))}/>
+                <Addictions ref={advicesRef} isDefault pageId={pageId} onClick={(data) => setModalState(prev =>( {...prev, ...data}))}/>
                 <UpButton onClick={() => wrapperRef?.current?.scrollTo({top: 0, behavior: "smooth"})}>
                     <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill="#FF7F00"/>
@@ -259,7 +270,7 @@ export const DefaultPage = ({pageId, personComponent}) => {
                             <path d="M1 6.36395C0.447715 6.36395 9.65645e-08 6.81167 0 7.36395C-9.65645e-08 7.91624 0.447715 8.36395 1 8.36395L1 7.36395L1 6.36395ZM26.7071 8.07106C27.0976 7.68054 27.0976 7.04737 26.7071 6.65685L20.3431 0.292888C19.9526 -0.0976362 19.3195 -0.0976364 18.9289 0.292888C18.5384 0.683412 18.5384 1.31658 18.9289 1.7071L24.5858 7.36396L18.9289 13.0208C18.5384 13.4113 18.5384 14.0445 18.9289 14.435C19.3195 14.8255 19.9526 14.8255 20.3431 14.435L26.7071 8.07106ZM1 7.36395L1 8.36395L26 8.36396L26 7.36396L26 6.36396L1 6.36395L1 7.36395Z" fill={'var(--color-gray)'}/>
                         </svg>
     
-                        <button onClick={openBot}>
+                        <button onClick={() => openBot()}>
                             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clipPath="url(#clip0_3441_155136)">
                                 <path d="M0 19.2C0 10.149 0 5.62355 2.81177 2.81177C5.62355 0 10.149 0 19.2 0H20.8C29.851 0 34.3764 0 37.1882 2.81177C40 5.62355 40 10.149 40 19.2V20.8C40 29.851 40 34.3764 37.1882 37.1882C34.3764 40 29.851 40 20.8 40H19.2C10.149 40 5.62355 40 2.81177 37.1882C0 34.3764 0 29.851 0 20.8V19.2Z" fill="#FFF2EC"/>
@@ -290,12 +301,15 @@ export const DefaultPage = ({pageId, personComponent}) => {
                         <SecondButtonStyled onClick={scrollToVacancy}>
                             вакансии
                         </SecondButtonStyled>
-                        <SecondButtonStyled>
+                        <SecondButtonStyled onClick={scrollToAdvices}>
                             советы про работу
                         </SecondButtonStyled>
                     </MenuStyled>
                 )}
             </AnimatePresence>
+            <MaterialModal isOpen={modalState.isSmallModal} onClose={() => setModalState({isSmallModal: false, shown: false})}>
+                {modalState.ModalComponent}
+            </MaterialModal>
         </Wrapper>
     )
 }

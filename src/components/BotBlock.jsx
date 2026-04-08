@@ -29,11 +29,11 @@ const Wrapper = styled.div`
 `;
 
 
-export const BotBlock = ({ isBrand, defaultColor, styles, testAdditionMargin = 0, backgroundColor = 'var(--color-gray)'}) => (
+export const BotBlock = ({ isBrand, brandUrl, defaultColor, styles, testAdditionMargin = 0, backgroundColor = 'var(--color-gray)'}) => (
     <Wrapper $testAdditionMargin={testAdditionMargin} $isBrand={isBrand} $backgroundColor={backgroundColor} $defaultColor={defaultColor}>
         <Text>
             хочешь узнать больше полезной инфы о навыках и развитии в профессии?
         </Text>
-        <Button $isBrand={isBrand} onClick={openBot} $style={styles} $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
+        <Button $isBrand={isBrand} onClick={() => openBot(brandUrl)} $style={styles} $defaultColor={defaultColor} $type={defaultColor !== undefined ? 'main' : "secondary"}>перейти в бота</Button>
     </Wrapper>
 )

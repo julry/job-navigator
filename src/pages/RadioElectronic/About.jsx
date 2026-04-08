@@ -45,9 +45,11 @@ const ButtonStyled = styled(Button)`
     color:  ${({ $defaultColor }) => $defaultColor};
 
     ${media.desktop`
-        &:hover {
-            color: var(--color-white);
-            background-color: ${({ $defaultColor }) => $defaultColor};
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color-white);
+                background-color: ${({ $defaultColor }) => $defaultColor};
+            }
         }
     `}
 `;
@@ -110,7 +112,7 @@ export const About = ({ scrollToVacancy, defaultColor, accentColor }) => (
             </Subtitle>
             <br />
             <Text $color={defaultColor}>
-                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране, а команда — это люди, которые не боятся предлагать новое и менять правила игры, потому что верят в идею
+                сети и сервисы <NoTransformSpan>Билайна</NoTransformSpan> работают в сотнях городов, более 3000 отделений разбросаны по всей стране, а команда — это люди, которые не боятся предлагать новое и менять правила игры, потому что верят в идею
             </Text>
             <br />
             <Text $color={defaultColor}>

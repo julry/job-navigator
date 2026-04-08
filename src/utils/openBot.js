@@ -1,1 +1,2 @@
-export const openBot = () => window?.open('https://vk.com/write-234984375?ref_source=lending', '_blank');
+export const openBot = (brandUrl) => window?.open(brandUrl ?? 'https://vk.cc/cWl8Sh', '_blank');
+

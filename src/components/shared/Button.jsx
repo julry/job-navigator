@@ -24,9 +24,11 @@ export const Button = styled.button`
     line-height: 110%;
     transition: background-color 0.3s;
 
-    &:hover {
-        background-color: ${({$accentColor = 'var(--color-orange)'}) => $accentColor};
-        color: ${({$defaultColor = "var(--color-white-text)", $isBrand}) => $isBrand ? $defaultColor : 'var(--color-white-text)'};
+    @media (hover: hover) {
+        &:hover {
+            background-color: ${({$accentColor = 'var(--color-orange)'}) => $accentColor};
+            color: ${({$defaultColor = "var(--color-white-text)", $isBrand}) => $isBrand ? $defaultColor : 'var(--color-white-text)'};
+        }
     }
 
     ${({$style}) => $style};

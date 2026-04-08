@@ -166,8 +166,10 @@ const EndButtonWrapper = styled.div`
         width: auto;
         min-width: 150px;
 
-        &:hover {
-            border: 1px solid ${({$accentColor}) => $accentColor ?? 'var(--color-white)'};
+        @media (hover: hover) {
+            &:hover {
+                border: 1px solid ${({$accentColor}) => $accentColor ?? 'var(--color-white)'};
+            }
         }
     }
 
@@ -178,7 +180,7 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ isBrand, brandUrl, testBlockMargin, testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
@@ -226,7 +228,7 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
             return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nкак успешно пройти собеседование и трудоустроиться — узнай в нашем боте!' 
         }
 
-        return 'ты почти у цели.\nпереходи в наш бот и прокачивай навыки, которые нужны для успешного трудоустройства!'
+        return 'ты почти у цели.\nпереходи в наш бот и прокачивай навыки, которые нужны для успешного трудоустройства!'
     }
 
     return (
@@ -235,7 +237,7 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
                 <Title $color={defaultColor}><ColoredSpan $color={accentColor}>проверь</ColoredSpan> себя</Title>
                 <Text $color={defaultColor}>
                     готов ли ты {testFullName ?? `работать в ${testName}`}?{'\n'}
-                    отметь в чек-листе, какие знания и навыки у тебя уже есть, и получи персональную рекомендацию
+                    отметь в чек-листе, какие знания и навыки у тебя уже есть, и получи персональную рекомендацию
                 </Text>
             </TextBlock>
             <TestWrapper>
@@ -295,7 +297,7 @@ export const TestBlock = ({ isBrand, testBlockMargin, testFullName, scrollToVaca
                 <ResultBlock $testBlockMargin={testBlockMargin} $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
                     <EndButtonWrapper $accentColor={isBrand ? accentColor : undefined}>
-                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={openBot} $type="secondary">перейти в бот</Button>
+                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={() => openBot(brandUrl)} $type="secondary">перейти в бот</Button>
                         <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
                     </EndButtonWrapper>
                 </ResultBlock>

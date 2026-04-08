@@ -90,10 +90,12 @@ export const RadioElectronicPage = () => {
             border: 1px solid var(--color-beeline-dark);
             color: var(--color-beeline-dark);
 
-            &:hover {
-                background-color: var(--color-beeline-accent);
-                border: 1px solid var(--color-beeline-accent) !important;
-                color: var(--color-beeline-dark);
+            @media (hover: hover) {
+                &:hover {
+                    background-color: var(--color-beeline-accent);
+                    border: 1px solid var(--color-beeline-accent) !important;
+                    color: var(--color-beeline-dark);
+                }
             }
         `,
         cardTitleColor: 'var(--color-dark)',
@@ -115,9 +117,11 @@ export const RadioElectronicPage = () => {
         background-color: var(--color-white);
         color: var(--color-beeline-dark);
 
-        &:hover {
-            background-color: var(--color-beeline-dark);
-            color: var(--color-beeline-accent);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-beeline-dark);
+                color: var(--color-beeline-accent);
+            }
         }
     `;
 
@@ -150,6 +154,7 @@ export const RadioElectronicPage = () => {
         <BrandPage
             pageId="radioelectronic"
             hasHorizontal
+            brandUrl="https://vk.cc/cWleKO"
             defaultColor={'var(--color-beeline-dark)'}
             accentColor={'var(--color-beeline-accent)'}
             preloadImages={[ beelineMenu, beelineMenuHead ]}

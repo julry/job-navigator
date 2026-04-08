@@ -100,10 +100,12 @@ const ButtonStyled = styled(Button)`
         max-width: calc((100% - 2vw * 3)/ 3);
     `}
 
-    &:hover {
-        color: ${({ $defaultColor }) => $defaultColor};
-        background-color:${({ $accentColor }) => $accentColor};
-        border: 1px solid ${({ $accentColor }) =>  $accentColor};
+    @media (hover: hover) {
+        &:hover {
+            color: ${({ $defaultColor }) => $defaultColor};
+            background-color:${({ $accentColor }) => $accentColor};
+            border: 1px solid ${({ $accentColor }) =>  $accentColor};
+        }
     }
 `;
 

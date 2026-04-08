@@ -88,10 +88,12 @@ export const EconomyPage = () => {
             border: 1px solid var(--color-vtb-blue);
             color: var(--color-vtb-blue);
 
-            &:hover {
-                background-color: var(--color-vtb-blue);
-                border: 1px solid var(--color-vtb-blue) !important;
-                color: var(--color-white);
+            @media (hover: hover) {
+                &:hover {
+                    background-color: var(--color-vtb-blue);
+                    border: 1px solid var(--color-vtb-blue) !important;
+                    color: var(--color-white);
+                }
             }
         `,
         cardTitleColor: 'var(--color-white)',
@@ -114,9 +116,11 @@ export const EconomyPage = () => {
         background-color: var(--color-white);
         color: var(--color-vtb-blue);
 
-        &:hover {
-            color: var(--color-vtb-blue);
-            background-color: var(--color-vtb-accent);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color-vtb-blue);
+                background-color: var(--color-vtb-accent);
+            }
         }
     `;
 
@@ -133,7 +137,7 @@ export const EconomyPage = () => {
         buttonStyles: {
             hoverStyles: {
                 second: `background:var(--color-vtb-blue);`,
-                main: `background: var(--color-vtb-blue);`,
+                main: `background: var(--color-vtb-blue); border-color: var(--color-vtb-blue);`,
             },
             hoverStylesColored: {
                 second: `background: transparent; border: 1px solid var(--color-white);`,
@@ -153,6 +157,7 @@ export const EconomyPage = () => {
         <BrandPage
             pageId="economy"
             hasHorizontal
+            brandUrl="https://vk.cc/cWleDt"
             defaultColor={'var(--color-vtb-blue)'}
             accentColor={'var(--color-vtb-accent)'}
             botButtonStyles={botButtonStyles}

@@ -88,10 +88,12 @@ export const PravoPage = () => {
             border: 1px solid var(--color-vtb-blue);
             color: var(--color-vtb-blue);
 
-            &:hover {
-                background-color: var(--color-vtb-blue);
-                border: 1px solid var(--color-vtb-blue) !important;
-                color: var(--color-white);
+            @media (hover: hover) {
+                &:hover {
+                    background-color: var(--color-vtb-blue);
+                    border: 1px solid var(--color-vtb-blue) !important;
+                    color: var(--color-white);
+                }
             }
         `,
         cardTitleColor: 'var(--color-white)',
@@ -114,9 +116,11 @@ export const PravoPage = () => {
         background-color: var(--color-white);
         color: var(--color-vtb-blue);
 
-        &:hover {
-            color: var(--color-vtb-blue);
-            background-color: var(--color-vtb-accent);
+        @media (hover: hover) {
+            &:hover {
+                color: var(--color-vtb-blue);
+                background-color: var(--color-vtb-accent);
+            }
         }
     `;
 
@@ -134,7 +138,7 @@ export const PravoPage = () => {
         buttonStyles: {
             hoverStyles: {
                 second: `background:var(--color-vtb-blue);`,
-                main: `background: var(--color-vtb-blue);`,
+                main: `background: var(--color-vtb-blue); border-color: var(--color-vtb-blue);`,
             },
             hoverStylesColored: {
                 second: `background: transparent; border: 1px solid var(--color-white);`,
@@ -154,6 +158,7 @@ export const PravoPage = () => {
         <BrandPage
             pageId="pravo"
             hasHorizontal
+            brandUrl="https://vk.cc/cWleDt"
             defaultColor={'var(--color-vtb-blue)'}
             accentColor={'var(--color-vtb-accent)'}
             botButtonStyles={botButtonStyles}

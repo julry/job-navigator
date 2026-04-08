@@ -78,7 +78,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                             полноценная система обучения, наставничества и развития
                         </Subtitle>
                         <TextInfo $color={'var(--color-white)'}>
-                            у тебя будет опытный наставник
+                            у тебя будет опытный наставник
                             и помощник по адаптации, который поможет освоить полезную информацию и влиться
                             в корпоративную культуру банка
                         </TextInfo>
@@ -147,7 +147,7 @@ export const Advantages = ({ defaultColor, accentColor }) => {
                             плюшки
                         </Subtitle>
                         <TextInfo $color={'var(--color-white)'}>
-                            у тебя будет полис <NoTransformSpan>ДМС</NoTransformSpan> со стоматологией, материальная помощь, скидки на связь, курсы, книги и многое другое
+                            у тебя будет полис <NoTransformSpan>ДМС</NoTransformSpan> со стоматологией, материальная помощь, скидки на связь, курсы, книги и многое другое
                         </TextInfo>
                     </InfoComponent>
                 }

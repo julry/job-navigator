@@ -23,7 +23,7 @@ const Wrapper = styled.div`
     gap: 30px;
 
     ${media.desktop`
-        scroll-margin-top: 200px;
+        scroll-margin-top: ${({$hasButton}) => $hasButton ? 90 : 200}px;
         border-top-left-radius: 72px;
         border-top-right-radius: 72px;
         padding-bottom: ${({$hasButton, $length}) => $hasButton ? (385 - $length * 20) : 185}px;

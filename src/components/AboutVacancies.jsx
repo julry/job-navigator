@@ -186,7 +186,7 @@ const ButtonStyled = styled(Button)`
     ${({$isBrand}) => !$isBrand ? 'background-color: var(--color-orange); color: var(--color-white);' : ''};
 `;
 
-export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor = 'var(--color-gray)', addPicture = defaultAdd, vacanciesDescr = []}) => {
+export const AboutVacancies = ({ isBrand, brandUrl, className, accentColor, defaultColor = 'var(--color-gray)', addPicture = defaultAdd, vacanciesDescr = []}) => {
     const [hoveredCard, setHoveredCard] = useState();
 
     const touchTimerRef = useRef(null);
@@ -246,7 +246,7 @@ export const AboutVacancies = ({ isBrand, className, accentColor, defaultColor =
                 и успешно трудоустроиться?
             </SubTitleAdd>
             <AddPicture src={addPicture} alt=""/>
-            <ButtonStyled onClick={openBot} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
+            <ButtonStyled onClick={() => openBot(brandUrl)} $isBrand={isBrand} $defaultColor={defaultColor} $accentColor={accentColor}>переходи в бота</ButtonStyled>
         </AddBlock>
     </Wrapper>
 )

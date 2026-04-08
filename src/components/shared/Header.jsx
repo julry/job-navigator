@@ -94,6 +94,10 @@ const ButtonStyled = styled(Button)`
             ${({$hoverStyles}) => $hoverStyles};
         }
     `}
+
+    @media screen and (max-width: 340px){
+        width: 70px;
+    }
 `;
 
 const SecondButtonStyledDesktop = styled(Button)`
@@ -101,9 +105,11 @@ const SecondButtonStyledDesktop = styled(Button)`
     display: none;
     border: 1px solid transparent;
 
-    &:hover {
-        background: var(--color-orange);
-        ${({$hoverStyles}) => $hoverStyles};
+    @media (hover: hover) {
+        &:hover {
+            background: var(--color-orange);
+            ${({$hoverStyles}) => $hoverStyles};
+        }
     }
 
     ${media.desktop`
@@ -122,6 +128,10 @@ const ButtonsWrapper = styled.div`
     }
     @media screen and (min-width: 1200px) and (max-width: 1220px){
         gap: 2px;
+    }
+
+    @media screen and (max-width: 370px){
+        gap: 10px;
     }
 `;
 

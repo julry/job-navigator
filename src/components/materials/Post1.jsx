@@ -1,13 +1,11 @@
-import { useState } from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 import {Card, Image, FullTextWrapper, Title, Text, SmallText, UlStyled} from './Elements';
 import { media } from "../../styles/media";
-import { ColoredSpan } from "../shared/Texts";
-import { MaterialModal } from "./Modal";
+import { ColoredSpan, NoTransformSpan } from "../shared/Texts";
 
 const Circle = styled(Image)`
     top: -138px;
-    right: -450px;
+    right: -320px;
 
     width: 628px;
     height: 1209px;
@@ -82,24 +80,8 @@ const DesktopCircle = styled(DesktopImage)`
 `;
 
 export const Post1 = ({bgCircle, bgCard, image, onClick, accentColor, textColor}) => {
-    const [isOpen, setIsOpen] = useState(false);
-
-    const handleClick = () => {
-        onClick?.();
-        setIsOpen(prev => !prev);
-    };
-
-    return (
-        <>
-            <Card
-                onClick={handleClick}
-                title={<><ColoredSpan $color={accentColor}>Составляем резюме:</ColoredSpan> как превратить практику в опыт</>}
-                desc={"Есть простой лайфхак,\nкоторый работает\nбезотказно: сначала\nнужно правильно пройти\nпрактику, а потом правильно\nописать её в резюме.\nРазбираемся по шагам."}
-            >
-                <Circle src={bgCircle} alt="" />
-                <Person src={image} alt="" />
-            </Card>
-            <MaterialModal isOpen={isOpen} onClose={handleClick}>
+    const ModalComponent = (
+            <>
                 <DesktopPerson src={image} alt=""/>
                 <DesktopCircle src={bgCircle} alt=""/>
                 <FullTextWrapper $color={textColor}>
@@ -139,7 +121,7 @@ export const Post1 = ({bgCircle, bgCard, image, onClick, accentColor, textColor}
                     <br/>
                     <SmallText><ColoredSpan $color={accentColor}>Шаг 3. Смотреть шире</ColoredSpan></SmallText>
                     <SmallText>
-                        Твоя задача на практике — не только попробовать себя в реальных задачах, но и понять, что такое — работа по твоей специальности. Поэтому:
+                        Твоя задача на практике — не только попробовать себя в реальных задачах, но и понять, что такое — работа по твоей специальности. Поэтому:
                         Проси делать больше, а не просто смотри со стороны. Лучше один раз составить документацию, чем целый месяц смотреть, как это делают другие.
                         Задавай вопросы, чтобы разобраться в процессе. Попробуй понять:
                     </SmallText>
@@ -163,10 +145,10 @@ export const Post1 = ({bgCircle, bgCard, image, onClick, accentColor, textColor}
                             май-август 2026
                         </li>
                         <li>
-                            ООО «Ромашка»
+                            <NoTransformSpan>ООО «Ромашка»</NoTransformSpan>
                         </li>
                         <li>
-                            Специалист по документообороту, практика
+                            Специалист по документообороту, практика
                         </li>
                     </UlStyled>
                     <br/>
@@ -200,10 +182,25 @@ export const Post1 = ({bgCircle, bgCard, image, onClick, accentColor, textColor}
                     <br />
                      <SmallText><ColoredSpan $color={accentColor}>Главное, что стоит запомнить</ColoredSpan></SmallText>
                      <SmallText>
-                        Практика становится опытом только тогда, когда ты можешь рассказать о ней конкретно: какие задачи выполнял, с чем работал и чему научился. Подготовься к этому заранее — и резюме будет работать на тебя даже без официального стажа.
+                        Практика становится опытом только тогда, когда ты можешь рассказать о ней конкретно: какие задачи выполнял, с чем работал и чему научился. Подготовься к этому заранее — и резюме будет работать на тебя даже без официального стажа.
                      </SmallText>
                 </FullTextWrapper>
-            </MaterialModal>
+            </>
+    )
+    const handleClick = () => {
+        onClick?.({ModalComponent, isSmallModal: true});
+    };
+
+    return (
+        <>
+            <Card
+                onClick={handleClick}
+                title={<><ColoredSpan $color={accentColor}>Составляем резюме:</ColoredSpan> как превратить практику в опыт</>}
+                desc={"Есть простой лайфхак,\nкоторый работает\nбезотказно: сначала\nнужно правильно пройти\nпрактику, а потом правильно\nописать её в резюме.\nРазбираемся по шагам."}
+            >
+                <Circle src={bgCircle} alt="" />
+                <Person src={image} alt="" />
+            </Card>
         </>
     )
 }

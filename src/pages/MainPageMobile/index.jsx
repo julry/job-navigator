@@ -284,7 +284,7 @@ export const MainPageMobile = () => {
                     <SmallText>Выбирай свою специальность</SmallText>
                 </OrangeBlock>
             </CompasBlock>
-            <BotBlockWrapper onClick={openBot}>
+            <BotBlockWrapper onClick={() => openBot()}>
                 <BotBlock>
                     <SmallText>бот — твой{'\n'}личный гид</SmallText>
                 </BotBlock>
@@ -821,7 +821,7 @@ export const MainPageMobile = () => {
                     полезной инфы о навыках{'\n'}
                     и развитии в профессии?
                 </p>
-                <ButtonStyled onClick={openBot}>переходи в бота!</ButtonStyled>
+                <ButtonStyled onClick={() => openBot()}>переходи в бота!</ButtonStyled>
             </BotInfo>
             <UpButton onClick={() => wrapperRef?.current?.scrollTo({ top: 0, behavior: "smooth" })}>
                 <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -50,9 +50,11 @@ const ButtonStyled = styled(Button)`
         border: 1px solid ${({ $defaultColor }) => $defaultColor};
         color:  var(--color-white);
 
-        &:hover {
-            background-color: var(--color-white);
-            color:  ${({ $defaultColor }) => $defaultColor};
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-white);
+                color:  ${({ $defaultColor }) => $defaultColor};
+            }
         }
     `}
 `;

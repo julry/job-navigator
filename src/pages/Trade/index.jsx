@@ -61,10 +61,12 @@ export const TradePage = () => {
             border: 1px solid var(--color-lemana-dark);
             color: var(--color-lemana-dark);
 
-            &:hover {
-                background-color: var(--color-lemana-accent);
-                border: 1px solid var(--color-lemana-accent) !important;
-                color: var(--color-dark);
+            @media (hover: hover) {
+                &:hover {
+                    background-color: var(--color-lemana-accent);
+                    border: 1px solid var(--color-lemana-accent) !important;
+                    color: var(--color-dark);
+                }
             }
         `,
         cardTitleColor: 'var(--color-dark)',
@@ -85,10 +87,11 @@ export const TradePage = () => {
     const botButtonStyles = `
         background-color: var(--color-lemana-dark);
         color: var(--color-lemana-accent);
-
-        &:hover {
-            background-color: var(--color-white);
-            color: var(--color-lemana-dark);
+        @media (hover: hover) {
+            &:hover {
+                background-color: var(--color-white);
+                color: var(--color-lemana-dark);
+            }
         }
     `;
 
@@ -121,6 +124,7 @@ export const TradePage = () => {
         <BrandPage
             pageId="trade"
             hasHorizontal
+            brandUrl="https://vk.cc/cWleIf"
             defaultColor={'var(--color-lemana-dark)'}
             accentColor={'var(--color-lemana-accent)'}
             botButtonStyles={botButtonStyles}

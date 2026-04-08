@@ -364,9 +364,12 @@ const ButtonStyled = styled(Button)`
         width: 280px;
     `}
 
-    &:hover {
-        border: 1px solid var(--color-orange);
-        ${({ $hasActiveStyles, $activeStyles }) => $hasActiveStyles ? $activeStyles : ''};
+     
+    @media (hover: hover) {
+        &:hover {
+            border: 1px solid var(--color-orange);
+            ${({ $hasActiveStyles, $activeStyles }) => $hasActiveStyles ? $activeStyles : ''};
+        }
     }
 
     @media screen  and (max-width: 350px){
