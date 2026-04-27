@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ColoredSpan, SmallText, Title } from "../../components/shared/Texts";
-import compasBg from '../../assets/images/compas/compasMain.png';
-import compasArrow from '../../assets/images/compas/compasArrow.png';
+import compasBg from '../../assets/images/compas/compasMain.webp';
+import compasArrow from '../../assets/images/compas/compasArrow.webp';
 import { media } from "../../styles/media";
 import { useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";

@@ -13,8 +13,8 @@ import { Advantages } from "./Advantages";
 import { Button } from "../../components/shared/Button";
 import { openLink } from "../../utils/openLink";
 import opportunityLinesDesk from '../../assets/images/lines/oppAlabuga.png'
-import compasBg from '../../assets/images/compas/alabugaCompasMain.png';
-import compasArrow from '../../assets/images/compas/alabugaCompasArrow.png';
+import compasBg from '../../assets/images/compas/alabugaCompasMain.webp';
+import compasArrow from '../../assets/images/compas/alabugaCompasArrow.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

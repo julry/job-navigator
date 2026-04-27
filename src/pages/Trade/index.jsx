@@ -15,8 +15,8 @@ import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
 import { HorizontalContent } from "./Horizontal";
 import { VacanciesComponent } from "./Vacancies";
-import compasBg from '../../assets/images/compas/lemanaCompasMain.png';
-import compasArrow from '../../assets/images/compas/lemanaCompasArrow.png';
+import compasBg from '../../assets/images/compas/lemanaCompasMain.webp';
+import compasArrow from '../../assets/images/compas/lemanaCompasArrow.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

@@ -16,8 +16,8 @@ import { ProgressComponent } from "./Progress";
 import opportunityLinesDesk from '../../assets/images/lines/oppVtb.png'
 import opportunityLines from '../../assets/images/lines/opp3mobileVtb.png'
 import additionalLines from '../../assets/images/lines/additionalVtb.png'
-import compasBg from '../../assets/images/compas/vtbCompasMain.png';
-import compasArrow from '../../assets/images/compas/vtbCompasArrow.png';
+import compasBg from '../../assets/images/compas/vtbCompasMain.webp';
+import compasArrow from '../../assets/images/compas/vtbCompasArrow.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

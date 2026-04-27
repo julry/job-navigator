@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import compasBg from '../../assets/images/compas/compasMain.png';
-import compasArrow from '../../assets/images/compas/compasArrow.png';
+import compasBg from '../../assets/images/compas/compasMain.webp';
+import compasArrow from '../../assets/images/compas/compasArrow.webp';
 import compasText from '../../assets/images/compas/compasText.png';
 
 const Wrapper = styled.button`

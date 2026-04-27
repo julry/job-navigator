@@ -16,8 +16,8 @@ import { ProgressComponent } from "./Progress";
 import opportunityLinesDesk from '../../assets/images/lines/oppBeeline.png';
 import opportunityLines from '../../assets/images/lines/opp3mobileBeeline.png';
 import additionalLines from '../../assets/images/lines/additionalBeeline.png';
-import compasBg from '../../assets/images/compas/beelineCompasMain.png';
-import compasArrow from '../../assets/images/compas/beelineCompasArrow.png';
+import compasBg from '../../assets/images/compas/beelineCompasMain.webp';
+import compasArrow from '../../assets/images/compas/beelineCompasArrow.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;
