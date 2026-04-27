@@ -4,7 +4,7 @@ import { media } from "../styles/media";
 import { ImagePerson } from "../components/shared/ImagePerson";
 import pers from '../assets/images/default/people/materials.webp';
 import objL from '../assets/images/default/objects/materialsObjectL.png';
-import objR from '../assets/images/default/objects/materialsObjectR.png';
+import objR from '../assets/images/default/objects/materialsObjectR.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

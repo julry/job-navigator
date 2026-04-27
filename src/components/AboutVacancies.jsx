@@ -6,7 +6,7 @@ import { media } from "../styles/media";
 import { Title } from "./shared/Texts";
 import { Button } from "./shared/Button";
 
-import defaultAdd from '../assets/images/default/defaultPhone.png'
+import defaultAdd from '../assets/images/default/defaultPhone.webp'
 import { openBot } from "../utils/openBot";
 
 const Wrapper = styled.div`

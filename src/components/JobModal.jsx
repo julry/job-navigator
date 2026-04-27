@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { media } from "../styles/media";
 import { Title, Text, ColoredSpan } from "./shared/Texts";
 import defaultMenuPerson from '../assets/images/default/modalPersonDefault.png';
-import defaultMenuHead from '../assets/images/default/menuDefaultHead.png';
+import defaultMenuHead from '../assets/images/default/menuDefaultHead.webp';
 import { Button } from './shared/Button';
 import { ModalLines } from "./shared/svg/ModalLines";
 import { ModalLinesDesk } from "./shared/svg/ModalLinesDesk";
