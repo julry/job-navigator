@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/vtb/pravoLand.png';
-import addPicture from '../../assets/images/vtb/vtbAddBot.png';
-import vtbStudent from '../../assets/images/vtb/vtbStudent.png';
+import pers from '../../assets/images/vtb/pravoLand.webp';
+import addPicture from '../../assets/images/vtb/vtbAddBot.webp';
+import vtbStudent from '../../assets/images/vtb/vtbStudent.webp';
 import vtbMenu from '../../assets/images/vtb/vtbMenu.png';
-import vtbMenuHead from '../../assets/images/vtb/vtbMenuHead.png';
+import vtbMenuHead from '../../assets/images/vtb/vtbMenuHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";

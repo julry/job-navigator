@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import house from '../../assets/images/vtb/vtbHouse.png';
-import money from '../../assets/images/vtb/vtbMoney.png';
+import house from '../../assets/images/vtb/vtbHouse.webp';
+import money from '../../assets/images/vtb/vtbMoney.webp';
 import { InfoLine } from "../../components/shared/InfoLine";
 import { NoTransformSpan, Subtitle, Text, ColoredSpan, Title } from "../../components/shared/Texts";
 import { AbsoluteImage } from '../../components/shared/AbsoluteImage';

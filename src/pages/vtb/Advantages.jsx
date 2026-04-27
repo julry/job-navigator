@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { media } from "../../styles/media";
 import { NoTransformSpan, SubtitleSm } from "../../components/shared/Texts";
 import { AdvantageBlock } from "../../components/shared/AdvantageBlock";
-import adv1 from '../../assets/images/vtb/vtbAdvent1.png';
-import adv2 from '../../assets/images/vtb/vtbAdvent2.png';
-import adv3 from '../../assets/images/vtb/vtbAdvent3.png';
-import adv4 from '../../assets/images/vtb/vtbAdvent4.png';
-import adv5 from '../../assets/images/vtb/vtbAdvent5.png';
+import adv1 from '../../assets/images/vtb/vtbAdvent1.webp';
+import adv2 from '../../assets/images/vtb/vtbAdvent2.webp';
+import adv3 from '../../assets/images/vtb/vtbAdvent3.webp';
+import adv4 from '../../assets/images/vtb/vtbAdvent4.webp';
+import adv5 from '../../assets/images/vtb/vtbAdvent5.webp';
 import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 
 const InfoComponent = styled.div`

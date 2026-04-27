@@ -1,5 +1,5 @@
 import alabugaVac from '../assets/images/alabuga/alabugaVacancies.png';
-import vtbVac from '../assets/images/vtb/vtbVacancies.png';
+import vtbVac from '../assets/images/vtb/vtbVacancies.webp';
 import tradeVac from '../assets/images/lemana/lemanaVac.webp';
 import { ColoredSpan, NoTransformSpan } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
@@ -7,11 +7,11 @@ import stroy from '../assets/images/default/people/stroy.png';
 import stroyT from '../assets/images/alabuga/alabugaTop.png'
 import stroyB from '../assets/images/alabuga/alabugaBot.png';
 import economy from '../assets/images/default/people/economy.png';
-import economyT from '../assets/images/vtb/economyTop.png'
-import economyB from '../assets/images/vtb/economyBot.png';
+import economyT from '../assets/images/vtb/economyTop.webp'
+import economyB from '../assets/images/vtb/economyBot.webp';
 import pravo from '../assets/images/default/people/pravo.png';
-import pravoT from '../assets/images/vtb/pravoTop.png'
-import pravoB from '../assets/images/vtb/pravoBot.png';
+import pravoT from '../assets/images/vtb/pravoTop.webp'
+import pravoB from '../assets/images/vtb/pravoBot.webp';
 
 import trade from '../assets/images/lemana/lemanaShown.webp';
 import tradeT from '../assets/images/lemana/lemanaTop.webp';
