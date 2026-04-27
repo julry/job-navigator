@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { DefaultPage } from "../components/DefaultPage"
 import { media } from "../styles/media";
 import { ImagePerson } from "../components/shared/ImagePerson";
-import persD from '../assets/images/default/people/techprom.png';
-import pers from '../assets/images/default/people/techpromCut.png';
+import persD from '../assets/images/default/people/techprom.webp';
+import pers from '../assets/images/default/people/techpromCut.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

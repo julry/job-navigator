@@ -33,21 +33,21 @@ import serviceT from '../assets/images/default/serviceTop.png';
 import educationB from '../assets/images/default/educationBot.png';
 import educationT from '../assets/images/default/educationTop.png';
 
-import agro from '../assets/images/default/people/agro.png';
-import biotech from '../assets/images/default/people/biotech.png';
-import education from '../assets/images/default/people/education.png';
-import energetics from '../assets/images/default/people/energetics.png';
-import geology from '../assets/images/default/people/geology.png';
-import himTech from '../assets/images/default/people/himtech.png';
-import infosec from '../assets/images/default/people/infosec.png';
-import it from '../assets/images/default/people/it.png';
-import machine from '../assets/images/default/people/machine.png';
-import safetech from '../assets/images/default/people/safetech.png';
-import service from '../assets/images/default/people/service.png';
-import techcontrol from '../assets/images/default/people/techcontrol.png';
-import transport from '../assets/images/default/people/transportMain.png';
-import materials from '../assets/images/default/people/materials.png';
-import techprom from '../assets/images/default/people/techprom.png';
+import agro from '../assets/images/default/people/agro.webp';
+import biotech from '../assets/images/default/people/biotech.webp';
+import education from '../assets/images/default/people/education.webp';
+import energetics from '../assets/images/default/people/energetics.webp';
+import geology from '../assets/images/default/people/geology.webp';
+import himTech from '../assets/images/default/people/himtech.webp';
+import infosec from '../assets/images/default/people/infosec.webp';
+import it from '../assets/images/default/people/it.webp';
+import machine from '../assets/images/default/people/machine.webp';
+import safetech from '../assets/images/default/people/safetech.webp';
+import service from '../assets/images/default/people/service.webp';
+import techcontrol from '../assets/images/default/people/techcontrol.webp';
+import transport from '../assets/images/default/people/transportMain.webp';
+import materials from '../assets/images/default/people/materials.webp';
+import techprom from '../assets/images/default/people/techprom.webp';
 
 export const defaultPages = [
     {

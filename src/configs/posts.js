@@ -10,11 +10,11 @@ import bgVtb from '../assets/images/materials/vtbPostBg.webp';
 import bgVtbDesk from '../assets/images/materials/vtbPostBgDesk.webp';
 
 import post1Alabuga from '../assets/images/materials/alabuga1Post.webp';
-import post2Alabuga from '../assets/images/default/people/stroy.png';
+import post2Alabuga from '../assets/images/default/people/stroy.webp';
 import bgAlabuga from '../assets/images/materials/alabugaPostBg.webp';
 import bgAlabugaDesk from '../assets/images/materials/alabugaPostBgDesk.webp';
 
-import post2Beeline from '../assets/images/default/people/radioelectronicShown.png';
+import post2Beeline from '../assets/images/default/people/radioelectronicShown.webp';
 import bgBeeline from '../assets/images/materials/beelinePostBg.png';
 import bgBeelineDesk from '../assets/images/materials/beelinePostBgDesk.webp';
 

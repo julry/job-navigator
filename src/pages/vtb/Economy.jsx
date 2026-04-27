@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/default/people/economy.png';
+import pers from '../../assets/images/default/people/economy.webp';
 import addPicture from '../../assets/images/vtb/vtbAddBot.webp';
 import vtbStudent from '../../assets/images/vtb/vtbStudent.webp';
 import vtbMenu from '../../assets/images/vtb/vtbMenu.png';

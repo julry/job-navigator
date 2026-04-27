@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DefaultPage } from "../components/DefaultPage"
 import { media } from "../styles/media";
 import { ImagePerson } from "../components/shared/ImagePerson";
-import pers from '../assets/images/default/people/himtech.png';
+import pers from '../assets/images/default/people/himtech.webp';
 import obj from '../assets/images/default/objects/himTechObj.png';
 
 const PersonWrapper = styled.div`

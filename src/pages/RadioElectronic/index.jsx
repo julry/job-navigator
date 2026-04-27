@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/default/people/radioelectronicShown.png';
+import pers from '../../assets/images/default/people/radioelectronicShown.webp';
 import addPicture from '../../assets/images/beeline/beelineAddBot.webp';
 import beelineStudent from '../../assets/images/beeline/beelineStudent.webp';
 import beelineMenu from '../../assets/images/beeline/beelineMenu.png';

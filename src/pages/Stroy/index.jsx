@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/default/people/stroy.png';
+import pers from '../../assets/images/default/people/stroy.webp';
 import addPicture from '../../assets/images/alabuga/alabugaAddBot.webp';
 import alabugaStudent from '../../assets/images/alabuga/alabugaStudent.webp';
 import alabugaMenu from '../../assets/images/alabuga/alabugaMenu.png';

@@ -3,13 +3,13 @@ import vtbVac from '../assets/images/vtb/vtbVacancies.webp';
 import tradeVac from '../assets/images/lemana/lemanaVac.webp';
 import { ColoredSpan, NoTransformSpan } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
-import stroy from '../assets/images/default/people/stroy.png';
+import stroy from '../assets/images/default/people/stroy.webp';
 import stroyT from '../assets/images/alabuga/alabugaTop.webp'
 import stroyB from '../assets/images/alabuga/alabugaBot.webp';
-import economy from '../assets/images/default/people/economy.png';
+import economy from '../assets/images/default/people/economy.webp';
 import economyT from '../assets/images/vtb/economyTop.webp'
 import economyB from '../assets/images/vtb/economyBot.webp';
-import pravo from '../assets/images/default/people/pravo.png';
+import pravo from '../assets/images/default/people/pravo.webp';
 import pravoT from '../assets/images/vtb/pravoTop.webp'
 import pravoB from '../assets/images/vtb/pravoBot.webp';
 
@@ -17,7 +17,7 @@ import trade from '../assets/images/lemana/lemanaShown.webp';
 import tradeT from '../assets/images/lemana/lemanaTop.webp';
 import tradeB from '../assets/images/lemana/lemanaBot.webp';
 
-import radioelectronic from '../assets/images/default/people/radioelectronicShown.png';
+import radioelectronic from '../assets/images/default/people/radioelectronicShown.webp';
 import radioelectronicT from '../assets/images/beeline/beelineTop.webp';
 import radioelectronicB from '../assets/images/beeline/beelineBot.webp';
 import beelineVac from '../assets/images/beeline/beelineVac.webp';

@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DefaultPage } from "../components/DefaultPage"
 import { media } from "../styles/media";
 import { ImagePerson } from "../components/shared/ImagePerson";
-import pers from '../assets/images/default/people/infosec.png';
+import pers from '../assets/images/default/people/infosec.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;

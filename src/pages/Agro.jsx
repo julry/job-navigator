@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { DefaultPage } from "../components/DefaultPage"
 import { media } from "../styles/media";
 import { ImagePerson } from "../components/shared/ImagePerson";
-import pers from '../assets/images/default/people/agro.png';
+import pers from '../assets/images/default/people/agro.webp';
 import objL from '../assets/images/default/objects/agroObjectL.png';
 import objR from '../assets/images/default/objects/agroObjectR.png';
 
