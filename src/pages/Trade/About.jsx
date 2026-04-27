@@ -1,8 +1,8 @@
 import { InfoLine } from "../../components/shared/InfoLine";
 import { NoTransformSpan, Subtitle, Text, Title, ColoredSpan } from "../../components/shared/Texts";
 import { AbsoluteImage } from '../../components/shared/AbsoluteImage';
-import house from '../../assets/images/lemana/lemanaBuilding.png';
-import box from '../../assets/images/lemana/lemanaBox.png';
+import house from '../../assets/images/lemana/lemanaBuilding.webp';
+import box from '../../assets/images/lemana/lemanaBox.webp';
 import { media } from "../../styles/media";
 import styled from "styled-components";
 import { Button } from "../../components/shared/Button";

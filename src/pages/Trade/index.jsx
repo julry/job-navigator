@@ -5,11 +5,11 @@ import opportunityLinesDesk from '../../assets/images/lines/oppLemana.png'
 import opportunityLines from '../../assets/images/lines/opp3mobileLemana.png'
 import additionalLines from '../../assets/images/lines/additionalLemana.png'
 import { ImagePerson } from "../../components/shared/ImagePerson";
-import pers from '../../assets/images/lemana/lemanaShown.png';
-import addPicture from '../../assets/images/lemana/lemanaAddBot.png';
-import lemanaStudent from '../../assets/images/lemana/lemanaStudent.png';
-import lemanaMenu from '../../assets/images/lemana/lemanaMenu.png';
-import lemanaMenuHead from '../../assets/images/lemana/lemanaMenuHead.png';
+import pers from '../../assets/images/lemana/lemanaShown.webp';
+import addPicture from '../../assets/images/lemana/lemanaAddBot.webp';
+import lemanaStudent from '../../assets/images/lemana/lemanaStudent.webp';
+import lemanaMenu from '../../assets/images/lemana/lemanaMenu.webp';
+import lemanaMenuHead from '../../assets/images/lemana/lemanaMenuHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
