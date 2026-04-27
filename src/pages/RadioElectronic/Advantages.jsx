@@ -2,11 +2,11 @@ import { useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../../styles/media";
 import { AdvantageBlock } from "../../components/shared/AdvantageBlock";
-import adv1 from '../../assets/images/beeline/beelineAdvant1.png';
-import adv2 from '../../assets/images/beeline/beelineAdvant2.png';
-import adv3 from '../../assets/images/beeline/beelineAdvant3.png';
-import adv4 from '../../assets/images/beeline/beelineAdvant4.png';
-import adv5 from '../../assets/images/beeline/beelineAdvant6.png';
+import adv1 from '../../assets/images/beeline/beelineAdvant1.webp';
+import adv2 from '../../assets/images/beeline/beelineAdvant2.webp';
+import adv3 from '../../assets/images/beeline/beelineAdvant3.webp';
+import adv4 from '../../assets/images/beeline/beelineAdvant4.webp';
+import adv5 from '../../assets/images/beeline/beelineAdvant6.webp';
 import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 
 const InfoComponent = styled.div`

@@ -153,7 +153,6 @@ export const StroyPage = () => {
         <BrandPage
             pageId="stroy"
             brandUrl="https://vk.cc/cWlePA"
-            preloadImages={[ alabugaMenu, alabugaMenuHead ]}
             defaultColor={'var(--color-alabuga-blue)'}
             accentColor={'var(--color-alabuga-accent)'}
             botButtonStyles={botButtonStyles}

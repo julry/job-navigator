@@ -18,9 +18,9 @@ import tradeT from '../assets/images/lemana/lemanaTop.webp';
 import tradeB from '../assets/images/lemana/lemanaBot.webp';
 
 import radioelectronic from '../assets/images/default/people/radioelectronicShown.png';
-import radioelectronicT from '../assets/images/beeline/beelineTop.png';
-import radioelectronicB from '../assets/images/beeline/beelineBot.png';
-import beelineVac from '../assets/images/beeline/beelineVac.png';
+import radioelectronicT from '../assets/images/beeline/beelineTop.webp';
+import radioelectronicB from '../assets/images/beeline/beelineBot.webp';
+import beelineVac from '../assets/images/beeline/beelineVac.webp';
 
 export const brandPages = [
     {

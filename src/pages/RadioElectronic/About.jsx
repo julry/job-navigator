@@ -1,9 +1,9 @@
 import { InfoLine } from "../../components/shared/InfoLine";
 import { NoTransformSpan, Subtitle, Text, Title, ColoredSpan } from "../../components/shared/Texts";
 import { AbsoluteImage } from '../../components/shared/AbsoluteImage';
-import phone from '../../assets/images/beeline/beelineAbout1.png';
-import plate from '../../assets/images/beeline/beelineAbout3.png';
-import radio from '../../assets/images/beeline/beelinePhone2.png';
+import phone from '../../assets/images/beeline/beelineAbout1.webp';
+import plate from '../../assets/images/beeline/beelineAbout3.webp';
+import radio from '../../assets/images/beeline/beelinePhone2.webp';
 import { media } from "../../styles/media";
 import styled from "styled-components";
 import { Button } from "../../components/shared/Button";

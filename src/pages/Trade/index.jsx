@@ -128,7 +128,6 @@ export const TradePage = () => {
             defaultColor={'var(--color-lemana-dark)'}
             accentColor={'var(--color-lemana-accent)'}
             botButtonStyles={botButtonStyles}
-            preloadImages={[ lemanaMenu, lemanaMenuHead ]}
             addPicture={addPicture}
             headerProps={headerProps}
             opportunityPerson={lemanaStudent}

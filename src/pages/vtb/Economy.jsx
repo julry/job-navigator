@@ -162,7 +162,6 @@ export const EconomyPage = () => {
             accentColor={'var(--color-vtb-accent)'}
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
-            preloadImages={[ vtbMenu, vtbMenuHead ]}
             opportunityPerson={vtbStudent}
             menuPerson={vtbMenu}
             menuPersonHead={vtbMenuHead}

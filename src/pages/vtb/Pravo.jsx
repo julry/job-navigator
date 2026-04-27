@@ -164,7 +164,6 @@ export const PravoPage = () => {
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
             headerProps={headerProps}
-            preloadImages={[ vtbMenu, vtbMenuHead ]}
             opportunityPerson={vtbStudent}
             menuPerson={vtbMenu}
             menuPersonHead={vtbMenuHead}

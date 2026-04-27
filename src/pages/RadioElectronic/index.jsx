@@ -3,10 +3,10 @@ import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
 import pers from '../../assets/images/default/people/radioelectronicShown.png';
-import addPicture from '../../assets/images/beeline/beelineAddBot.png';
-import beelineStudent from '../../assets/images/beeline/beelineStudent.png';
+import addPicture from '../../assets/images/beeline/beelineAddBot.webp';
+import beelineStudent from '../../assets/images/beeline/beelineStudent.webp';
 import beelineMenu from '../../assets/images/beeline/beelineMenu.png';
-import beelineMenuHead from '../../assets/images/beeline/beelineHead.png';
+import beelineMenuHead from '../../assets/images/beeline/beelineHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";
@@ -157,7 +157,6 @@ export const RadioElectronicPage = () => {
             brandUrl="https://vk.cc/cWleKO"
             defaultColor={'var(--color-beeline-dark)'}
             accentColor={'var(--color-beeline-accent)'}
-            preloadImages={[ beelineMenu, beelineMenuHead ]}
             botButtonStyles={botButtonStyles}
             addPicture={addPicture}
             opportunityPerson={beelineStudent}
