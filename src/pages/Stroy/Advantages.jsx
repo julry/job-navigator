@@ -1,11 +1,11 @@
 import { useRef, useState } from "react"
 import { NoTransformSpan, SubtitleSm } from "../../components/shared/Texts";
 import { AdvantageBlock } from "../../components/shared/AdvantageBlock";
-import adv1 from '../../assets/images/alabuga/alabugaAdvant1.png';
+import adv1 from '../../assets/images/alabuga/alabugaAdvant1.webp';
 import adv2 from '../../assets/images/alabuga/alabugaAdvant2.png';
 import adv3 from '../../assets/images/alabuga/alabugaAdvant3.png';
-import adv4 from '../../assets/images/alabuga/alabugaAdvant4.png';
-import adv5 from '../../assets/images/alabuga/alabugaAdvant5.png';
+import adv4 from '../../assets/images/alabuga/alabugaAdvant4.webp';
+import adv5 from '../../assets/images/alabuga/alabugaAdvant5.webp';
 import { AbsoluteImage } from "../../components/shared/AbsoluteImage";
 import styled from "styled-components";
 import { media } from "../../styles/media";

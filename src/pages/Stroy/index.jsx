@@ -3,10 +3,10 @@ import { BrandPage } from "../../components/BrandPage"
 import { media } from "../../styles/media";
 import { ImagePerson } from "../../components/shared/ImagePerson";
 import pers from '../../assets/images/default/people/stroy.png';
-import addPicture from '../../assets/images/alabuga/alabugaAddBot.png';
-import alabugaStudent from '../../assets/images/alabuga/alabugaStudent.png';
+import addPicture from '../../assets/images/alabuga/alabugaAddBot.webp';
+import alabugaStudent from '../../assets/images/alabuga/alabugaStudent.webp';
 import alabugaMenu from '../../assets/images/alabuga/alabugaMenu.png';
-import alabugaMenuHead from '../../assets/images/alabuga/alabugaMenuHead.png';
+import alabugaMenuHead from '../../assets/images/alabuga/alabugaMenuHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";
 import { Advantages } from "./Advantages";

@@ -1,7 +1,7 @@
 import { InfoLine } from "../../components/shared/InfoLine";
 import { NoTransformSpan, Subtitle, Text, Title, TextDesk, ColoredSpan } from "../../components/shared/Texts";
 import { AbsoluteImage } from '../../components/shared/AbsoluteImage';
-import house from '../../assets/images/alabuga/alabugaH.png';
+import house from '../../assets/images/alabuga/alabugaH.webp';
 import kran from '../../assets/images/alabuga/alabugaK.png';
 import { media } from "../../styles/media";
 import styled from "styled-components";

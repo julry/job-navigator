@@ -1,11 +1,11 @@
-import alabugaVac from '../assets/images/alabuga/alabugaVacancies.png';
+import alabugaVac from '../assets/images/alabuga/alabugaVacancies.webp';
 import vtbVac from '../assets/images/vtb/vtbVacancies.webp';
 import tradeVac from '../assets/images/lemana/lemanaVac.webp';
 import { ColoredSpan, NoTransformSpan } from '../components/shared/Texts';
 import { opportunitiesConfig } from './opportunitiesConfig';
 import stroy from '../assets/images/default/people/stroy.png';
-import stroyT from '../assets/images/alabuga/alabugaTop.png'
-import stroyB from '../assets/images/alabuga/alabugaBot.png';
+import stroyT from '../assets/images/alabuga/alabugaTop.webp'
+import stroyB from '../assets/images/alabuga/alabugaBot.webp';
 import economy from '../assets/images/default/people/economy.png';
 import economyT from '../assets/images/vtb/economyTop.webp'
 import economyB from '../assets/images/vtb/economyBot.webp';
