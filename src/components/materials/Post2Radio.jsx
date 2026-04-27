@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {Card, Image, FullTextWrapper, Title, Text, SmallText, UlStyled, OlStyled} from './Elements';
+import {Card, Image, FullTextWrapper, Title, Text, SmallText, UlStyled} from './Elements';
 import { media } from "../../styles/media";
 import { ColoredSpan, NoTransformSpan } from "../shared/Texts";
 

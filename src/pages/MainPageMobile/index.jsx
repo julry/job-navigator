@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import agro from '../../assets/images/default/people/agro.webp';
 import biotech from '../../assets/images/default/people/biotech.webp';
 import energetics from '../../assets/images/default/people/energetics.webp';
+import education from '../../assets/images/default/people/education.webp';
 import geology from '../../assets/images/default/people/geology.webp';
 import himtech from '../../assets/images/default/people/himtech.webp';
 import machine from '../../assets/images/default/people/machine.webp';
