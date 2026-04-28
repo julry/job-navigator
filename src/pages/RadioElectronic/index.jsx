@@ -5,7 +5,7 @@ import { ImagePerson } from "../../components/shared/ImagePerson";
 import pers from '../../assets/images/default/people/radioelectronicShown.webp';
 import addPicture from '../../assets/images/beeline/beelineAddBot.webp';
 import beelineStudent from '../../assets/images/beeline/beelineStudent.webp';
-import beelineMenu from '../../assets/images/beeline/beelineMenu.png';
+import beelineMenu from '../../assets/images/beeline/beelineMenu.webp';
 import beelineMenuHead from '../../assets/images/beeline/beelineHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";

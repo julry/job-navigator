@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import cloudLg from '../../assets/images/mountins/cloudLg.png';
+import cloudLg from '../../assets/images/mountins/cloudLg.webp';
 
 const CloudsField = styled.div`
     overflow: visible;
