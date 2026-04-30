@@ -5,7 +5,7 @@ import { ImagePerson } from "../../components/shared/ImagePerson";
 import pers from '../../assets/images/vtb/pravoLand.webp';
 import addPicture from '../../assets/images/vtb/vtbAddBot.webp';
 import vtbStudent from '../../assets/images/vtb/vtbStudent.webp';
-import vtbMenu from '../../assets/images/vtb/vtbMenu.png';
+import vtbMenu from '../../assets/images/vtb/vtbMenu.webp';
 import vtbMenuHead from '../../assets/images/vtb/vtbMenuHead.webp';
 import { About } from "./About";
 import { LogoComponent } from "./Logo";

@@ -3,7 +3,7 @@ import { Fragment, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { media } from "../styles/media";
 import { Title, Text, ColoredSpan } from "./shared/Texts";
-import defaultMenuPerson from '../assets/images/default/modalPersonDefault.png';
+import defaultMenuPerson from '../assets/images/default/modalPersonDefault.webp';
 import defaultMenuHead from '../assets/images/default/menuDefaultHead.webp';
 import { Button } from './shared/Button';
 import { ModalLines } from "./shared/svg/ModalLines";

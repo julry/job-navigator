@@ -57,6 +57,7 @@ const ImageElement = styled(motion.img)`
     width: ${({ $width }) => $width}px;
     object-fit: contain;
     z-index: 2;
+    transform: translateZ(0);
 `;
 
 const AbsoluteBlock = styled.div`
