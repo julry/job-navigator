@@ -10,6 +10,7 @@ import { ModalLines } from "./shared/svg/ModalLines";
 import { ModalLinesDesk } from "./shared/svg/ModalLinesDesk";
 import { useHeaderScroll } from "../hooks/useHeaderScroll";
 import { Header } from "./shared/Header";
+import { NoiseSvg } from "./NoiseSvg";
 
 const Wrapper = styled(motion.div)`
     position: fixed;
@@ -125,24 +126,6 @@ const CardContent = styled.div`
     }
 `
 
-const NoiseSvg = styled.div`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    background-color: ${({ $backgroundColor }) => $backgroundColor ?? 'var(--color-gray)'};
-    filter: url(#noiseFilter);   
-    border-radius: 30px;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    contain: content;
-    isolation: isolate;
-`;
-
 const CardTitle = styled(Title)`
     font-size: 24px;
     color: ${({ $color }) => $color ?? 'var(--color-white-text)'};
@@ -161,13 +144,6 @@ const CardTitle = styled(Title)`
 const CardsInfoTitle = styled(CardTitle)`
     color: ${({ $color }) => $color ?? 'var(--color-dark-text)'};
     margin-top: ${({$isLast}) => $isLast ? 40 : 0}px;
-`;
-
-const FilterSvg = styled.svg`
-    position: absolute;
-    top: -2vh;
-    left: -2vh;
-    visibility: hidden;
 `;
 
 const Picture = styled.img`
@@ -340,9 +316,6 @@ const ButtonWrapper = styled.div`
     }
 `;
 
-const ButtonNoiseSvg = styled(NoiseSvg)`
-    background-color: ${({ $backgroundColor }) => $backgroundColor ?? 'var(--color-orange)'};
-`;
 
 const ButtonStyled = styled(Button)`
     font-size: 12px;
@@ -548,7 +521,9 @@ const JobModal = ({
         }
         const lastCard = lastCardRef?.current?.getBoundingClientRect();
         const bottom = lastCard?.top + lastCard?.height;
-        setShowUpBtn(window.innerWidth < 1200 || bottom > window.innerHeight);
+        
+        const hasShowDesk = jobs.length !== 1 && bottom > window.innerHeight;
+        setShowUpBtn(window.innerWidth < 1200 || hasShowDesk);
     }, [chosen]);
 
     const handleChoose = (id) => {
@@ -605,7 +580,7 @@ const JobModal = ({
                         {opportunities.map(({ text, id, blockTextSize }) => (
                             <ButtonWrapper key={id}>
                                 {id === chosen && (
-                                    <ButtonNoiseSvg $backgroundColor={activeTabStyles?.backgroundColor} />
+                                    <NoiseSvg $borderRadius={30} $backgroundColor={activeTabStyles?.backgroundColor ?? 'var(--color-orange)'} />
                                 )}
                                 <ButtonStyled
                                     onClick={() => handleChoose(id)}
@@ -710,7 +685,7 @@ const JobModal = ({
                                     </CardInnerWrapper>
 
                                 </CardContent>
-                                <NoiseSvg $backgroundColor={backgroundColor} />
+                                <NoiseSvg $borderRadius={30} $backgroundColor={backgroundColor ?? 'var(--color-gray)'} />
                             </Card>
                             {index === 0 && hasTitles && (
                                 <CardsInfoTitle $color={titleColor} $isLast >что будет дальше?</CardsInfoTitle>
@@ -754,7 +729,7 @@ const JobModal = ({
                         {opportunities.map(({ text, id, blockTextSize }) => (
                             <ButtonWrapper key={id}>
                                 {id === chosen && (
-                                    <ButtonNoiseSvg $backgroundColor={activeTabStyles.backgroundColor} />
+                                    <NoiseSvg $borderRadius={30} $backgroundColor={activeTabStyles.backgroundColor} />
                                 )}
                                 <ButtonStyled
                                     onClick={() => handleChoose(id)}
@@ -777,27 +752,6 @@ const JobModal = ({
                         <rect x="1" y="41" width="40" height="40" rx="20" transform="rotate(-90 1 41)" stroke={upBtnColor ?? textColor ?? "var(--color-gray)"} strokeWidth="2" />
                     </svg>
                 </UpButton>)}
-                <FilterSvg width="100%" height="100%">
-                    <rect width="100%" height="100%" fill="none" filter="url(#noiseFilter)" clipPath="url(#clip)" />
-                    <defs>
-                        <clipPath id="clip">
-                            <rect width="100%" height="100%" />
-                        </clipPath>
-                        <filter id="noiseFilter"
-                            x="0" y="0"
-                            width="110%" height="110%"
-                            filterUnits="objectBoundingBox">
-                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="1" result="effect1_foregroundBlur" in="SourceGraphic" />
-                            <feTurbulence type="fractalNoise" baseFrequency="1.6666666269302368 1.6666666269302368" numOctaves="3" seed="4986" />
-                            <feDisplacementMap in="effect1_foregroundBlur" scale="4" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="105%" height="105%" />
-                            <feMerge>
-                                <feMergeNode in="displacedImage" />
-                            </feMerge>
-                        </filter>
-                    </defs>
-                </FilterSvg>
             </Content>
 
         </Wrapper>

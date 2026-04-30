@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import techpromMountinSm from '../../assets/images/mountins/techPromMountinSm.png';
-import pravoMountinSm from '../../assets/images/mountins/pravoMountinSm.png';
-import himtechMountinSm from '../../assets/images/mountins/himTechMountinSm.png';
-import educationMountinSm from '../../assets/images/mountins/educationMountinSm.png';
-import agroMountinSm from '../../assets/images/mountins/agroMountinSm.png';
-import mountinSm from '../../assets/images/mountins/mountinSm.png';
+import pravoMountinSm from '../../assets/images/mountins/pravoMountinSm.webp';
+import himtechMountinSm from '../../assets/images/mountins/himTechMountinSm.webp';
+import educationMountinSm from '../../assets/images/mountins/educationMountinSm.webp';
+import agroMountinSm from '../../assets/images/mountins/agroMountinSm.webp';
+import mountinSm from '../../assets/images/mountins/mountinSm.webp';
 
 const AnimatedItem = styled(motion.div)`
     position: absolute;
