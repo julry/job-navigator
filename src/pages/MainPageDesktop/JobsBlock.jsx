@@ -49,16 +49,17 @@ const Person = styled(ImageElement)`
 `;
 
 
-const HimTechCircle = styled.div`
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    top: 4px;
-    right: 95px;
-    z-index: 4;
-    border-radius: 50%;
-    background-color: var(--color-orange);
-`;
+//TODO: remove if dont need this circle
+// const HimTechCircle = styled.div`
+//     position: absolute;
+//     width: 10px;
+//     height: 10px;
+//     top: 4px;
+//     right: 85px;
+//     z-index: 4;
+//     border-radius: 50%;
+//     background-color: var(--color-orange);
+// `;
 
 export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksStatic}) => {
     const [chosen, setChosen] = useState();
@@ -125,7 +126,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksS
                     $top={job.mountain.top}
                     $left={job.mountain.left}
                 />
-                {job.hasCircle && <HimTechCircle />}
+                {/* {job.hasCircle && <HimTechCircle />} */}
                 <DetailsModal
                     isActive={chosen === job.id}
                     jobId={job.id}

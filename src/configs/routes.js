@@ -4,6 +4,17 @@ import { AnimatedLayout } from "../components/AnimatedLayout";
 
 export const routes = [
     {
+        path: '/landing',
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Landing');
+                return { Component: component.Landing };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
+    },
+    {
         element: <AnimatedLayout />,
         children: 
         [
@@ -246,17 +257,6 @@ export const routes = [
                     try {
                         const component = await import('../pages/Stroy');
                         return { Component: component.StroyPage };
-                    } catch (error) {
-                        console.error('Ошибка при загрузке компонента:', error);
-                    }
-                }
-            },
-            {
-                path: '/landing',
-                lazy: async () => {
-                    try {
-                        const component = await import('../pages/Landing');
-                        return { Component: component.Landing };
                     } catch (error) {
                         console.error('Ошибка при загрузке компонента:', error);
                     }

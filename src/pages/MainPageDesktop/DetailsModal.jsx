@@ -4,6 +4,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { popups } from "../../configs/popups";
 import { SmallText } from "../../components/shared/Texts";
 import { NoiseSvg } from '../../components/NoiseSvg';
+import safetech from '../../assets/images/default/people/safetech.webp';
+import energetics from '../../assets/images/default/people/energetics.webp';
+import biotech from '../../assets/images/default/people/biotech.webp';
+import materials from '../../assets/images/default/people/materials.webp';
+import himtech from '../../assets/images/default/people/himtech.webp';
+import techprom from '../../assets/images/default/people/techpromMain.webp';
+import techcontrol from '../../assets/images/default/people/techcontrol.webp';
 
 const Wrapper = styled(motion.div)`
     position: absolute;
@@ -43,9 +50,12 @@ const UlStyled = styled.ul`
     & li::marker {
         font-size: 8px;
     }
+
+    width: 100%;
+    max-width: ${({$textMaxWidth = 240}) => $textMaxWidth}px;
 `
 
-export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, height, right, $titleWidth, paddingTop}) => {
+export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, $textWidth, right, $titleWidth}) => {
     const info = popups.find(({id}) => id === jobId) ?? {};
 
     return (
@@ -60,12 +70,11 @@ export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, he
                 >
                     <DetailedWrapper 
                         $width={width} 
-                        $paddingTop={paddingTop}
                         $isMirror={isMirror}
                         onClick={onClick}
                     >
                         <DetailedTitle $titleWidth={$titleWidth}>{info?.title}</DetailedTitle>
-                        <UlStyled>
+                        <UlStyled $textMaxWidth={$textWidth}>
                             {info.jobs?.map((job) => (
                                 <li key={job}>
                                     <SmallText>{job}</SmallText>
