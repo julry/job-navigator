@@ -26,26 +26,24 @@ const AnimatedItem = styled(motion.div)`
 `;
 
 
-export const Clouds = () => (
+export const Clouds = ({y}) => (
     <CloudsField>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={417} $left={1006} $width={133} $height={56}
             initial={{ x: 0 }}
             animate={{
                 x: -50,
             }}
-
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 2,
+                duration: 2.5,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={578} $left={330} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
@@ -54,16 +52,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 2,
+                duration: 2.5,
                 delay: 0.015,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={1241} $left={1130} $width={283} $height={119}
             initial={{ x: 0 }}
             animate={{
@@ -72,16 +69,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 2,
+                duration: 2.5,
                 delay: 0.02,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={1155} $left={0} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
@@ -90,16 +86,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 2,
+                duration: 2.5,
                 delay: 0.05,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={1181} $left={658} $width={173} $height={72}
             initial={{ x: 0 }}
             animate={{
@@ -108,16 +103,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 4,
+                duration: 6,
                 delay: 0.02,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={1601} $left={1250} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
@@ -126,16 +120,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 4,
+                duration: 6,
                 delay: 0.02,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={2200} $left={632} $width={350} $height={147}
             initial={{ x: 0 }}
             animate={{
@@ -144,16 +137,15 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
-                duration: 6,
+                duration: 9,
                 delay: 0.02,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />
         </AnimatedItem>
-        <AnimatedItem
+        <AnimatedItem style={{y}}
             $top={1659} $left={97} $width={128} $height={54}
             initial={{ x: 0 }}
             animate={{
@@ -162,10 +154,9 @@ export const Clouds = () => (
 
             transition={{
                 repeat: Infinity,
-                repeatDelay: 2,
                 duration: 8,
                 ease: 'linear',
-                repeatType: 'mirror'
+                repeatType: 'reverse'
             }}
         >
             <img src={cloudLg} alt="" />

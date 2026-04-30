@@ -119,7 +119,7 @@ const CompasHeader = styled(Title)`
     `}
 `;
 
-const TipBlock = styled.div`
+const TipBlock = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -196,7 +196,7 @@ const ContentWrapper = styled.div`
 
 const COMPAS_SIZE_KOEF = 229 / 357;
 
-const START_ANIMATION = 246;
+const START_ANIMATION = 70;
 
 export const MainPageDesktop = () => {
     const titleRef = useRef();
@@ -208,7 +208,7 @@ export const MainPageDesktop = () => {
     const [arrowDeg, setArrowDeg] = useState();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        setIsFixed(latest > 540);
+        setIsFixed(latest > 140);
     });
 
     const scale = useTransform(
@@ -229,17 +229,29 @@ export const MainPageDesktop = () => {
         [0, -(357 / 4 * COMPAS_SIZE_KOEF)]
     );
 
+    const yDescription = useTransform(
+        scrollY,
+        [0, START_ANIMATION],
+        [0, -500]
+    );
+
+    const opacityDescription = useTransform(
+        scrollY,
+        [0, 10],
+        [1, 0]
+    )
+
     const yBlocks = useTransform(
         scrollY,
         [0, START_ANIMATION],
-        [0, START_ANIMATION]
+        [0, -100]
     );
 
-    const yBlocksMiddle = useTransform(
+    const yBlocksStatic = useTransform(
         scrollY,
         [0, START_ANIMATION],
-        [0, START_ANIMATION / 2]
-    );
+        [0, -150]
+    )
 
     const handleMouseEnter = (e) => {
         const {x = 0, y = 0, width: compassWidth = 0, height: compassHeight = 0} = compasRef?.current?.getBoundingClientRect() ?? {};
@@ -288,14 +300,14 @@ export const MainPageDesktop = () => {
                     <CompasElement key="background" src={compasBg} alt="" />
                     <CompasArrow key="arrow" src={compasArrow} alt="" animate={{rotate: arrowDeg}}/>
                 </CompasWrapper>
-                <CompasBlock>
+                <CompasBlock style={{y: yDescription, opacity: opacityDescription}}>
                     <CompasHeader>Это <ColoredSpan>навигатор профессий — интерактивный помощник</ColoredSpan> для студентов колледжей и техникумов</CompasHeader>
                     <SmallText>
                         Мы создали его, чтобы помочь тебе понять свою специальность, узнать, как вырасти в профессии и найти первую работу {'\n\n'}
                         погрузись в мир реальных вакансий, лайфхаков и советов от ведущих работодателей!
                     </SmallText>
                 </CompasBlock>
-                <TipBlock>
+                <TipBlock style={{y: yDescription, opacity: opacityDescription}}>
                     <SmallText>
                         листай ниже, чтобы посмотреть все профессии
                     </SmallText>
@@ -304,14 +316,14 @@ export const MainPageDesktop = () => {
                     </motion.svg>
                 </TipBlock>
                 <ContentWrapper>
-                <Clouds />
+                <Clouds y={yBlocksStatic}/>
                 <TitleStyled ref={titleRef} 
                     animate={{opacity: +(!isFixed)}}
                 >
                     <ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий
                 </TitleStyled>
-                <Stones yBlocks={yBlocks} yBlocksMiddle={yBlocksMiddle}/>
-                <JobsBlock handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} yBlocks={yBlocks} />
+                <Stones yBlocks={yBlocks} yBlocksMiddle={yBlocksStatic}/>
+                <JobsBlock handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} yBlocks={yBlocks} yBlocksStatic={yBlocksStatic} />
                 <FooterText>
                     © 2005-2026 FutureToday.{'\n'}Все права защищены.
                 </FooterText>
