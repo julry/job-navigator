@@ -247,6 +247,17 @@ export const routes = [
         }
     },
     {
+        path: '/landing',
+        lazy: async () => {
+            try {
+                const component = await import('../pages/Landing');
+                return { Component: component.Landing };
+            } catch (error) {
+                console.error('Ошибка при загрузке компонента:', error);
+            }
+        }
+    },
+    {
         path: '*',
         element: <Navigate to={'/'} replace />,
     },

@@ -5,7 +5,6 @@ import bg from './assets/images/bg.png';
 import { useRef } from 'react';
 import { AppContext } from './context/AppContext';
 
-
 const Wrapper = styled.div`
    width: 100%;
    height: 100%;

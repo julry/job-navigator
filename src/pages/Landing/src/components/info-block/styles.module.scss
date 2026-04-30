@@ -1,0 +1,50 @@
+@use "../../styles/mixins.scss" as *;
+
+.infoBlock {
+    margin-top: 65px;
+
+    &_content {
+        min-height: 340px;
+
+        @include desktop {
+            padding-top: 70px;
+            min-height: 640px;
+        }
+    }
+
+    &_title {
+        white-space: pre-line;
+        font-size: 30px;
+
+        @include desktop {
+            font-size: 48px;
+        }
+
+        @media screen and (max-width: 360px) {
+            font-size: 28px;
+        }
+    }
+
+    &_button {
+        max-width: 721px;
+        width: 100%;
+    }
+
+    &_buttonWrapper {
+        max-width: 721px;
+        width: 100%;
+
+        @include desktop {
+            margin-top: 46px;
+        }
+    }
+
+    @include tablet {
+        margin-top: 80px;
+    }
+
+    @include desktop {
+        scroll-margin-block: 110px;
+        margin-top: 100px;
+    }
+}
