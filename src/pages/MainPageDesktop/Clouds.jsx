@@ -29,14 +29,14 @@ const AnimatedItem = styled(motion.div)`
 export const Clouds = ({y}) => (
     <CloudsField>
         <AnimatedItem style={{y}}
-            $top={417} $left={1006} $width={133} $height={56}
+            $top={687} $left={1106} $width={133} $height={56}
             initial={{ x: 0 }}
             animate={{
-                x: -50,
+                x: [-50, 0, 50],
             }}
             transition={{
                 repeat: Infinity,
-                duration: 2.5,
+                duration: 4.5,
                 ease: 'linear',
                 repeatType: 'reverse'
             }}
@@ -47,12 +47,12 @@ export const Clouds = ({y}) => (
             $top={578} $left={330} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
-                x: 50,
+                x: [50, 0, -50],
             }}
 
             transition={{
                 repeat: Infinity,
-                duration: 2.5,
+                duration: 4.5,
                 delay: 0.015,
                 ease: 'linear',
                 repeatType: 'reverse'
@@ -61,15 +61,15 @@ export const Clouds = ({y}) => (
             <img src={cloudLg} alt="" />
         </AnimatedItem>
         <AnimatedItem style={{y}}
-            $top={1241} $left={1130} $width={283} $height={119}
+            $top={1181} $left={1230} $width={283} $height={119}
             initial={{ x: 0 }}
             animate={{
-                x: -50,
+                x: [-50, 0, 50],
             }}
 
             transition={{
                 repeat: Infinity,
-                duration: 2.5,
+                duration: 4.5,
                 delay: 0.02,
                 ease: 'linear',
                 repeatType: 'reverse'
@@ -78,15 +78,15 @@ export const Clouds = ({y}) => (
             <img src={cloudLg} alt="" />
         </AnimatedItem>
         <AnimatedItem style={{y}}
-            $top={1155} $left={0} $width={188} $height={68}
+            $top={1205} $left={330} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
-                x: 50,
+                x: [50, 0, -50],
             }}
 
             transition={{
                 repeat: Infinity,
-                duration: 2.5,
+                duration: 4.5,
                 delay: 0.05,
                 ease: 'linear',
                 repeatType: 'reverse'
@@ -95,27 +95,10 @@ export const Clouds = ({y}) => (
             <img src={cloudLg} alt="" />
         </AnimatedItem>
         <AnimatedItem style={{y}}
-            $top={1181} $left={658} $width={173} $height={72}
+            $top={1701} $left={1250} $width={188} $height={68}
             initial={{ x: 0 }}
             animate={{
-                x: [50, 0, -50],
-            }}
-
-            transition={{
-                repeat: Infinity,
-                duration: 6,
-                delay: 0.02,
-                ease: 'linear',
-                repeatType: 'reverse'
-            }}
-        >
-            <img src={cloudLg} alt="" />
-        </AnimatedItem>
-        <AnimatedItem style={{y}}
-            $top={1601} $left={1250} $width={188} $height={68}
-            initial={{ x: 0 }}
-            animate={{
-                x: -50,
+                x: [-50, 0, 50],
             }}
 
             transition={{
@@ -146,7 +129,23 @@ export const Clouds = ({y}) => (
             <img src={cloudLg} alt="" />
         </AnimatedItem>
         <AnimatedItem style={{y}}
-            $top={1659} $left={97} $width={128} $height={54}
+            $top={1679} $left={20} $width={128} $height={54}
+            initial={{ x: 0 }}
+            animate={{
+                x: [40, 0, 40],
+            }}
+
+            transition={{
+                repeat: Infinity,
+                duration: 8,
+                ease: 'linear',
+                repeatType: 'reverse'
+            }}
+        >
+            <img src={cloudLg} alt="" />
+        </AnimatedItem>
+        <AnimatedItem style={{y}}
+            $top={2179} $left={60} $width={128} $height={54}
             initial={{ x: 0 }}
             animate={{
                 x: [40, 0, 40],

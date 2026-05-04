@@ -1,5 +1,12 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useLocation, useOutlet } from "react-router-dom";
+import styled from "styled-components";
+
+const Wrapper = styled(motion.div)`
+  height: 100%;
+  overflow: hidden auto;
+  inset: 0;
+`;
 
 export function AnimatedLayout() {
   const location = useLocation();
@@ -9,7 +16,7 @@ export function AnimatedLayout() {
 
   return (
     <AnimatePresence mode="sync" initial={false}>
-        <motion.div
+        <Wrapper
             key={location.pathname}
             initial={isHome ? false : { y: "100vh" }}
             animate={{ y: 0 }}
@@ -17,14 +24,11 @@ export function AnimatedLayout() {
             transition={{ duration: 0.35 }}
             style={{
                 position: isHome ? "relative" : "absolute",
-                inset: 0,
                 zIndex: isHome ? 1 : 10,
-                height: "100%",
-                overflowY: "auto",
             }}
             >
             {outlet}
-            </motion.div>
+            </Wrapper>
     </AnimatePresence>
   );
 }

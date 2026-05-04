@@ -6,7 +6,7 @@ import pers from '../assets/images/default/people/techcontrol.webp';
 
 const PersonWrapper = styled.div`
     position: absolute;
-    top: 476px;
+    top: 478px;
     right: -2px;
     width: 156px;
     height: 237px;

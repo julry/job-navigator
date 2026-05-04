@@ -44,7 +44,7 @@ const MotionBlock = styled(motion.div)`
 
 const Person = styled(ImageElement)`
     z-index: 5;
-    transform: ${({ $isMirror }) => $isMirror ? 'scale(-1,1)' : 'none'} translateZ(0);
+    transform: scale(${({$scale}) => $scale[0] + ',' + $scale[1]}) translateZ(0);
     cursor: pointer;
 `;
 
@@ -61,7 +61,7 @@ const Person = styled(ImageElement)`
 //     background-color: var(--color-orange);
 // `;
 
-export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksStatic}) => {
+export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
     const [chosen, setChosen] = useState();
     const navigate = useNavigate();
 
@@ -84,6 +84,12 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksS
         }
     }
 
+    const getPersonScale = (id, isMirror) => {
+        let koef = chosen === id ? 1.2 : 1;
+
+        return [koef * (isMirror ? -1 : 1), koef];
+    }
+
     return (
         jobs.map((job) => (
             <MotionBlock
@@ -93,7 +99,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksS
                 $width={job.position.width}
                 $height={job.position.height}
                 $spaceTopSmall={job.spaceTopSmall}
-                style={{ y: job.type === 'motion' ? yBlocks : yBlocksStatic, zIndex: chosen === job.id ? 10 : 2 }}
+                style={{ y: job.type === 'motion' ? yBlocks : yBlocks, zIndex: chosen === job.id ? 10 : 2 }}
                 onMouseEnter={(e) => handleHover(e, job.position, job.id)}
                 onMouseLeave={handleStopHover}
             >
@@ -117,6 +123,7 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks, yBlocksS
                     $height={job.person.height}
                     $top={job.person.top}
                     $left={job.person.left}
+                    $scale={getPersonScale(job.id, job.person.isMirror)}
                 />
                 <ImageElement
                     src={job.mountain.src}

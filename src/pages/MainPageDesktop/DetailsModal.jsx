@@ -4,13 +4,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { popups } from "../../configs/popups";
 import { SmallText } from "../../components/shared/Texts";
 import { NoiseSvg } from '../../components/NoiseSvg';
-import safetech from '../../assets/images/default/people/safetech.webp';
-import energetics from '../../assets/images/default/people/energetics.webp';
-import biotech from '../../assets/images/default/people/biotech.webp';
-import materials from '../../assets/images/default/people/materials.webp';
-import himtech from '../../assets/images/default/people/himtech.webp';
-import techprom from '../../assets/images/default/people/techpromMain.webp';
-import techcontrol from '../../assets/images/default/people/techcontrol.webp';
 
 const Wrapper = styled(motion.div)`
     position: absolute;
@@ -28,6 +21,7 @@ const DetailedWrapper = styled(motion.div)`
     align-items: ${({$isMirror}) => $isMirror ? 'flex-end' : 'flex-start'};
 
     width: ${({$width}) => $width}px;
+    min-height: ${({$height = 177}) => $height}px;
     padding: ${({$paddingTop = 20}) => $paddingTop}px 25px 25px;
 
     border-radius: 30px;
@@ -55,7 +49,7 @@ const UlStyled = styled.ul`
     max-width: ${({$textMaxWidth = 240}) => $textMaxWidth}px;
 `
 
-export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, $textWidth, right, $titleWidth}) => {
+export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, height, $textWidth, right, $titleWidth}) => {
     const info = popups.find(({id}) => id === jobId) ?? {};
 
     return (
@@ -70,6 +64,7 @@ export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, $t
                 >
                     <DetailedWrapper 
                         $width={width} 
+                        $height={height} 
                         $isMirror={isMirror}
                         onClick={onClick}
                     >

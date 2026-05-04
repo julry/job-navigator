@@ -168,14 +168,13 @@ const TextWrapper = styled.div`
     align-items: center;
     --text-spacing: ${({ $spacing }) => -1 * $spacing + 'px'};
     border-radius: 100px;
-    border: 1px solid var(--color-white);
-    background-color: ${({ $isInversed }) => $isInversed ? 'var(--color-white)' : 'var(--color-gray)'};
+    background-color: ${({ $isInversed }) => $isInversed ? 'var(--color-white)' : 'var(--color-orange)'};
     font-size: 12px;
     line-height: 90%;
     padding: 0 15px;
     letter-spacing: -0.03em;
     white-space: pre-wrap;
-    color: ${({ $isInversed }) => $isInversed ? 'var(--color-dark-text)' : 'var(--color-white-text)'};
+    color: var(--color-dark-text);
     top: ${({ $top }) => $top}px;
     width: ${({ $width }) => $width}px;
     height: ${({ $height }) => $height ?? 40}px;
@@ -353,7 +352,7 @@ export const MainPageMobile = () => {
                                 <PictureWrapper $width={172} $height={165}>
                                     <TextWrapper $isInversed $isRight={false} $top={25} $width={215} $spacing={150}>юриспруденция</TextWrapper>
                                     <Person src={pravo} alt="" $width={85} $height={150} $top={-10} $left={69} />
-                                    <ImageElement src={pravoMountin} alt="" $width={205} $height={129} $top={34} $left={-20} />
+                                    <ImageElement src={pravoMountin} alt="" $width={219 * 0.8} $height={179 * 0.8} $top={10} $left={-10} />
                                 </PictureWrapper>
                             ),
                             jobId: 'pravo'
@@ -363,7 +362,7 @@ export const MainPageMobile = () => {
                     <PictureWrapper $width={172} $height={165}>
                         <TextWrapper $isRight={false} $top={40} $width={180} $spacing={135}>юриспруденция</TextWrapper>
                         <Person src={pravo} alt="" $width={85} $height={150} $top={0} $left={89} />
-                        <ImageElement src={pravoMountin} alt="" $width={205} $height={129} $top={44} $left={0} />
+                        <ImageElement src={pravoMountin} alt="" $width={219 * 0.8} $height={179 * 0.8} $top={20} $left={0} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock
@@ -371,27 +370,27 @@ export const MainPageMobile = () => {
                         shown: true,
                         data: {
                             component: (
-                                <PictureWrapper $width={243} $height={148}>
-                                    <TextWrapper $isInversed $top={42} $width={175} $spacing={87}>
+                                <PictureWrapper $width={223} $height={148}>
+                                    <TextWrapper $isInversed $top={42} $width={155} $spacing={0}>
                                         Экономика{'\n'}
                                         и финансы
                                     </TextWrapper>
-                                    <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={17} />
-                                    <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={-30} />
+                                    <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={57} />
+                                    <ImageElement src={economyMountin} alt="" $width={202 * 0.85} $height={149 * 0.85} $top={30} $left={-10} />
                                 </PictureWrapper>
                             ),
                             jobId: 'economy',
-                            marginTop: 100,
+                            marginTop: 55,
                         }
                     })}
                 >
-                    <PictureWrapper $width={243} $height={148}>
-                        <TextWrapper $top={42} $width={155} $spacing={77}>
+                    <PictureWrapper $width={223} $height={148}>
+                        <TextWrapper $top={42} $width={155} $spacing={67}>
                             Экономика{'\n'}
                             и финансы
                         </TextWrapper>
-                        <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={47} />
-                        <ImageElement src={economyMountin} alt="" $width={280} $height={147} $top={0} $left={0} />
+                        <Person src={economy} alt="" $width={79} $height={138} $top={0} $left={57} />
+                        <ImageElement src={economyMountin} alt="" $width={202 * 0.85} $height={149 * 0.85} $top={30} $left={40} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock
@@ -426,15 +425,15 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={206} $height={158}>
-                                    <TextWrapper $isInversed $top={38} $width={247} $spacing={125} $style={{fontSize: '11px'}}>
+                                    <TextWrapper $isInversed $top={38} $width={247} $spacing={105} $style={{fontSize: '11px'}}>
                                         Информатика{'\n'}и вычислительная техника
                                     </TextWrapper>
                                     <Person src={it} alt="" $width={79 * 1.35} $height={143 * 1.35} $top={-25} $left={20} />
-                                    <ImageElement src={itMountin} alt="" $width={230} $height={123} $top={33} $left={-40} />
+                                    <ImageElement src={itMountin} alt="" $width={228 * 0.85} $height={196 * 0.85} $top={33} $left={-40} />
                                 </PictureWrapper>
                             ),
                             jobId: 'it',
-                            marginTop: 100
+                            marginTop: 55
                         }
                     })}
                 >
@@ -443,7 +442,7 @@ export const MainPageMobile = () => {
                             Информатика{'\n'}и вычислительная техника
                         </TextWrapper>
                         <Person src={it} alt="" $width={79 * 1.35} $height={143 * 1.35} $top={-22} $left={60} />
-                        <ImageElement src={itMountin} alt="" $width={230} $height={123} $top={36} $left={0} />
+                        <ImageElement src={itMountin} alt="" $width={228 * 0.85} $height={196 * 0.85} $top={26} $left={10} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock
@@ -452,9 +451,9 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={156} $height={153}>
-                                    <TextWrapper $isInversed $top={55} $width={269} $spacing={173}>Управление{'\n'}в технических системах</TextWrapper>
+                                    <TextWrapper $isInversed $top={55} $width={239} $spacing={173}>Управление{'\n'}в технических системах</TextWrapper>
                                     <Person $isMirror src={techcontrol} alt="" $width={87 * 1.4} $height={146 * 1.4} $top={-40} $left={63.5} />
-                                    <ImageElement src={techcontrolMountin} alt="" $width={188} $height={145} $top={9} $left={-42} />
+                                    <ImageElement src={techcontrolMountin} alt="" $width={200 * 0.85} $height={200 * 0.85} $top={10} $left={-10} />
                                 </PictureWrapper>
                             ),
                             jobId: 'techcontrol',
@@ -465,7 +464,7 @@ export const MainPageMobile = () => {
                     <PictureWrapper $width={156} $height={153}>
                         <TextWrapper $isRight $top={61} $width={249} $spacing={183}>Управление{'\n'}в технических системах</TextWrapper>
                         <Person $isMirror src={techcontrol} alt="" $width={87 * 1.4} $height={146 * 1.4} $top={-40} $left={63.5} />
-                        <ImageElement src={techcontrolMountin} alt="" $width={188} $height={145} $top={9} $left={-42} />
+                        <ImageElement src={techcontrolMountin} alt="" $width={200 * 0.85} $height={200* 0.85} $top={10} $left={-10} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -555,11 +554,11 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={186} $height={173}>
-                                <TextWrapper $isInversed $top={43} $width={242} $spacing={139}>
+                                <TextWrapper $isInversed $top={43} $width={202} $spacing={89}>
                                     Сервис и туризм
                                 </TextWrapper>
-                                <Person $isMirror src={service} alt="" $width={77} $height={144} $top={0} $left={58} />
-                                <ImageElement src={serviceMountin} alt="" $width={195} $height={108} $top={65} $left={-20} />
+                                <Person $isMirror src={service} alt="" $width={77} $height={144} $top={0} $left={52} />
+                                <ImageElement src={serviceMountin} alt="" $width={251 * 0.85} $height={162 * 0.85} $top={25} $left={-35} />
                             </PictureWrapper>
                             ),
                             jobId: 'service',
@@ -568,11 +567,11 @@ export const MainPageMobile = () => {
                     })}
                 >
                     <PictureWrapper $width={186} $height={173}>
-                        <TextWrapper $isRight $top={43} $width={192} $spacing={94}>
+                        <TextWrapper $isRight $top={43} $width={192} $spacing={84}>
                             Сервис и туризм
                         </TextWrapper>
                         <Person $isMirror src={service} alt="" $width={77} $height={144} $top={0} $left={63} />
-                        <ImageElement src={serviceMountin} alt="" $width={195} $height={108} $top={65} $left={-15} />
+                        <ImageElement src={serviceMountin} alt="" $width={251 * 0.85} $height={162 * 0.85} $top={30} $left={-27} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -609,11 +608,11 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={195} $height={176}>
-                                    <TextWrapper $isInversed $top={29} $width={274} $spacing={125}>
+                                    <TextWrapper $isInversed $top={29} $width={204} $spacing={55}>
                                         Информационная{'\n'}безопасность
                                     </TextWrapper>
-                                    <Person src={infosec} alt="" $width={75 * 1.3} $height={134 * 1.3} $top={-40} $left={0} />
-                                    <ImageElement src={infosecMountin} alt="" $width={195} $height={126} $top={29} $left={-20} />
+                                    <Person src={infosec} alt="" $width={75 * 1.3} $height={134 * 1.3} $top={-30} $left={0} />
+                                    <ImageElement src={infosecMountin} alt="" $width={218 * 0.85} $height={103 * 0.85} $top={59} $left={-20} />
                                 </PictureWrapper>
                             ),
                             jobId: 'infosec',
@@ -621,11 +620,11 @@ export const MainPageMobile = () => {
                     })}
                 >
                     <PictureWrapper $width={195} $height={176}>
-                        <TextWrapper $isRight $top={49} $width={254} $spacing={105}>
+                        <TextWrapper $isRight $top={49} $width={204} $spacing={65}>
                             Информационная{'\n'}безопасность
                         </TextWrapper>
-                        <Person src={infosec} alt="" $width={75 * 1.3} $height={134 * 1.3} $top={-20} $left={20} />
-                        <ImageElement src={infosecMountin} alt="" $width={195} $height={126} $top={49} $left={0} />
+                        <Person src={infosec} alt="" $width={75 * 1.3} $height={134 * 1.3} $top={0} $left={20} />
+                        <ImageElement src={infosecMountin} alt="" $width={218 * 0.85} $height={103 * 0.85} $top={89} $left={0} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -666,11 +665,11 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={193} $height={165}>
-                                    <TextWrapper $isInversed $top={32} $width={250} $spacing={135}>
+                                    <TextWrapper $isInversed $top={32} $width={240} $spacing={85}>
                                         химические технологии
                                     </TextWrapper>
-                                    <Person src={himtech} alt="" $width={71 * 1.2} $height={153 * 1.2} $top={-65} $left={30} />
-                                    <ImageElement src={himtechMountin} alt="" $width={219} $height={142} $top={4} $left={-39} />
+                                    <Person src={himtech} alt="" $width={71 * 1.2} $height={153 * 1.2} $top={-35} $left={30} />
+                                    <ImageElement src={himtechMountin} alt="" $width={231 * 0.85} $height={231 * 0.85} $top={-10} $left={-39} />
                                 </PictureWrapper>
                             ),
                             jobId: 'himtech',
@@ -682,7 +681,7 @@ export const MainPageMobile = () => {
                             химические технологии
                         </TextWrapper>
                         <Person src={himtech} alt="" $width={71 * 1.2} $height={153 * 1.2} $top={-35} $left={95} />
-                        <ImageElement src={himtechMountin} alt="" $width={219} $height={142} $top={24} $left={-24} />
+                        <ImageElement src={himtechMountin} alt="" $width={231 * 0.85} $height={231 * 0.85} $top={-10} $left={-24} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -692,15 +691,15 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={217} $height={157}>
-                                    <TextWrapper $isInversed $top={34} $width={258} $spacing={110}>
+                                    <TextWrapper $isInversed $top={34} $width={228} $spacing={90}>
                                         Сельское, лесное{'\n'}и рыбное хозяйство
                                     </TextWrapper>
                                     <Person $isMirror src={agro} alt="" $width={81 * 1.4} $height={134 * 1.4} $top={-40} $left={30} />
-                                    <ImageElement src={agroMountin} alt="" $width={252} $height={95} $top={62} $left={-30} />
+                                    <ImageElement src={agroMountin} alt="" $width={221 * 0.85} $height={221 * 0.85} $top={-20} $left={-30} />
                                 </PictureWrapper>
                             ),
                             jobId: 'agro',
-                            marginTop: 115
+                            marginTop: 65
                         }
                     })}
                 >
@@ -708,8 +707,8 @@ export const MainPageMobile = () => {
                         <TextWrapper $top={64} $width={268} $spacing={129}>
                             Сельское, лесное{'\n'}и рыбное хозяйство
                         </TextWrapper>
-                        <Person src={agro} alt="" $width={81 * 1.4} $height={134 * 1.4} $top={-40} $left={60} />
-                        <ImageElement src={agroMountin} alt="" $width={252} $height={95} $top={62} $left={0} />
+                        <Person src={agro} alt="" $width={81 * 1.4} $height={134 * 1.4} $top={-10} $left={60} />
+                        <ImageElement src={agroMountin} alt="" $width={221 * 0.85} $height={221 * 0.85} $top={0} $left={30} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -719,24 +718,24 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={193} $height={147}>
-                                    <TextWrapper $isInversed $top={26} $width={280} $spacing={130}>
+                                    <TextWrapper $isInversed $top={26} $width={240} $spacing={100}>
                                         Техника и технологии{'\n'}наземного транспорта
                                     </TextWrapper>
                                     <Person src={transportMain} alt="" $width={92} $height={177} $top={-20} $left={0} />
-                                    <ImageElement src={transportMountin} alt="" $width={213} $height={108} $top={55} $left={-20} />
+                                    <ImageElement src={transportMountin} alt="" $width={235 * 0.85} $height={196 * 0.85} $top={10} $left={-30} $isMirror/>
                                 </PictureWrapper>
                             ),
                             jobId: 'transport',
-                            marginTop: 95
+                            marginTop: 55
                         }
                     })}
                 >
                     <PictureWrapper $width={193} $height={147}>
-                        <TextWrapper $top={26} $width={240} $spacing={90}>
+                        <TextWrapper $top={46} $width={240} $spacing={90}>
                             Техника и технологии{'\n'}наземного транспорта
                         </TextWrapper>
                         <Person src={transportMain} alt="" $width={92} $height={177} $top={0} $left={0} />
-                        <ImageElement src={transportMountin} alt="" $width={213} $height={108} $top={75} $left={-20} />
+                        <ImageElement src={transportMountin} alt="" $width={235 * 0.85} $height={196 * 0.85} $top={25} $left={-20} $isMirror/>
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock 
@@ -746,15 +745,15 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={196} $height={174}>
-                                    <TextWrapper $isInversed $top={35} $width={271} $spacing={130}>
+                                    <TextWrapper $isInversed $top={35} $width={221} $spacing={80}>
                                         Технологии легкой{'\n'}промышленности
                                     </TextWrapper>
                                     <Person $isMirror src={techprom} alt="" $width={85} $height={147} $top={-10} $left={22} />
-                                    <ImageElement src={techpromMountin} alt="" $width={256} $height={103} $top={54} $left={-30} />
+                                    <ImageElement src={techpromMountin} alt="" $width={207 * 0.85} $height={207 * 0.85} $top={5} $left={-30} />
                                 </PictureWrapper>
                             ),
                             jobId: 'techprom',
-                            marginTop: 100
+                            marginTop: 60
                         }
                     })}
                 >
@@ -763,7 +762,7 @@ export const MainPageMobile = () => {
                             Технологии легкой{'\n'}промышленности
                         </TextWrapper>
                         <Person src={techprom} alt="" $width={85} $height={147} $top={0} $left={52} />
-                        <ImageElement src={techpromMountin} alt="" $width={256} $height={103} $top={64} $left={0} />
+                        <ImageElement src={techpromMountin} alt="" $width={207 * 0.85} $height={207 * 0.85} $top={15} $left={30} />
                     </PictureWrapper>
                 </StaticBlock>
                 <StaticBlock
@@ -798,20 +797,20 @@ export const MainPageMobile = () => {
                         data: {
                             component: (
                                 <PictureWrapper $width={212} $height={150}>
-                                    <TextWrapper $isInversed $top={62} $width={250} $spacing={110}>Образование{'\n'}и педагогические науки</TextWrapper>
+                                    <TextWrapper $isInversed $top={62} $width={230} $spacing={90}>Образование{'\n'}и педагогические науки</TextWrapper>
                                     <Person $isMirror src={education} alt="" $width={114} $height={170} $top={-10} $left={50} />
-                                    <ImageElement src={educationMountin} alt="" $width={230} $height={127} $top={44} $left={-40} />
+                                    <ImageElement src={educationMountin} alt="" $width={187} $height={206} $top={0} $left={-60} />
                                 </PictureWrapper>
                             ),
                             jobId: 'education',
-                            marginTop: 120
+                            marginTop: 80
                         }
                     })}
                 >
                     <PictureWrapper $width={212} $height={150}>
                         <TextWrapper $isRight $top={62} $width={270} $spacing={85}>Образование{'\n'}и педагогические науки</TextWrapper>
                         <Person src={education} alt="" $width={134} $height={200} $top={0} $left={70} />
-                        <ImageElement src={educationMountin} alt="" $width={230} $height={127} $top={84} $left={0} />
+                        <ImageElement src={educationMountin} alt="" $width={187} $height={206} $top={40} $left={40} />
                     </PictureWrapper>
                 </StaticBlock>
             </JobsWrapper>
