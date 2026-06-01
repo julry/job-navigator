@@ -15,8 +15,12 @@ import { Post2Stroy } from "./materials/Post2Stroy";
 const Wrapper = styled.div`
     width: 100%;
     text-align: center;
-    margin-top: 80px;
     scroll-margin-top: 90px;
+    margin-top: ${({$isBrand, $testAdditionMargin}) => $isBrand ? 80 : 345 + $testAdditionMargin}px;
+
+    ${media.desktop`
+        margin-top: ${({$isBrand}) => $isBrand ? 80 : 170}px;
+    `}
 `;
 
 const MaterialsBlock = styled.div`
@@ -42,13 +46,13 @@ const PostWrapper = styled.div`
     `}
 `;
 
-export const Addictions = ({ref, textColor = 'var(--color-dark-text)', onClick, isDefault, pageId, accentColor = 'var(--color-orange)'}) => {
+export const Addictions = ({ref, onClick, isDefault, pageId, accentColor = 'var(--color-orange)', testAdditionMargin = 0, textColor = 'var(--color-dark-text)'}) => {
     const {bgColor, ...blockInfo} = posts[isDefault ? 'def' : pageId] ?? {};
 
     const config = post2Infos.find(({id}) => id === pageId);
 
     return (
-         <Wrapper ref={ref}>
+         <Wrapper ref={ref} $testAdditionMargin={testAdditionMargin} $isBrand={!isDefault}>
             <Title $color={textColor}><ColoredSpan $color={accentColor}>советы</ColoredSpan> про работу</Title>
             <MaterialsBlock>
                 <PostWrapper $bg={bgColor}>

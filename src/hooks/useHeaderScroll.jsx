@@ -7,7 +7,6 @@ export const useHeaderScroll = (wrapperRef) => {
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const maxScroll = window?.innerWidth < 800 ? 550 : 800;
-
         setIsFixed(latest > maxScroll);
     });
 

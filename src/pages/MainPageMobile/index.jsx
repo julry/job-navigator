@@ -44,10 +44,8 @@ import techcontrolMountin from '../../assets/images/mountins/techcontrolMountin.
 import techpromMountin from '../../assets/images/mountins/techpromMountin.webp';
 import transportMountin from '../../assets/images/mountins/transportMountin.webp';
 import tradeMountin from '../../assets/images/mountins/tradeMountin.webp';
-import { Button } from "../../components/shared/Button";
 import { media } from "../../styles/media";
 import { DetailsModal } from "./DetailsModal";
-import { openBot } from "../../utils/openBot";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -93,21 +91,6 @@ const OrangeBlock = styled.div`
     & ${SmallText} {
         color: var(--color-dark-text) !important;
     }
-`;
-
-const BotBlockWrapper = styled.div`
-    position: sticky;
-    top: 100px;
-    width: 100%;
-    height: 40px;
-    margin: 36px 0;
-    z-index: 10;
-`;
-
-const BotBlock = styled(OrangeBlock)`
-    margin-left: -30px;
-    justify-content: flex-end;
-    width: 150px;
 `;
 
 const ImageElement = styled(motion.img)`
@@ -217,22 +200,7 @@ const PictureWrapper = styled.div`
 
 const JobsWrapper = styled.div`
     width: 100%;
-`;
-
-const BotInfo = styled.div`
-    margin: 40px auto 20px;
-    padding: 40px 30px 0;
-
-    & p {
-        font-size: 20px;
-        line-height: 100%;
-        color: var(--color-white-text);
-        margin-bottom: 20px;
-    }
-
-    ${media.tablet`
-       margin-top: 80px;
-    `}
+    margin-top: 36px;
 `;
 
 const FooterText = styled(SmallText)`
@@ -240,11 +208,6 @@ const FooterText = styled(SmallText)`
     text-transform: none;
     color: var(--color-white-text);
     margin-bottom: 34px;
-`;
-
-const ButtonStyled = styled(Button)`
-    background-color: var(--color-orange);
-    color: var(--color-gray);
 `;
 
 const UpButton = styled.button`
@@ -283,11 +246,6 @@ export const MainPageMobile = () => {
                     <SmallText>Выбирай свою специальность</SmallText>
                 </OrangeBlock>
             </CompasBlock>
-            <BotBlockWrapper onClick={() => openBot()}>
-                <BotBlock>
-                    <SmallText>бот — твой{'\n'}личный гид</SmallText>
-                </BotBlock>
-            </BotBlockWrapper>
             <JobsWrapper>
                 <StaticBlock
                     $marginTop={0}
@@ -814,14 +772,6 @@ export const MainPageMobile = () => {
                     </PictureWrapper>
                 </StaticBlock>
             </JobsWrapper>
-            <BotInfo>
-                <p>
-                    Хочешь узнать больше{'\n'}
-                    полезной инфы о навыках{'\n'}
-                    и развитии в профессии?
-                </p>
-                <ButtonStyled onClick={() => openBot()}>переходи в бота!</ButtonStyled>
-            </BotInfo>
             <UpButton onClick={() => wrapperRef?.current?.scrollTo({ top: 0, behavior: "smooth" })}>
                 <svg width="100%" height="100%" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M20 31C20 31.5523 20.4477 32 21 32C21.5523 32 22 31.5523 22 31L21 31L20 31ZM21.7071 9.29289C21.3166 8.90237 20.6834 8.90237 20.2929 9.29289L13.9289 15.6569C13.5384 16.0474 13.5384 16.6805 13.9289 17.0711C14.3195 17.4616 14.9526 17.4616 15.3431 17.0711L21 11.4142L26.6569 17.0711C27.0474 17.4616 27.6805 17.4616 28.0711 17.0711C28.4616 16.6805 28.4616 16.0474 28.0711 15.6569L21.7071 9.29289ZM21 31L22 31L22 10L21 10L20 10L20 31L21 31Z" fill="var(--color-white)" />

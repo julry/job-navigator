@@ -21,7 +21,7 @@ const LinksWrapper = styled.div`
         margin-top: 50px;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: ${({$isShort}) => $isShort ? 'flex-start' : 'space-between'};
     `}
 `;
 
@@ -40,7 +40,7 @@ export const Vacancies = ({ref, textColor, vacancies = [],  accentColor = 'var(-
     return (
         <Wrapper ref={ref}>
             <Title $color={textColor}><ColoredSpan $color={accentColor}>вакансии</ColoredSpan> для начинающих специалистов</Title>
-            <LinksWrapper>
+            <LinksWrapper $isShort={vacancies.length < 4}>
                 {vacancies.map(({name, link}) => (
                     <Link key={link} onClick={() => openLink(link)}>
                         {name}

@@ -3,14 +3,14 @@ import { CompasButton } from "./CompasButton";
 import { useNavigate } from "react-router-dom";
 import { media } from "../../styles/media";
 import { Button } from "./Button";
-import { ColoredSpan, NoTransformSpan, TextDesk } from "./Texts";
+import { ColoredSpan, NoTransformSpan } from "./Texts";
 import { motion } from "framer-motion";
 
 const Wrapper = styled(motion.div)`
     position: absolute;
     top: -88px;
     left: 0;
-    z-index: 501;
+    z-index: 1501;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,8 +30,8 @@ const Wrapper = styled(motion.div)`
     `}
 `;
 
-
 const WrapperSticky = styled(Wrapper)`
+    position: fixed;
     top: 0;
     background-color: ${({$bg = 'var(--color-dark-text)'}) => $bg};
     border-radius: 0 0 35px 35px;
@@ -76,28 +76,6 @@ const HeaderTitle = styled.h3`
     ${media.desktop`
         font-size: 26px;
     `}
-`;
-
-const ButtonStyled = styled(Button)`
-    width: 110px;
-    background-color: ${({$buttonColor = 'var(--color-orange)'}) => $buttonColor};
-    height: 40px;
-    ${({$buttonStyle}) => $buttonStyle};
-
-    ${media.desktop`
-        width: 210px;
-        height: 45px;
-
-        &:hover {
-            background: transparent;
-            border: 1px solid var(--color-orange);
-            ${({$hoverStyles}) => $hoverStyles};
-        }
-    `}
-
-    @media screen and (max-width: 340px){
-        width: 70px;
-    }
 `;
 
 const SecondButtonStyledDesktop = styled(Button)`
@@ -182,14 +160,6 @@ export const Header = ({
                             советы про работу
                         </SecondButtonStyledDesktop>
                     </>
-                )}
-                {!isMenuOpen && (
-                    <ButtonStyled 
-                        $buttonStyle={buttonStyles.buttonStyle} $hoverStyles={hoverStylesHeader?.main} 
-                        onClick={onClickBot}
-                    >
-                        <TextDesk>переходи{' '}</TextDesk> в бот<TextDesk>а!</TextDesk>
-                    </ButtonStyled>
                 )}
                 {!isHiddenLinks && (
                     <MenuButton onClick={onClickMenu}>

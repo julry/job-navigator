@@ -4,7 +4,6 @@ import { ColoredSpan, Text, Title } from "./shared/Texts";
 import styled from "styled-components";
 import { Button } from "./shared/Button";
 import { motion } from "framer-motion";
-import { openBot } from "../utils/openBot";
 
 const Wrapper = styled.div`
     width: 100%;
@@ -180,7 +179,7 @@ const EndButtonWrapper = styled.div`
     `}
 `;
 
-export const TestBlock = ({ isBrand, brandUrl, testBlockMargin, testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
+export const TestBlock = ({ isBrand, moveToAdvices, testBlockMargin, testFullName, scrollToVacancy, testName, person, defaultColor, accentColor = 'var(--color-orange)', questions = [] }) => {
     const [answers, setAnswers] = useState([]);
     const [isEnd, setIsEnd] = useState(false);
     const [isMobile, setIsMobile] = useState(true);
@@ -221,14 +220,14 @@ export const TestBlock = ({ isBrand, brandUrl, testBlockMargin, testFullName, sc
 
     const getEndText = () => {
         if (answers.length < 3) {
-            return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или переходи в наш бот и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
+            return 'пока твоих навыков не хватает для сильного старта. выбери больше пунктов, или читай советы и качай скиллы\n\nа потом возвращайся\nи откликайся на вакансии!'
         }
 
         if (answers.length > 5) {
-            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую\n\nкак успешно пройти собеседование и трудоустроиться — узнай в нашем боте!' 
+            return 'отлично!\nу тебя уже есть полезные навыки и качества, смотри вакансии и выбирай подходящую' 
         }
 
-        return 'ты почти у цели.\nпереходи в наш бот и прокачивай навыки, которые нужны для успешного трудоустройства!'
+        return 'ты почти у цели.\nчитай советы и прокачивай навыки, которые нужны для успешного трудоустройства!'
     }
 
     return (
@@ -297,7 +296,7 @@ export const TestBlock = ({ isBrand, brandUrl, testBlockMargin, testFullName, sc
                 <ResultBlock $testBlockMargin={testBlockMargin} $background={defaultColor} {...endAnimation}>
                     <Text>{endText}</Text>
                     <EndButtonWrapper $accentColor={isBrand ? accentColor : undefined}>
-                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={() => openBot(brandUrl)} $type="secondary">перейти в бот</Button>
+                        <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={moveToAdvices} $type="secondary">советы про работу</Button>
                         <Button $accentColor={accentColor} $defaultColor={defaultColor} $isBrand={isBrand} onClick={scrollToVacancy} $type="secondary">вакансии</Button>
                     </EndButtonWrapper>
                 </ResultBlock>

@@ -58,7 +58,7 @@ function App({ router }) {
 
    return (
          <AppContext.Provider value={{wrapperRef}}>
-            <Wrapper ref={wrapperRef}>
+            <Wrapper>
                <RouterProvider router={router} />
             </Wrapper>
             <NoiseSvg width="0" height="0">

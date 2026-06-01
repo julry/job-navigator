@@ -242,6 +242,9 @@ export const BotBlock = () => {
 
                 return ({x: -250, y: 20, rotate: 25});
             }
+            default: {
+              return ({})
+            }
         }
         
     }

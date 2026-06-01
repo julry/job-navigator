@@ -466,7 +466,7 @@ const AboutBlock = styled.div`
 `;
 
 const JobModal = ({ 
-    isBrand, styles, opportunities, onOpenBot, id, onClose, horizontalComponent, getModalContent,
+    isBrand, styles, opportunities, onopenVk, id, onClose, horizontalComponent, getModalContent,
     picture, brandProps, menuPerson = defaultMenuPerson, menuPersonHead = defaultMenuHead 
 }) => {
     const [chosen, setChosen] = useState(id);
@@ -524,7 +524,7 @@ const JobModal = ({
         
         const hasShowDesk = jobs.length !== 1 && bottom > window.innerHeight;
         setShowUpBtn(window.innerWidth < 1200 || hasShowDesk);
-    }, [chosen]);
+    }, [chosen, jobs.length]);
 
     const handleChoose = (id) => {
         setChosen(id);
@@ -555,7 +555,7 @@ const JobModal = ({
                             hasBg 
                             isHiddenLinks
                             brandProps={brandProps}
-                            onClickBot={onOpenBot}
+                            onClickBot={onopenVk}
                             transition={{
                                 duration: 0.3
                             }}
