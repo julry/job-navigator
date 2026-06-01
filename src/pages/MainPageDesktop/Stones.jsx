@@ -24,47 +24,48 @@ const AnimatedItem = styled(motion.div)`
 `;
 
 
-export const Stones = ({yBlocks}) => (
+export const Stones = ({animationProps, isFixed}) => (
     <>
         <AnimatedItem
             $top={735} $left={350} $width={96} $height={44}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={mountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
-            $top={933} $left={1284} $width={141} $height={76}
-            style={{ y: yBlocks }}
+            $top={543} $left={1284} $width={141} $height={76}
+            animate={isFixed ? {y: -30} : {}}
+            transition={{duration: 0.4, ease: 'linear'}}
         >
             <img src={mountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
             $top={1455} $left={1287} $width={125} $height={84}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={mountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
             $top={1035} $left={335} $width={89} $height={73}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={pravoMountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
             $top={2193} $left={436} $width={97} $height={78}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={himtechMountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
             $top={1454} $left={495} $width={108} $height={85}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={agroMountinSm} alt="" />
         </AnimatedItem>
         <AnimatedItem
             $top={1988} $left={19} $width={141} $height={76}
-            style={{ y: yBlocks }}
+            {...animationProps}
         >
             <img src={techpromMountinSm} alt="" />
         </AnimatedItem>

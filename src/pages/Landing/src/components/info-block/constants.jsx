@@ -5,13 +5,10 @@ import books from '../../assets/images/books.webp';
 import gifts from '../../assets/images/severalGifts.webp';
 import computer from '../../assets/images/computer.webp';
 
-import styles from './styles.module.scss';
-
 export const cards = [
     {
         id: 'prizes',
         title: 'регулярные призы',
-        imgClassName: styles.infoBlockGift,
         text: (
             <>
                 разыгрываем сертификаты в <span className="accent-text">Додо Пиццу, Ozon и Правое полушарие Интроверта</span> каждый месяц.{' '}

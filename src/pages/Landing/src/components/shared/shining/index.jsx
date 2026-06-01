@@ -1,9 +1,22 @@
-import cn from 'classnames';
-import styles from './styles.module.scss';
+import styled from "styled-components"
+
+const Wrapper = styled.div`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: var(--color-white);
+    
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0);
+    contain: content;
+    isolation: isolate;
+`;
 
 export const Shining = ({ className }) => (
-    <>
-        <div className={cn(styles.shining, className)} style={{filter: `url(#noiseFilter)`}}/>
-        
-    </>
+    <Wrapper className={className} style={{filter: `url(#noiseFilter)`}}/>
 )

@@ -4,7 +4,7 @@ import compasBg from '../../assets/images/compas/compasMain.webp';
 import compasArrow from '../../assets/images/compas/compasArrow.webp';
 import { media } from "../../styles/media";
 import { useRef, useState } from "react";
-import { motion, useMotionValueEvent, useScroll, useTransform } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 
 import { calculateAngle } from "../../utils/calculateAngle";
 import { Stones } from "./Stones";
@@ -13,6 +13,7 @@ import { Clouds } from "./Clouds";
 import { Button } from "../../components/shared/Button";
 import { openBot } from "../../utils/openBot";
 import { reachMetrikaGoal } from "../../utils/reachMetrikaGoal";
+import {keyframes} from 'styled-components';
 
 const Wrapper = styled.div`
     display: none;
@@ -22,7 +23,7 @@ const Wrapper = styled.div`
     z-index: 3;
     overflow-x: hidden;
     overflow-y: auto;
-    transform: translate3d(0,0,0);
+    /* transform: translate3d(0,0,0); */
 
     ${media.desktop`
         display: flex;
@@ -55,18 +56,19 @@ const TitleStyled = styled(motion.h3)`
 `;
 
 const CompasWrapper = styled(motion.div)`
-    position: sticky;
-    display: none;
+    position: fixed;
     top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 357px;
     height: 357px;
-    z-index: 20;
+    z-index: 100;
     pointer-events: none;
+
+    display: none;
 
     ${media.desktop`
         display: block;
-        margin: 0 auto;
-        margin-top: -25px;
     `}
 `;
 
@@ -145,6 +147,7 @@ const BotBlock = styled(motion.div)`
     margin-left: auto;
     height: auto;
     right: 0;
+    overflow: hidden;
     padding: 25px 29px;
     border: 1px solid var(--color-white);
     border-radius: ${({$radius = 25}) => $radius}px;
@@ -154,6 +157,12 @@ const BotBlock = styled(motion.div)`
     background-color: var(--color-gray);
     z-index: 13;
     transform: translateZ(0);
+
+    display: none;
+
+    ${media.desktop`
+        display: block;
+    `}
 
     & ${SmallText} {
         color: var(--color-white);
@@ -166,11 +175,17 @@ const LogoBlock = styled(BotBlock)`
     align-items: center;
     height: 89px;
     margin-bottom: 15px;
+
+    display: none;
+
+    ${media.desktop`
+         display: flex;
+    `}
 `;
 
 const FooterText = styled(SmallText)`
     position: absolute;
-    top: 2000px;
+    top: 1860px;
     left: 60px;
     text-align: center;
     margin-top: auto;
@@ -183,7 +198,7 @@ const BotFooterText = styled.div`
     position: absolute;
    display: flex;
    align-items: center;
-   top: 2000px;
+   top: 1860px;
    right: 60px;
    padding-bottom: 29px;
    gap: 10px;
@@ -208,12 +223,14 @@ const ContentWrapper = styled.div`
 `;
 
 const BotWrapper = styled(motion.div)`
-    position: sticky;
+    /* position: sticky;
+    top: 32px; */
+    position: fixed;
+    right: 0;
     top: 32px;
     width: fit-content;
     margin-left: auto;
-    z-index: 6;
-    margin-top: -330px;
+    z-index: 26;
 `;
 
 const CompasLogoBlock = styled(LogoBlock)`
@@ -229,9 +246,21 @@ const CompasLogoBlock = styled(LogoBlock)`
     }
 `;
 
+const moveDown = keyframes`
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+`;
+
+const Arrow = styled.svg`
+    animation: ${moveDown} 1s infinite;
+    animation-timing-function: ease-in-out;
+`;
+
+
 const COMPAS_SIZE_KOEF = 177 / 357;
 
-const START_ANIMATION = 30;
+const START_ANIMATION = 20;
 
 export const MainPageDesktop = () => {
     const titleRef = useRef();
@@ -243,44 +272,8 @@ export const MainPageDesktop = () => {
     const [arrowDeg, setArrowDeg] = useState();
 
     useMotionValueEvent(scrollY, "change", (latest) => {
-        setIsFixed(latest > START_ANIMATION / 2);
+        setIsFixed(latest > START_ANIMATION);
     });
-
-    const scale = useTransform(
-        scrollY,
-        [0, START_ANIMATION],
-        [1, COMPAS_SIZE_KOEF]
-    );
-
-    const x = useTransform(
-        scrollY,
-        [0, START_ANIMATION],
-        [0, (window.innerWidth / 2) - 295]
-    );
-
-    const y = useTransform(
-        scrollY,
-        [0, START_ANIMATION],
-        [0, -(357 / 2.3 * COMPAS_SIZE_KOEF)]
-    );
-
-    const yDescription = useTransform(
-        scrollY,
-        [0, START_ANIMATION],
-        [0, -500]
-    );
-
-    const opacityDescription = useTransform(
-        scrollY,
-        [0, 10],
-        [1, 0]
-    )
-
-    const yBlocks = useTransform(
-        scrollY,
-        [0, START_ANIMATION],
-        [0, -300]
-    );
 
     const handleMouseEnter = (e) => {
         const {x = 0, y = 0, width: compassWidth = 0, height: compassHeight = 0} = compasRef?.current?.getBoundingClientRect() ?? {};
@@ -312,31 +305,41 @@ export const MainPageDesktop = () => {
         openBot();
     };
 
+    const animationProps = {
+        animate: isFixed ? {y: -460} : {},
+        transition: {duration: 0.4, ease: 'linear'}
+    }
+
     return (
         <>
-            <Wrapper ref={wrapperRef}>
-                <CompasWrapper
-                    ref={compasRef}
-                    layout
-                    style={{ x, y, scale }}
-                    transition={{
-                        type: 'spring',
-                        duration: 0.5,
-                        ease: 'easeOut',
-                        layout: true,
-                    }}
-                >
-                    <CompasElement key="background" src={compasBg} alt="" />
-                    <CompasArrow key="arrow" src={compasArrow} alt="" animate={{rotate: arrowDeg}}/>
-                </CompasWrapper>
-                <BotWrapper >
-                    {isFixed && (
-                        <CompasLogoBlock layout={true} initial={{opacity: 0, scaleY: 0}} exit={{opacity: 0, scaleY: 0}} animate={{opacity: 1, scaleY: 1}}>
-                            <p>
-                                <ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий
-                            </p>
-                        </CompasLogoBlock>
-                    )}
+            <CompasWrapper
+                ref={compasRef}
+                initial={{x: '-50%'}}
+                animate={isFixed ? {y: -(357 / 2.3 * COMPAS_SIZE_KOEF), x: (window.innerWidth / 2) - 485, scale: COMPAS_SIZE_KOEF,} : {x: '-50%'}}
+                transition={{
+                    duration: 0.25,
+                    ease: 'linear',
+                    layout: true,
+                }}
+            >
+                <CompasElement key="background" src={compasBg} alt="" />
+                <CompasArrow key="arrow" src={compasArrow} alt="" animate={{rotate: arrowDeg}}/>
+            </CompasWrapper>
+            <BotWrapper>
+                    <AnimatePresence>
+                        {isFixed && (
+                            <CompasLogoBlock 
+                                initial={{opacity: 0, height: 0, x: 308}} 
+                                exit={{opacity: 0, height: 0, x: 380}} 
+                                animate={{ opacity: 1, height: 100, x: 0}} 
+                                transition={{ x: {duration: 0.25, ease: 'linear'}, opacity: {duration: 0.15, ease: 'linear'}, height: {duration: 0.25, ease: 'linear'}}}
+                            >
+                                <p>
+                                    <ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий
+                                </p>
+                            </CompasLogoBlock>
+                        )}
+                    </AnimatePresence>
                     <LogoBlock layout={true}>
                         <svg width="148" height="45" viewBox="0 0 148 45" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_3441_155493)">
@@ -377,48 +380,64 @@ export const MainPageDesktop = () => {
                             </defs>
                         </svg>
                     </LogoBlock>
-                    <BotBlock $radius={30} layout={true}>
+                    <BotBlock $radius={30} layout={true} transition={{duration: 0.2, ease: 'linear'}}>
                         <SmallText>
                             <ColoredSpan>Бот</ColoredSpan> — твой личный гид
-                           {!isFixed && (
-                                <>
+                           {/* {!isFixed && ( */}
+                                <motion.span style={{display: 'block'}} animate={isFixed ? {height: 0, opacity: 0} : {}} transition={{duration: 0.2, ease: 'linear'}}>
                                     {'\n\n'}
                                     Он будет присылать контент, подобранный под твою специальность, помогать готовиться к собеседованиям
                                     и держать в курсе вакансий
                                     и розыгрышей
-                                </>
-                           )}
+                                </motion.span>
+                           {/* )} */}
                         </SmallText>
                         <ButtonStyled onClick={handleOpenBot}>
                             перейти в бот
                         </ButtonStyled>
                     </BotBlock>
-                </BotWrapper>
-               
-                <CompasBlock initial={{x: '-50%'}} style={{x: '-50%', y: yDescription, opacity: opacityDescription}}>
-                    <CompasHeader>Это <ColoredSpan>навигатор профессий — интерактивный помощник</ColoredSpan> для студентов колледжей и техникумов</CompasHeader>
-                    <SmallText>
-                        Мы создали его, чтобы помочь тебе понять свою специальность, узнать, как вырасти в профессии и найти первую работу {'\n\n'}
-                        погрузись в мир реальных вакансий, лайфхаков и советов от ведущих работодателей!
-                    </SmallText>
-                </CompasBlock>
-                <TipBlock style={{y: yDescription, opacity: opacityDescription}}>
-                    <SmallText>
-                        листай ниже, чтобы посмотреть все профессии
-                    </SmallText>
-                    <motion.svg animate={{y: 10}} transition={{repeat: Infinity, repeatType: 'mirror', duration: 1}} width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M8.36328 1C8.36328 0.447715 7.91557 -2.41411e-08 7.36328 0C6.811 2.41411e-08 6.36328 0.447715 6.36328 1L7.36328 1L8.36328 1ZM6.65618 26.7071C7.0467 27.0976 7.67986 27.0976 8.07039 26.7071L14.4343 20.3431C14.8249 19.9526 14.8249 19.3195 14.4343 18.9289C14.0438 18.5384 13.4107 18.5384 13.0201 18.9289L7.36328 24.5858L1.70643 18.9289C1.3159 18.5384 0.682739 18.5384 0.292214 18.9289C-0.0983101 19.3195 -0.0983101 19.9526 0.292214 20.3431L6.65618 26.7071ZM7.36328 1L6.36328 1L6.36328 26L7.36328 26L8.36328 26L8.36328 1L7.36328 1Z" fill="#FF7F00"/>
-                    </motion.svg>
-                </TipBlock>
+            </BotWrapper>
+            <Wrapper ref={wrapperRef}>
+                <AnimatePresence initial={false}>
+                    {!isFixed && (
+                        <>
+                            <CompasBlock 
+                                initial={{x: '-50%', y: -500, opacity: 0}} 
+                                exit={{y: -500, opacity: 0, x: '-50%'}}
+                                animate={{y: 0, opacity: 1, x: '-50%'}}
+                                transition={{duration: 0.4, ease: 'linear'}}
+                            >
+                                <CompasHeader>Это <ColoredSpan>навигатор профессий — интерактивный помощник</ColoredSpan> для студентов колледжей и техникумов</CompasHeader>
+                                <SmallText>
+                                    Мы создали его, чтобы помочь тебе понять свою специальность, узнать, как вырасти в профессии и найти первую работу {'\n\n'}
+                                    погрузись в мир реальных вакансий, лайфхаков и советов от ведущих работодателей!
+                                </SmallText>
+                            </CompasBlock>
+                            <TipBlock 
+                                initial={{ y: -500, opacity: 0}} 
+                                exit={{y: -500, opacity: 0, }}
+                                animate={{y: 0, opacity: 1,}}
+                                transition={{duration: 0.4, ease: 'linear'}}
+                            >
+                                <SmallText>
+                                    листай ниже, чтобы посмотреть все профессии
+                                </SmallText>
+                                <Arrow width="15" height="27" viewBox="0 0 15 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.36328 1C8.36328 0.447715 7.91557 -2.41411e-08 7.36328 0C6.811 2.41411e-08 6.36328 0.447715 6.36328 1L7.36328 1L8.36328 1ZM6.65618 26.7071C7.0467 27.0976 7.67986 27.0976 8.07039 26.7071L14.4343 20.3431C14.8249 19.9526 14.8249 19.3195 14.4343 18.9289C14.0438 18.5384 13.4107 18.5384 13.0201 18.9289L7.36328 24.5858L1.70643 18.9289C1.3159 18.5384 0.682739 18.5384 0.292214 18.9289C-0.0983101 19.3195 -0.0983101 19.9526 0.292214 20.3431L6.65618 26.7071ZM7.36328 1L6.36328 1L6.36328 26L7.36328 26L8.36328 26L8.36328 1L7.36328 1Z" fill="#FF7F00"/>
+                                </Arrow>
+                            </TipBlock>
+                        </>
+                    )}
+                </AnimatePresence>
                 <ContentWrapper>
-                    <Clouds y={yBlocks}/>
+                    <Clouds animationProps={animationProps} isFixed={isFixed}/>
                     <TitleStyled ref={titleRef} 
                         animate={{opacity: +(!isFixed)}}
                     >
                         <ColoredSpan>навигатор</ColoredSpan>{'\n'}профессий
                     </TitleStyled>
-                    <Stones yBlocks={yBlocks} yBlocksMiddle={yBlocks}/>
-                    <JobsBlock handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} yBlocks={yBlocks}/>
+                    <Stones animationProps={animationProps} isFixed={isFixed}/>
+                    <JobsBlock handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} animationProps={animationProps}/>
                     <FooterText>
                         © 2005-2026 FutureToday.{'\n'}Все права защищены.
                     </FooterText>

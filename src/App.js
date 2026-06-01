@@ -59,7 +59,7 @@ function App({ router }) {
    return (
          <AppContext.Provider value={{wrapperRef}}>
             <Wrapper ref={wrapperRef}>
-                  <RouterProvider router={router} />
+               <RouterProvider router={router} />
             </Wrapper>
             <NoiseSvg width="0" height="0">
                <rect width="100%" height="100%" fill="none" filter={`url(#noiseFilter)`} clipPath="url(#clip)" />

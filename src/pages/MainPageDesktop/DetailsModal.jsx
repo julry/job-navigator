@@ -21,7 +21,6 @@ const DetailedWrapper = styled(motion.div)`
     align-items: ${({$isMirror}) => $isMirror ? 'flex-end' : 'flex-start'};
 
     width: ${({$width}) => $width}px;
-    min-height: ${({$height = 177}) => $height}px;
     padding: ${({$paddingTop = 20}) => $paddingTop}px 25px 25px;
 
     border-radius: 30px;
@@ -49,7 +48,7 @@ const UlStyled = styled.ul`
     max-width: ${({$textMaxWidth = 240}) => $textMaxWidth}px;
 `
 
-export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, height, $textWidth, right, $titleWidth}) => {
+export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, height, $textWidth, $paddingTop, right, $titleWidth}) => {
     const info = popups.find(({id}) => id === jobId) ?? {};
 
     return (
@@ -67,6 +66,7 @@ export const DetailsModal = ({jobId, onClick, isActive, isMirror, width, top, he
                         $height={height} 
                         $isMirror={isMirror}
                         onClick={onClick}
+                        $paddingTop={$paddingTop}
                     >
                         <DetailedTitle $titleWidth={$titleWidth}>{info?.title}</DetailedTitle>
                         <UlStyled $textMaxWidth={$textWidth}>

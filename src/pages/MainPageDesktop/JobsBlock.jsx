@@ -46,22 +46,11 @@ const Person = styled(ImageElement)`
     z-index: 5;
     transform: scale(${({$scale}) => $scale[0] + ',' + $scale[1]}) translateZ(0);
     cursor: pointer;
+
+    transition: transform 0.2s linear;
 `;
 
-
-//TODO: remove if dont need this circle
-// const HimTechCircle = styled.div`
-//     position: absolute;
-//     width: 10px;
-//     height: 10px;
-//     top: 4px;
-//     right: 85px;
-//     z-index: 4;
-//     border-radius: 50%;
-//     background-color: var(--color-orange);
-// `;
-
-export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
+export const JobsBlock = ({handleMouseEnter, handleMouseLeave, animationProps}) => {
     const [chosen, setChosen] = useState();
     const navigate = useNavigate();
 
@@ -99,7 +88,8 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
                 $width={job.position.width}
                 $height={job.position.height}
                 $spaceTopSmall={job.spaceTopSmall}
-                style={{ y: job.type === 'motion' ? yBlocks : yBlocks, zIndex: chosen === job.id ? 10 : 2 }}
+                style={{ zIndex: chosen === job.id ? 10 : 2 }}
+                {...animationProps}
                 onMouseEnter={(e) => handleHover(e, job.position, job.id)}
                 onMouseLeave={handleStopHover}
             >
@@ -133,12 +123,12 @@ export const JobsBlock = ({handleMouseEnter, handleMouseLeave, yBlocks}) => {
                     $top={job.mountain.top}
                     $left={job.mountain.left}
                 />
-                {/* {job.hasCircle && <HimTechCircle />} */}
                 <DetailsModal
                     isActive={chosen === job.id}
                     jobId={job.id}
                     onClick={() => handleNavigate(job.id)}
                     {...job.modal}
+                    top={job.text.top + (job.text.height ?? 46) - 11}
                 />
             </MotionBlock>
         ))

@@ -1,26 +1,133 @@
+import styled from 'styled-components';
 import person from '../../assets/images/man.webp';
 import {openBot} from '../../utils/openBot';
 import { Block } from '../shared/block';
 
-import styles from './styles.module.scss';
+import { media } from '../../../../../styles/media';
+
+const BlockStyled = styled(Block)`
+    & > div:first-child {
+        padding: 30px 0;
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border: 1px solid var(--color-white);
+        border-bottom: none;
+        box-shadow: 0 0 5px 0px var(--color-white);
+
+       ${media.desktop`
+            flex-direction: row;
+            height: 102px;
+            padding: 36px 50px 32px;
+       `}
+    }
+
+    & > div:last-child {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+`;
+
+const Wrapper = styled.div`
+    position: relative;
+`;
+
+const FooterPerson = styled.img`
+    position: absolute;
+    z-index: 3;
+    top: 44px;
+    left: 57%;
+    transform: translateX(-50%);
+    width: 205px;
+    height: 359px;
+    object-fit: contain;
+
+    ${media.desktop`
+        left: 660px;
+        top: -320px;
+        width: 244px;
+        height: 426px;
+
+        @media screen and (max-width: 1200px) {
+            top: -270px;
+        }
+    `}
+`;
+
+const Content = styled.div`
+    position: relative;
+    padding-top: 390px;
+    overflow: hidden;
+
+    ${media.desktop`
+        padding-top: 89px;
+
+        @media screen and (max-width: 1200px) {
+        padding-top: 139px;
+        }
+    `}
+`;
+
+const FooterText = styled.p`
+  font-size: 16px;
+  align-items: center;
+  text-transform: none;
+  white-space: pre-line;
+  line-height: 105%;
+
+  ${media.desktop`
+    align-items: left;
+  `}
+`;
+
+const BotBlock = styled.div`
+  display: flex;
+  gap: 12px;
+`;
+
+const BotBlockText = styled.div`
+  display: none;
+
+  ${media.desktop`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  `}
+`;
+
+const BotButton = styled.button`
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+
+  ${media.desktop`
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0;
+  `}
+`;
 
 export const Footer = () => (
-   <div className={styles.footerWrapper}>
-        <img className={styles.footerPerson} src={person} alt="" />
-        <div className={styles.footer}>
-            <Block className={styles.footerBlock} shiningClassName={styles.footerShining}>
-                <p className={styles.footerText}>
+   <Wrapper>
+        <FooterPerson src={person} alt="" />
+        <Content>
+            <BlockStyled>
+                <FooterText>
                     © 2005-2026 FutureToday.{'\n'}Все права защищены.
-                </p>
-                <div className={styles.footerBotBlock}>
-                    <div className={styles.footerBotBlockText}>
-                        <p className={styles.footerText}>перейти в бот</p>
+                </FooterText>
+                <BotBlock>
+                    <BotBlockText>
+                        <FooterText>перейти в бот</FooterText>
                         <svg width="27" height="15" viewBox="0 0 27 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M1 6.36395C0.447715 6.36395 9.65645e-08 6.81167 0 7.36395C-9.65645e-08 7.91624 0.447715 8.36395 1 8.36395L1 7.36395L1 6.36395ZM26.7071 8.07106C27.0976 7.68054 27.0976 7.04737 26.7071 6.65685L20.3431 0.292888C19.9526 -0.0976362 19.3195 -0.0976364 18.9289 0.292888C18.5384 0.683412 18.5384 1.31658 18.9289 1.7071L24.5858 7.36396L18.9289 13.0208C18.5384 13.4113 18.5384 14.0445 18.9289 14.435C19.3195 14.8255 19.9526 14.8255 20.3431 14.435L26.7071 8.07106ZM1 7.36395L1 8.36395L26 8.36396L26 7.36396L26 6.36396L1 6.36395L1 7.36395Z" fill="#FFF2EC"/>
                         </svg>
-                    </div>
+                    </BotBlockText>
                     
-                    <button className={styles.footerBotButton} onClick={openBot}>
+                    <BotButton onClick={openBot}>
                         <svg width="100%" height="100%" viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g clipPath="url(#clip0_9001_106)">
                             <path d="M0 24.96C0 13.1937 0 7.31062 3.65531 3.65531C7.31062 0 13.1937 0 24.96 0H27.04C38.8063 0 44.6893 0 48.3447 3.65531C52 7.31062 52 13.1937 52 24.96V27.04C52 38.8063 52 44.6893 48.3447 48.3447C44.6893 52 38.8063 52 27.04 52H24.96C13.1937 52 7.31062 52 3.65531 48.3447C0 44.6893 0 38.8063 0 27.04V24.96Z" fill="#FFF2EC"/>
@@ -32,9 +139,9 @@ export const Footer = () => (
                             </clipPath>
                             </defs>
                         </svg>
-                    </button>
-                </div>
-            </Block>
-        </div>
-   </div>
+                    </BotButton>
+                </BotBlock>
+            </BlockStyled>
+        </Content>
+   </Wrapper>
 )
